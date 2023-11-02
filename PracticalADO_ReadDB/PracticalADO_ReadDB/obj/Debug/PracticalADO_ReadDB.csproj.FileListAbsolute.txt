@@ -1,0 +1,15 @@
+c:\prj\PracticalADO_ReadDB\PracticalADO_ReadDB\bin\Debug\PracticalADO_ReadDB.exe.config
+c:\prj\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.csprojResolveAssemblyReference.cache
+c:\prj\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.frmLogin.resources
+c:\prj\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.Properties.Resources.resources
+c:\prj\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.csproj.GenerateResource.Cache
+c:\prj\PracticalADO_ReadDB\PracticalADO_ReadDB\bin\Debug\PracticalADO_ReadDB.exe
+c:\prj\PracticalADO_ReadDB\PracticalADO_ReadDB\bin\Debug\PracticalADO_ReadDB.pdb
+c:\prj\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.exe
+c:\prj\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.pdb
+C:\prj\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.frmUserTrans.resources
+C:\prj\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.GetNumber.resources
+C:\prj\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.frmUsers.resources
+C:\prj\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.frmAddUser.resources
+C:\prj\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.frmUserMaintenance.resources
+C:\prj\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.Charts.resources
