@@ -14,9 +14,14 @@ namespace PracticalADO_ReadDB
     {
         public Admin()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (NotImplementedException) {
+                MessageBox.Show("New");
+            }
         }
-
         private void Admin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();

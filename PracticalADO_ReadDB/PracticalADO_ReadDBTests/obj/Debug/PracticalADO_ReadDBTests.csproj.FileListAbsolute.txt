@@ -1,0 +1,9 @@
+C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDBTests\bin\Debug\PracticalADO_ReadDBTests.dll
+C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDBTests\bin\Debug\PracticalADO_ReadDBTests.pdb
+C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDBTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDBTests\bin\Debug\PracticalADO_ReadDB.exe
+C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDBTests\bin\Debug\PracticalADO_ReadDB.pdb
+C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDBTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDBTests\obj\Debug\PracticalADO_ReadDBTests.csprojResolveAssemblyReference.cache
+C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDBTests\obj\Debug\PracticalADO_ReadDBTests.dll
+C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDBTests\obj\Debug\PracticalADO_ReadDBTests.pdb

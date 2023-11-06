@@ -14,7 +14,14 @@ namespace PracticalADO_ReadDB
     {
         public User()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (NotImplementedException)
+            {
+                MessageBox.Show("New");
+            }
         }
 
         private void User_FormClosed(object sender, FormClosedEventArgs e)
