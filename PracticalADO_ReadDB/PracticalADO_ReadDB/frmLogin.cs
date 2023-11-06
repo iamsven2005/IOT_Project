@@ -55,10 +55,21 @@ namespace PracticalADO_ReadDB
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    MessageBox.Show($"Succcess: Welcome {tbUserName.Text}");
-                    frmUserTrans f2 = new frmUserTrans();
-                    f2.Show();
-                    this.Hide();
+                    if (tbUserName.Text == "Admin")
+                    {
+                        MessageBox.Show($"Succcess: Welcome {tbUserName.Text}");
+                        Admin f2 = new Admin();
+                        f2.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Succcess: Welcome {tbUserName.Text}");
+                        User f2 = new User();
+                        f2.Show();
+                        this.Hide();
+                    }
+
                 }
                 else
                     MessageBox.Show("Fail: Please Try Again");
