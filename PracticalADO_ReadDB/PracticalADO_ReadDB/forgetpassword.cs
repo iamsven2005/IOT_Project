@@ -16,5 +16,15 @@ namespace PracticalADO_ReadDB
         {
             InitializeComponent();
         }
+
+        private void forgetpassword_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void forgetpassword_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

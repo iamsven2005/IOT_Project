@@ -146,15 +146,29 @@ namespace PracticalADO_ReadDB
 
         private void ForgetPwd_Click(object sender, EventArgs e)
         {
-
+            forgetpassword f5 = new forgetpassword();
+            //this leads to the email page frmForget leads to the MFA page
+            f5.Show();
+            this.Hide();
         }
 
         private void frmLogin_Resize(object sender, EventArgs e)
         {
-            int width = (this.Width/50);
-            Title.Font = new System.Drawing.Font("Arial Rounded MT", width, System.Drawing.FontStyle.Bold);
-            //this.Font = new System.Drawing.Font("Arial Rounded MT", (width/4), System.Drawing.FontStyle.Bold);
-            
+                int width = (this.Width / 50);
+                int height = ((this.Height / 25)/2);
+                if (width == 0 || height == 0)
+            {
+
+            }
+            else
+            {
+                Title.Font = new System.Drawing.Font("Arial Rounded MT", width, System.Drawing.FontStyle.Bold);
+                this.Font = new System.Drawing.Font("Arial Rounded MT", height, System.Drawing.FontStyle.Regular);
+                tbPassword.Height = this.Height * 2;
+                tbUserName.Height = this.Height * 2;
+            }
+
+
         }
     }
 }
