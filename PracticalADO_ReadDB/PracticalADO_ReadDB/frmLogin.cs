@@ -106,7 +106,7 @@ namespace PracticalADO_ReadDB
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
-
+           
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -126,6 +126,35 @@ namespace PracticalADO_ReadDB
             Charts f5 = new Charts();
             f5.Show();
             this.Hide();
+        }
+
+        private void Title_ClientSizeChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Title_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void Title_ParentChanged(object sender, EventArgs e)
+        {
+            Title.Font = new System.Drawing.Font("Trebuchet MS", 20F, System.Drawing.FontStyle.Bold);
+        }
+
+        private void ForgetPwd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmLogin_Resize(object sender, EventArgs e)
+        {
+            int width = (this.Width/50);
+            Title.Font = new System.Drawing.Font("Arial Rounded MT", width, System.Drawing.FontStyle.Bold);
+            //this.Font = new System.Drawing.Font("Arial Rounded MT", (width/4), System.Drawing.FontStyle.Bold);
+            
         }
     }
 }
