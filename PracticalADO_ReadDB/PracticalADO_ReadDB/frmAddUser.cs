@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
-
+using BCrypt.Net;
 namespace PracticalADO_ReadDB
 {
     public partial class frmAddUser : Form
@@ -37,7 +37,7 @@ namespace PracticalADO_ReadDB
             updateCmd.Parameters.AddWithValue("@NewNRIC", tbNRIC.Text);
             updateCmd.Parameters.AddWithValue("@NewAdd", tbAdd.Text);
             updateCmd.Parameters.AddWithValue("@NewContact", tbContact.Text);
-            updateCmd.Parameters.AddWithValue("@NewPwd", tbPwd.Text);
+            updateCmd.Parameters.AddWithValue("@NewPwd", BCrypt.Net.BCrypt.HashPassword(tbPwd.Text));
             myConnect.Open();
             result = updateCmd.ExecuteNonQuery();
             if (result > 0)

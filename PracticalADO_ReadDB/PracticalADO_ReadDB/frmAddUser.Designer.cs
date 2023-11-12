@@ -47,89 +47,100 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(64, 77);
+            this.lblName.Location = new System.Drawing.Point(48, 63);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(49, 17);
+            this.lblName.Size = new System.Drawing.Size(38, 13);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name:";
             // 
             // lblRFID
             // 
             this.lblRFID.AutoSize = true;
-            this.lblRFID.Location = new System.Drawing.Point(65, 103);
+            this.lblRFID.Location = new System.Drawing.Point(49, 84);
+            this.lblRFID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRFID.Name = "lblRFID";
-            this.lblRFID.Size = new System.Drawing.Size(43, 17);
+            this.lblRFID.Size = new System.Drawing.Size(35, 13);
             this.lblRFID.TabIndex = 1;
             this.lblRFID.Text = "RFID:";
             // 
             // lblNRIC
             // 
             this.lblNRIC.AutoSize = true;
-            this.lblNRIC.Location = new System.Drawing.Point(64, 131);
+            this.lblNRIC.Location = new System.Drawing.Point(48, 106);
+            this.lblNRIC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNRIC.Name = "lblNRIC";
-            this.lblNRIC.Size = new System.Drawing.Size(44, 17);
+            this.lblNRIC.Size = new System.Drawing.Size(36, 13);
             this.lblNRIC.TabIndex = 2;
             this.lblNRIC.Text = "NRIC:";
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(64, 159);
+            this.lblAddress.Location = new System.Drawing.Point(48, 129);
+            this.lblAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(64, 17);
+            this.lblAddress.Size = new System.Drawing.Size(48, 13);
             this.lblAddress.TabIndex = 3;
             this.lblAddress.Text = "Address:";
             // 
             // tbContact
             // 
             this.tbContact.AutoSize = true;
-            this.tbContact.Location = new System.Drawing.Point(65, 187);
+            this.tbContact.Location = new System.Drawing.Point(49, 152);
+            this.tbContact.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tbContact.Name = "tbContact";
-            this.tbContact.Size = new System.Drawing.Size(60, 17);
+            this.tbContact.Size = new System.Drawing.Size(47, 13);
             this.tbContact.TabIndex = 4;
             this.tbContact.Text = "Contact:";
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(134, 75);
+            this.tbName.Location = new System.Drawing.Point(100, 61);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(100, 22);
+            this.tbName.Size = new System.Drawing.Size(76, 20);
             this.tbName.TabIndex = 5;
             // 
             // tbRFID
             // 
-            this.tbRFID.Location = new System.Drawing.Point(134, 103);
+            this.tbRFID.Location = new System.Drawing.Point(100, 84);
+            this.tbRFID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbRFID.Name = "tbRFID";
-            this.tbRFID.Size = new System.Drawing.Size(100, 22);
+            this.tbRFID.Size = new System.Drawing.Size(76, 20);
             this.tbRFID.TabIndex = 6;
             // 
             // tbNRIC
             // 
-            this.tbNRIC.Location = new System.Drawing.Point(134, 131);
+            this.tbNRIC.Location = new System.Drawing.Point(100, 106);
+            this.tbNRIC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbNRIC.Name = "tbNRIC";
-            this.tbNRIC.Size = new System.Drawing.Size(100, 22);
+            this.tbNRIC.Size = new System.Drawing.Size(76, 20);
             this.tbNRIC.TabIndex = 7;
             // 
             // tbAdd
             // 
-            this.tbAdd.Location = new System.Drawing.Point(134, 159);
+            this.tbAdd.Location = new System.Drawing.Point(100, 129);
+            this.tbAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbAdd.Name = "tbAdd";
-            this.tbAdd.Size = new System.Drawing.Size(100, 22);
+            this.tbAdd.Size = new System.Drawing.Size(76, 20);
             this.tbAdd.TabIndex = 8;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(134, 187);
+            this.textBox1.Location = new System.Drawing.Point(100, 152);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.Size = new System.Drawing.Size(76, 20);
             this.textBox1.TabIndex = 9;
             // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(68, 218);
+            this.btnSave.Location = new System.Drawing.Point(51, 177);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(56, 19);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -138,9 +149,10 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(159, 218);
+            this.btnCancel.Location = new System.Drawing.Point(119, 177);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(56, 19);
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -149,25 +161,27 @@
             // lblPwd
             // 
             this.lblPwd.AutoSize = true;
-            this.lblPwd.Location = new System.Drawing.Point(64, 51);
+            this.lblPwd.Location = new System.Drawing.Point(48, 41);
+            this.lblPwd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPwd.Name = "lblPwd";
-            this.lblPwd.Size = new System.Drawing.Size(69, 17);
+            this.lblPwd.Size = new System.Drawing.Size(53, 13);
             this.lblPwd.TabIndex = 12;
             this.lblPwd.Text = "Password";
             this.lblPwd.Click += new System.EventHandler(this.label1_Click);
             // 
             // tbPwd
             // 
-            this.tbPwd.Location = new System.Drawing.Point(134, 46);
+            this.tbPwd.Location = new System.Drawing.Point(100, 37);
+            this.tbPwd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbPwd.Name = "tbPwd";
-            this.tbPwd.Size = new System.Drawing.Size(100, 22);
+            this.tbPwd.Size = new System.Drawing.Size(76, 20);
             this.tbPwd.TabIndex = 13;
             // 
             // frmAddUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 253);
+            this.ClientSize = new System.Drawing.Size(392, 206);
             this.Controls.Add(this.tbPwd);
             this.Controls.Add(this.lblPwd);
             this.Controls.Add(this.btnCancel);
@@ -182,6 +196,7 @@
             this.Controls.Add(this.lblNRIC);
             this.Controls.Add(this.lblRFID);
             this.Controls.Add(this.lblName);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmAddUser";
             this.Text = "Add New User";
             this.Load += new System.EventHandler(this.frmAddUser_Load);

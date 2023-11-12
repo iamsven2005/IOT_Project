@@ -39,3 +39,5 @@ C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\
 C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\bin\Debug\SampleDB_log.ldf
 C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.forgetpassword.resources
 C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.frmForget.resources
+C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\bin\Debug\BCrypt.Net.dll
+C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\bin\Debug\BCrypt.Net.xml

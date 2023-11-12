@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using BCrypt.Net;
 
 namespace PracticalADO_ReadDB
 {
@@ -43,43 +44,60 @@ namespace PracticalADO_ReadDB
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-            string strCommandText = "SELECT Name, Password FROM MyUser";
-            strCommandText += " WHERE Name=@uname AND Password=@pwd";
+            string strCommandText = "SELECT Name, Password FROM MyUser WHERE Name=@uname";
             SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
             cmd.Parameters.AddWithValue("@uname", tbUserName.Text);
-            cmd.Parameters.AddWithValue("@pwd", tbPassword.Text);
+
             try
             {
                 myConnect.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
+
+                if (reader.HasRows)
                 {
-                    if (tbUserName.Text == "Admin")
+                    reader.Read();
+                    string hashedPasswordFromDB = reader["Password"].ToString();
+
+                    // Verify the entered password during login
+                    string enteredPassword = tbPassword.Text; // Replace with the actual user-entered password
+
+                    if (BCrypt.Net.BCrypt.Verify(enteredPassword, hashedPasswordFromDB))
                     {
                         MessageBox.Show($"Succcess: Welcome {tbUserName.Text}");
-                        Admin f2 = new Admin();
-                        f2.Show();
-                        this.Hide();
+
+                        if (tbUserName.Text == "Admin")
+                        {
+                            Admin f2 = new Admin();
+                            f2.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            string dataToPass = tbUserName.Text;
+                            User f2 = new User(dataToPass);
+                            f2.Show();
+                            this.Hide();
+
+                        }
                     }
                     else
                     {
-                        MessageBox.Show($"Succcess: Welcome {tbUserName.Text}");
-                        User f2 = new User();
-                        f2.Show();
-                        this.Hide();
-                    }
+                        MessageBox.Show("Wrong Password");
 
+                    }
                 }
                 else
+                {
                     MessageBox.Show("Fail: Please Try Again");
+                }
                 reader.Close();
-            
+
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
-            
             }
             finally
             {
@@ -95,6 +113,7 @@ namespace PracticalADO_ReadDB
         private void Test_Click(object sender, EventArgs e)
         {
             frmUsers f3 = new frmUsers();
+            //frmForget f3 = new frmForget();
             f3.Show();
             this.Hide();
         }

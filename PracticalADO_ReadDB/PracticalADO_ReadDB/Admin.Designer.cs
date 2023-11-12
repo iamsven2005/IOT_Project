@@ -29,10 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.messageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.messagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sampleDBDataSet1 = new PracticalADO_ReadDB.SampleDBDataSet1();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.adminmsg = new System.Windows.Forms.TextBox();
+            this.adminsend = new System.Windows.Forms.Button();
             this.usermgt = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -41,40 +52,35 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dashboard = new System.Windows.Forms.FlowLayoutPanel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.adminsend = new System.Windows.Forms.Button();
-            this.adminmsg = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sampleDBDataSet1 = new PracticalADO_ReadDB.SampleDBDataSet1();
-            this.messagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.messagesTableAdapter = new PracticalADO_ReadDB.SampleDBDataSet1TableAdapters.MessagesTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.messageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usrmgtpg = new System.Windows.Forms.TabPage();
             this.todo = new System.Windows.Forms.TabPage();
+            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.grdUser = new System.Windows.Forms.DataGridView();
-            this.sampleDBDataSet = new PracticalADO_ReadDB.SampleDBDataSet();
-            this.sampleDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taskDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateLineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toDoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sampleDBDataSet2 = new PracticalADO_ReadDB.SampleDBDataSet2();
-            this.toDoListTableAdapter = new PracticalADO_ReadDB.SampleDBDataSet2TableAdapters.ToDoListTableAdapter();
-            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.GetDate = new System.Windows.Forms.Button();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.GetDate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.messagesTableAdapter = new PracticalADO_ReadDB.SampleDBDataSet1TableAdapters.MessagesTableAdapter();
+            this.sampleDBDataSet = new PracticalADO_ReadDB.SampleDBDataSet();
+            this.sampleDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toDoListTableAdapter = new PracticalADO_ReadDB.SampleDBDataSet2TableAdapters.ToDoListTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
+            this.splitContainer4.Panel1.SuspendLayout();
+            this.splitContainer4.Panel2.SuspendLayout();
+            this.splitContainer4.SuspendLayout();
             this.usermgt.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -82,30 +88,19 @@
             this.splitContainer2.SuspendLayout();
             this.dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
-            this.splitContainer4.Panel1.SuspendLayout();
-            this.splitContainer4.Panel2.SuspendLayout();
-            this.splitContainer4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).BeginInit();
             this.todo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toDoListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toDoListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
             this.splitContainer6.Panel1.SuspendLayout();
             this.splitContainer6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -125,102 +120,6 @@
             this.splitContainer1.SplitterDistance = 265;
             this.splitContainer1.TabIndex = 0;
             // 
-            // usermgt
-            // 
-            this.usermgt.Controls.Add(this.tabPage1);
-            this.usermgt.Controls.Add(this.tabPage2);
-            this.usermgt.Controls.Add(this.tabPage3);
-            this.usermgt.Controls.Add(this.tabPage4);
-            this.usermgt.Controls.Add(this.usrmgtpg);
-            this.usermgt.Controls.Add(this.todo);
-            this.usermgt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.usermgt.Location = new System.Drawing.Point(0, 0);
-            this.usermgt.Name = "usermgt";
-            this.usermgt.SelectedIndex = 0;
-            this.usermgt.Size = new System.Drawing.Size(860, 450);
-            this.usermgt.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(852, 352);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Approval";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(852, 352);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Current Queue";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(852, 352);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Logs";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.splitContainer2);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(852, 352);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Dashboard";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.dashboard);
-            this.splitContainer2.Size = new System.Drawing.Size(846, 346);
-            this.splitContainer2.SplitterDistance = 58;
-            this.splitContainer2.TabIndex = 1;
-            // 
-            // dashboard
-            // 
-            this.dashboard.Controls.Add(this.chart1);
-            this.dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dashboard.Location = new System.Drawing.Point(0, 0);
-            this.dashboard.Name = "dashboard";
-            this.dashboard.Size = new System.Drawing.Size(846, 284);
-            this.dashboard.TabIndex = 0;
-            // 
-            // chart1
-            // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Top;
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
-            this.chart1.Location = new System.Drawing.Point(3, 3);
-            this.chart1.Name = "chart1";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart1.Series.Add(series4);
-            this.chart1.Size = new System.Drawing.Size(248, 234);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
-            // 
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -239,45 +138,6 @@
             this.splitContainer3.SplitterDistance = 377;
             this.splitContainer3.TabIndex = 0;
             // 
-            // splitContainer4
-            // 
-            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer4.Name = "splitContainer4";
-            // 
-            // splitContainer4.Panel1
-            // 
-            this.splitContainer4.Panel1.Controls.Add(this.adminmsg);
-            // 
-            // splitContainer4.Panel2
-            // 
-            this.splitContainer4.Panel2.Controls.Add(this.adminsend);
-            this.splitContainer4.Size = new System.Drawing.Size(265, 69);
-            this.splitContainer4.SplitterDistance = 175;
-            this.splitContainer4.TabIndex = 0;
-            // 
-            // adminsend
-            // 
-            this.adminsend.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.adminsend.Location = new System.Drawing.Point(0, 0);
-            this.adminsend.MinimumSize = new System.Drawing.Size(30, 20);
-            this.adminsend.Name = "adminsend";
-            this.adminsend.Size = new System.Drawing.Size(86, 69);
-            this.adminsend.TabIndex = 0;
-            this.adminsend.Text = "Send";
-            this.adminsend.UseVisualStyleBackColor = true;
-            // 
-            // adminmsg
-            // 
-            this.adminmsg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.adminmsg.Location = new System.Drawing.Point(0, 0);
-            this.adminmsg.MinimumSize = new System.Drawing.Size(50, 20);
-            this.adminmsg.Multiline = true;
-            this.adminmsg.Name = "adminmsg";
-            this.adminmsg.Size = new System.Drawing.Size(175, 69);
-            this.adminmsg.TabIndex = 0;
-            this.adminmsg.Text = "Admin Msg";
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
@@ -295,20 +155,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(265, 377);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // sampleDBDataSet1
-            // 
-            this.sampleDBDataSet1.DataSetName = "SampleDBDataSet1";
-            this.sampleDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // messagesBindingSource
-            // 
-            this.messagesBindingSource.DataMember = "Messages";
-            this.messagesBindingSource.DataSource = this.sampleDBDataSet1;
-            // 
-            // messagesTableAdapter
-            // 
-            this.messagesTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -334,12 +180,157 @@
             this.timeDataGridViewTextBoxColumn.HeaderText = "Time";
             this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
             // 
+            // messagesBindingSource
+            // 
+            this.messagesBindingSource.DataMember = "Messages";
+            this.messagesBindingSource.DataSource = this.sampleDBDataSet1;
+            // 
+            // sampleDBDataSet1
+            // 
+            this.sampleDBDataSet1.DataSetName = "SampleDBDataSet1";
+            this.sampleDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // splitContainer4
+            // 
+            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer4.Name = "splitContainer4";
+            // 
+            // splitContainer4.Panel1
+            // 
+            this.splitContainer4.Panel1.Controls.Add(this.adminmsg);
+            // 
+            // splitContainer4.Panel2
+            // 
+            this.splitContainer4.Panel2.Controls.Add(this.adminsend);
+            this.splitContainer4.Size = new System.Drawing.Size(265, 69);
+            this.splitContainer4.SplitterDistance = 175;
+            this.splitContainer4.TabIndex = 0;
+            // 
+            // adminmsg
+            // 
+            this.adminmsg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.adminmsg.Location = new System.Drawing.Point(0, 0);
+            this.adminmsg.MinimumSize = new System.Drawing.Size(50, 20);
+            this.adminmsg.Multiline = true;
+            this.adminmsg.Name = "adminmsg";
+            this.adminmsg.Size = new System.Drawing.Size(175, 69);
+            this.adminmsg.TabIndex = 0;
+            this.adminmsg.Text = "Admin Msg";
+            // 
+            // adminsend
+            // 
+            this.adminsend.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.adminsend.Location = new System.Drawing.Point(0, 0);
+            this.adminsend.MinimumSize = new System.Drawing.Size(30, 20);
+            this.adminsend.Name = "adminsend";
+            this.adminsend.Size = new System.Drawing.Size(86, 69);
+            this.adminsend.TabIndex = 0;
+            this.adminsend.Text = "Send";
+            this.adminsend.UseVisualStyleBackColor = true;
+            // 
+            // usermgt
+            // 
+            this.usermgt.Controls.Add(this.tabPage1);
+            this.usermgt.Controls.Add(this.tabPage2);
+            this.usermgt.Controls.Add(this.tabPage3);
+            this.usermgt.Controls.Add(this.tabPage4);
+            this.usermgt.Controls.Add(this.usrmgtpg);
+            this.usermgt.Controls.Add(this.todo);
+            this.usermgt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.usermgt.Location = new System.Drawing.Point(0, 0);
+            this.usermgt.Name = "usermgt";
+            this.usermgt.SelectedIndex = 0;
+            this.usermgt.Size = new System.Drawing.Size(860, 450);
+            this.usermgt.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(852, 421);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Approval";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(852, 421);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Current Queue";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(852, 421);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Logs";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.splitContainer2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(852, 421);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Dashboard";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.dashboard);
+            this.splitContainer2.Size = new System.Drawing.Size(846, 415);
+            this.splitContainer2.SplitterDistance = 69;
+            this.splitContainer2.TabIndex = 1;
+            // 
+            // dashboard
+            // 
+            this.dashboard.Controls.Add(this.chart1);
+            this.dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboard.Location = new System.Drawing.Point(0, 0);
+            this.dashboard.Name = "dashboard";
+            this.dashboard.Size = new System.Drawing.Size(846, 342);
+            this.dashboard.TabIndex = 0;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Top;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(3, 3);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(248, 234);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
             // usrmgtpg
             // 
             this.usrmgtpg.Location = new System.Drawing.Point(4, 25);
             this.usrmgtpg.Name = "usrmgtpg";
             this.usrmgtpg.Padding = new System.Windows.Forms.Padding(3);
-            this.usrmgtpg.Size = new System.Drawing.Size(852, 352);
+            this.usrmgtpg.Size = new System.Drawing.Size(852, 421);
             this.usrmgtpg.TabIndex = 4;
             this.usrmgtpg.Text = "User Management Page";
             this.usrmgtpg.UseVisualStyleBackColor = true;
@@ -354,80 +345,6 @@
             this.todo.TabIndex = 5;
             this.todo.Text = "To-do-list";
             this.todo.UseVisualStyleBackColor = true;
-            // 
-            // grdUser
-            // 
-            this.grdUser.AllowUserToOrderColumns = true;
-            this.grdUser.AutoGenerateColumns = false;
-            this.grdUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.taskDataGridViewTextBoxColumn,
-            this.importanceDataGridViewTextBoxColumn,
-            this.dateLineDataGridViewTextBoxColumn,
-            this.doneDataGridViewTextBoxColumn});
-            this.grdUser.DataSource = this.toDoListBindingSource;
-            this.grdUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdUser.Location = new System.Drawing.Point(0, 0);
-            this.grdUser.Name = "grdUser";
-            this.grdUser.RowTemplate.Height = 24;
-            this.grdUser.Size = new System.Drawing.Size(846, 286);
-            this.grdUser.TabIndex = 0;
-            this.grdUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdUser_CellContentClick);
-            // 
-            // sampleDBDataSet
-            // 
-            this.sampleDBDataSet.DataSetName = "SampleDBDataSet";
-            this.sampleDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sampleDBDataSetBindingSource
-            // 
-            this.sampleDBDataSetBindingSource.DataSource = this.sampleDBDataSet;
-            this.sampleDBDataSetBindingSource.Position = 0;
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            // 
-            // taskDataGridViewTextBoxColumn
-            // 
-            this.taskDataGridViewTextBoxColumn.DataPropertyName = "Task";
-            this.taskDataGridViewTextBoxColumn.HeaderText = "Task";
-            this.taskDataGridViewTextBoxColumn.Name = "taskDataGridViewTextBoxColumn";
-            // 
-            // importanceDataGridViewTextBoxColumn
-            // 
-            this.importanceDataGridViewTextBoxColumn.DataPropertyName = "Importance";
-            this.importanceDataGridViewTextBoxColumn.HeaderText = "Importance";
-            this.importanceDataGridViewTextBoxColumn.Name = "importanceDataGridViewTextBoxColumn";
-            // 
-            // dateLineDataGridViewTextBoxColumn
-            // 
-            this.dateLineDataGridViewTextBoxColumn.DataPropertyName = "DateLine";
-            this.dateLineDataGridViewTextBoxColumn.HeaderText = "DateLine";
-            this.dateLineDataGridViewTextBoxColumn.Name = "dateLineDataGridViewTextBoxColumn";
-            // 
-            // doneDataGridViewTextBoxColumn
-            // 
-            this.doneDataGridViewTextBoxColumn.DataPropertyName = "Done";
-            this.doneDataGridViewTextBoxColumn.HeaderText = "Done";
-            this.doneDataGridViewTextBoxColumn.Name = "doneDataGridViewTextBoxColumn";
-            // 
-            // toDoListBindingSource
-            // 
-            this.toDoListBindingSource.DataMember = "ToDoList";
-            this.toDoListBindingSource.DataSource = this.sampleDBDataSet2;
-            // 
-            // sampleDBDataSet2
-            // 
-            this.sampleDBDataSet2.DataSetName = "SampleDBDataSet2";
-            this.sampleDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // toDoListTableAdapter
-            // 
-            this.toDoListTableAdapter.ClearBeforeFill = true;
             // 
             // splitContainer5
             // 
@@ -448,34 +365,27 @@
             this.splitContainer5.SplitterDistance = 286;
             this.splitContainer5.TabIndex = 1;
             // 
-            // btnUpdate
+            // grdUser
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(3, 3);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 0;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.grdUser.AllowUserToOrderColumns = true;
+            this.grdUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdUser.Location = new System.Drawing.Point(0, 0);
+            this.grdUser.Name = "grdUser";
+            this.grdUser.RowTemplate.Height = 24;
+            this.grdUser.Size = new System.Drawing.Size(846, 286);
+            this.grdUser.TabIndex = 0;
+            this.grdUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdUser_CellContentClick);
             // 
-            // btnDelete
+            // toDoListBindingSource
             // 
-            this.btnDelete.Location = new System.Drawing.Point(3, 32);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 1;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.toDoListBindingSource.DataMember = "ToDoList";
+            this.toDoListBindingSource.DataSource = this.sampleDBDataSet2;
             // 
-            // GetDate
+            // sampleDBDataSet2
             // 
-            this.GetDate.Location = new System.Drawing.Point(3, 61);
-            this.GetDate.Name = "GetDate";
-            this.GetDate.Size = new System.Drawing.Size(75, 23);
-            this.GetDate.TabIndex = 2;
-            this.GetDate.Text = "Get Date";
-            this.GetDate.UseVisualStyleBackColor = true;
+            this.sampleDBDataSet2.DataSetName = "SampleDBDataSet2";
+            this.sampleDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // splitContainer6
             // 
@@ -492,13 +402,60 @@
             this.splitContainer6.SplitterDistance = 287;
             this.splitContainer6.TabIndex = 3;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(3, 3);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 0;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // GetDate
+            // 
+            this.GetDate.Location = new System.Drawing.Point(3, 61);
+            this.GetDate.Name = "GetDate";
+            this.GetDate.Size = new System.Drawing.Size(75, 23);
+            this.GetDate.TabIndex = 2;
+            this.GetDate.Text = "Get Date";
+            this.GetDate.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(3, 32);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // messagesTableAdapter
+            // 
+            this.messagesTableAdapter.ClearBeforeFill = true;
+            // 
+            // sampleDBDataSet
+            // 
+            this.sampleDBDataSet.DataSetName = "SampleDBDataSet";
+            this.sampleDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sampleDBDataSetBindingSource
+            // 
+            this.sampleDBDataSetBindingSource.DataSource = this.sampleDBDataSet;
+            this.sampleDBDataSetBindingSource.Position = 0;
+            // 
+            // toDoListTableAdapter
+            // 
+            this.toDoListTableAdapter.ClearBeforeFill = true;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1129, 450);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Admin";
             this.Text = "Admin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Admin_FormClosed);
@@ -507,6 +464,18 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet1)).EndInit();
+            this.splitContainer4.Panel1.ResumeLayout(false);
+            this.splitContainer4.Panel1.PerformLayout();
+            this.splitContainer4.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
+            this.splitContainer4.ResumeLayout(false);
             this.usermgt.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
@@ -514,31 +483,19 @@
             this.splitContainer2.ResumeLayout(false);
             this.dashboard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
-            this.splitContainer4.Panel1.ResumeLayout(false);
-            this.splitContainer4.Panel1.PerformLayout();
-            this.splitContainer4.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
-            this.splitContainer4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).EndInit();
             this.todo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toDoListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).EndInit();
             this.splitContainer5.Panel1.ResumeLayout(false);
             this.splitContainer5.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toDoListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).EndInit();
             this.splitContainer6.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
             this.splitContainer6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -574,11 +531,6 @@
         private SampleDBDataSet2 sampleDBDataSet2;
         private System.Windows.Forms.BindingSource toDoListBindingSource;
         private SampleDBDataSet2TableAdapters.ToDoListTableAdapter toDoListTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn taskDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn importanceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateLineDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doneDataGridViewTextBoxColumn;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.Button GetDate;
         private System.Windows.Forms.Button btnDelete;

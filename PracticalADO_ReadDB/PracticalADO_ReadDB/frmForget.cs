@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BCrypt.Net;
 namespace PracticalADO_ReadDB
 {
     public partial class frmForget : Form
@@ -20,6 +20,19 @@ namespace PracticalADO_ReadDB
         private void frmForget_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pwdbtn_Click(object sender, EventArgs e)
+        {
+            string password = this.passwordtb.Text;
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+            MessageBox.Show($"Original Password: {password}\nHashed Password: {hashedPassword}", "Hashing Result");
+
         }
     }
 }

@@ -12,16 +12,13 @@ namespace PracticalADO_ReadDB
 {
     public partial class User : Form
     {
-        public User()
+        private string receivedData;
+        //used for inter-form parsing
+        public User(string data) //declared from function in login
         {
-            try
-            {
-                InitializeComponent();
-            }
-            catch (NotImplementedException)
-            {
-                MessageBox.Show("New");
-            }
+            InitializeComponent();
+            receivedData = data;
+            //used for inter-form parsing
         }
 
         private void User_FormClosed(object sender, FormClosedEventArgs e)
@@ -33,7 +30,7 @@ namespace PracticalADO_ReadDB
         {
             // TODO: This line of code loads data into the 'sampleDBDataSet.Messages' table. You can move, or remove it, as needed.
             this.messagesTableAdapter.Fill(this.sampleDBDataSet.Messages);
-
+            MessageBox.Show(receivedData);
         }
 
         private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)

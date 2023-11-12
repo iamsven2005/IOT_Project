@@ -10,42 +10,53 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
 
+
 namespace PracticalADO_ReadDB
 {
-
     public partial class Admin : Form
     {
         private string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
         DataTable UserTable = new DataTable();
         DataGridViewRow CurrentRow = null;
         SqlDataAdapter UserAdapter;
+
         public Admin()
         {
-            try
-            {
-                InitializeComponent();
-            }
-            catch (NotImplementedException) {
-                MessageBox.Show("New");
-            }
-        }
-        private void Admin_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
+            InitializeComponent();
         }
 
         private void Admin_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sampleDBDataSet2.ToDoList' table. You can move, or remove it, as needed.
-            this.toDoListTableAdapter.Fill(this.sampleDBDataSet2.ToDoList);
-            // TODO: This line of code loads data into the 'sampleDBDataSet1.Messages' table. You can move, or remove it, as needed.
-            this.messagesTableAdapter.Fill(this.sampleDBDataSet1.Messages);
-
+            LoadUserRecords();
         }
-
         private void splitContainer5_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private void LoadUserRecords()
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            string strCommandText = "SELECT TaskID, Task, Importance, Address, Done FROM ToDo";
+            UserAdapter = new SqlDataAdapter(strCommandText, myConnect);
+            SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(UserAdapter);
+            UserTable.Clear();
+            UserAdapter.Fill(UserTable);
+            if (UserTable.Rows.Count > 0)
+                grdUser.DataSource = UserTable;
+            grdUser.Columns["TaskID"].DefaultCellStyle.BackColor = Color.FromArgb(227, 227, 227);
+            grdUser.Columns["TaskID"].ReadOnly = true;
+
+
+        }
+
+        private void grdUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void grdUser_Click(object sender, EventArgs e)
+        {
+            CurrentRow = grdUser.CurrentRow;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -67,51 +78,18 @@ namespace PracticalADO_ReadDB
                 MessageBox.Show("There are " + modifiedRows + " records updated...");
             LoadUserRecords();
         }
-        private void LoadUserRecords()
+        private void Admin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            SqlConnection myConnect = new SqlConnection(strConnectionString);
-            string strCommandText = "SELECT UniqueUserID, Name, UniqueRFID, Address, Contact FROM MyUser";
-            UserAdapter = new SqlDataAdapter(strCommandText, myConnect);
-            SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(UserAdapter);
-            UserTable.Clear();
-            UserAdapter.Fill(UserTable);
-            if (UserTable.Rows.Count > 0)
-                grdUser.DataSource = UserTable;
-            grdUser.Columns["UniqueUserID"].DefaultCellStyle.BackColor = Color.FromArgb(227, 227, 227);
-            grdUser.Columns["UniqueUserID"].ReadOnly = true;
-            grdUser.Columns["UniqueRFID"].DefaultCellStyle.BackColor = Color.FromArgb(227, 227, 227);
-            grdUser.Columns["UniqueRFID"].ReadOnly = true;
-
-
+            Application.Exit();
         }
 
-        private void grdUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private void grdUser_Click(object sender, EventArgs e)
-        {
-            CurrentRow = grdUser.CurrentRow;
-        }
-        private int DeleteTxnRecord(string strRFID)
-        {
-            int result = 0;
-            SqlConnection myConnect = new SqlConnection(strConnectionString);
-            String strCommandText = "DELETE FROM MyTxn WHERE UniqueRFID = @UniqueRFID";
-            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
-            updateCmd.Parameters.AddWithValue("@UniqueRFID", strRFID);
-            myConnect.Open();
-            result = updateCmd.ExecuteNonQuery();
-            myConnect.Close();
-            return result;
-        }
         private int DeleteUserRecord(string strRFID)
         {
             int result = 0;
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-            String strCommandText = "DELETE FROM MyUser WHERE UniqueRFID = @UniqueRFID";
+            String strCommandText = "DELETE FROM ToDo WHERE TaskID = @TaskID";
             SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
-            updateCmd.Parameters.AddWithValue("@UniqueRFID", strRFID);
+            updateCmd.Parameters.AddWithValue("@TaskID", strRFID);
             myConnect.Open();
             result = updateCmd.ExecuteNonQuery();
             myConnect.Close();
@@ -130,11 +108,9 @@ namespace PracticalADO_ReadDB
                 }
                 else
                 {
-                    string strRFID = CurrentRow.Cells[2].Value + "";
-                    string strUserName = CurrentRow.Cells[1].Value + "";
-                    int NumberOfRecords = DeleteTxnRecord(strRFID);
+                    string strRFID = CurrentRow.Cells[1].Value + "";
                     if (DeleteUserRecord(strRFID) > 0)
-                        MessageBox.Show("Username = " + strUserName + " along with " + NumberOfRecords + " transactions has been deleted");
+                        MessageBox.Show(" transactions has been deleted");
                     else
                     {
                         MessageBox.Show("Delete Failed");
@@ -145,5 +121,6 @@ namespace PracticalADO_ReadDB
             }
 
         }
+
     }
 }
