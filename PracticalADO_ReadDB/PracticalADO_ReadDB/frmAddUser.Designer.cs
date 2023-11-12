@@ -32,12 +32,12 @@
             this.lblRFID = new System.Windows.Forms.Label();
             this.lblNRIC = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
-            this.tbContact = new System.Windows.Forms.Label();
+            this.lblContact = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.tbRFID = new System.Windows.Forms.TextBox();
             this.tbNRIC = new System.Windows.Forms.TextBox();
             this.tbAdd = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbContact = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblPwd = new System.Windows.Forms.Label();
@@ -84,20 +84,20 @@
             this.lblAddress.TabIndex = 3;
             this.lblAddress.Text = "Address:";
             // 
-            // tbContact
+            // lblContact
             // 
-            this.tbContact.AutoSize = true;
-            this.tbContact.Location = new System.Drawing.Point(49, 152);
-            this.tbContact.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.tbContact.Name = "tbContact";
-            this.tbContact.Size = new System.Drawing.Size(47, 13);
-            this.tbContact.TabIndex = 4;
-            this.tbContact.Text = "Contact:";
+            this.lblContact.AutoSize = true;
+            this.lblContact.Location = new System.Drawing.Point(49, 152);
+            this.lblContact.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblContact.Name = "lblContact";
+            this.lblContact.Size = new System.Drawing.Size(47, 13);
+            this.lblContact.TabIndex = 4;
+            this.lblContact.Text = "Contact:";
             // 
             // tbName
             // 
             this.tbName.Location = new System.Drawing.Point(100, 61);
-            this.tbName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(76, 20);
             this.tbName.TabIndex = 5;
@@ -105,7 +105,7 @@
             // tbRFID
             // 
             this.tbRFID.Location = new System.Drawing.Point(100, 84);
-            this.tbRFID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbRFID.Margin = new System.Windows.Forms.Padding(2);
             this.tbRFID.Name = "tbRFID";
             this.tbRFID.Size = new System.Drawing.Size(76, 20);
             this.tbRFID.TabIndex = 6;
@@ -113,7 +113,7 @@
             // tbNRIC
             // 
             this.tbNRIC.Location = new System.Drawing.Point(100, 106);
-            this.tbNRIC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbNRIC.Margin = new System.Windows.Forms.Padding(2);
             this.tbNRIC.Name = "tbNRIC";
             this.tbNRIC.Size = new System.Drawing.Size(76, 20);
             this.tbNRIC.TabIndex = 7;
@@ -121,24 +121,24 @@
             // tbAdd
             // 
             this.tbAdd.Location = new System.Drawing.Point(100, 129);
-            this.tbAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAdd.Margin = new System.Windows.Forms.Padding(2);
             this.tbAdd.Name = "tbAdd";
             this.tbAdd.Size = new System.Drawing.Size(76, 20);
             this.tbAdd.TabIndex = 8;
             // 
-            // textBox1
+            // tbContact
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 152);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(76, 20);
-            this.textBox1.TabIndex = 9;
+            this.tbContact.Location = new System.Drawing.Point(100, 152);
+            this.tbContact.Margin = new System.Windows.Forms.Padding(2);
+            this.tbContact.Name = "tbContact";
+            this.tbContact.Size = new System.Drawing.Size(76, 20);
+            this.tbContact.TabIndex = 9;
             // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Location = new System.Drawing.Point(51, 177);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(56, 19);
             this.btnSave.TabIndex = 10;
@@ -150,7 +150,7 @@
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(119, 177);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(56, 19);
             this.btnCancel.TabIndex = 11;
@@ -172,7 +172,7 @@
             // tbPwd
             // 
             this.tbPwd.Location = new System.Drawing.Point(100, 37);
-            this.tbPwd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPwd.Margin = new System.Windows.Forms.Padding(2);
             this.tbPwd.Name = "tbPwd";
             this.tbPwd.Size = new System.Drawing.Size(76, 20);
             this.tbPwd.TabIndex = 13;
@@ -186,17 +186,17 @@
             this.Controls.Add(this.lblPwd);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbContact);
             this.Controls.Add(this.tbAdd);
             this.Controls.Add(this.tbNRIC);
             this.Controls.Add(this.tbRFID);
             this.Controls.Add(this.tbName);
-            this.Controls.Add(this.tbContact);
+            this.Controls.Add(this.lblContact);
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.lblNRIC);
             this.Controls.Add(this.lblRFID);
             this.Controls.Add(this.lblName);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAddUser";
             this.Text = "Add New User";
             this.Load += new System.EventHandler(this.frmAddUser_Load);
@@ -211,12 +211,12 @@
         private System.Windows.Forms.Label lblRFID;
         private System.Windows.Forms.Label lblNRIC;
         private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.Label tbContact;
+        private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.TextBox tbRFID;
         private System.Windows.Forms.TextBox tbNRIC;
         private System.Windows.Forms.TextBox tbAdd;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbContact;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblPwd;

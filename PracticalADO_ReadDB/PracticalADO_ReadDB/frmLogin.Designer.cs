@@ -43,6 +43,7 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.ForgetPwd = new System.Windows.Forms.Button();
+            this.AdminLogin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -155,6 +156,7 @@
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.Desktop;
             this.splitContainer1.Panel1.BackgroundImage = global::PracticalADO_ReadDB.Properties.Resources.SYSTEM_OVERVIEW__1_;
             this.splitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.splitContainer1.Panel1.Controls.Add(this.AdminLogin);
             this.splitContainer1.Panel1.Controls.Add(this.test3);
             this.splitContainer1.Panel1.Controls.Add(this.Test);
             this.splitContainer1.Panel1.Controls.Add(this.test2);
@@ -300,6 +302,19 @@
             this.ForgetPwd.UseWaitCursor = true;
             this.ForgetPwd.Click += new System.EventHandler(this.ForgetPwd_Click);
             // 
+            // AdminLogin
+            // 
+            this.AdminLogin.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.AdminLogin.Location = new System.Drawing.Point(0, 180);
+            this.AdminLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.AdminLogin.Name = "AdminLogin";
+            this.AdminLogin.Size = new System.Drawing.Size(146, 28);
+            this.AdminLogin.TabIndex = 9;
+            this.AdminLogin.Text = "AdminLogin";
+            this.AdminLogin.UseVisualStyleBackColor = true;
+            this.AdminLogin.UseWaitCursor = true;
+            this.AdminLogin.Click += new System.EventHandler(this.AdminLogin_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -359,6 +374,7 @@
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.Label Title;
+        private System.Windows.Forms.Button AdminLogin;
     }
 }
 

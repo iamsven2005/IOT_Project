@@ -47,5 +47,22 @@ namespace PracticalADO_ReadDB
         {
 
         }
+
+        private void User_Resize(object sender, EventArgs e)
+        {
+            int width = (this.Width / 50);
+            int height = ((this.Height / 25) / 2);
+            if (width == 0 || height == 0)
+            {
+
+            }
+            else
+            {
+                //AddTitle.Font = new System.Drawing.Font("Arial Rounded MT", width, System.Drawing.FontStyle.Bold);
+                this.Font = new System.Drawing.Font("Arial Rounded MT", height, System.Drawing.FontStyle.Regular);
+                //this.TextBox.Height = this.Height * 2;
+                //tbUserName.Height = this.Height * 2;
+            }
+        }
     }
 }

@@ -15,14 +15,16 @@ namespace PracticalADO_ReadDB
 {
     public partial class Admin : Form
     {
+        private string receivedData;
         private string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
         DataTable UserTable = new DataTable();
         DataGridViewRow CurrentRow = null;
         SqlDataAdapter UserAdapter;
 
-        public Admin()
+        public Admin(string data)
         {
             InitializeComponent();
+            receivedData = data;
         }
 
         private void Admin_Load(object sender, EventArgs e)
@@ -122,5 +124,76 @@ namespace PracticalADO_ReadDB
 
         }
 
+        private void GetContact_Click(object sender, EventArgs e)
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            string strCommandText = "SELECT Contact FROM MyUser ";
+            strCommandText += "WHERE Name=@UserID";
+            SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
+            cmd.Parameters.AddWithValue("@UserID", ContactUsername.Text);
+            myConnect.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                ContactResult.Text = reader["Contact"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("error");
+            }
+
+        }
+
+        private void Admin_Resize(object sender, EventArgs e)
+        {
+            int width = (this.Width / 50);
+            int height = ((this.Height / 25) / 2);
+            if (width == 0 || height == 0)
+            {
+
+            }
+            else
+            {
+                ContactTitle.Font = new System.Drawing.Font("Arial Rounded MT", width, System.Drawing.FontStyle.Bold);
+                AddTitle.Font = new System.Drawing.Font("Arial Rounded MT", width, System.Drawing.FontStyle.Bold);
+                this.Font = new System.Drawing.Font("Arial Rounded MT", height, System.Drawing.FontStyle.Regular);
+                ContactResult.Height = this.Height * 2;
+                ContactUsername.Height = this.Height * 2;
+            }
+
+        }
+
+        private void splitContainer14_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+            //ghost (dont delete)
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            int result = 0;
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            String strCommandText = "INSERT MyUser (Name, UniqueRFID, NRIC, Address, Contact, Password)" + " VALUES (@NewName, @NewRFID, @NewNRIC, @NewAdd, @NewContact, @NewPwd)";
+            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
+            updateCmd.Parameters.AddWithValue("@NewName", tbName.Text);
+            updateCmd.Parameters.AddWithValue("@NewRFID", tbRFID.Text);
+            updateCmd.Parameters.AddWithValue("@NewNRIC", tbNRIC.Text);
+            updateCmd.Parameters.AddWithValue("@NewAdd", tbAdd.Text);
+            updateCmd.Parameters.AddWithValue("@NewContact", lblContact.Text);
+            updateCmd.Parameters.AddWithValue("@NewPwd", BCrypt.Net.BCrypt.HashPassword(tbPwd.Text));
+            myConnect.Open();
+            result = updateCmd.ExecuteNonQuery();
+            if (result > 0)
+            {
+                MessageBox.Show("New User Record Added Successfully!");
+            }
+            else
+            {
+                MessageBox.Show("New User Record Failed to Add");
+
+            }
+            myConnect.Close();
+
+
+        }
     }
 }

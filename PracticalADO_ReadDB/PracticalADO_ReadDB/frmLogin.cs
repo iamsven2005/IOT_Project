@@ -69,7 +69,8 @@ namespace PracticalADO_ReadDB
 
                         if (tbUserName.Text == "Admin")
                         {
-                            Admin f2 = new Admin();
+                            string dataToPass = tbUserName.Text;
+                            Admin f2 = new Admin(dataToPass);
                             f2.Show();
                             this.Hide();
                         }
@@ -146,7 +147,13 @@ namespace PracticalADO_ReadDB
             f5.Show();
             this.Hide();
         }
-
+        private void AdminLogin_Click(object sender, EventArgs e)
+        {
+            string dataToPass = "Admin";
+            Admin f2 = new Admin(dataToPass);
+            f2.Show();
+            this.Hide();
+        }
         private void Title_ClientSizeChanged(object sender, EventArgs e)
         {
 
@@ -189,5 +196,7 @@ namespace PracticalADO_ReadDB
 
 
         }
+
+
     }
 }
