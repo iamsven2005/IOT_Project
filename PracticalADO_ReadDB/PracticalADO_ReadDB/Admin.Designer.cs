@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -86,20 +86,46 @@
             this.tbName = new System.Windows.Forms.TextBox();
             this.tbPwd = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.splitContainer14 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer16 = new System.Windows.Forms.SplitContainer();
+            this.editlbl = new System.Windows.Forms.Label();
+            this.splitContainer17 = new System.Windows.Forms.SplitContainer();
+            this.grdUser = new System.Windows.Forms.DataGridView();
+            this.splitContainer18 = new System.Windows.Forms.SplitContainer();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.toDoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sampleDBDataSet2 = new PracticalADO_ReadDB.SampleDBDataSet2();
             this.messagesTableAdapter = new PracticalADO_ReadDB.SampleDBDataSet1TableAdapters.MessagesTableAdapter();
             this.sampleDBDataSet = new PracticalADO_ReadDB.SampleDBDataSet();
             this.sampleDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toDoListTableAdapter = new PracticalADO_ReadDB.SampleDBDataSet2TableAdapters.ToDoListTableAdapter();
-            this.splitContainer14 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer16 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer19 = new System.Windows.Forms.SplitContainer();
+            this.modifylbl = new System.Windows.Forms.Label();
+            this.splitContainer20 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer22 = new System.Windows.Forms.SplitContainer();
+            this.btnModify = new System.Windows.Forms.Button();
+            this.lblUniqueUserID = new System.Windows.Forms.Label();
+            this.tbUserID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.splitContainer17 = new System.Windows.Forms.SplitContainer();
-            this.grdUser = new System.Windows.Forms.DataGridView();
-            this.splitContainer18 = new System.Windows.Forms.SplitContainer();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.tbNameMd = new System.Windows.Forms.TextBox();
+            this.tbRFIDMd = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbNRICMd = new System.Windows.Forms.TextBox();
+            this.tbAddMd = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbContactMd = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbPasswordMd = new System.Windows.Forms.TextBox();
+            this.tbDOBMd = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbCountryOfBirthMd = new System.Windows.Forms.Label();
+            this.btnGetUserID = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -118,6 +144,7 @@
             this.usermgt.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.dashboard.SuspendLayout();
@@ -161,12 +188,9 @@
             this.splitContainer15.Panel1.SuspendLayout();
             this.splitContainer15.Panel2.SuspendLayout();
             this.splitContainer15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.toDoListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer14)).BeginInit();
             this.splitContainer14.Panel1.SuspendLayout();
+            this.splitContainer14.Panel2.SuspendLayout();
             this.splitContainer14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer16)).BeginInit();
             this.splitContainer16.Panel1.SuspendLayout();
@@ -181,6 +205,22 @@
             this.splitContainer18.Panel1.SuspendLayout();
             this.splitContainer18.Panel2.SuspendLayout();
             this.splitContainer18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.toDoListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer19)).BeginInit();
+            this.splitContainer19.Panel1.SuspendLayout();
+            this.splitContainer19.Panel2.SuspendLayout();
+            this.splitContainer19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer20)).BeginInit();
+            this.splitContainer20.Panel1.SuspendLayout();
+            this.splitContainer20.Panel2.SuspendLayout();
+            this.splitContainer20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer22)).BeginInit();
+            this.splitContainer22.Panel1.SuspendLayout();
+            this.splitContainer22.Panel2.SuspendLayout();
+            this.splitContainer22.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -389,38 +429,45 @@
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.BackColor = System.Drawing.Color.Black;
+            this.splitContainer2.Panel1.Controls.Add(this.label9);
+            this.splitContainer2.Panel1.Controls.Add(this.button1);
+            // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dashboard);
             this.splitContainer2.Size = new System.Drawing.Size(634, 336);
-            this.splitContainer2.SplitterDistance = 55;
+            this.splitContainer2.SplitterDistance = 41;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 1;
             // 
             // dashboard
             // 
+            this.dashboard.BackColor = System.Drawing.Color.Black;
             this.dashboard.Controls.Add(this.chart1);
             this.dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboard.Location = new System.Drawing.Point(0, 0);
             this.dashboard.Margin = new System.Windows.Forms.Padding(2);
             this.dashboard.Name = "dashboard";
-            this.dashboard.Size = new System.Drawing.Size(634, 278);
+            this.dashboard.Size = new System.Drawing.Size(634, 292);
             this.dashboard.TabIndex = 0;
             // 
             // chart1
             // 
-            chartArea13.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea13);
+            chartArea6.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea6);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Top;
-            legend13.Name = "Legend1";
-            this.chart1.Legends.Add(legend13);
+            legend6.Name = "Legend1";
+            this.chart1.Legends.Add(legend6);
             this.chart1.Location = new System.Drawing.Point(2, 2);
             this.chart1.Margin = new System.Windows.Forms.Padding(2);
             this.chart1.Name = "chart1";
-            series13.ChartArea = "ChartArea1";
-            series13.Legend = "Legend1";
-            series13.Name = "Series1";
-            this.chart1.Series.Add(series13);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chart1.Series.Add(series6);
             this.chart1.Size = new System.Drawing.Size(186, 190);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -597,7 +644,6 @@
             // ContactUsername
             // 
             this.ContactUsername.AllowDrop = true;
-            this.ContactUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ContactUsername.Location = new System.Drawing.Point(94, 5);
             this.ContactUsername.Name = "ContactUsername";
             this.ContactUsername.Size = new System.Drawing.Size(100, 20);
@@ -605,10 +651,11 @@
             // 
             // Username
             // 
-            this.Username.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Username.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Username.AutoSize = true;
             this.Username.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Username.Location = new System.Drawing.Point(33, 8);
+            this.Username.Location = new System.Drawing.Point(9, 5);
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(55, 13);
             this.Username.TabIndex = 1;
@@ -616,9 +663,11 @@
             // 
             // Contact
             // 
+            this.Contact.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Contact.AutoSize = true;
             this.Contact.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Contact.Location = new System.Drawing.Point(33, 10);
+            this.Contact.Location = new System.Drawing.Point(9, 10);
             this.Contact.Name = "Contact";
             this.Contact.Size = new System.Drawing.Size(44, 13);
             this.Contact.TabIndex = 5;
@@ -859,34 +908,6 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // toDoListBindingSource
-            // 
-            this.toDoListBindingSource.DataMember = "ToDoList";
-            this.toDoListBindingSource.DataSource = this.sampleDBDataSet2;
-            // 
-            // sampleDBDataSet2
-            // 
-            this.sampleDBDataSet2.DataSetName = "SampleDBDataSet2";
-            this.sampleDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // messagesTableAdapter
-            // 
-            this.messagesTableAdapter.ClearBeforeFill = true;
-            // 
-            // sampleDBDataSet
-            // 
-            this.sampleDBDataSet.DataSetName = "SampleDBDataSet";
-            this.sampleDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sampleDBDataSetBindingSource
-            // 
-            this.sampleDBDataSetBindingSource.DataSource = this.sampleDBDataSet;
-            this.sampleDBDataSetBindingSource.Position = 0;
-            // 
-            // toDoListTableAdapter
-            // 
-            this.toDoListTableAdapter.ClearBeforeFill = true;
-            // 
             // splitContainer14
             // 
             this.splitContainer14.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -897,6 +918,10 @@
             // splitContainer14.Panel1
             // 
             this.splitContainer14.Panel1.Controls.Add(this.splitContainer16);
+            // 
+            // splitContainer14.Panel2
+            // 
+            this.splitContainer14.Panel2.Controls.Add(this.splitContainer19);
             this.splitContainer14.Size = new System.Drawing.Size(418, 334);
             this.splitContainer14.SplitterDistance = 168;
             this.splitContainer14.TabIndex = 0;
@@ -910,7 +935,7 @@
             // 
             // splitContainer16.Panel1
             // 
-            this.splitContainer16.Panel1.Controls.Add(this.label2);
+            this.splitContainer16.Panel1.Controls.Add(this.editlbl);
             // 
             // splitContainer16.Panel2
             // 
@@ -919,20 +944,20 @@
             this.splitContainer16.SplitterDistance = 35;
             this.splitContainer16.TabIndex = 0;
             // 
-            // label2
+            // editlbl
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.editlbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(130, -3);
-            this.label2.Margin = new System.Windows.Forms.Padding(10);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(10);
-            this.label2.Size = new System.Drawing.Size(172, 36);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Edit User Information";
+            this.editlbl.AutoSize = true;
+            this.editlbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.editlbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.editlbl.Location = new System.Drawing.Point(130, -3);
+            this.editlbl.Margin = new System.Windows.Forms.Padding(10);
+            this.editlbl.Name = "editlbl";
+            this.editlbl.Padding = new System.Windows.Forms.Padding(10);
+            this.editlbl.Size = new System.Drawing.Size(172, 36);
+            this.editlbl.TabIndex = 1;
+            this.editlbl.Text = "Edit User Information";
             // 
             // splitContainer17
             // 
@@ -1008,6 +1033,344 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // toDoListBindingSource
+            // 
+            this.toDoListBindingSource.DataMember = "ToDoList";
+            this.toDoListBindingSource.DataSource = this.sampleDBDataSet2;
+            // 
+            // sampleDBDataSet2
+            // 
+            this.sampleDBDataSet2.DataSetName = "SampleDBDataSet2";
+            this.sampleDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // messagesTableAdapter
+            // 
+            this.messagesTableAdapter.ClearBeforeFill = true;
+            // 
+            // sampleDBDataSet
+            // 
+            this.sampleDBDataSet.DataSetName = "SampleDBDataSet";
+            this.sampleDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sampleDBDataSetBindingSource
+            // 
+            this.sampleDBDataSetBindingSource.DataSource = this.sampleDBDataSet;
+            this.sampleDBDataSetBindingSource.Position = 0;
+            // 
+            // toDoListTableAdapter
+            // 
+            this.toDoListTableAdapter.ClearBeforeFill = true;
+            // 
+            // splitContainer19
+            // 
+            this.splitContainer19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer19.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer19.Name = "splitContainer19";
+            this.splitContainer19.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer19.Panel1
+            // 
+            this.splitContainer19.Panel1.Controls.Add(this.splitContainer22);
+            // 
+            // splitContainer19.Panel2
+            // 
+            this.splitContainer19.Panel2.Controls.Add(this.splitContainer20);
+            this.splitContainer19.Size = new System.Drawing.Size(418, 162);
+            this.splitContainer19.SplitterDistance = 35;
+            this.splitContainer19.TabIndex = 0;
+            // 
+            // modifylbl
+            // 
+            this.modifylbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.modifylbl.AutoSize = true;
+            this.modifylbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.modifylbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.modifylbl.Location = new System.Drawing.Point(60, 0);
+            this.modifylbl.Margin = new System.Windows.Forms.Padding(10);
+            this.modifylbl.Name = "modifylbl";
+            this.modifylbl.Padding = new System.Windows.Forms.Padding(10);
+            this.modifylbl.Size = new System.Drawing.Size(191, 36);
+            this.modifylbl.TabIndex = 2;
+            this.modifylbl.Text = "Modify User Information";
+            // 
+            // splitContainer20
+            // 
+            this.splitContainer20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer20.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer20.Name = "splitContainer20";
+            // 
+            // splitContainer20.Panel1
+            // 
+            this.splitContainer20.Panel1.Controls.Add(this.label5);
+            this.splitContainer20.Panel1.Controls.Add(this.label4);
+            this.splitContainer20.Panel1.Controls.Add(this.tbAddMd);
+            this.splitContainer20.Panel1.Controls.Add(this.tbNRICMd);
+            this.splitContainer20.Panel1.Controls.Add(this.label3);
+            this.splitContainer20.Panel1.Controls.Add(this.tbRFIDMd);
+            this.splitContainer20.Panel1.Controls.Add(this.tbNameMd);
+            this.splitContainer20.Panel1.Controls.Add(this.label2);
+            this.splitContainer20.Panel1.Controls.Add(this.tbUserID);
+            this.splitContainer20.Panel1.Controls.Add(this.lblUniqueUserID);
+            // 
+            // splitContainer20.Panel2
+            // 
+            this.splitContainer20.Panel2.Controls.Add(this.btnGetUserID);
+            this.splitContainer20.Panel2.Controls.Add(this.tbCountryOfBirthMd);
+            this.splitContainer20.Panel2.Controls.Add(this.textBox1);
+            this.splitContainer20.Panel2.Controls.Add(this.label8);
+            this.splitContainer20.Panel2.Controls.Add(this.tbDOBMd);
+            this.splitContainer20.Panel2.Controls.Add(this.tbPasswordMd);
+            this.splitContainer20.Panel2.Controls.Add(this.label7);
+            this.splitContainer20.Panel2.Controls.Add(this.label6);
+            this.splitContainer20.Panel2.Controls.Add(this.tbContactMd);
+            this.splitContainer20.Size = new System.Drawing.Size(418, 123);
+            this.splitContainer20.SplitterDistance = 201;
+            this.splitContainer20.TabIndex = 0;
+            // 
+            // splitContainer22
+            // 
+            this.splitContainer22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer22.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer22.Name = "splitContainer22";
+            // 
+            // splitContainer22.Panel1
+            // 
+            this.splitContainer22.Panel1.Controls.Add(this.modifylbl);
+            // 
+            // splitContainer22.Panel2
+            // 
+            this.splitContainer22.Panel2.Controls.Add(this.btnModify);
+            this.splitContainer22.Size = new System.Drawing.Size(418, 35);
+            this.splitContainer22.SplitterDistance = 309;
+            this.splitContainer22.TabIndex = 0;
+            // 
+            // btnModify
+            // 
+            this.btnModify.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModify.Location = new System.Drawing.Point(0, 0);
+            this.btnModify.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(105, 35);
+            this.btnModify.TabIndex = 15;
+            this.btnModify.Text = "Modify";
+            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
+            // 
+            // lblUniqueUserID
+            // 
+            this.lblUniqueUserID.AutoSize = true;
+            this.lblUniqueUserID.BackColor = System.Drawing.Color.Transparent;
+            this.lblUniqueUserID.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblUniqueUserID.Location = new System.Drawing.Point(1, 5);
+            this.lblUniqueUserID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUniqueUserID.Name = "lblUniqueUserID";
+            this.lblUniqueUserID.Size = new System.Drawing.Size(77, 13);
+            this.lblUniqueUserID.TabIndex = 1;
+            this.lblUniqueUserID.Text = "UniqueUserID:";
+            // 
+            // tbUserID
+            // 
+            this.tbUserID.BackColor = System.Drawing.SystemColors.Window;
+            this.tbUserID.Location = new System.Drawing.Point(82, 2);
+            this.tbUserID.Margin = new System.Windows.Forms.Padding(2);
+            this.tbUserID.Name = "tbUserID";
+            this.tbUserID.Size = new System.Drawing.Size(117, 20);
+            this.tbUserID.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label2.Location = new System.Drawing.Point(2, 29);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Name:";
+            // 
+            // tbNameMd
+            // 
+            this.tbNameMd.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbNameMd.Location = new System.Drawing.Point(82, 26);
+            this.tbNameMd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbNameMd.Name = "tbNameMd";
+            this.tbNameMd.Size = new System.Drawing.Size(117, 20);
+            this.tbNameMd.TabIndex = 9;
+            // 
+            // tbRFIDMd
+            // 
+            this.tbRFIDMd.Location = new System.Drawing.Point(82, 50);
+            this.tbRFIDMd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbRFIDMd.Name = "tbRFIDMd";
+            this.tbRFIDMd.Size = new System.Drawing.Size(117, 20);
+            this.tbRFIDMd.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label3.Location = new System.Drawing.Point(2, 53);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "RFID:";
+            // 
+            // tbNRICMd
+            // 
+            this.tbNRICMd.Location = new System.Drawing.Point(82, 74);
+            this.tbNRICMd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbNRICMd.Name = "tbNRICMd";
+            this.tbNRICMd.Size = new System.Drawing.Size(117, 20);
+            this.tbNRICMd.TabIndex = 12;
+            // 
+            // tbAddMd
+            // 
+            this.tbAddMd.Location = new System.Drawing.Point(82, 98);
+            this.tbAddMd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbAddMd.Name = "tbAddMd";
+            this.tbAddMd.Size = new System.Drawing.Size(117, 20);
+            this.tbAddMd.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label4.Location = new System.Drawing.Point(1, 77);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "NRIC:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label5.Location = new System.Drawing.Point(2, 101);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Address:";
+            // 
+            // tbContactMd
+            // 
+            this.tbContactMd.Location = new System.Drawing.Point(77, 5);
+            this.tbContactMd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbContactMd.Name = "tbContactMd";
+            this.tbContactMd.Size = new System.Drawing.Size(134, 20);
+            this.tbContactMd.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label6.Location = new System.Drawing.Point(11, 8);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Contact:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label7.Location = new System.Drawing.Point(11, 79);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Password:";
+            // 
+            // tbPasswordMd
+            // 
+            this.tbPasswordMd.Location = new System.Drawing.Point(77, 77);
+            this.tbPasswordMd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbPasswordMd.Name = "tbPasswordMd";
+            this.tbPasswordMd.Size = new System.Drawing.Size(134, 20);
+            this.tbPasswordMd.TabIndex = 15;
+            // 
+            // tbDOBMd
+            // 
+            this.tbDOBMd.Location = new System.Drawing.Point(77, 29);
+            this.tbDOBMd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDOBMd.Name = "tbDOBMd";
+            this.tbDOBMd.Size = new System.Drawing.Size(134, 20);
+            this.tbDOBMd.TabIndex = 16;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label8.Location = new System.Drawing.Point(11, 32);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(33, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "DOB:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(77, 53);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(134, 20);
+            this.textBox1.TabIndex = 18;
+            // 
+            // tbCountryOfBirthMd
+            // 
+            this.tbCountryOfBirthMd.AutoSize = true;
+            this.tbCountryOfBirthMd.BackColor = System.Drawing.Color.Transparent;
+            this.tbCountryOfBirthMd.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.tbCountryOfBirthMd.Location = new System.Drawing.Point(11, 56);
+            this.tbCountryOfBirthMd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.tbCountryOfBirthMd.Name = "tbCountryOfBirthMd";
+            this.tbCountryOfBirthMd.Size = new System.Drawing.Size(46, 13);
+            this.tbCountryOfBirthMd.TabIndex = 19;
+            this.tbCountryOfBirthMd.Text = "Country:";
+            // 
+            // btnGetUserID
+            // 
+            this.btnGetUserID.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnGetUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGetUserID.Location = new System.Drawing.Point(0, 104);
+            this.btnGetUserID.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGetUserID.Name = "btnGetUserID";
+            this.btnGetUserID.Size = new System.Drawing.Size(213, 19);
+            this.btnGetUserID.TabIndex = 20;
+            this.btnGetUserID.Text = "Get User";
+            this.btnGetUserID.UseVisualStyleBackColor = true;
+            this.btnGetUserID.Click += new System.EventHandler(this.btnGetUserID_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Margin = new System.Windows.Forms.Padding(10);
+            this.label9.Name = "label9";
+            this.label9.Padding = new System.Windows.Forms.Padding(10);
+            this.label9.Size = new System.Drawing.Size(103, 36);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "DashBoard";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(523, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 33);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Disable Buzzer";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1039,6 +1402,8 @@
             this.splitContainer4.ResumeLayout(false);
             this.usermgt.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
@@ -1089,11 +1454,8 @@
             this.splitContainer15.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer15)).EndInit();
             this.splitContainer15.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.toDoListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSetBindingSource)).EndInit();
             this.splitContainer14.Panel1.ResumeLayout(false);
+            this.splitContainer14.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer14)).EndInit();
             this.splitContainer14.ResumeLayout(false);
             this.splitContainer16.Panel1.ResumeLayout(false);
@@ -1110,6 +1472,25 @@
             this.splitContainer18.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer18)).EndInit();
             this.splitContainer18.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.toDoListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSetBindingSource)).EndInit();
+            this.splitContainer19.Panel1.ResumeLayout(false);
+            this.splitContainer19.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer19)).EndInit();
+            this.splitContainer19.ResumeLayout(false);
+            this.splitContainer20.Panel1.ResumeLayout(false);
+            this.splitContainer20.Panel1.PerformLayout();
+            this.splitContainer20.Panel2.ResumeLayout(false);
+            this.splitContainer20.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer20)).EndInit();
+            this.splitContainer20.ResumeLayout(false);
+            this.splitContainer22.Panel1.ResumeLayout(false);
+            this.splitContainer22.Panel1.PerformLayout();
+            this.splitContainer22.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer22)).EndInit();
+            this.splitContainer22.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1178,11 +1559,37 @@
         private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.SplitContainer splitContainer14;
         private System.Windows.Forms.SplitContainer splitContainer16;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label editlbl;
         private System.Windows.Forms.SplitContainer splitContainer17;
         private System.Windows.Forms.DataGridView grdUser;
         private System.Windows.Forms.SplitContainer splitContainer18;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.SplitContainer splitContainer19;
+        private System.Windows.Forms.Label modifylbl;
+        private System.Windows.Forms.SplitContainer splitContainer20;
+        private System.Windows.Forms.SplitContainer splitContainer22;
+        private System.Windows.Forms.Button btnModify;
+        private System.Windows.Forms.Label lblUniqueUserID;
+        private System.Windows.Forms.TextBox tbUserID;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbNameMd;
+        private System.Windows.Forms.TextBox tbRFIDMd;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbNRICMd;
+        private System.Windows.Forms.TextBox tbAddMd;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tbContactMd;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label tbCountryOfBirthMd;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox tbDOBMd;
+        private System.Windows.Forms.TextBox tbPasswordMd;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnGetUserID;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
     }
 }

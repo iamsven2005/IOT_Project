@@ -34,7 +34,7 @@ namespace PracticalADO_ReadDB
         private void LoadUserRecords()
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-            string strCommandText = "SELECT UniqueUserID, Name, UniqueRFID, Address, Contact FROM MyUser";
+            string strCommandText = "SELECT UniqueUserID, Name, UniqueRFID, Address, Contact, Gender, DOB, CountryOfBirth, NRIC FROM MyUser";
             UserAdapter = new SqlDataAdapter(strCommandText, myConnect);
             SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(UserAdapter);
             UserTable.Clear();
@@ -78,20 +78,6 @@ namespace PracticalADO_ReadDB
 
         private void Admin_Resize(object sender, EventArgs e)
         {
-            int width = (this.Width / 50);
-            int height = ((this.Height / 25) / 2);
-            if (width == 0 || height == 0)
-            {
-
-            }
-            else
-            {
-                ContactTitle.Font = new System.Drawing.Font("Arial Rounded MT", width, System.Drawing.FontStyle.Bold);
-                AddTitle.Font = new System.Drawing.Font("Arial Rounded MT", width, System.Drawing.FontStyle.Bold);
-                this.Font = new System.Drawing.Font("Arial Rounded MT", height, System.Drawing.FontStyle.Regular);
-                ContactResult.Height = this.Height * 2;
-                ContactUsername.Height = this.Height * 2;
-            }
 
         }
 
@@ -215,5 +201,62 @@ namespace PracticalADO_ReadDB
 
         }
 
+        private void btnGetUserID_Click(object sender, EventArgs e)
+        {
+            GetUserDetails();
+        }
+        private void GetUserDetails()
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            string strCommandText = "SELECT Name, UniqueRFID, NRIC, Address, Contact, DOB, CountryOfBirth FROM MyUser ";
+            strCommandText += "WHERE UniqueUserID=@UserID";
+            SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
+            cmd.Parameters.AddWithValue("@UserID", tbUserID.Text);
+            myConnect.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                tbNameMd.Text = reader["Name"].ToString();
+                tbRFIDMd.Text = reader["UniqueRFID"].ToString();
+                tbNRICMd.Text = reader["NRIC"].ToString();
+                tbAddMd.Text = reader["Address"].ToString();
+                tbContactMd.Text = reader["Contact"].ToString();
+                tbDOBMd.Text = reader["DOB"].ToString();
+                tbCountryOfBirthMd.Text = reader["CountryOfBirth"].ToString();
+
+
+            }
+            else
+                MessageBox.Show("No Record Found");
+            reader.Close();
+            myConnect.Close();
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            if (ModifyUserRecord() > 0)
+                MessageBox.Show("Modify Successful");
+            else
+                MessageBox.Show("Modify Fail");
+        }
+        private int ModifyUserRecord()
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            string strCommandText = "UPDATE MyUser SET Name=@NewName, UniqueRFID=@NewRFID, NRIC=@NewNRIC, Address=@NewAdd, Contact=@NewContact, DOB=@NewDOB, CountryOfBirth=@NewCountry, Password=@NewPassword WHERE UniqueUserID=@UserID";
+            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
+            updateCmd.Parameters.AddWithValue("@UserID", tbUserID.Text);
+            updateCmd.Parameters.AddWithValue("@NewName", tbName.Text);
+            updateCmd.Parameters.AddWithValue("@NewRFID", tbRFID.Text);
+            updateCmd.Parameters.AddWithValue("@NewNRIC", tbNRIC.Text);
+            updateCmd.Parameters.AddWithValue("@NewAdd", tbAdd.Text);
+            updateCmd.Parameters.AddWithValue("@NewContact", tbContact.Text);
+            updateCmd.Parameters.AddWithValue("@NewDOB", tbDOBMd.Text);
+            updateCmd.Parameters.AddWithValue("@NewCountry", tbCountryOfBirthMd.Text);
+            updateCmd.Parameters.AddWithValue("@NewPassword", BCrypt.Net.BCrypt.HashPassword(tbPasswordMd.Text));
+            myConnect.Open();
+            int result = updateCmd.ExecuteNonQuery();
+            myConnect.Close();
+            return result;
+        }
     }
 }

@@ -24,12 +24,9 @@ C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\
 C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.csprojResolveAssemblyReference.cache
 C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.Admin.resources
 C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.Charts.resources
-C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.frmAddUser.resources
 C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.frmLogin.resources
-C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.frmUserMaintenance.resources
 C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.frmUsers.resources
 C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.frmUserTrans.resources
-C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.GetNumber.resources
 C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.Properties.Resources.resources
 C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.csproj.GenerateResource.Cache
 C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.User.resources
