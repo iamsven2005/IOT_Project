@@ -25,6 +25,7 @@ namespace IOTLogic
         private static SerialComms uartComms;
         private static string strRfidDetected = "";
 
+        Pin PirMotionSensorPin = Pin.DigitalPin2;
         Pin buzzerPin = Pin.DigitalPin3;
         IButtonSensor button = DeviceFactory.Build.ButtonSensor(Pin.DigitalPin7);
         ILed ledRed = DeviceFactory.Build.Led(Pin.DigitalPin5);
@@ -109,7 +110,7 @@ namespace IOTLogic
 
        
 
-        private async void startMotionMonitoring()
+        private async void startButtonMonitoring()
         {
             await Task.Delay(100);
             while (true)
@@ -127,6 +128,27 @@ namespace IOTLogic
                     }
                 }
 
+            }
+        }
+
+
+        private bool motionDetected = false;
+
+        private async void startMotionMonitoring()
+        {
+            await Task.Delay(100);
+            while (true)
+            {
+                Sleep(100);
+                sm.WaitOne();
+                string motionState = DeviceFactory.Build.GrovePi().DigitalRead(PirMotionSensorPin).ToString();
+                sm.Release();
+
+                if (motionState.Equals("1"))
+                {
+                    motionDetected = true;
+                    Task.Delay(3000).Wait();
+                }
             }
         }
 
@@ -150,12 +172,16 @@ namespace IOTLogic
                     ChangeLEDState(ledGreen, SensorStatus.Off);
                     ChangeLEDState(ledRed, SensorStatus.On);
                     activateBuzzer(buzzerPin, 0);
+                    Sleep(200);
+                    ChangeLEDState(ledGreen, SensorStatus.On);
+                    ChangeLEDState(ledRed, SensorStatus.Off);
                 }
                 strRfidDetected = "";
 
                 if (buttonPressed == true)
                 {
                     buttonPressed = false;
+                    // motionDetected = false;
 
                     curMode = MODE_ALARM;
                     ChangeLEDState(ledGreen, SensorStatus.Off);
@@ -166,7 +192,7 @@ namespace IOTLogic
 
             }
 
-            
+
         }
 
         private void handleModeAlarm()
@@ -194,6 +220,7 @@ namespace IOTLogic
 
             StartUart();
 
+            startButtonMonitoring();
             startMotionMonitoring();
 
             curMode = MODE_NORMAL;
