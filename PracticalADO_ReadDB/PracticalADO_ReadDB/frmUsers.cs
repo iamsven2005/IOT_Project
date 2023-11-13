@@ -83,12 +83,6 @@ namespace PracticalADO_ReadDB
             return result;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            frmAddUser frm = new frmAddUser();
-            frm.ShowDialog();
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();

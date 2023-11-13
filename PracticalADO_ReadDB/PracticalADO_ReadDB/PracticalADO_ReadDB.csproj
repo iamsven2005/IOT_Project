@@ -83,12 +83,6 @@
     <Compile Include="Charts.Designer.cs">
       <DependentUpon>Charts.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAddUser.Designer.cs">
-      <DependentUpon>frmAddUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmForget.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,12 +95,6 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUserMaintenance.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmUserMaintenance.Designer.cs">
-      <DependentUpon>frmUserMaintenance.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,12 +106,6 @@
     </Compile>
     <Compile Include="frmUserTrans.Designer.cs">
       <DependentUpon>frmUserTrans.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GetNumber.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GetNumber.Designer.cs">
-      <DependentUpon>GetNumber.cs</DependentUpon>
     </Compile>
     <Compile Include="forgetpassword.cs">
       <SubType>Form</SubType>
@@ -163,26 +145,17 @@
     <EmbeddedResource Include="forgetpassword.resx">
       <DependentUpon>forgetpassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddUser.resx">
-      <DependentUpon>frmAddUser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmForget.resx">
       <DependentUpon>frmForget.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUserMaintenance.resx">
-      <DependentUpon>frmUserMaintenance.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserTrans.resx">
       <DependentUpon>frmUserTrans.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GetNumber.resx">
-      <DependentUpon>GetNumber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -265,13 +238,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SampleDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SampleDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>SampleDB.mdf</DependentUpon>
-    </Content>
     <Content Include="url_to_database.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

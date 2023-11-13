@@ -134,12 +134,6 @@ namespace PracticalADO_ReadDB
 
         }
         //Test files for references (please delete before submitting)
-        private void test2_Click(object sender, EventArgs e)
-        {
-            frmUserMaintenance f4 = new frmUserMaintenance();
-            f4.Show();
-            this.Hide();
-        }
 
         private void test3_Click(object sender, EventArgs e)
         {

@@ -31,98 +31,30 @@ namespace PracticalADO_ReadDB
         {
             LoadUserRecords();
         }
-        private void splitContainer5_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void LoadUserRecords()
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-            string strCommandText = "SELECT TaskID, Task, Importance, Address, Done FROM ToDo";
+            string strCommandText = "SELECT UniqueUserID, Name, UniqueRFID, Address, Contact, Gender, DOB, CountryOfBirth, NRIC FROM MyUser";
             UserAdapter = new SqlDataAdapter(strCommandText, myConnect);
             SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(UserAdapter);
             UserTable.Clear();
             UserAdapter.Fill(UserTable);
             if (UserTable.Rows.Count > 0)
                 grdUser.DataSource = UserTable;
-            grdUser.Columns["TaskID"].DefaultCellStyle.BackColor = Color.FromArgb(227, 227, 227);
-            grdUser.Columns["TaskID"].ReadOnly = true;
+            grdUser.Columns["UniqueUserID"].DefaultCellStyle.BackColor = Color.FromArgb(227, 227, 227);
+            grdUser.Columns["UniqueUserID"].ReadOnly = true;
+            grdUser.Columns["UniqueRFID"].DefaultCellStyle.BackColor = Color.FromArgb(227, 227, 227);
+            grdUser.Columns["UniqueRFID"].ReadOnly = true;
 
 
         }
 
-        private void grdUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-
-        private void grdUser_Click(object sender, EventArgs e)
-        {
-            CurrentRow = grdUser.CurrentRow;
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            int modifiedRows = 0;
-            DataTable UpdatedTable = UserTable.GetChanges();
-            if (UpdatedTable != null)
-            {
-                modifiedRows = UserAdapter.Update(UpdatedTable);
-                UserTable.AcceptChanges();
-
-            }
-            else
-            {
-                MessageBox.Show("There are " + modifiedRows + " records updated...");
-
-            }
-            if (modifiedRows > 0)
-                MessageBox.Show("There are " + modifiedRows + " records updated...");
-            LoadUserRecords();
-        }
         private void Admin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
-        private int DeleteUserRecord(string strRFID)
-        {
-            int result = 0;
-            SqlConnection myConnect = new SqlConnection(strConnectionString);
-            String strCommandText = "DELETE FROM ToDo WHERE TaskID = @TaskID";
-            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
-            updateCmd.Parameters.AddWithValue("@TaskID", strRFID);
-            myConnect.Open();
-            result = updateCmd.ExecuteNonQuery();
-            myConnect.Close();
-            return result;
-            //here
-
-        }
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Confirm Delete?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-            {
-                if (CurrentRow == null)
-                {
-                    MessageBox.Show("No Row selected for delete");
-
-                }
-                else
-                {
-                    string strRFID = CurrentRow.Cells[1].Value + "";
-                    if (DeleteUserRecord(strRFID) > 0)
-                        MessageBox.Show(" transactions has been deleted");
-                    else
-                    {
-                        MessageBox.Show("Delete Failed");
-
-                    }
-                    LoadUserRecords();
-                }
-            }
-
-        }
 
         private void GetContact_Click(object sender, EventArgs e)
         {
@@ -146,20 +78,6 @@ namespace PracticalADO_ReadDB
 
         private void Admin_Resize(object sender, EventArgs e)
         {
-            int width = (this.Width / 50);
-            int height = ((this.Height / 25) / 2);
-            if (width == 0 || height == 0)
-            {
-
-            }
-            else
-            {
-                ContactTitle.Font = new System.Drawing.Font("Arial Rounded MT", width, System.Drawing.FontStyle.Bold);
-                AddTitle.Font = new System.Drawing.Font("Arial Rounded MT", width, System.Drawing.FontStyle.Bold);
-                this.Font = new System.Drawing.Font("Arial Rounded MT", height, System.Drawing.FontStyle.Regular);
-                ContactResult.Height = this.Height * 2;
-                ContactUsername.Height = this.Height * 2;
-            }
 
         }
 
@@ -194,6 +112,151 @@ namespace PracticalADO_ReadDB
             myConnect.Close();
 
 
+        }
+        private void splitContainer5_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void grdUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void grdUser_Click(object sender, EventArgs e)
+        {
+            CurrentRow = grdUser.CurrentRow;
+        }
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            int modifiedRows = 0;
+            DataTable UpdatedTable = UserTable.GetChanges();
+            if (UpdatedTable != null)
+            {
+                modifiedRows = UserAdapter.Update(UpdatedTable);
+                UserTable.AcceptChanges();
+
+            }
+            else
+            {
+                MessageBox.Show("There are " + modifiedRows + " records updated...");
+
+            }
+            if (modifiedRows > 0)
+                MessageBox.Show("There are " + modifiedRows + " records updated...");
+            LoadUserRecords();
+        }
+        private int DeleteTxnRecord(string strRFID)
+        {
+            int result = 0;
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            String strCommandText = "DELETE FROM MyTxn WHERE UniqueRFID = @UniqueRFID";
+            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
+            updateCmd.Parameters.AddWithValue("@UniqueRFID", strRFID);
+            myConnect.Open();
+            result = updateCmd.ExecuteNonQuery();
+            myConnect.Close();
+            return result;
+        }
+        private int DeleteUserRecord(string strRFID)
+        {
+            int result = 0;
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            String strCommandText = "DELETE FROM MyUser WHERE UniqueRFID = @UniqueRFID";
+            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
+            updateCmd.Parameters.AddWithValue("@UniqueRFID", strRFID);
+            myConnect.Open();
+            result = updateCmd.ExecuteNonQuery();
+            myConnect.Close();
+            return result;
+            //here
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirm Delete?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                if (CurrentRow == null)
+                {
+                    MessageBox.Show("No Row selected for delete");
+
+                }
+                else
+                {
+                    string strRFID = CurrentRow.Cells[2].Value + "";
+                    string strUserName = CurrentRow.Cells[1].Value + "";
+                    int NumberOfRecords = DeleteTxnRecord(strRFID);
+                    if (DeleteUserRecord(strRFID) > 0)
+                        MessageBox.Show("Username = " + strUserName + " along with " + NumberOfRecords + " transactions has been deleted");
+                    else
+                    {
+                        MessageBox.Show("Delete Failed");
+
+                    }
+                    LoadUserRecords();
+                }
+            }
+
+        }
+
+        private void btnGetUserID_Click(object sender, EventArgs e)
+        {
+            GetUserDetails();
+        }
+        private void GetUserDetails()
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            string strCommandText = "SELECT Name, UniqueRFID, NRIC, Address, Contact, DOB, CountryOfBirth FROM MyUser ";
+            strCommandText += "WHERE UniqueUserID=@UserID";
+            SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
+            cmd.Parameters.AddWithValue("@UserID", tbUserID.Text);
+            myConnect.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                tbNameMd.Text = reader["Name"].ToString();
+                tbRFIDMd.Text = reader["UniqueRFID"].ToString();
+                tbNRICMd.Text = reader["NRIC"].ToString();
+                tbAddMd.Text = reader["Address"].ToString();
+                tbContactMd.Text = reader["Contact"].ToString();
+                tbDOBMd.Text = reader["DOB"].ToString();
+                tbCountryOfBirthMd.Text = reader["CountryOfBirth"].ToString();
+
+
+            }
+            else
+                MessageBox.Show("No Record Found");
+            reader.Close();
+            myConnect.Close();
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            if (ModifyUserRecord() > 0)
+                MessageBox.Show("Modify Successful");
+            else
+                MessageBox.Show("Modify Fail");
+        }
+        private int ModifyUserRecord()
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            string strCommandText = "UPDATE MyUser SET Name=@NewName, UniqueRFID=@NewRFID, NRIC=@NewNRIC, Address=@NewAdd, Contact=@NewContact, DOB=@NewDOB, CountryOfBirth=@NewCountry, Password=@NewPassword WHERE UniqueUserID=@UserID";
+            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
+            updateCmd.Parameters.AddWithValue("@UserID", tbUserID.Text);
+            updateCmd.Parameters.AddWithValue("@NewName", tbName.Text);
+            updateCmd.Parameters.AddWithValue("@NewRFID", tbRFID.Text);
+            updateCmd.Parameters.AddWithValue("@NewNRIC", tbNRIC.Text);
+            updateCmd.Parameters.AddWithValue("@NewAdd", tbAdd.Text);
+            updateCmd.Parameters.AddWithValue("@NewContact", tbContact.Text);
+            updateCmd.Parameters.AddWithValue("@NewDOB", tbDOBMd.Text);
+            updateCmd.Parameters.AddWithValue("@NewCountry", tbCountryOfBirthMd.Text);
+            updateCmd.Parameters.AddWithValue("@NewPassword", BCrypt.Net.BCrypt.HashPassword(tbPasswordMd.Text));
+            myConnect.Open();
+            int result = updateCmd.ExecuteNonQuery();
+            myConnect.Close();
+            return result;
         }
     }
 }
