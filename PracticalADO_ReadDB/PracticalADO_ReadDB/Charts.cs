@@ -128,6 +128,8 @@ namespace PracticalADO_ReadDB
         private void Charts_Load(object sender, EventArgs e)
         {
             initChartProperties();
+
+
         }
 
         private void chart1_Click(object sender, EventArgs e)
