@@ -33,11 +33,9 @@
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.Test = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.AdminLogin = new System.Windows.Forms.Button();
             this.test3 = new System.Windows.Forms.Button();
-            this.test2 = new System.Windows.Forms.Button();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.Title = new System.Windows.Forms.Label();
@@ -74,7 +72,7 @@
             this.label2.Location = new System.Drawing.Point(-72, 45);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 1;
             this.label2.UseWaitCursor = true;
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -85,10 +83,10 @@
             this.tbUserName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
             this.tbUserName.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.tbUserName.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tbUserName.Location = new System.Drawing.Point(0, 28);
+            this.tbUserName.Location = new System.Drawing.Point(0, 30);
             this.tbUserName.Margin = new System.Windows.Forms.Padding(4);
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(261, 22);
+            this.tbUserName.Size = new System.Drawing.Size(261, 20);
             this.tbUserName.TabIndex = 1;
             this.tbUserName.Text = "Username";
             this.tbUserName.UseWaitCursor = true;
@@ -100,7 +98,7 @@
             this.tbPassword.Location = new System.Drawing.Point(0, 0);
             this.tbPassword.Margin = new System.Windows.Forms.Padding(8);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(261, 22);
+            this.tbPassword.Size = new System.Drawing.Size(261, 20);
             this.tbPassword.TabIndex = 2;
             this.tbPassword.Text = "Password";
             this.tbPassword.UseWaitCursor = true;
@@ -132,19 +130,6 @@
             this.btnCancel.UseWaitCursor = true;
             this.btnCancel.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Test
-            // 
-            this.Test.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Test.Location = new System.Drawing.Point(4, 7);
-            this.Test.Margin = new System.Windows.Forms.Padding(4);
-            this.Test.Name = "Test";
-            this.Test.Size = new System.Drawing.Size(146, 52);
-            this.Test.TabIndex = 6;
-            this.Test.Text = "For adding new user without logging in";
-            this.Test.UseVisualStyleBackColor = true;
-            this.Test.UseWaitCursor = true;
-            this.Test.Click += new System.EventHandler(this.Test_Click);
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -158,8 +143,6 @@
             this.splitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.splitContainer1.Panel1.Controls.Add(this.AdminLogin);
             this.splitContainer1.Panel1.Controls.Add(this.test3);
-            this.splitContainer1.Panel1.Controls.Add(this.Test);
-            this.splitContainer1.Panel1.Controls.Add(this.test2);
             this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
@@ -175,7 +158,7 @@
             // AdminLogin
             // 
             this.AdminLogin.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.AdminLogin.Location = new System.Drawing.Point(0, 180);
+            this.AdminLogin.Location = new System.Drawing.Point(4, 30);
             this.AdminLogin.Margin = new System.Windows.Forms.Padding(4);
             this.AdminLogin.Name = "AdminLogin";
             this.AdminLogin.Size = new System.Drawing.Size(146, 28);
@@ -197,19 +180,6 @@
             this.test3.UseVisualStyleBackColor = true;
             this.test3.UseWaitCursor = true;
             this.test3.Click += new System.EventHandler(this.test3_Click);
-            // 
-            // test2
-            // 
-            this.test2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.test2.Location = new System.Drawing.Point(4, 67);
-            this.test2.Margin = new System.Windows.Forms.Padding(4);
-            this.test2.Name = "test2";
-            this.test2.Size = new System.Drawing.Size(146, 28);
-            this.test2.TabIndex = 7;
-            this.test2.Text = "Grid Example";
-            this.test2.UseVisualStyleBackColor = true;
-            this.test2.UseWaitCursor = true;
-            this.test2.Click += new System.EventHandler(this.test2_Click);
             // 
             // splitContainer4
             // 
@@ -258,7 +228,7 @@
             this.Title.MaximumSize = new System.Drawing.Size(2000, 200);
             this.Title.MinimumSize = new System.Drawing.Size(200, 20);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(326, 20);
+            this.Title.Size = new System.Drawing.Size(271, 20);
             this.Title.TabIndex = 0;
             this.Title.Text = "Server Environment Monitoring System";
             this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -364,10 +334,8 @@
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button Test;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button ForgetPwd;
-        private System.Windows.Forms.Button test2;
         private System.Windows.Forms.Button test3;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.SplitContainer splitContainer3;
