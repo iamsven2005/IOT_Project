@@ -39,8 +39,6 @@ C:\Users\iamsv\Source\Repos\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\bin\Debug\PracticalADO_ReadDB.exe.config
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.exe
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.pdb
-D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\bin\Debug\SampleDB.mdf
-D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\bin\Debug\SampleDB_log.ldf
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\bin\Debug\PracticalADO_ReadDB.exe
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\bin\Debug\PracticalADO_ReadDB.pdb
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\bin\Debug\BCrypt.Net.dll
@@ -51,13 +49,10 @@ D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_Re
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.Admin.resources
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.Charts.resources
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.forgetpassword.resources
-D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.frmAddUser.resources
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.frmForget.resources
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.frmLogin.resources
-D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.frmUserMaintenance.resources
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.frmUsers.resources
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.frmUserTrans.resources
-D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.GetNumber.resources
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.Properties.Resources.resources
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.User.resources
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.csproj.GenerateResource.Cache
