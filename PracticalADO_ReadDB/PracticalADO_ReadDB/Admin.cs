@@ -245,11 +245,11 @@ namespace PracticalADO_ReadDB
             string strCommandText = "UPDATE MyUser SET Name=@NewName, UniqueRFID=@NewRFID, NRIC=@NewNRIC, Address=@NewAdd, Contact=@NewContact, DOB=@NewDOB, CountryOfBirth=@NewCountry, Password=@NewPassword WHERE UniqueUserID=@UserID";
             SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
             updateCmd.Parameters.AddWithValue("@UserID", tbUserID.Text);
-            updateCmd.Parameters.AddWithValue("@NewName", tbName.Text);
-            updateCmd.Parameters.AddWithValue("@NewRFID", tbRFID.Text);
-            updateCmd.Parameters.AddWithValue("@NewNRIC", tbNRIC.Text);
-            updateCmd.Parameters.AddWithValue("@NewAdd", tbAdd.Text);
-            updateCmd.Parameters.AddWithValue("@NewContact", tbContact.Text);
+            updateCmd.Parameters.AddWithValue("@NewName", tbNameMd.Text);
+            updateCmd.Parameters.AddWithValue("@NewRFID", tbRFIDMd.Text);
+            updateCmd.Parameters.AddWithValue("@NewNRIC", tbNRICMd.Text);
+            updateCmd.Parameters.AddWithValue("@NewAdd", tbAddMd.Text);
+            updateCmd.Parameters.AddWithValue("@NewContact", tbContactMd.Text);
             updateCmd.Parameters.AddWithValue("@NewDOB", tbDOBMd.Text);
             updateCmd.Parameters.AddWithValue("@NewCountry", tbCountryOfBirthMd.Text);
             updateCmd.Parameters.AddWithValue("@NewPassword", BCrypt.Net.BCrypt.HashPassword(tbPasswordMd.Text));
@@ -257,6 +257,11 @@ namespace PracticalADO_ReadDB
             int result = updateCmd.ExecuteNonQuery();
             myConnect.Close();
             return result;
+        }
+
+        private void CountryLbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
