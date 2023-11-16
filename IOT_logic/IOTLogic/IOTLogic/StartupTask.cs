@@ -19,6 +19,7 @@ namespace IOTLogic
         const int MODE_NORMAL = 1;
         const int MODE_ALARM = 2;
         static int curMode;
+        string strDataReceived = "";
 
         private System.Threading.Semaphore sm = new System.Threading.Semaphore(1, 1);
 
@@ -30,6 +31,33 @@ namespace IOTLogic
         IButtonSensor button = DeviceFactory.Build.ButtonSensor(Pin.DigitalPin7);
         ILed ledRed = DeviceFactory.Build.Led(Pin.DigitalPin5);
         ILed ledGreen = DeviceFactory.Build.Led(Pin.DigitalPin6);
+
+        DataComms dataComms;
+
+        public void commsDataReceive(string dataReceived)
+        {
+            strDataReceived = dataReceived;
+            Debug.WriteLine("Data Received: " + strDataReceived);
+        }
+
+        private void sendDataToWindows(string strDataOut)
+        {
+            try
+            {
+                dataComms.sendData(strDataOut);
+                Debug.WriteLine("Sending Msg: " + strDataOut);
+            }
+            catch (Exception)
+            {
+                Debug.WriteLine("ERROR. Did you forget to initComms()?");
+            }
+        }
+
+        private void initComms()
+        {
+            dataComms = new DataComms();
+            dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataReceive);
+        }
 
         private SensorStatus GetLEDState(ILed led)
         {
