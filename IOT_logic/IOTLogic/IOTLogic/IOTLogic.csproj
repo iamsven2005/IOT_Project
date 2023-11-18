@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{9EB2C9F2-A664-40DE-B92A-320637BD4190}</ProjectGuid>
+    <ProjectGuid>{509A6BF1-C471-4E0D-9B3A-2CD35683A3D5}</ProjectGuid>
     <OutputType>winmdobj</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IOTLogic</RootNamespace>
@@ -134,8 +134,9 @@
     <Reference Include="GrovePi">
       <HintPath>C:\Users\dexte\Downloads\GrovePi_DLL\GrovePi.dll</HintPath>
     </Reference>
-    <Reference Include="RpiCommsUtil">
-      <HintPath>..\..\..\..\IOTPRJ\DataCommsStarters\RpiCommsUtil.dll</HintPath>
+    <Reference Include="RpiCommsUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\dexte\Downloads\DataCommsStarters\DataCommsStarters\RpiCommsUtil.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

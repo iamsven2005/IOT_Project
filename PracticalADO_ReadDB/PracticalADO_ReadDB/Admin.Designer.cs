@@ -34,6 +34,7 @@
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -128,7 +129,11 @@
             this.sampleDBDataSet = new PracticalADO_ReadDB.SampleDBDataSet();
             this.sampleDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toDoListTableAdapter = new PracticalADO_ReadDB.SampleDBDataSet2TableAdapters.ToDoListTableAdapter();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.lightValueTB = new System.Windows.Forms.TextBox();
+            this.sendLight = new System.Windows.Forms.Button();
+            this.stopLightBtn = new System.Windows.Forms.Button();
+            this.roomStatus = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -224,6 +229,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSetBindingSource)).BeginInit();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -263,6 +269,16 @@
             this.splitContainer3.Size = new System.Drawing.Size(263, 450);
             this.splitContainer3.SplitterDistance = 372;
             this.splitContainer3.TabIndex = 0;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(13, 72);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(229, 260);
+            this.listBox1.TabIndex = 1;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
             // 
             // dataGridView1
             // 
@@ -369,6 +385,7 @@
             this.usermgt.Controls.Add(this.usrmgtpg);
             this.usermgt.Controls.Add(this.todo);
             this.usermgt.Controls.Add(this.tabPage5);
+            this.usermgt.Controls.Add(this.tabPage6);
             this.usermgt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.usermgt.Location = new System.Drawing.Point(0, 0);
             this.usermgt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1415,15 +1432,57 @@
             // 
             this.toDoListTableAdapter.ClearBeforeFill = true;
             // 
-            // listBox1
+            // tabPage6
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(13, 72);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(229, 260);
-            this.listBox1.TabIndex = 1;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
+            this.tabPage6.BackColor = System.Drawing.Color.LightGray;
+            this.tabPage6.Controls.Add(this.roomStatus);
+            this.tabPage6.Controls.Add(this.stopLightBtn);
+            this.tabPage6.Controls.Add(this.sendLight);
+            this.tabPage6.Controls.Add(this.lightValueTB);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(854, 421);
+            this.tabPage6.TabIndex = 7;
+            this.tabPage6.Text = "lightValue";
+            this.tabPage6.Click += new System.EventHandler(this.tabPage6_Click);
+            // 
+            // lightValueTB
+            // 
+            this.lightValueTB.Location = new System.Drawing.Point(72, 24);
+            this.lightValueTB.Name = "lightValueTB";
+            this.lightValueTB.ReadOnly = true;
+            this.lightValueTB.Size = new System.Drawing.Size(272, 22);
+            this.lightValueTB.TabIndex = 0;
+            this.lightValueTB.TextChanged += new System.EventHandler(this.lightValueTB_TextChanged);
+            // 
+            // sendLight
+            // 
+            this.sendLight.Location = new System.Drawing.Point(376, 16);
+            this.sendLight.Name = "sendLight";
+            this.sendLight.Size = new System.Drawing.Size(96, 30);
+            this.sendLight.TabIndex = 1;
+            this.sendLight.Text = "Send Light";
+            this.sendLight.UseVisualStyleBackColor = true;
+            this.sendLight.Click += new System.EventHandler(this.sendLight_Click);
+            // 
+            // stopLightBtn
+            // 
+            this.stopLightBtn.Location = new System.Drawing.Point(489, 16);
+            this.stopLightBtn.Name = "stopLightBtn";
+            this.stopLightBtn.Size = new System.Drawing.Size(96, 30);
+            this.stopLightBtn.TabIndex = 2;
+            this.stopLightBtn.Text = "Stop Light";
+            this.stopLightBtn.UseVisualStyleBackColor = true;
+            this.stopLightBtn.Click += new System.EventHandler(this.stopLightBtn_Click);
+            // 
+            // roomStatus
+            // 
+            this.roomStatus.Location = new System.Drawing.Point(72, 65);
+            this.roomStatus.Name = "roomStatus";
+            this.roomStatus.ReadOnly = true;
+            this.roomStatus.Size = new System.Drawing.Size(272, 22);
+            this.roomStatus.TabIndex = 3;
+            this.roomStatus.TextChanged += new System.EventHandler(this.roomStatus_TextChanged);
             // 
             // Admin
             // 
@@ -1546,6 +1605,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSetBindingSource)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1649,5 +1710,10 @@
         private System.Windows.Forms.Button scanCardBtn;
         private System.Windows.Forms.Button stopScanBtn;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button stopLightBtn;
+        private System.Windows.Forms.Button sendLight;
+        private System.Windows.Forms.TextBox lightValueTB;
+        private System.Windows.Forms.TextBox roomStatus;
     }
 }

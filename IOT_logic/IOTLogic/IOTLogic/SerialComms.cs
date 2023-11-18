@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Windows.Devices.SerialCommunication;
-using Windows.Storage.Streams;  
-using Windows.Devices.Enumeration;  
-using System.Diagnostics;   
+using Windows.Storage.Streams;
+using Windows.Devices.Enumeration;
+using System.Diagnostics;
 
 class SerialComms
 {
@@ -33,7 +33,7 @@ class SerialComms
 
     private void OnUartEvent(UartEventArgs e)
     {
-         UartEvent(this, e);
+        UartEvent(this, e);
     }
     #endregion
 
@@ -77,7 +77,7 @@ class SerialComms
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Exception in InitSerial: "+ ex.Message.ToString());
+                Debug.WriteLine("Exception in InitSerial: " + ex.Message.ToString());
             }
         }
     }
@@ -125,7 +125,7 @@ class SerialComms
         if (bytesRead > 0)
         {
             string strMsgRec = dataReaderObject.ReadString(bytesRead);
-            strMsgRec=strMsgRec.Substring(1, 12);
+            strMsgRec = strMsgRec.Substring(1, 12);
             UartEventArgs _args = new UartEventArgs();
             _args.data = strMsgRec;
             OnUartEvent(_args);

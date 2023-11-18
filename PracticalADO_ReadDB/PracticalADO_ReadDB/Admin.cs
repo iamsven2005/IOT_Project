@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using System.Configuration;
 using System.Data.SqlClient;
 
@@ -44,6 +45,7 @@ namespace PracticalADO_ReadDB
             processDataReceive(errMsg);
         }
 
+
         private void InitComms()
         {
             dataComms = new DataComms();
@@ -51,6 +53,24 @@ namespace PracticalADO_ReadDB
             dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError);
         }
 
+        private void saveLightSensorDataToDB(string strTime, string strlightValue, string strStatus)
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+
+            String strCommandText =
+                "INSERT MyLightSensor (TimeOccurred, SensorValue, SensorStatus) " +
+               " VALUES (@time, @value, @status)";
+
+            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
+            updateCmd.Parameters.AddWithValue("@time", strTime);
+            updateCmd.Parameters.AddWithValue("@value", strlightValue);
+            updateCmd.Parameters.AddWithValue("@status", strStatus);
+
+            myConnect.Open();
+            int result = updateCmd.ExecuteNonQuery();
+
+            myConnect.Close();
+        }
 
         private void Admin_Load(object sender, EventArgs e)
         {
@@ -298,6 +318,43 @@ namespace PracticalADO_ReadDB
             return result;
         }
 
+       
+    
+        private float extractFloatValue(string strData, string ID)
+        {
+            // Console.WriteLine(float.Parse(extractStringValue(strData, ID)));
+            return (float.Parse(extractStringValue(strData, ID)));
+        }
+
+        private void handleLightSensorData(string strData, string strTime, string ID)
+        {
+            string strlightValue = extractStringValue(strData, ID);
+            Console.WriteLine(strlightValue);
+
+            lightValueTB.Text = strlightValue;
+            Console.WriteLine(strData);
+
+            float fLightValue = extractFloatValue(strData, ID);
+
+            string status = "";
+
+            if (fLightValue <= 200)
+            {
+                status = "Dark";
+            }
+            else
+            {
+                status = "Bright";
+            }
+            roomStatus.Text = status;
+            saveLightSensorDataToDB(strTime, strlightValue, status);
+
+
+
+
+        }
+
+
         private void handleRfidSensorData(string strData, string strTime, string ID)
         {
             string strValue = extractStringValue(strData, ID);
@@ -317,11 +374,12 @@ namespace PracticalADO_ReadDB
 
         private void extractSensorData(string strData, string strTime)
         {
-            if (strData.IndexOf("RFID=") != -1)
+            if (strData.IndexOf("LIGHT=") != -1)
             {
-                handleRfidSensorData(strData, strTime, "RFID=");
+                handleLightSensorData(strData, strTime, "LIGHT=");
             }
-           
+            
+
         }
 
 
@@ -373,6 +431,31 @@ namespace PracticalADO_ReadDB
 
    
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lightValueTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sendLight_Click(object sender, EventArgs e)
+        {
+            dataComms.sendData("SENDLIGHT");
+        }
+
+        private void stopLightBtn_Click(object sender, EventArgs e)
+        {
+            dataComms.sendData("STOPLIGHT");
+        }
+
+        private void tabPage6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roomStatus_TextChanged(object sender, EventArgs e)
         {
 
         }
