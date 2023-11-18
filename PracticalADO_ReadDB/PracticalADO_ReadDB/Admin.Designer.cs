@@ -81,6 +81,8 @@
             this.lblRFID = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblPwd = new System.Windows.Forms.Label();
+            this.stopScanBtn = new System.Windows.Forms.Button();
+            this.scanCardBtn = new System.Windows.Forms.Button();
             this.tbContact = new System.Windows.Forms.TextBox();
             this.tbAdd = new System.Windows.Forms.TextBox();
             this.tbNRIC = new System.Windows.Forms.TextBox();
@@ -126,6 +128,7 @@
             this.sampleDBDataSet = new PracticalADO_ReadDB.SampleDBDataSet();
             this.sampleDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toDoListTableAdapter = new PracticalADO_ReadDB.SampleDBDataSet2TableAdapters.ToDoListTableAdapter();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -251,6 +254,7 @@
             // 
             // splitContainer3.Panel1
             // 
+            this.splitContainer3.Panel1.Controls.Add(this.listBox1);
             this.splitContainer3.Panel1.Controls.Add(this.dataGridView1);
             // 
             // splitContainer3.Panel2
@@ -390,7 +394,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(853, 421);
+            this.tabPage2.Size = new System.Drawing.Size(854, 421);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Current Queue";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -401,7 +405,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(853, 421);
+            this.tabPage3.Size = new System.Drawing.Size(854, 421);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Logs";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -413,7 +417,7 @@
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage4.Size = new System.Drawing.Size(853, 421);
+            this.tabPage4.Size = new System.Drawing.Size(854, 421);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Dashboard";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -435,7 +439,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dashboard);
-            this.splitContainer2.Size = new System.Drawing.Size(847, 417);
+            this.splitContainer2.Size = new System.Drawing.Size(848, 417);
+            this.splitContainer2.SplitterDistance = 207;
             this.splitContainer2.TabIndex = 1;
             // 
             // label9
@@ -457,9 +462,9 @@
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(697, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 41);
+            this.button1.Size = new System.Drawing.Size(844, 41);
             this.button1.TabIndex = 3;
             this.button1.Text = "Disable Buzzer";
             this.button1.UseVisualStyleBackColor = true;
@@ -472,7 +477,7 @@
             this.dashboard.Location = new System.Drawing.Point(0, 0);
             this.dashboard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dashboard.Name = "dashboard";
-            this.dashboard.Size = new System.Drawing.Size(847, 363);
+            this.dashboard.Size = new System.Drawing.Size(848, 206);
             this.dashboard.TabIndex = 0;
             // 
             // chart1
@@ -499,7 +504,7 @@
             this.usrmgtpg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.usrmgtpg.Name = "usrmgtpg";
             this.usrmgtpg.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.usrmgtpg.Size = new System.Drawing.Size(853, 421);
+            this.usrmgtpg.Size = new System.Drawing.Size(854, 421);
             this.usrmgtpg.TabIndex = 4;
             this.usrmgtpg.Text = "User Management Page";
             this.usrmgtpg.UseVisualStyleBackColor = true;
@@ -511,7 +516,7 @@
             this.todo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.todo.Name = "todo";
             this.todo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.todo.Size = new System.Drawing.Size(853, 421);
+            this.todo.Size = new System.Drawing.Size(854, 421);
             this.todo.TabIndex = 5;
             this.todo.Text = "To-do-list";
             this.todo.UseVisualStyleBackColor = true;
@@ -528,7 +533,7 @@
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer6);
             this.splitContainer5.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer5_Panel2_Paint);
-            this.splitContainer5.Size = new System.Drawing.Size(847, 417);
+            this.splitContainer5.Size = new System.Drawing.Size(848, 417);
             this.splitContainer5.SplitterDistance = 286;
             this.splitContainer5.TabIndex = 1;
             // 
@@ -538,7 +543,7 @@
             this.splitContainer6.Location = new System.Drawing.Point(0, 0);
             this.splitContainer6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainer6.Name = "splitContainer6";
-            this.splitContainer6.Size = new System.Drawing.Size(847, 127);
+            this.splitContainer6.Size = new System.Drawing.Size(848, 127);
             this.splitContainer6.SplitterDistance = 287;
             this.splitContainer6.TabIndex = 3;
             // 
@@ -547,9 +552,9 @@
             this.tabPage5.BackColor = System.Drawing.Color.Black;
             this.tabPage5.Controls.Add(this.splitContainer7);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage5.Size = new System.Drawing.Size(854, 421);
             this.tabPage5.TabIndex = 6;
             this.tabPage5.Text = "Check Info";
@@ -559,7 +564,7 @@
             this.splitContainer7.BackColor = System.Drawing.Color.Black;
             this.splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer7.Location = new System.Drawing.Point(4, 4);
-            this.splitContainer7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer7.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer7.Name = "splitContainer7";
             // 
             // splitContainer7.Panel1
@@ -578,7 +583,7 @@
             // 
             this.splitContainer8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer8.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer8.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer8.Name = "splitContainer8";
             this.splitContainer8.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -598,7 +603,7 @@
             // 
             this.splitContainer9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer9.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer9.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer9.Name = "splitContainer9";
             this.splitContainer9.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -633,7 +638,7 @@
             // 
             this.splitContainer10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer10.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer10.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer10.Name = "splitContainer10";
             this.splitContainer10.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -653,7 +658,7 @@
             // 
             this.splitContainer11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer11.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer11.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer11.Name = "splitContainer11";
             this.splitContainer11.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -675,7 +680,7 @@
             // 
             this.ContactUsername.AllowDrop = true;
             this.ContactUsername.Location = new System.Drawing.Point(125, 6);
-            this.ContactUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ContactUsername.Margin = new System.Windows.Forms.Padding(4);
             this.ContactUsername.Name = "ContactUsername";
             this.ContactUsername.Size = new System.Drawing.Size(132, 22);
             this.ContactUsername.TabIndex = 3;
@@ -709,7 +714,7 @@
             // ContactResult
             // 
             this.ContactResult.Location = new System.Drawing.Point(125, 9);
-            this.ContactResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ContactResult.Margin = new System.Windows.Forms.Padding(4);
             this.ContactResult.Name = "ContactResult";
             this.ContactResult.ReadOnly = true;
             this.ContactResult.Size = new System.Drawing.Size(132, 22);
@@ -719,7 +724,7 @@
             // 
             this.GetContact.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GetContact.Location = new System.Drawing.Point(0, 0);
-            this.GetContact.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GetContact.Margin = new System.Windows.Forms.Padding(4);
             this.GetContact.Name = "GetContact";
             this.GetContact.Size = new System.Drawing.Size(281, 36);
             this.GetContact.TabIndex = 5;
@@ -731,7 +736,7 @@
             // 
             this.splitContainer12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer12.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer12.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer12.Name = "splitContainer12";
             this.splitContainer12.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -766,7 +771,7 @@
             // 
             this.splitContainer13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer13.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer13.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer13.Name = "splitContainer13";
             this.splitContainer13.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -786,7 +791,7 @@
             // 
             this.splitContainer15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer15.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer15.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer15.Name = "splitContainer15";
             // 
             // splitContainer15.Panel1
@@ -801,6 +806,8 @@
             // 
             // splitContainer15.Panel2
             // 
+            this.splitContainer15.Panel2.Controls.Add(this.stopScanBtn);
+            this.splitContainer15.Panel2.Controls.Add(this.scanCardBtn);
             this.splitContainer15.Panel2.Controls.Add(this.tbContact);
             this.splitContainer15.Panel2.Controls.Add(this.tbAdd);
             this.splitContainer15.Panel2.Controls.Add(this.tbNRIC);
@@ -881,6 +888,26 @@
             this.lblPwd.TabIndex = 13;
             this.lblPwd.Text = "Password:";
             // 
+            // stopScanBtn
+            // 
+            this.stopScanBtn.Location = new System.Drawing.Point(137, 56);
+            this.stopScanBtn.Name = "stopScanBtn";
+            this.stopScanBtn.Size = new System.Drawing.Size(47, 23);
+            this.stopScanBtn.TabIndex = 21;
+            this.stopScanBtn.Text = "Stop Scan";
+            this.stopScanBtn.UseVisualStyleBackColor = true;
+            this.stopScanBtn.Click += new System.EventHandler(this.stopScanBtn_Click);
+            // 
+            // scanCardBtn
+            // 
+            this.scanCardBtn.Location = new System.Drawing.Point(80, 56);
+            this.scanCardBtn.Name = "scanCardBtn";
+            this.scanCardBtn.Size = new System.Drawing.Size(51, 23);
+            this.scanCardBtn.TabIndex = 20;
+            this.scanCardBtn.Text = "Scan Card";
+            this.scanCardBtn.UseVisualStyleBackColor = true;
+            this.scanCardBtn.Click += new System.EventHandler(this.scanCardBtn_Click);
+            // 
             // tbContact
             // 
             this.tbContact.Location = new System.Drawing.Point(3, 146);
@@ -910,8 +937,10 @@
             this.tbRFID.Location = new System.Drawing.Point(3, 58);
             this.tbRFID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbRFID.Name = "tbRFID";
-            this.tbRFID.Size = new System.Drawing.Size(181, 22);
+            this.tbRFID.ReadOnly = true;
+            this.tbRFID.Size = new System.Drawing.Size(71, 22);
             this.tbRFID.TabIndex = 16;
+            this.tbRFID.TextChanged += new System.EventHandler(this.tbRFID_TextChanged);
             // 
             // tbName
             // 
@@ -946,7 +975,7 @@
             // 
             this.splitContainer14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer14.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer14.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer14.Name = "splitContainer14";
             this.splitContainer14.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -966,7 +995,7 @@
             // 
             this.splitContainer16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer16.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer16.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer16.Name = "splitContainer16";
             this.splitContainer16.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1001,7 +1030,7 @@
             // 
             this.splitContainer17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer17.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer17.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer17.Name = "splitContainer17";
             // 
             // splitContainer17.Panel1
@@ -1012,7 +1041,7 @@
             // 
             this.splitContainer17.Panel2.Controls.Add(this.splitContainer18);
             this.splitContainer17.Size = new System.Drawing.Size(560, 159);
-            this.splitContainer17.SplitterDistance = 416;
+            this.splitContainer17.SplitterDistance = 415;
             this.splitContainer17.SplitterWidth = 5;
             this.splitContainer17.TabIndex = 0;
             // 
@@ -1025,7 +1054,7 @@
             this.grdUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grdUser.Name = "grdUser";
             this.grdUser.RowTemplate.Height = 24;
-            this.grdUser.Size = new System.Drawing.Size(416, 159);
+            this.grdUser.Size = new System.Drawing.Size(415, 159);
             this.grdUser.TabIndex = 1;
             this.grdUser.Click += new System.EventHandler(this.grdUser_Click);
             // 
@@ -1033,7 +1062,7 @@
             // 
             this.splitContainer18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer18.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer18.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer18.Name = "splitContainer18";
             this.splitContainer18.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1044,7 +1073,7 @@
             // splitContainer18.Panel2
             // 
             this.splitContainer18.Panel2.Controls.Add(this.btnDelete);
-            this.splitContainer18.Size = new System.Drawing.Size(139, 159);
+            this.splitContainer18.Size = new System.Drawing.Size(140, 159);
             this.splitContainer18.SplitterDistance = 76;
             this.splitContainer18.SplitterWidth = 5;
             this.splitContainer18.TabIndex = 0;
@@ -1056,7 +1085,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(0, 0);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(139, 76);
+            this.btnUpdate.Size = new System.Drawing.Size(140, 76);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -1069,7 +1098,7 @@
             this.btnDelete.Location = new System.Drawing.Point(0, 0);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(139, 78);
+            this.btnDelete.Size = new System.Drawing.Size(140, 78);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -1079,7 +1108,7 @@
             // 
             this.splitContainer19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer19.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer19.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer19.Name = "splitContainer19";
             this.splitContainer19.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1099,7 +1128,7 @@
             // 
             this.splitContainer22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer22.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer22.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer22.Name = "splitContainer22";
             // 
             // splitContainer22.Panel1
@@ -1146,7 +1175,7 @@
             // 
             this.splitContainer20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer20.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer20.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer20.Name = "splitContainer20";
             // 
             // splitContainer20.Panel1
@@ -1386,6 +1415,16 @@
             // 
             this.toDoListTableAdapter.ClearBeforeFill = true;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(13, 72);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(229, 260);
+            this.listBox1.TabIndex = 1;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1394,7 +1433,7 @@
             this.ClientSize = new System.Drawing.Size(1129, 450);
             this.Controls.Add(this.splitContainer1);
             this.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Admin";
             this.Text = "Admin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Admin_FormClosed);
@@ -1607,5 +1646,8 @@
         private System.Windows.Forms.Button btnGetUserID;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button scanCardBtn;
+        private System.Windows.Forms.Button stopScanBtn;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

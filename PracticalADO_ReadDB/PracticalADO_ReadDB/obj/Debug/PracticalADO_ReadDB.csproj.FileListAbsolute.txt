@@ -56,3 +56,4 @@ D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_Re
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.Properties.Resources.resources
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.User.resources
 D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\obj\Debug\PracticalADO_ReadDB.csproj.GenerateResource.Cache
+D:\IOT_Project\PracticalADO_ReadDB\PracticalADO_ReadDB\bin\Debug\CommsUtil.dll

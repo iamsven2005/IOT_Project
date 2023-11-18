@@ -21,16 +21,44 @@ namespace PracticalADO_ReadDB
         DataGridViewRow CurrentRow = null;
         SqlDataAdapter UserAdapter;
 
+        DataComms dataComms;
+
+        public delegate void myprocessDataDelegate(String strData);
+
+
         public Admin(string data)
         {
             InitializeComponent();
             receivedData = data;
         }
 
+
+        public void commsDataReceive(string dataReceived)
+        {
+            processDataReceive(dataReceived);
+        }
+
+        public void commsSendError(string errMsg)
+        {
+            MessageBox.Show(errMsg);
+            processDataReceive(errMsg);
+        }
+
+        private void InitComms()
+        {
+            dataComms = new DataComms();
+            dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataReceive);
+            dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError);
+        }
+
+
         private void Admin_Load(object sender, EventArgs e)
         {
             LoadUserRecords();
+            InitComms();
         }
+
+
         private void LoadUserRecords()
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
@@ -260,6 +288,91 @@ namespace PracticalADO_ReadDB
         }
 
         private void CountryLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private string extractStringValue(string strData, string ID)
+        {
+            string result = strData.Substring(strData.IndexOf(ID) + ID.Length);
+            return result;
+        }
+
+        private void handleRfidSensorData(string strData, string strTime, string ID)
+        {
+            string strValue = extractStringValue(strData, ID);
+            Console.WriteLine(strValue);
+            tbRFID.Text = strValue;
+            
+            // Console.WriteLine(strData);
+
+            // float fLightValue = extractFloatValue(strData, ID);
+
+            // string status = "";
+
+            //tbRFID.Text = strData;
+
+        }
+
+
+        private void extractSensorData(string strData, string strTime)
+        {
+            if (strData.IndexOf("RFID=") != -1)
+            {
+                handleRfidSensorData(strData, strTime, "RFID=");
+            }
+           
+        }
+
+
+        public void handleRfidData(String strData)
+        {
+            if (strData.IndexOf("RFID=") != -1)
+            {
+                string dt = DateTime.Now.ToString("s");
+
+                handleRfidSensorData(strData, dt, "RFID==");
+            }
+
+        }
+
+        public void handleSensorData(String strData)
+        {
+            Console.WriteLine(strData);
+            string dt = DateTime.Now.ToString("s");
+            extractSensorData(strData, dt);
+
+            string strMessage = dt + ":" + strData;
+
+        }
+
+        public void processDataReceive(String strData)
+        {
+            myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData);
+            listBox1.Invoke(d, new object[] { strData });
+        }
+
+        
+
+        private void scanCardBtn_Click(object sender, EventArgs e)
+        {
+            dataComms.sendData("SCANRFID");
+        }
+
+        private void stopScanBtn_Click(object sender, EventArgs e)
+        {
+            dataComms.sendData("STOPRFID");
+        }
+
+        private void tbRFID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+   
+        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }

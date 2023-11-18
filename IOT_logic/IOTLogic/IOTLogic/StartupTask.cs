@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using GrovePi;
 using GrovePi.Sensors;
 
+
 namespace IOTLogic
 {
     public sealed class StartupTask : IBackgroundTask
@@ -18,6 +19,9 @@ namespace IOTLogic
 
         const int MODE_NORMAL = 1;
         const int MODE_ALARM = 2;
+        const int MODE_SCAN = 3;
+        const int MODE_SENDLIGHT = 4;
+        const int MODE_SENDBUTTON = 5;
         static int curMode;
         string strDataReceived = "";
 
@@ -31,8 +35,19 @@ namespace IOTLogic
         IButtonSensor button = DeviceFactory.Build.ButtonSensor(Pin.DigitalPin7);
         ILed ledRed = DeviceFactory.Build.Led(Pin.DigitalPin5);
         ILed ledGreen = DeviceFactory.Build.Led(Pin.DigitalPin6);
+        Pin lightPin = Pin.AnalogPin1;
 
         DataComms dataComms;
+
+        int lightAdcValue = 800;
+        int iPrevAdcValue = 800, iReadAdcValue, iDiff = 0;
+
+        int sensorLightAdcValue;
+        private bool buttonPressed = false;
+        private bool prevButtonStatus = false;
+
+        private bool lightDark = false;
+        private bool prevLightDark = false;
 
         public void commsDataReceive(string dataReceived)
         {
@@ -59,6 +74,9 @@ namespace IOTLogic
             dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataReceive);
         }
 
+        
+
+
         private SensorStatus GetLEDState(ILed led)
         {
             sm.WaitOne();
@@ -74,7 +92,69 @@ namespace IOTLogic
             sm.Release();
         }
 
-        private bool buttonPressed = false;
+        private int GetLightValue(Pin pin)
+        {
+            sm.WaitOne();
+            int value = DeviceFactory.Build.GrovePi().AnalogRead(pin);
+            sm.Release();
+            return value;
+        }
+
+
+        private int getLight()
+        {
+            iReadAdcValue = GetLightValue(lightPin);
+            // Debug.WriteLine(iReadAdcValue);
+
+            if (iPrevAdcValue > iReadAdcValue)
+            {
+                iDiff = iPrevAdcValue - iReadAdcValue;
+            }
+            else
+            {
+                iDiff = iReadAdcValue - iPrevAdcValue;
+            }
+
+            if (iDiff < 100)
+            {
+                lightAdcValue = iReadAdcValue;
+            }
+
+            lightAdcValue = iReadAdcValue;
+            // Debug.WriteLine(lightAdcValue);
+
+            return lightAdcValue;
+        }
+
+        private void handleModeSendLight()
+        {
+            if (sensorLightAdcValue <= 200)
+            {
+                lightDark = true;
+            }
+            else
+            {
+                lightDark = false;
+            }
+
+            if (prevLightDark != lightDark)
+            {
+                sendDataToWindows("LIGHT= " + sensorLightAdcValue);
+
+            }
+            prevLightDark = lightDark;
+
+            if (strDataReceived.Equals("SENDBUTTON"))
+            {
+                curMode = MODE_SENDBUTTON;
+                Debug.WriteLine("===Entering MODE_SENDBUTTON===");
+
+            }
+            strDataReceived = "";
+        }
+
+
+
 
         private void Sleep(int NoOfMs)
         {
@@ -94,10 +174,31 @@ namespace IOTLogic
 
         private void StartUart()
         {
+            
             uartComms = new SerialComms();
             uartComms.UartEvent += new SerialComms.UartEventDelegate(UartDataHandler);
+            Debug.WriteLine(new SerialComms.UartEventDelegate(UartDataHandler) + "==");
+            
+        }
+
+        string[] rfid_array = new string[1];
+
+        static string extractRFIDdata(string rfid)
+        {
+            Debug.WriteLine("RFID: " + rfid);
+            
+            return rfid;
+        }
+
+
+        static void UartDataHandler(object sender, SerialComms.UartEventArgs e)
+        {
+            strRfidDetected = e.data;
+            extractRFIDdata(strRfidDetected);
+            Debug.WriteLine("Card detected: " + strRfidDetected);
 
         }
+
 
 
         private void soundBuzzer()
@@ -129,12 +230,7 @@ namespace IOTLogic
 
         }
 
-        static void UartDataHandler(object sender, SerialComms.UartEventArgs e)
-        {
-            strRfidDetected = e.data; 
-            Debug.WriteLine("Card detected: " + strRfidDetected);
-           
-        }
+        
 
        
 
@@ -182,15 +278,40 @@ namespace IOTLogic
 
         private void handleModeNormal()
         {
-            strRfidDetected = "";
+            strDataReceived = "";
 
             ChangeLEDState(ledGreen, SensorStatus.On);
 
-            while (true)
-            {
+           
+                if (sensorLightAdcValue <= 200)
+                {
+                    lightDark = true;
+                }
+                else
+                {
+                    lightDark = false;
+                }
+
+                if (prevLightDark != lightDark)
+                {
+                    sendDataToWindows("LIGHT= " + sensorLightAdcValue);
+
+                }
+                prevLightDark = lightDark;
+
+                if (strDataReceived.Equals("SENDBUTTON"))
+                {
+                    curMode = MODE_SENDBUTTON;
+                    Debug.WriteLine("===Entering MODE_SENDBUTTON===");
+
+                }
+                strDataReceived = "";
+
                 Sleep(200);
                 if (!strRfidDetected.Equals(""))
                 {
+                    
+                    strRfidDetected = "";
                     activateBuzzer(buzzerPin, 60);
                     ChangeLEDState(ledGreen, SensorStatus.On);
                     ChangeLEDState(ledRed, SensorStatus.Off);
@@ -204,7 +325,16 @@ namespace IOTLogic
                     ChangeLEDState(ledGreen, SensorStatus.On);
                     ChangeLEDState(ledRed, SensorStatus.Off);
                 }
-                strRfidDetected = "";
+
+
+                if (strDataReceived.Equals("SCANRFID"))
+                {
+                    curMode = MODE_SCAN;
+                    Debug.WriteLine("RFID scan mode active....");
+                }
+
+                strDataReceived = "";
+
 
                 if (buttonPressed == true)
                 {
@@ -215,13 +345,44 @@ namespace IOTLogic
                     ChangeLEDState(ledGreen, SensorStatus.Off);
 
                     Debug.WriteLine("Entering MODE_ALARM");
-                    break;
+                    
                 }
 
-            }
-
+           
 
         }
+
+        private void handleModeScan()
+        {
+            Debug.WriteLine("RFID scan mode active....");
+            if (!strRfidDetected.Equals(""))
+            {
+
+                strRfidDetected = "";
+                activateBuzzer(buzzerPin, 60);
+                ChangeLEDState(ledGreen, SensorStatus.On);
+                ChangeLEDState(ledRed, SensorStatus.Off);
+                Debug.WriteLine("One Card is detected.");
+                Debug.WriteLine("Can you figure out how to check for a specific card? \n");
+                Sleep(200);
+                ChangeLEDState(ledGreen, SensorStatus.Off);
+                ChangeLEDState(ledRed, SensorStatus.On);
+                activateBuzzer(buzzerPin, 0);
+                Sleep(200);
+                ChangeLEDState(ledGreen, SensorStatus.On);
+                ChangeLEDState(ledRed, SensorStatus.Off);
+                sendDataToWindows("RFID= " + strRfidDetected);
+
+            }
+            else
+            { 
+                if (strDataReceived.Equals("STOPRFID"))
+                {
+                    curMode = MODE_NORMAL;
+                }
+            }
+    }
+
 
         private void handleModeAlarm()
         {
@@ -246,6 +407,8 @@ namespace IOTLogic
             // described in http://aka.ms/backgroundtaskdeferral
             //
 
+
+
             StartUart();
 
             startButtonMonitoring();
@@ -256,6 +419,7 @@ namespace IOTLogic
 
             while (true)
             {
+                initComms();
                 Sleep(300);
 
                 if (curMode == MODE_NORMAL)
@@ -265,6 +429,10 @@ namespace IOTLogic
                 else if (curMode == MODE_ALARM)
                 {
                     handleModeAlarm();
+                }
+                else if (curMode == MODE_SCAN)
+                {
+                    handleModeScan();
                 }
                 else
                 {

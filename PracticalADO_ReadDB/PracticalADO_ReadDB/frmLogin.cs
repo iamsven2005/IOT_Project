@@ -15,12 +15,15 @@ namespace PracticalADO_ReadDB
 {
     public partial class frmLogin : Form
     {
+        DataComms dataComms;
+
         private string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
         public frmLogin()
         {
             InitializeComponent();
 
         }
+    
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -37,9 +40,9 @@ namespace PracticalADO_ReadDB
             this.Close();
         }
 
+        
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
