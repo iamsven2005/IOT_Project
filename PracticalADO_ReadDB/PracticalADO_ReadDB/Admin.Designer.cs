@@ -29,17 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.messageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.messagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sampleDBDataSet1 = new PracticalADO_ReadDB.SampleDBDataSet1();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
@@ -123,17 +117,18 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tbContactMd = new System.Windows.Forms.TextBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.roomStatus = new System.Windows.Forms.TextBox();
+            this.stopLightBtn = new System.Windows.Forms.Button();
+            this.sendLight = new System.Windows.Forms.Button();
+            this.lightValueTB = new System.Windows.Forms.TextBox();
             this.toDoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sampleDBDataSet2 = new PracticalADO_ReadDB.SampleDBDataSet2();
             this.messagesTableAdapter = new PracticalADO_ReadDB.SampleDBDataSet1TableAdapters.MessagesTableAdapter();
             this.sampleDBDataSet = new PracticalADO_ReadDB.SampleDBDataSet();
             this.sampleDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toDoListTableAdapter = new PracticalADO_ReadDB.SampleDBDataSet2TableAdapters.ToDoListTableAdapter();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.lightValueTB = new System.Windows.Forms.TextBox();
-            this.sendLight = new System.Windows.Forms.Button();
-            this.stopLightBtn = new System.Windows.Forms.Button();
-            this.roomStatus = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -142,7 +137,6 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
@@ -225,11 +219,11 @@
             this.splitContainer20.Panel1.SuspendLayout();
             this.splitContainer20.Panel2.SuspendLayout();
             this.splitContainer20.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toDoListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSetBindingSource)).BeginInit();
-            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -260,8 +254,7 @@
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.listBox1);
-            this.splitContainer3.Panel1.Controls.Add(this.dataGridView1);
+            this.splitContainer3.Panel1.Controls.Add(this.textBox1);
             // 
             // splitContainer3.Panel2
             // 
@@ -269,59 +262,6 @@
             this.splitContainer3.Size = new System.Drawing.Size(263, 450);
             this.splitContainer3.SplitterDistance = 372;
             this.splitContainer3.TabIndex = 0;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(13, 72);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(229, 260);
-            this.listBox1.TabIndex = 1;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.userDataGridViewTextBoxColumn,
-            this.messageDataGridViewTextBoxColumn,
-            this.timeDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.messagesBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(263, 372);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // userDataGridViewTextBoxColumn
-            // 
-            this.userDataGridViewTextBoxColumn.DataPropertyName = "User";
-            this.userDataGridViewTextBoxColumn.HeaderText = "User";
-            this.userDataGridViewTextBoxColumn.Name = "userDataGridViewTextBoxColumn";
-            // 
-            // messageDataGridViewTextBoxColumn
-            // 
-            this.messageDataGridViewTextBoxColumn.DataPropertyName = "Message";
-            this.messageDataGridViewTextBoxColumn.HeaderText = "Message";
-            this.messageDataGridViewTextBoxColumn.Name = "messageDataGridViewTextBoxColumn";
-            // 
-            // timeDataGridViewTextBoxColumn
-            // 
-            this.timeDataGridViewTextBoxColumn.DataPropertyName = "Time";
-            this.timeDataGridViewTextBoxColumn.HeaderText = "Time";
-            this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
             // 
             // messagesBindingSource
             // 
@@ -499,18 +439,18 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Top;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(3, 2);
             this.chart1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(248, 234);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1404,6 +1344,58 @@
             this.tbContactMd.Size = new System.Drawing.Size(177, 22);
             this.tbContactMd.TabIndex = 12;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.BackColor = System.Drawing.Color.LightGray;
+            this.tabPage6.Controls.Add(this.roomStatus);
+            this.tabPage6.Controls.Add(this.stopLightBtn);
+            this.tabPage6.Controls.Add(this.sendLight);
+            this.tabPage6.Controls.Add(this.lightValueTB);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(854, 421);
+            this.tabPage6.TabIndex = 7;
+            this.tabPage6.Text = "lightValue";
+            this.tabPage6.Click += new System.EventHandler(this.tabPage6_Click);
+            // 
+            // roomStatus
+            // 
+            this.roomStatus.Location = new System.Drawing.Point(72, 65);
+            this.roomStatus.Name = "roomStatus";
+            this.roomStatus.ReadOnly = true;
+            this.roomStatus.Size = new System.Drawing.Size(272, 22);
+            this.roomStatus.TabIndex = 3;
+            this.roomStatus.TextChanged += new System.EventHandler(this.roomStatus_TextChanged);
+            // 
+            // stopLightBtn
+            // 
+            this.stopLightBtn.Location = new System.Drawing.Point(489, 16);
+            this.stopLightBtn.Name = "stopLightBtn";
+            this.stopLightBtn.Size = new System.Drawing.Size(96, 30);
+            this.stopLightBtn.TabIndex = 2;
+            this.stopLightBtn.Text = "Stop Light";
+            this.stopLightBtn.UseVisualStyleBackColor = true;
+            this.stopLightBtn.Click += new System.EventHandler(this.stopLightBtn_Click);
+            // 
+            // sendLight
+            // 
+            this.sendLight.Location = new System.Drawing.Point(376, 16);
+            this.sendLight.Name = "sendLight";
+            this.sendLight.Size = new System.Drawing.Size(96, 30);
+            this.sendLight.TabIndex = 1;
+            this.sendLight.Text = "Send Light";
+            this.sendLight.UseVisualStyleBackColor = true;
+            this.sendLight.Click += new System.EventHandler(this.sendLight_Click);
+            // 
+            // lightValueTB
+            // 
+            this.lightValueTB.Location = new System.Drawing.Point(72, 24);
+            this.lightValueTB.Name = "lightValueTB";
+            this.lightValueTB.ReadOnly = true;
+            this.lightValueTB.Size = new System.Drawing.Size(272, 22);
+            this.lightValueTB.TabIndex = 0;
+            this.lightValueTB.TextChanged += new System.EventHandler(this.lightValueTB_TextChanged);
+            // 
             // toDoListBindingSource
             // 
             this.toDoListBindingSource.DataMember = "ToDoList";
@@ -1432,57 +1424,14 @@
             // 
             this.toDoListTableAdapter.ClearBeforeFill = true;
             // 
-            // tabPage6
+            // textBox1
             // 
-            this.tabPage6.BackColor = System.Drawing.Color.LightGray;
-            this.tabPage6.Controls.Add(this.roomStatus);
-            this.tabPage6.Controls.Add(this.stopLightBtn);
-            this.tabPage6.Controls.Add(this.sendLight);
-            this.tabPage6.Controls.Add(this.lightValueTB);
-            this.tabPage6.Location = new System.Drawing.Point(4, 25);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(854, 421);
-            this.tabPage6.TabIndex = 7;
-            this.tabPage6.Text = "lightValue";
-            this.tabPage6.Click += new System.EventHandler(this.tabPage6_Click);
-            // 
-            // lightValueTB
-            // 
-            this.lightValueTB.Location = new System.Drawing.Point(72, 24);
-            this.lightValueTB.Name = "lightValueTB";
-            this.lightValueTB.ReadOnly = true;
-            this.lightValueTB.Size = new System.Drawing.Size(272, 22);
-            this.lightValueTB.TabIndex = 0;
-            this.lightValueTB.TextChanged += new System.EventHandler(this.lightValueTB_TextChanged);
-            // 
-            // sendLight
-            // 
-            this.sendLight.Location = new System.Drawing.Point(376, 16);
-            this.sendLight.Name = "sendLight";
-            this.sendLight.Size = new System.Drawing.Size(96, 30);
-            this.sendLight.TabIndex = 1;
-            this.sendLight.Text = "Send Light";
-            this.sendLight.UseVisualStyleBackColor = true;
-            this.sendLight.Click += new System.EventHandler(this.sendLight_Click);
-            // 
-            // stopLightBtn
-            // 
-            this.stopLightBtn.Location = new System.Drawing.Point(489, 16);
-            this.stopLightBtn.Name = "stopLightBtn";
-            this.stopLightBtn.Size = new System.Drawing.Size(96, 30);
-            this.stopLightBtn.TabIndex = 2;
-            this.stopLightBtn.Text = "Stop Light";
-            this.stopLightBtn.UseVisualStyleBackColor = true;
-            this.stopLightBtn.Click += new System.EventHandler(this.stopLightBtn_Click);
-            // 
-            // roomStatus
-            // 
-            this.roomStatus.Location = new System.Drawing.Point(72, 65);
-            this.roomStatus.Name = "roomStatus";
-            this.roomStatus.ReadOnly = true;
-            this.roomStatus.Size = new System.Drawing.Size(272, 22);
-            this.roomStatus.TabIndex = 3;
-            this.roomStatus.TextChanged += new System.EventHandler(this.roomStatus_TextChanged);
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(263, 372);
+            this.textBox1.TabIndex = 0;
             // 
             // Admin
             // 
@@ -1503,10 +1452,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel1.PerformLayout();
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet1)).EndInit();
             this.splitContainer4.Panel1.ResumeLayout(false);
@@ -1601,12 +1550,12 @@
             this.splitContainer20.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer20)).EndInit();
             this.splitContainer20.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toDoListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSetBindingSource)).EndInit();
-            this.tabPage6.ResumeLayout(false);
-            this.tabPage6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1615,7 +1564,6 @@
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.TextBox adminmsg;
         private System.Windows.Forms.Button adminsend;
@@ -1630,10 +1578,6 @@
         private SampleDBDataSet1 sampleDBDataSet1;
         private System.Windows.Forms.BindingSource messagesBindingSource;
         private SampleDBDataSet1TableAdapters.MessagesTableAdapter messagesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn messageDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage usrmgtpg;
         private System.Windows.Forms.TabPage todo;
         private SampleDBDataSet sampleDBDataSet;
@@ -1709,11 +1653,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button scanCardBtn;
         private System.Windows.Forms.Button stopScanBtn;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Button stopLightBtn;
         private System.Windows.Forms.Button sendLight;
         private System.Windows.Forms.TextBox lightValueTB;
         private System.Windows.Forms.TextBox roomStatus;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
