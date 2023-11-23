@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -123,16 +124,8 @@
             this.stopLightBtn = new System.Windows.Forms.Button();
             this.sendLight = new System.Windows.Forms.Button();
             this.lightValueTB = new System.Windows.Forms.TextBox();
-            this.messagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sampleDBDataSet1 = new PracticalADO_ReadDB.SampleDBDataSet1();
-            this.toDoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sampleDBDataSet2 = new PracticalADO_ReadDB.SampleDBDataSet2();
-            this.messagesTableAdapter = new PracticalADO_ReadDB.SampleDBDataSet1TableAdapters.MessagesTableAdapter();
-            this.sampleDBDataSet = new PracticalADO_ReadDB.SampleDBDataSet();
-            this.sampleDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toDoListTableAdapter = new PracticalADO_ReadDB.SampleDBDataSet2TableAdapters.ToDoListTableAdapter();
             this.Temperature = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.Syslog = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -221,14 +214,8 @@
             this.splitContainer20.Panel2.SuspendLayout();
             this.splitContainer20.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toDoListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Temperature)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Syslog)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -436,7 +423,7 @@
             // 
             this.dashboard.BackColor = System.Drawing.Color.Black;
             this.dashboard.Controls.Add(this.Temperature);
-            this.dashboard.Controls.Add(this.chart1);
+            this.dashboard.Controls.Add(this.Syslog);
             this.dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboard.Location = new System.Drawing.Point(0, 0);
             this.dashboard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1385,75 +1372,45 @@
             this.lightValueTB.TabIndex = 0;
             this.lightValueTB.TextChanged += new System.EventHandler(this.lightValueTB_TextChanged);
             // 
-            // messagesBindingSource
-            // 
-            this.messagesBindingSource.DataMember = "Messages";
-            this.messagesBindingSource.DataSource = this.sampleDBDataSet1;
-            // 
-            // sampleDBDataSet1
-            // 
-            this.sampleDBDataSet1.DataSetName = "SampleDBDataSet1";
-            this.sampleDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // toDoListBindingSource
-            // 
-            this.toDoListBindingSource.DataMember = "ToDoList";
-            this.toDoListBindingSource.DataSource = this.sampleDBDataSet2;
-            // 
-            // sampleDBDataSet2
-            // 
-            this.sampleDBDataSet2.DataSetName = "SampleDBDataSet2";
-            this.sampleDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // messagesTableAdapter
-            // 
-            this.messagesTableAdapter.ClearBeforeFill = true;
-            // 
-            // sampleDBDataSet
-            // 
-            this.sampleDBDataSet.DataSetName = "SampleDBDataSet";
-            this.sampleDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sampleDBDataSetBindingSource
-            // 
-            this.sampleDBDataSetBindingSource.DataSource = this.sampleDBDataSet;
-            this.sampleDBDataSetBindingSource.Position = 0;
-            // 
-            // toDoListTableAdapter
-            // 
-            this.toDoListTableAdapter.ClearBeforeFill = true;
-            // 
             // Temperature
             // 
-            chartArea2.Name = "ChartArea1";
-            this.Temperature.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.Temperature.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.Temperature.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.Temperature.Legends.Add(legend1);
             this.Temperature.Location = new System.Drawing.Point(3, 3);
             this.Temperature.Name = "Temperature";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.Temperature.Series.Add(series1);
+            this.Temperature.Size = new System.Drawing.Size(493, 199);
+            this.Temperature.TabIndex = 0;
+            this.Temperature.Text = "Temperature";
+            title1.Name = "Temperature";
+            title1.Text = "Temperature";
+            this.Temperature.Titles.Add(title1);
+            // 
+            // Syslog
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.Syslog.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.Syslog.Legends.Add(legend2);
+            this.Syslog.Location = new System.Drawing.Point(502, 3);
+            this.Syslog.Name = "Syslog";
             series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series2.Legend = "Legend1";
             series2.Name = "Series1";
-            this.Temperature.Series.Add(series2);
-            this.Temperature.Size = new System.Drawing.Size(300, 202);
-            this.Temperature.TabIndex = 1;
-            this.Temperature.Text = "Temperature";
-            // 
-            // chart1
-            // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(309, 3);
-            this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(300, 200);
-            this.chart1.TabIndex = 2;
-            this.chart1.Text = "chart1";
+            this.Syslog.Series.Add(series2);
+            this.Syslog.Size = new System.Drawing.Size(438, 200);
+            this.Syslog.TabIndex = 1;
+            this.Syslog.Text = "Syslog";
+            title2.Name = "Syslog";
+            title2.Text = "Syslog";
+            this.Syslog.Titles.Add(title2);
             // 
             // Admin
             // 
@@ -1571,14 +1528,8 @@
             this.splitContainer20.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toDoListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Temperature)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Syslog)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1597,16 +1548,8 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.FlowLayoutPanel dashboard;
-        private SampleDBDataSet1 sampleDBDataSet1;
-        private System.Windows.Forms.BindingSource messagesBindingSource;
-        private SampleDBDataSet1TableAdapters.MessagesTableAdapter messagesTableAdapter;
         private System.Windows.Forms.TabPage usrmgtpg;
         private System.Windows.Forms.TabPage todo;
-        private SampleDBDataSet sampleDBDataSet;
-        private System.Windows.Forms.BindingSource sampleDBDataSetBindingSource;
-        private SampleDBDataSet2 sampleDBDataSet2;
-        private System.Windows.Forms.BindingSource toDoListBindingSource;
-        private SampleDBDataSet2TableAdapters.ToDoListTableAdapter toDoListTableAdapter;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.SplitContainer splitContainer6;
         private System.Windows.Forms.TabPage tabPage5;
@@ -1682,6 +1625,6 @@
         private System.Windows.Forms.TextBox roomStatus;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataVisualization.Charting.Chart Temperature;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Syslog;
     }
 }
