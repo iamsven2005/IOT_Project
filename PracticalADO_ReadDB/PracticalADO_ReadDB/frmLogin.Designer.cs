@@ -38,11 +38,11 @@
             this.test3 = new System.Windows.Forms.Button();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Title = new System.Windows.Forms.Label();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.ForgetPwd = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -73,7 +73,7 @@
             this.label2.Location = new System.Drawing.Point(-72, 5);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 1;
             this.label2.UseWaitCursor = true;
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -84,10 +84,10 @@
             this.tbUserName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
             this.tbUserName.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.tbUserName.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tbUserName.Location = new System.Drawing.Point(0, 24);
+            this.tbUserName.Location = new System.Drawing.Point(0, 26);
             this.tbUserName.Margin = new System.Windows.Forms.Padding(4);
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(261, 22);
+            this.tbUserName.Size = new System.Drawing.Size(261, 20);
             this.tbUserName.TabIndex = 1;
             this.tbUserName.Text = "Username";
             this.tbUserName.UseWaitCursor = true;
@@ -99,7 +99,7 @@
             this.tbPassword.Location = new System.Drawing.Point(0, 0);
             this.tbPassword.Margin = new System.Windows.Forms.Padding(8);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(261, 22);
+            this.tbPassword.Size = new System.Drawing.Size(261, 20);
             this.tbPassword.TabIndex = 2;
             this.tbPassword.Text = "Password";
             this.tbPassword.UseWaitCursor = true;
@@ -219,6 +219,16 @@
             this.splitContainer5.SplitterDistance = 46;
             this.splitContainer5.TabIndex = 10;
             // 
+            // textBox1
+            // 
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.textBox1.Location = new System.Drawing.Point(0, 30);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(261, 20);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.Text = "RFID";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
             // Title
             // 
             this.Title.AutoSize = true;
@@ -230,7 +240,7 @@
             this.Title.MaximumSize = new System.Drawing.Size(2000, 200);
             this.Title.MinimumSize = new System.Drawing.Size(200, 20);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(326, 20);
+            this.Title.Size = new System.Drawing.Size(271, 20);
             this.Title.TabIndex = 0;
             this.Title.Text = "Server Environment Monitoring System";
             this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -286,16 +296,6 @@
             this.ForgetPwd.UseVisualStyleBackColor = true;
             this.ForgetPwd.UseWaitCursor = true;
             this.ForgetPwd.Click += new System.EventHandler(this.ForgetPwd_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox1.Location = new System.Drawing.Point(0, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(261, 22);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "RFID";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // frmLogin
             // 
