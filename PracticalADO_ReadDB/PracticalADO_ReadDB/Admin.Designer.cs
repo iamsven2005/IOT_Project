@@ -532,7 +532,7 @@
             // 
             this.splitContainer7.Panel2.Controls.Add(this.splitContainer14);
             this.splitContainer7.Size = new System.Drawing.Size(846, 413);
-            this.splitContainer7.SplitterDistance = 281;
+            this.splitContainer7.SplitterDistance = 331;
             this.splitContainer7.SplitterWidth = 5;
             this.splitContainer7.TabIndex = 0;
             // 
@@ -551,7 +551,7 @@
             // splitContainer8.Panel2
             // 
             this.splitContainer8.Panel2.Controls.Add(this.splitContainer12);
-            this.splitContainer8.Size = new System.Drawing.Size(281, 413);
+            this.splitContainer8.Size = new System.Drawing.Size(331, 413);
             this.splitContainer8.SplitterDistance = 153;
             this.splitContainer8.SplitterWidth = 5;
             this.splitContainer8.TabIndex = 0;
@@ -571,7 +571,7 @@
             // splitContainer9.Panel2
             // 
             this.splitContainer9.Panel2.Controls.Add(this.splitContainer10);
-            this.splitContainer9.Size = new System.Drawing.Size(281, 153);
+            this.splitContainer9.Size = new System.Drawing.Size(331, 153);
             this.splitContainer9.SplitterDistance = 30;
             this.splitContainer9.SplitterWidth = 5;
             this.splitContainer9.TabIndex = 0;
@@ -606,7 +606,7 @@
             // splitContainer10.Panel2
             // 
             this.splitContainer10.Panel2.Controls.Add(this.GetContact);
-            this.splitContainer10.Size = new System.Drawing.Size(281, 118);
+            this.splitContainer10.Size = new System.Drawing.Size(331, 118);
             this.splitContainer10.SplitterDistance = 77;
             this.splitContainer10.SplitterWidth = 5;
             this.splitContainer10.TabIndex = 0;
@@ -628,7 +628,7 @@
             // 
             this.splitContainer11.Panel2.Controls.Add(this.Contact);
             this.splitContainer11.Panel2.Controls.Add(this.ContactResult);
-            this.splitContainer11.Size = new System.Drawing.Size(281, 77);
+            this.splitContainer11.Size = new System.Drawing.Size(331, 77);
             this.splitContainer11.SplitterDistance = 33;
             this.splitContainer11.SplitterWidth = 5;
             this.splitContainer11.TabIndex = 0;
@@ -683,7 +683,7 @@
             this.GetContact.Location = new System.Drawing.Point(0, 0);
             this.GetContact.Margin = new System.Windows.Forms.Padding(4);
             this.GetContact.Name = "GetContact";
-            this.GetContact.Size = new System.Drawing.Size(281, 36);
+            this.GetContact.Size = new System.Drawing.Size(331, 36);
             this.GetContact.TabIndex = 5;
             this.GetContact.Text = "Get Contact";
             this.GetContact.UseVisualStyleBackColor = true;
@@ -704,7 +704,7 @@
             // splitContainer12.Panel2
             // 
             this.splitContainer12.Panel2.Controls.Add(this.splitContainer13);
-            this.splitContainer12.Size = new System.Drawing.Size(281, 255);
+            this.splitContainer12.Size = new System.Drawing.Size(331, 255);
             this.splitContainer12.SplitterDistance = 37;
             this.splitContainer12.SplitterWidth = 5;
             this.splitContainer12.TabIndex = 0;
@@ -739,7 +739,7 @@
             // splitContainer13.Panel2
             // 
             this.splitContainer13.Panel2.Controls.Add(this.btnSave);
-            this.splitContainer13.Size = new System.Drawing.Size(281, 213);
+            this.splitContainer13.Size = new System.Drawing.Size(331, 213);
             this.splitContainer13.SplitterDistance = 174;
             this.splitContainer13.SplitterWidth = 5;
             this.splitContainer13.TabIndex = 0;
@@ -771,8 +771,8 @@
             this.splitContainer15.Panel2.Controls.Add(this.tbRFID);
             this.splitContainer15.Panel2.Controls.Add(this.tbName);
             this.splitContainer15.Panel2.Controls.Add(this.tbPwd);
-            this.splitContainer15.Size = new System.Drawing.Size(281, 174);
-            this.splitContainer15.SplitterDistance = 86;
+            this.splitContainer15.Size = new System.Drawing.Size(331, 174);
+            this.splitContainer15.SplitterDistance = 101;
             this.splitContainer15.SplitterWidth = 5;
             this.splitContainer15.TabIndex = 0;
             // 
@@ -847,7 +847,7 @@
             // 
             // stopScanBtn
             // 
-            this.stopScanBtn.Location = new System.Drawing.Point(137, 57);
+            this.stopScanBtn.Location = new System.Drawing.Point(161, 57);
             this.stopScanBtn.Name = "stopScanBtn";
             this.stopScanBtn.Size = new System.Drawing.Size(47, 23);
             this.stopScanBtn.TabIndex = 21;
@@ -857,7 +857,7 @@
             // 
             // scanCardBtn
             // 
-            this.scanCardBtn.Location = new System.Drawing.Point(80, 57);
+            this.scanCardBtn.Location = new System.Drawing.Point(104, 56);
             this.scanCardBtn.Name = "scanCardBtn";
             this.scanCardBtn.Size = new System.Drawing.Size(51, 23);
             this.scanCardBtn.TabIndex = 20;
@@ -870,7 +870,7 @@
             this.tbContact.Location = new System.Drawing.Point(3, 146);
             this.tbContact.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbContact.Name = "tbContact";
-            this.tbContact.Size = new System.Drawing.Size(181, 22);
+            this.tbContact.Size = new System.Drawing.Size(205, 22);
             this.tbContact.TabIndex = 19;
             // 
             // tbAdd
@@ -878,7 +878,7 @@
             this.tbAdd.Location = new System.Drawing.Point(3, 117);
             this.tbAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbAdd.Name = "tbAdd";
-            this.tbAdd.Size = new System.Drawing.Size(181, 22);
+            this.tbAdd.Size = new System.Drawing.Size(205, 22);
             this.tbAdd.TabIndex = 18;
             // 
             // tbNRIC
@@ -886,7 +886,7 @@
             this.tbNRIC.Location = new System.Drawing.Point(3, 87);
             this.tbNRIC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbNRIC.Name = "tbNRIC";
-            this.tbNRIC.Size = new System.Drawing.Size(181, 22);
+            this.tbNRIC.Size = new System.Drawing.Size(205, 22);
             this.tbNRIC.TabIndex = 17;
             // 
             // tbRFID
@@ -895,7 +895,7 @@
             this.tbRFID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbRFID.Name = "tbRFID";
             this.tbRFID.ReadOnly = true;
-            this.tbRFID.Size = new System.Drawing.Size(71, 22);
+            this.tbRFID.Size = new System.Drawing.Size(95, 22);
             this.tbRFID.TabIndex = 16;
             this.tbRFID.TextChanged += new System.EventHandler(this.tbRFID_TextChanged);
             // 
@@ -904,7 +904,7 @@
             this.tbName.Location = new System.Drawing.Point(3, 28);
             this.tbName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(181, 22);
+            this.tbName.Size = new System.Drawing.Size(205, 22);
             this.tbName.TabIndex = 15;
             // 
             // tbPwd
@@ -912,7 +912,7 @@
             this.tbPwd.Location = new System.Drawing.Point(3, -1);
             this.tbPwd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPwd.Name = "tbPwd";
-            this.tbPwd.Size = new System.Drawing.Size(181, 22);
+            this.tbPwd.Size = new System.Drawing.Size(205, 22);
             this.tbPwd.TabIndex = 14;
             // 
             // btnSave
@@ -922,7 +922,7 @@
             this.btnSave.Location = new System.Drawing.Point(0, 0);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(281, 34);
+            this.btnSave.Size = new System.Drawing.Size(331, 34);
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -943,7 +943,7 @@
             // splitContainer14.Panel2
             // 
             this.splitContainer14.Panel2.Controls.Add(this.splitContainer19);
-            this.splitContainer14.Size = new System.Drawing.Size(560, 413);
+            this.splitContainer14.Size = new System.Drawing.Size(510, 413);
             this.splitContainer14.SplitterDistance = 207;
             this.splitContainer14.SplitterWidth = 5;
             this.splitContainer14.TabIndex = 0;
@@ -963,7 +963,7 @@
             // splitContainer16.Panel2
             // 
             this.splitContainer16.Panel2.Controls.Add(this.splitContainer17);
-            this.splitContainer16.Size = new System.Drawing.Size(560, 207);
+            this.splitContainer16.Size = new System.Drawing.Size(510, 207);
             this.splitContainer16.SplitterDistance = 43;
             this.splitContainer16.SplitterWidth = 5;
             this.splitContainer16.TabIndex = 0;
@@ -997,8 +997,8 @@
             // splitContainer17.Panel2
             // 
             this.splitContainer17.Panel2.Controls.Add(this.splitContainer18);
-            this.splitContainer17.Size = new System.Drawing.Size(560, 159);
-            this.splitContainer17.SplitterDistance = 415;
+            this.splitContainer17.Size = new System.Drawing.Size(510, 159);
+            this.splitContainer17.SplitterDistance = 377;
             this.splitContainer17.SplitterWidth = 5;
             this.splitContainer17.TabIndex = 0;
             // 
@@ -1011,7 +1011,7 @@
             this.grdUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grdUser.Name = "grdUser";
             this.grdUser.RowTemplate.Height = 24;
-            this.grdUser.Size = new System.Drawing.Size(415, 159);
+            this.grdUser.Size = new System.Drawing.Size(377, 159);
             this.grdUser.TabIndex = 1;
             this.grdUser.Click += new System.EventHandler(this.grdUser_Click);
             // 
@@ -1030,7 +1030,7 @@
             // splitContainer18.Panel2
             // 
             this.splitContainer18.Panel2.Controls.Add(this.btnDelete);
-            this.splitContainer18.Size = new System.Drawing.Size(140, 159);
+            this.splitContainer18.Size = new System.Drawing.Size(128, 159);
             this.splitContainer18.SplitterDistance = 76;
             this.splitContainer18.SplitterWidth = 5;
             this.splitContainer18.TabIndex = 0;
@@ -1042,7 +1042,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(0, 0);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(140, 76);
+            this.btnUpdate.Size = new System.Drawing.Size(128, 76);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -1055,7 +1055,7 @@
             this.btnDelete.Location = new System.Drawing.Point(0, 0);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(140, 78);
+            this.btnDelete.Size = new System.Drawing.Size(128, 78);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -1076,7 +1076,7 @@
             // splitContainer19.Panel2
             // 
             this.splitContainer19.Panel2.Controls.Add(this.splitContainer20);
-            this.splitContainer19.Size = new System.Drawing.Size(560, 201);
+            this.splitContainer19.Size = new System.Drawing.Size(510, 201);
             this.splitContainer19.SplitterDistance = 43;
             this.splitContainer19.SplitterWidth = 5;
             this.splitContainer19.TabIndex = 0;
@@ -1095,8 +1095,8 @@
             // splitContainer22.Panel2
             // 
             this.splitContainer22.Panel2.Controls.Add(this.btnModify);
-            this.splitContainer22.Size = new System.Drawing.Size(560, 43);
-            this.splitContainer22.SplitterDistance = 413;
+            this.splitContainer22.Size = new System.Drawing.Size(510, 43);
+            this.splitContainer22.SplitterDistance = 376;
             this.splitContainer22.SplitterWidth = 5;
             this.splitContainer22.TabIndex = 0;
             // 
@@ -1122,7 +1122,7 @@
             this.btnModify.Location = new System.Drawing.Point(0, 0);
             this.btnModify.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(142, 43);
+            this.btnModify.Size = new System.Drawing.Size(129, 43);
             this.btnModify.TabIndex = 15;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = true;
@@ -1159,8 +1159,8 @@
             this.splitContainer20.Panel2.Controls.Add(this.label7);
             this.splitContainer20.Panel2.Controls.Add(this.label6);
             this.splitContainer20.Panel2.Controls.Add(this.tbContactMd);
-            this.splitContainer20.Size = new System.Drawing.Size(560, 153);
-            this.splitContainer20.SplitterDistance = 269;
+            this.splitContainer20.Size = new System.Drawing.Size(510, 153);
+            this.splitContainer20.SplitterDistance = 244;
             this.splitContainer20.SplitterWidth = 5;
             this.splitContainer20.TabIndex = 0;
             // 
@@ -1264,7 +1264,7 @@
             this.btnGetUserID.Location = new System.Drawing.Point(0, 130);
             this.btnGetUserID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGetUserID.Name = "btnGetUserID";
-            this.btnGetUserID.Size = new System.Drawing.Size(286, 23);
+            this.btnGetUserID.Size = new System.Drawing.Size(261, 23);
             this.btnGetUserID.TabIndex = 20;
             this.btnGetUserID.Text = "Get User";
             this.btnGetUserID.UseVisualStyleBackColor = true;
