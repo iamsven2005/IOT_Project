@@ -169,21 +169,21 @@ namespace IOTLogic
             ChangeLEDState(ledGreen, SensorStatus.On);
 
             Sleep(200);
-            if (!strRfidDetected.Equals(""))
-            {
-                activateBuzzer(buzzerPin, 60);
-                ChangeLEDState(ledGreen, SensorStatus.On);
-                ChangeLEDState(ledRed, SensorStatus.Off);
-                Debug.WriteLine("One Card is detected.");
-                Debug.WriteLine("Can you figure out how to check for a specific card? \n");
-                Sleep(200);
-                ChangeLEDState(ledGreen, SensorStatus.Off);
-                ChangeLEDState(ledRed, SensorStatus.On);
-                activateBuzzer(buzzerPin, 0);
-                Sleep(200);
-                ChangeLEDState(ledRed, SensorStatus.Off);
+            //if (!strRfidDetected.Equals(""))
+            //{
+            //    activateBuzzer(buzzerPin, 60);
+            //    ChangeLEDState(ledGreen, SensorStatus.On);
+            //    ChangeLEDState(ledRed, SensorStatus.Off);
+            //    Debug.WriteLine("One Card is detected.");
+            //    Debug.WriteLine("Can you figure out how to check for a specific card? \n");
+            //    Sleep(200);
+            //    ChangeLEDState(ledGreen, SensorStatus.Off);
+            //    ChangeLEDState(ledRed, SensorStatus.On);
+            //    activateBuzzer(buzzerPin, 0);
+            //    Sleep(200);
+            //    ChangeLEDState(ledRed, SensorStatus.Off);
 
-            }
+            //}
             strRfidDetected = "";
 
             if (buttonPressed == true)

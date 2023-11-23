@@ -374,15 +374,15 @@ namespace PracticalADO_ReadDB
         }
 
 
-        public void extractRfidData(String strData)
-        {
-            string dt = DateTime.Now.ToString("s");
-            if (strData.IndexOf("RFID=") != -1)
-            {
+        //public void extractRfidData(String strData)
+        //{
+        //    string dt = DateTime.Now.ToString("s");
+        //    if (strData.IndexOf("RFID=") != -1)
+        //    {
 
-                handleRfidSensorData(strData, dt, "RFID=");
-            }
-        }
+        //        handleRfidSensorData(strData, dt, "RFID=");
+        //    }
+        //}
 
         private void handleRfidSensorData(string strData, string strTime, string ID)
         {
@@ -414,8 +414,7 @@ namespace PracticalADO_ReadDB
         public void processDataReceive(String strData)
         {
             myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData);
-
-            listBox1.Invoke(d, new object[] { strData });
+            textBox1.Invoke(d, new object[] { strData });
         }
 
         
@@ -464,6 +463,11 @@ namespace PracticalADO_ReadDB
         }
 
         private void roomStatus_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

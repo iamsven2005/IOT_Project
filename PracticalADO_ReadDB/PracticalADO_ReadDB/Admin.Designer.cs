@@ -34,8 +34,7 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.messagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sampleDBDataSet1 = new PracticalADO_ReadDB.SampleDBDataSet1();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.adminmsg = new System.Windows.Forms.TextBox();
             this.adminsend = new System.Windows.Forms.Button();
@@ -122,13 +121,14 @@
             this.stopLightBtn = new System.Windows.Forms.Button();
             this.sendLight = new System.Windows.Forms.Button();
             this.lightValueTB = new System.Windows.Forms.TextBox();
+            this.messagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sampleDBDataSet1 = new PracticalADO_ReadDB.SampleDBDataSet1();
             this.toDoListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sampleDBDataSet2 = new PracticalADO_ReadDB.SampleDBDataSet2();
             this.messagesTableAdapter = new PracticalADO_ReadDB.SampleDBDataSet1TableAdapters.MessagesTableAdapter();
             this.sampleDBDataSet = new PracticalADO_ReadDB.SampleDBDataSet();
             this.sampleDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toDoListTableAdapter = new PracticalADO_ReadDB.SampleDBDataSet2TableAdapters.ToDoListTableAdapter();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -137,8 +137,6 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
@@ -220,6 +218,8 @@
             this.splitContainer20.Panel2.SuspendLayout();
             this.splitContainer20.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toDoListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).BeginInit();
@@ -263,15 +263,15 @@
             this.splitContainer3.SplitterDistance = 372;
             this.splitContainer3.TabIndex = 0;
             // 
-            // messagesBindingSource
+            // textBox1
             // 
-            this.messagesBindingSource.DataMember = "Messages";
-            this.messagesBindingSource.DataSource = this.sampleDBDataSet1;
-            // 
-            // sampleDBDataSet1
-            // 
-            this.sampleDBDataSet1.DataSetName = "SampleDBDataSet1";
-            this.sampleDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(263, 372);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // splitContainer4
             // 
@@ -847,7 +847,7 @@
             // 
             // stopScanBtn
             // 
-            this.stopScanBtn.Location = new System.Drawing.Point(137, 56);
+            this.stopScanBtn.Location = new System.Drawing.Point(137, 57);
             this.stopScanBtn.Name = "stopScanBtn";
             this.stopScanBtn.Size = new System.Drawing.Size(47, 23);
             this.stopScanBtn.TabIndex = 21;
@@ -857,7 +857,7 @@
             // 
             // scanCardBtn
             // 
-            this.scanCardBtn.Location = new System.Drawing.Point(80, 56);
+            this.scanCardBtn.Location = new System.Drawing.Point(80, 57);
             this.scanCardBtn.Name = "scanCardBtn";
             this.scanCardBtn.Size = new System.Drawing.Size(51, 23);
             this.scanCardBtn.TabIndex = 20;
@@ -1396,6 +1396,16 @@
             this.lightValueTB.TabIndex = 0;
             this.lightValueTB.TextChanged += new System.EventHandler(this.lightValueTB_TextChanged);
             // 
+            // messagesBindingSource
+            // 
+            this.messagesBindingSource.DataMember = "Messages";
+            this.messagesBindingSource.DataSource = this.sampleDBDataSet1;
+            // 
+            // sampleDBDataSet1
+            // 
+            this.sampleDBDataSet1.DataSetName = "SampleDBDataSet1";
+            this.sampleDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // toDoListBindingSource
             // 
             this.toDoListBindingSource.DataMember = "ToDoList";
@@ -1424,15 +1434,6 @@
             // 
             this.toDoListTableAdapter.ClearBeforeFill = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(263, 372);
-            this.textBox1.TabIndex = 0;
-            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1456,8 +1457,6 @@
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet1)).EndInit();
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel1.PerformLayout();
             this.splitContainer4.Panel2.ResumeLayout(false);
@@ -1552,6 +1551,8 @@
             this.splitContainer20.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toDoListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).EndInit();
