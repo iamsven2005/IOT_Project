@@ -20,6 +20,7 @@ namespace IOTLogic
         const int MODE_NORMAL = 1;
         const int MODE_ALARM = 2;
         const int MODE_SENDLIGHT = 3;
+        const int MODE_RFID = 4;
 
         static int curMode;
 
@@ -202,6 +203,13 @@ namespace IOTLogic
                 curMode = MODE_SENDLIGHT;
                 Debug.WriteLine("===Entering mode sendlight===");
             }
+
+            if (strDataReceived.Equals("SCANRFID"))
+            {
+                curMode = MODE_RFID;
+                Debug.WriteLine("===Entering mode handle RFID===");
+            }
+
             strDataReceived = "";
         }
 
@@ -274,6 +282,37 @@ namespace IOTLogic
             
         }
 
+        private void handleRFIDdata()
+        {
+            ChangeLEDState(ledGreen, SensorStatus.On);
+
+            Sleep(200);
+            if (!strRfidDetected.Equals(""))
+            {
+                sendDataToWindows("RFID= " + strRfidDetected);
+                activateBuzzer(buzzerPin, 60);
+                ChangeLEDState(ledGreen, SensorStatus.On);
+                ChangeLEDState(ledRed, SensorStatus.Off);
+                Debug.WriteLine("One Card is detected.");
+                Debug.WriteLine("Can you figure out how to check for a specific card? \n");
+                Sleep(200);
+                ChangeLEDState(ledGreen, SensorStatus.Off);
+                ChangeLEDState(ledRed, SensorStatus.On);
+                activateBuzzer(buzzerPin, 0);
+                Sleep(200);
+                ChangeLEDState(ledRed, SensorStatus.Off);
+
+            }
+            strRfidDetected = "";
+
+            if (strDataReceived == "STOPRFID")
+            {
+                handleModeNormal();
+            }
+
+            strDataReceived = "";
+        }
+
         private int getLight()
         {
             iReadAdcValue = GetLightValue(lightPin);
@@ -307,6 +346,8 @@ namespace IOTLogic
             return value;
         }
 
+        
+
 
         public void Run(IBackgroundTaskInstance taskInstance)
         {
@@ -333,7 +374,6 @@ namespace IOTLogic
                 Sleep(300);
 
                 
-
                 if (curMode == MODE_NORMAL)
                 {
                     handleModeNormal();
@@ -345,6 +385,10 @@ namespace IOTLogic
                 else if (curMode == MODE_SENDLIGHT)
                 {
                     handleModeSendLight();
+                }
+                else if (curMode == MODE_RFID)
+                {
+                    handleRFIDdata();
                 }
                 else
                 {

@@ -385,11 +385,12 @@ namespace PracticalADO_ReadDB
 
         public void handleRfidData(String strData)
         {
+            string dt = DateTime.Now.ToString("s");
+
             if (strData.IndexOf("RFID=") != -1)
             {
-                string dt = DateTime.Now.ToString("s");
 
-                handleRfidSensorData(strData, dt, "RFID==");
+                handleRfidSensorData(strData, dt, "RFID=");
             }
 
         }
@@ -407,6 +408,8 @@ namespace PracticalADO_ReadDB
         public void processDataReceive(String strData)
         {
             myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData);
+            myprocessDataDelegate d2 = new myprocessDataDelegate(handleRfidData);
+
             listBox1.Invoke(d, new object[] { strData });
         }
 
