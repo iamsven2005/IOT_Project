@@ -45,6 +45,7 @@ namespace PracticalADO_ReadDB
         
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            InitComms();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -52,11 +53,13 @@ namespace PracticalADO_ReadDB
 
             SqlConnection myConnect = new SqlConnection(strConnectionString);
             string strCommandText = "SELECT Name, Password FROM MyUser WHERE Name=@uname";
-            string RFID_authent_cmd = "SELECT UniqueRFID FROM MyUser WHERE Name=@uname AND ";
+            string RFID_authent_cmd = "SELECT UniqueRFID FROM MyUser WHERE Name=@uname AND UniqueRFID=@uRfid";
             SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
             SqlCommand cmd2 = new SqlCommand(RFID_authent_cmd, myConnect);
 
             cmd.Parameters.AddWithValue("@uname", tbUserName.Text);
+            cmd2.Parameters.AddWithValue("@uRfid", textBox1.Text);
+
 
             try
             {
@@ -275,5 +278,17 @@ namespace PracticalADO_ReadDB
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dataComms.sendData("STOPRFID");
+        }
+
+        private void scanBtn_Click(object sender, EventArgs e)
+        {
+            dataComms.sendData("SCANRFID");
+        }
+
+
     }
 }

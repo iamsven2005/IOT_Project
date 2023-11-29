@@ -38,11 +38,13 @@
             this.test3 = new System.Windows.Forms.Button();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Title = new System.Windows.Forms.Label();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.ForgetPwd = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.scanBtn = new System.Windows.Forms.Button();
+            this.stopBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -172,7 +174,7 @@
             // test3
             // 
             this.test3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.test3.Location = new System.Drawing.Point(0, 180);
+            this.test3.Location = new System.Drawing.Point(7, 184);
             this.test3.Margin = new System.Windows.Forms.Padding(4);
             this.test3.Name = "test3";
             this.test3.Size = new System.Drawing.Size(146, 28);
@@ -213,11 +215,23 @@
             // 
             // splitContainer5.Panel2
             // 
+            this.splitContainer5.Panel2.Controls.Add(this.stopBtn);
+            this.splitContainer5.Panel2.Controls.Add(this.scanBtn);
             this.splitContainer5.Panel2.Controls.Add(this.textBox1);
             this.splitContainer5.Panel2.Controls.Add(this.tbPassword);
             this.splitContainer5.Size = new System.Drawing.Size(261, 100);
             this.splitContainer5.SplitterDistance = 46;
             this.splitContainer5.TabIndex = 10;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox1.Location = new System.Drawing.Point(0, 28);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(136, 22);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.Text = "RFID";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // Title
             // 
@@ -287,15 +301,25 @@
             this.ForgetPwd.UseWaitCursor = true;
             this.ForgetPwd.Click += new System.EventHandler(this.ForgetPwd_Click);
             // 
-            // textBox1
+            // scanBtn
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox1.Location = new System.Drawing.Point(0, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(261, 22);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "RFID";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.scanBtn.Location = new System.Drawing.Point(142, 26);
+            this.scanBtn.Name = "scanBtn";
+            this.scanBtn.Size = new System.Drawing.Size(57, 23);
+            this.scanBtn.TabIndex = 4;
+            this.scanBtn.Text = "Scan Button";
+            this.scanBtn.UseVisualStyleBackColor = true;
+            this.scanBtn.Click += new System.EventHandler(this.scanBtn_Click);
+            // 
+            // stopBtn
+            // 
+            this.stopBtn.Location = new System.Drawing.Point(205, 26);
+            this.stopBtn.Name = "stopBtn";
+            this.stopBtn.Size = new System.Drawing.Size(56, 23);
+            this.stopBtn.TabIndex = 5;
+            this.stopBtn.Text = "Stop Button";
+            this.stopBtn.UseVisualStyleBackColor = true;
+            this.stopBtn.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmLogin
             // 
@@ -356,6 +380,8 @@
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Button AdminLogin;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button stopBtn;
+        private System.Windows.Forms.Button scanBtn;
     }
 }
 
