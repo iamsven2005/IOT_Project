@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BCrypt.Net;
 using System.Configuration;
 using System.Data.SqlClient;
 
@@ -471,5 +471,9 @@ namespace PracticalADO_ReadDB
         {
 
         }
+
+
+
+
     }
 }
