@@ -144,7 +144,7 @@ namespace PracticalADO_ReadDB
             updateCmd.Parameters.AddWithValue("@NewRFID", tbRFID.Text);
             updateCmd.Parameters.AddWithValue("@NewNRIC", tbNRIC.Text);
             updateCmd.Parameters.AddWithValue("@NewAdd", tbAdd.Text);
-            updateCmd.Parameters.AddWithValue("@NewContact", lblContact.Text);
+            updateCmd.Parameters.AddWithValue("@NewContact", tbContact.Text);
             updateCmd.Parameters.AddWithValue("@NewPwd", BCrypt.Net.BCrypt.HashPassword(tbPwd.Text));
             myConnect.Open();
             result = updateCmd.ExecuteNonQuery();
@@ -326,6 +326,12 @@ namespace PracticalADO_ReadDB
             return (float.Parse(extractStringValue(strData, ID)));
         }
 
+        private int extractIntValue(string strData, string ID)
+        {
+            return (int.Parse(extractStringValue(strData, ID)));
+
+        }
+
         private void handleLightSensorData(string strData, string strTime, string ID)
         {
             string strlightValue = extractStringValue(strData, ID);
@@ -354,6 +360,21 @@ namespace PracticalADO_ReadDB
 
         }
 
+        private void handleTempValue(string strData, string strTime, string ID)
+        {
+            string strlightValue = extractStringValue(strData, ID);
+            Console.WriteLine(strlightValue);
+
+            lightValueTB.Text = strlightValue;
+            Console.WriteLine(strData);
+
+            float fLightValue = extractFloatValue(strData, ID);
+
+            string status = "";
+
+            lblTemp.Text = status;
+            saveLightSensorDataToDB(strTime, strlightValue, status);
+        }
 
         
 
@@ -370,8 +391,113 @@ namespace PracticalADO_ReadDB
                 handleRfidSensorData(strData, strTime, "RFID=");
             }
 
+            if (strData.IndexOf("Temp=") != -1)
+            {
+                handleTempSensorData(strData, strTime, "Temp=");
+            }
+
+            if (strData.IndexOf("Moisture=") != -1)
+            {
+                handleMoistureSensorData(strData, strTime, "Moisture=");
+            }
 
         }
+
+        private void handleTempSensorData(string strData, string strTime, string ID)
+        {
+            float floatValue = extractFloatValue(strData, ID);
+            string strValue = extractStringValue(strData, ID);
+
+            
+            lblTemp.Text = strValue;
+
+            if (floatValue > 30)
+            {
+
+                lblTemp.ForeColor = Color.Red;
+            }
+            else if (floatValue > 28 && floatValue < 30)
+            {
+                lblTemp.ForeColor = Color.Yellow;
+
+            }
+            else
+            {
+                lblTemp.ForeColor = Color.Green;
+            }
+            saveTempSensorDataToDB(strTime, floatValue);
+
+
+        }
+
+        private void handleMoistureSensorData(string strData, string strTime, string ID)
+        {
+            string strValue = extractStringValue(strData, ID);
+            int intMoistureVal = extractIntValue(strData, ID);
+
+            if (intMoistureVal > 500)
+            {
+
+                lblMoisture.ForeColor = Color.Red;
+            }
+            else if (intMoistureVal > 100 && intMoistureVal < 500)
+            {
+                lblMoisture.ForeColor = Color.Yellow;
+
+            }
+            else
+            {
+                lblMoisture.ForeColor = Color.Green;
+            }
+
+            Console.WriteLine(strValue);
+            lblMoisture.Text = strValue;
+
+            saveMoistureSensorDataToDB(strTime, intMoistureVal);
+
+
+        }
+
+        private void saveTempSensorDataToDB(string strTime, float strTempValue)
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+
+            String strCommandText =
+                "INSERT Temperature (DateTime, Temp) " +
+               " VALUES (@time, @temp)";
+
+            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
+            updateCmd.Parameters.AddWithValue("@time", strTime);
+            updateCmd.Parameters.AddWithValue("@temp", strTempValue);
+            //updateCmd.Parameters.AddWithValue("@eventid", strEventID);
+            //updateCmd.Parameters.AddWithValue("@userid", strUserID);
+
+            myConnect.Open();
+            int result = updateCmd.ExecuteNonQuery();
+
+            myConnect.Close();
+        }
+
+        private void saveMoistureSensorDataToDB(string strTime, int strMoistureValue)
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+
+            String strCommandText =
+                "INSERT MoistureTable (DateTime, Moisture) " +
+               " VALUES (@time, @moisture)";
+
+            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
+            updateCmd.Parameters.AddWithValue("@time", strTime);
+            updateCmd.Parameters.AddWithValue("@moisture", strMoistureValue);
+            //updateCmd.Parameters.AddWithValue("@eventid", strEventID);
+            //updateCmd.Parameters.AddWithValue("@userid", strUserID);
+
+            myConnect.Open();
+            int result = updateCmd.ExecuteNonQuery();
+
+            myConnect.Close();
+        }
+
 
 
         //public void extractRfidData(String strData)
@@ -390,7 +516,7 @@ namespace PracticalADO_ReadDB
             Console.WriteLine(strValue);
             tbRFID.Text = strValue;
 
-            // Console.WriteLine(strData);
+            // Console.WriteLine(sttrData);
 
             // float fLightValue = extractFloatValue(strData, ID);
 
@@ -472,8 +598,44 @@ namespace PracticalADO_ReadDB
 
         }
 
+        private void lblContact_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void Temperature_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click_3(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click_4(object sender, EventArgs e)
+        {
+
+        }
     }
 }

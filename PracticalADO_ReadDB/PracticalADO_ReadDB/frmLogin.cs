@@ -17,6 +17,26 @@ namespace PracticalADO_ReadDB
     {
         DataComms dataComms;
 
+        //public void commsDataReceive(string dataReceived)
+        //{
+        //    processDataReceive(dataReceived);
+        //}
+
+        //public void commsSendError(string errMsg)
+        //{
+        //    MessageBox.Show(errMsg);
+        //    processDataReceive(errMsg);
+        //}
+
+
+        //private void InitComms()
+        //{
+        //    dataComms = new DataComms();
+        //    dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataReceive);
+        //    dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError);
+        //}
+
+
         public delegate void myprocessDataDelegate(String strData);
 
         private string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
@@ -45,7 +65,7 @@ namespace PracticalADO_ReadDB
         
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            InitComms();
+            //InitComms();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -53,12 +73,12 @@ namespace PracticalADO_ReadDB
 
             SqlConnection myConnect = new SqlConnection(strConnectionString);
             string strCommandText = "SELECT Name, Password FROM MyUser WHERE Name=@uname";
-            string RFID_authent_cmd = "SELECT UniqueRFID FROM MyUser WHERE Name=@uname AND UniqueRFID=@uRfid";
+            // string RFID_authent_cmd = "SELECT UniqueRFID FROM MyUser WHERE Name=@uname";
             SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
-            SqlCommand cmd2 = new SqlCommand(RFID_authent_cmd, myConnect);
+            // SqlCommand cmd2 = new SqlCommand(RFID_authent_cmd, myConnect);
 
             cmd.Parameters.AddWithValue("@uname", tbUserName.Text);
-            cmd2.Parameters.AddWithValue("@uRfid", textBox1.Text);
+            // cmd.Parameters.AddWithValue("@uRfid", textBox1.Text);
 
 
             try
@@ -70,11 +90,17 @@ namespace PracticalADO_ReadDB
                 {
                     reader.Read();
                     string hashedPasswordFromDB = reader["Password"].ToString();
+                    // string RFIDFromDB = reader["UniqueRFID"].ToString();
+                    // Console.WriteLine(RFIDFromDB);
+
 
                     // Verify the entered password during login
                     string enteredPassword = tbPassword.Text; // Replace with the actual user-entered password
+                    // string RFID_entered = textBox1.Text.ToString();
+                    // Console.WriteLine(RFID_entered);
 
-                    if (BCrypt.Net.BCrypt.Verify(enteredPassword, hashedPasswordFromDB ))
+
+                    if (BCrypt.Net.BCrypt.Verify(enteredPassword, hashedPasswordFromDB))
                     {
                         MessageBox.Show($"Succcess: Welcome {tbUserName.Text}");
 
@@ -156,6 +182,8 @@ namespace PracticalADO_ReadDB
         {
             string dataToPass = "Admin";
             Admin f2 = new Admin(dataToPass);
+            dataComms = null;
+
             f2.Show();
             this.Hide();
         }
@@ -202,16 +230,7 @@ namespace PracticalADO_ReadDB
 
         }
 
-        private void extractSensorData(string strData, string strTime)
-        {
-          
-            if (strData.IndexOf("RFID=") != -1)
-            {
-                handleRfidSensorData(strData, strTime, "RFID=");
-            }
-
-
-        }
+       
 
 
         //public void extractRfidData(String strData)
@@ -224,56 +243,8 @@ namespace PracticalADO_ReadDB
         //    }
         //}
 
-        private void handleRfidSensorData(string strData, string strTime, string ID)
-        {
-            string strValue = extractStringValue(strData, ID);
-            Console.WriteLine(strValue);
-            textBox1.Text = strValue;
-
-        }
-
-        private string extractStringValue(string strData, string ID)
-        {
-            string result = strData.Substring(strData.IndexOf(ID) + ID.Length);
-            return result;
-        }
-
-
-        public void handleSensorData(String strData)
-        {
-            Console.WriteLine(strData);
-            string dt = DateTime.Now.ToString("s");
-            extractSensorData(strData, dt);
-
-            string strMessage = dt + ":" + strData;
-
-        }
-
-        public void processDataReceive(String strData)
-        {
-            myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData);
-            // textBox1.Invoke(d, new object[] { strData });
-        }
-
-        public void commsDataReceive(string dataReceived)
-        {
-            processDataReceive(dataReceived);
-        }
-
-        public void commsSendError(string errMsg)
-        {
-            MessageBox.Show(errMsg);
-            processDataReceive(errMsg);
-        }
-
-
-        private void InitComms()
-        {
-            dataComms = new DataComms();
-            dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataReceive);
-            dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError);
-        }
-
+       
+        
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 

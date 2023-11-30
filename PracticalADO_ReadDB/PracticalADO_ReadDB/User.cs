@@ -29,7 +29,7 @@ namespace PracticalADO_ReadDB
         private void User_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sampleDBDataSet.Messages' table. You can move, or remove it, as needed.
-            this.messagesTableAdapter.Fill(this.sampleDBDataSet.Messages);
+            // this.messagesTableAdapter.Fill(this.sampleDBDataSet.Messages);
             MessageBox.Show(receivedData);
         }
 
@@ -59,7 +59,7 @@ namespace PracticalADO_ReadDB
             else
             {
                 //AddTitle.Font = new System.Drawing.Font("Arial Rounded MT", width, System.Drawing.FontStyle.Bold);
-                this.Font = new System.Drawing.Font("Arial Rounded MT", height, System.Drawing.FontStyle.Regular);
+                // this.Font = new System.Drawing.Font("Arial Rounded MT", height, System.Drawing.FontStyle.Regular);
                 //this.TextBox.Height = this.Height * 2;
                 //tbUserName.Height = this.Height * 2;
             }

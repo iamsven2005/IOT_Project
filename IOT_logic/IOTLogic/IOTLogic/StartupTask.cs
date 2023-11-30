@@ -35,6 +35,12 @@ namespace IOTLogic
         IButtonSensor button = DeviceFactory.Build.ButtonSensor(Pin.DigitalPin7);
         ILed ledRed = DeviceFactory.Build.Led(Pin.DigitalPin5);
         ILed ledGreen = DeviceFactory.Build.Led(Pin.DigitalPin6);
+        Pin tempPin = Pin.AnalogPin0;
+        Pin waterPin = Pin.AnalogPin2;
+
+        double temp = 23;
+
+        double sensorTemp;
 
         int lightAdcValue = 800;
         int iPrevAdcValue = 800, iReadAdcValue, iDiff = 0;
@@ -185,6 +191,14 @@ namespace IOTLogic
 
             //}
             strRfidDetected = "";
+            sensorMoistureAdcValue = getMoisture();
+            Debug.WriteLine("Moisture is " + sensorMoistureAdcValue.ToString());
+            sendDataToWindows("Moisture= " + sensorMoistureAdcValue.ToString());
+
+
+            sensorTemp = getTemp();
+            Debug.WriteLine("Temp in degrees Celsius is " + sensorTemp.ToString("N2"));
+            sendDataToWindows("Temp= " + sensorTemp.ToString("N2"));
 
             if (buttonPressed == true)
             {
@@ -346,8 +360,55 @@ namespace IOTLogic
             return value;
         }
 
+
         
 
+        private int ReadTempADC(Pin pin)
+        {
+            sm.WaitOne();
+            int val = DeviceFactory.Build.GrovePi().AnalogRead(pin);
+            sm.Release();
+            return val;
+        }
+
+        private double getTemp()
+        {
+            int adcValue;
+            double tempCalculated = 0, R;
+
+            adcValue = ReadTempADC(tempPin);
+
+            int B = 4250, R0 = 100000;
+            R = 100000 * (1023.0 - adcValue) / adcValue;
+            tempCalculated = 1 / (Math.Log(R / R0) / B + 1 / 298.15) - 273.15;
+
+            if (!Double.IsNaN(tempCalculated) && tempCalculated > 15 && tempCalculated < 40)
+            {
+                temp = tempCalculated;
+            }
+
+            return temp;
+
+        }
+
+        int moistureAdcValue = 1023;
+
+        private int sensorMoistureAdcValue;
+
+        private int getMoisture()
+        {
+            int adcValue;
+
+            sm.WaitOne();
+            adcValue = DeviceFactory.Build.GrovePi().AnalogRead(waterPin);
+            sm.Release();
+            if (adcValue <= 1023)
+            {
+                moistureAdcValue = adcValue;
+            }
+            return 1023 - moistureAdcValue;
+
+        }
 
         public void Run(IBackgroundTaskInstance taskInstance)
         {
