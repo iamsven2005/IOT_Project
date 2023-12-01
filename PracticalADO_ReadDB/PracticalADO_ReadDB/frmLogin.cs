@@ -17,25 +17,6 @@ namespace PracticalADO_ReadDB
     {
         DataComms dataComms;
 
-        //public void commsDataReceive(string dataReceived)
-        //{
-        //    processDataReceive(dataReceived);
-        //}
-
-        //public void commsSendError(string errMsg)
-        //{
-        //    MessageBox.Show(errMsg);
-        //    processDataReceive(errMsg);
-        //}
-
-
-        //private void InitComms()
-        //{
-        //    dataComms = new DataComms();
-        //    dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataReceive);
-        //    dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError);
-        //}
-
 
         public delegate void myprocessDataDelegate(String strData);
 
@@ -170,8 +151,6 @@ namespace PracticalADO_ReadDB
         {
 
         }
-        //Test files for references (please delete before submitting)
-
         private void test3_Click(object sender, EventArgs e)
         {
             Charts f5 = new Charts();

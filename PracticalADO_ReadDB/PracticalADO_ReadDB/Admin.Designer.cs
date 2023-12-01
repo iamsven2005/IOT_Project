@@ -17,14 +17,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.sysLogTB = new System.Windows.Forms.TextBox();
@@ -35,8 +35,14 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.syslogLB = new System.Windows.Forms.ListBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.label12 = new System.Windows.Forms.Label();
+            this.motionLbl = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.doorLbl = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.degcelLbl = new System.Windows.Forms.Label();
             this.moistureLbl = new System.Windows.Forms.Label();
@@ -47,7 +53,6 @@
             this.dashboard = new System.Windows.Forms.FlowLayoutPanel();
             this.Temperature = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Moisture = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.btnLoadData2 = new System.Windows.Forms.Button();
             this.usrmgtpg = new System.Windows.Forms.TabPage();
             this.todo = new System.Windows.Forms.TabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
@@ -123,12 +128,6 @@
             this.sendLight = new System.Windows.Forms.Button();
             this.sampleDBDataSet2 = new PracticalADO_ReadDB.SampleDBDataSet2();
             this.sampleDBDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.doorLbl = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.motionLbl = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.syslogLB = new System.Windows.Forms.ListBox();
-            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -368,6 +367,27 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Logs";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label13.Location = new System.Drawing.Point(31, 23);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(126, 25);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "System Log";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // syslogLB
+            // 
+            this.syslogLB.FormattingEnabled = true;
+            this.syslogLB.ItemHeight = 16;
+            this.syslogLB.Location = new System.Drawing.Point(25, 60);
+            this.syslogLB.Name = "syslogLB";
+            this.syslogLB.Size = new System.Drawing.Size(1005, 340);
+            this.syslogLB.TabIndex = 0;
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.splitContainer2);
@@ -410,6 +430,52 @@
             this.splitContainer2.Size = new System.Drawing.Size(1048, 417);
             this.splitContainer2.SplitterDistance = 205;
             this.splitContainer2.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label12.Location = new System.Drawing.Point(376, 135);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(120, 15);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Motion Detected?";
+            // 
+            // motionLbl
+            // 
+            this.motionLbl.AutoSize = true;
+            this.motionLbl.BackColor = System.Drawing.Color.Black;
+            this.motionLbl.ForeColor = System.Drawing.Color.Green;
+            this.motionLbl.Location = new System.Drawing.Point(371, 150);
+            this.motionLbl.Name = "motionLbl";
+            this.motionLbl.Size = new System.Drawing.Size(63, 39);
+            this.motionLbl.TabIndex = 12;
+            this.motionLbl.Text = "No";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label11.Location = new System.Drawing.Point(375, 56);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 15);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Door is:";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // doorLbl
+            // 
+            this.doorLbl.AutoSize = true;
+            this.doorLbl.BackColor = System.Drawing.Color.Black;
+            this.doorLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.doorLbl.Location = new System.Drawing.Point(371, 71);
+            this.doorLbl.Name = "doorLbl";
+            this.doorLbl.Size = new System.Drawing.Size(135, 39);
+            this.doorLbl.TabIndex = 10;
+            this.doorLbl.Text = "label10";
+            this.doorLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label10
             // 
@@ -501,7 +567,6 @@
             this.dashboard.BackColor = System.Drawing.Color.Black;
             this.dashboard.Controls.Add(this.Temperature);
             this.dashboard.Controls.Add(this.Moisture);
-            this.dashboard.Controls.Add(this.btnLoadData2);
             this.dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboard.Location = new System.Drawing.Point(0, 0);
             this.dashboard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -511,56 +576,46 @@
             // 
             // Temperature
             // 
-            chartArea5.Name = "ChartArea1";
-            this.Temperature.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.Temperature.Legends.Add(legend5);
+            chartArea1.Name = "ChartArea1";
+            this.Temperature.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.Temperature.Legends.Add(legend1);
             this.Temperature.Location = new System.Drawing.Point(3, 2);
             this.Temperature.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Temperature.Name = "Temperature";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.Temperature.Series.Add(series5);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.Temperature.Series.Add(series1);
             this.Temperature.Size = new System.Drawing.Size(493, 199);
             this.Temperature.TabIndex = 0;
             this.Temperature.Text = "Temperature";
-            title5.Name = "Temperature";
-            title5.Text = "Temperature";
-            this.Temperature.Titles.Add(title5);
+            title1.Name = "Temperature";
+            title1.Text = "Temperature";
+            this.Temperature.Titles.Add(title1);
             this.Temperature.Click += new System.EventHandler(this.Temperature_Click);
             // 
             // Moisture
             // 
-            chartArea6.Name = "ChartArea1";
-            this.Moisture.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.Moisture.Legends.Add(legend6);
+            chartArea2.Name = "ChartArea1";
+            this.Moisture.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.Moisture.Legends.Add(legend2);
             this.Moisture.Location = new System.Drawing.Point(502, 2);
             this.Moisture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Moisture.Name = "Moisture";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.Moisture.Series.Add(series6);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.Moisture.Series.Add(series2);
             this.Moisture.Size = new System.Drawing.Size(437, 199);
             this.Moisture.TabIndex = 1;
             this.Moisture.Text = "Moisture";
-            title6.Name = "Moisture";
-            title6.Text = "Moisture";
-            this.Moisture.Titles.Add(title6);
-            // 
-            // btnLoadData2
-            // 
-            this.btnLoadData2.Location = new System.Drawing.Point(945, 3);
-            this.btnLoadData2.Name = "btnLoadData2";
-            this.btnLoadData2.Size = new System.Drawing.Size(100, 23);
-            this.btnLoadData2.TabIndex = 2;
-            this.btnLoadData2.Text = "Load Data";
-            this.btnLoadData2.UseVisualStyleBackColor = true;
-            this.btnLoadData2.Click += new System.EventHandler(this.btnLoadData2_Click);
+            title2.Name = "Moisture";
+            title2.Text = "Moisture";
+            this.Moisture.Titles.Add(title2);
             // 
             // usrmgtpg
             // 
@@ -1521,73 +1576,6 @@
             this.sampleDBDataSet2BindingSource.DataSource = this.sampleDBDataSet2;
             this.sampleDBDataSet2BindingSource.Position = 0;
             // 
-            // doorLbl
-            // 
-            this.doorLbl.AutoSize = true;
-            this.doorLbl.BackColor = System.Drawing.Color.Black;
-            this.doorLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.doorLbl.Location = new System.Drawing.Point(371, 71);
-            this.doorLbl.Name = "doorLbl";
-            this.doorLbl.Size = new System.Drawing.Size(135, 39);
-            this.doorLbl.TabIndex = 10;
-            this.doorLbl.Text = "label10";
-            this.doorLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.GhostWhite;
-            this.label11.Location = new System.Drawing.Point(375, 56);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(57, 15);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Door is:";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
-            // motionLbl
-            // 
-            this.motionLbl.AutoSize = true;
-            this.motionLbl.BackColor = System.Drawing.Color.Black;
-            this.motionLbl.ForeColor = System.Drawing.Color.Green;
-            this.motionLbl.Location = new System.Drawing.Point(371, 150);
-            this.motionLbl.Name = "motionLbl";
-            this.motionLbl.Size = new System.Drawing.Size(63, 39);
-            this.motionLbl.TabIndex = 12;
-            this.motionLbl.Text = "No";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.GhostWhite;
-            this.label12.Location = new System.Drawing.Point(376, 135);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(120, 15);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "Motion Detected?";
-            // 
-            // syslogLB
-            // 
-            this.syslogLB.FormattingEnabled = true;
-            this.syslogLB.ItemHeight = 16;
-            this.syslogLB.Location = new System.Drawing.Point(25, 60);
-            this.syslogLB.Name = "syslogLB";
-            this.syslogLB.Size = new System.Drawing.Size(1005, 340);
-            this.syslogLB.TabIndex = 0;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label13.Location = new System.Drawing.Point(31, 23);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(126, 25);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "System Log";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
-            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1810,7 +1798,6 @@
         private System.Windows.Forms.Label lblMoisture;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label degcelLbl;
-        private System.Windows.Forms.Button btnLoadData2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label doorLbl;
         private System.Windows.Forms.Label label12;

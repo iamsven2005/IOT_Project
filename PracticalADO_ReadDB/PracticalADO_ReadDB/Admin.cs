@@ -28,6 +28,9 @@ namespace PracticalADO_ReadDB
         {
             InitializeComponent();
             receivedData = data;
+            //Async
+            loadDataTemp();
+            loadDataMoisture();
         }
         private void loadDataTemp()
         {
@@ -66,11 +69,10 @@ namespace PracticalADO_ReadDB
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
                 Console.WriteLine("DataSet [0] Rows = " + ds.Tables[0].Rows.Count);
-                Temperature.DataSource = ds;
-                Temperature.Series[0].XValueMember = "Datetime";
-                Temperature.Series[0].YValueMembers = "Moisture";
-                Temperature.DataBind();
-
+                Moisture.DataSource = ds;
+                Moisture.Series[0].XValueMember = "Datetime";
+                Moisture.Series[0].YValueMembers = "Moisture";
+                Moisture.DataBind();
             }
             catch (SqlException ex)
             {
@@ -81,32 +83,23 @@ namespace PracticalADO_ReadDB
                 myConnect.Close();
             }
         }
-        private void btnLoadData2_Click(object sender, EventArgs e)
-        {
-            loadDataTemp();
-            loadDataMoisture();
-        }
 
         private Color getColor(int r, int g, int b, int transparent = 255)
         {
             return System.Drawing.Color.FromArgb(transparent, r, g, b);
         }
-        private DateTime getDateTime(int year, int month, int day, int hour, int min, int sec, int miliesecs = 0)
+        private DateTime getDateTime(int year, int month, int day, int hour, int min, int sec)
         {
-            DateTime dt = new DateTime(year, month, day, hour, min, sec, miliesecs);
-            Console.WriteLine(dt.ToString("MM/dd/yyyy hh:mm:ss.fff"));
+            DateTime dt = new DateTime(year, month, day, hour, min, sec);
             return dt;
         }
         private void setXAxisDisplayRange(Chart cht, DateTime dtStart, DateTime dtEnd)
         {
             DateTime minDate = dtStart.AddSeconds(-1);
             DateTime maxDate = dtEnd;
-            Console.WriteLine("Setting AxisX.Minimum =" + minDate.ToOADate());
-            Console.WriteLine("Setting AxisX.Minimum =" + maxDate.ToOADate());
             cht.ChartAreas[0].AxisX.Minimum = minDate.ToOADate();
             cht.ChartAreas[0].AxisX.Maximum = maxDate.ToOADate();
             cht.Series[0].IsXValueIndexed = false;
-
         }
         private void initChartPropertiesTemperature()
         {
@@ -213,42 +206,35 @@ namespace PracticalADO_ReadDB
             initChartPropertiesTemperature();
             initChartPropertiesMoisture();
         }
-
         public void commsDataReceive(string dataReceived)
         {
             processDataReceive(dataReceived);
         }
-
         public void commsSendError(string errMsg)
         {
             MessageBox.Show(errMsg);
             processDataReceive(errMsg);
         }
-
-
         private void InitComms()
         {
             dataComms = new DataComms();
             dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataReceive);
             dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError);
+
         }
         
         private void saveLightSensorDataToDB(string strTime, string strlightValue, string strStatus)
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-
             String strCommandText =
                 "INSERT MyLightSensor (TimeOccurred, SensorValue, SensorStatus) " +
                " VALUES (@time, @value, @status)";
-
             SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
             updateCmd.Parameters.AddWithValue("@time", strTime);
             updateCmd.Parameters.AddWithValue("@value", strlightValue);
             updateCmd.Parameters.AddWithValue("@status", strStatus);
-
             myConnect.Open();
             int result = updateCmd.ExecuteNonQuery();
-
             myConnect.Close();
         }
         private void Admin_Load(object sender, EventArgs e)
@@ -364,8 +350,6 @@ namespace PracticalADO_ReadDB
             result = updateCmd.ExecuteNonQuery();
             myConnect.Close();
             return result;
-            //here
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -484,7 +468,7 @@ namespace PracticalADO_ReadDB
                 status = "Bright";
             }
             roomStatus.Text = status;
-            //saveLightSensorDataToDB(strTime, strlightValue, status);
+            saveLightSensorDataToDB(strTime, strlightValue, status);
         }
         private void handleTempValue(string strData, string strTime, string ID)
         {
@@ -495,7 +479,6 @@ namespace PracticalADO_ReadDB
             float fLightValue = extractFloatValue(strData, ID);
             string status = "";
             lblTemp.Text = status;
-            //saveLightSensorDataToDB(strTime, strlightValue, status);
         }
         private void extractSensorData(string strData, string strTime)
         {
@@ -533,10 +516,10 @@ namespace PracticalADO_ReadDB
             float floatValue = extractFloatValue(strData, ID);
             string strValue = extractStringValue(strData, ID);
             lblTemp.Text = strValue;
+            saveTempSensorDataToDB(strTime, floatValue);
             if (floatValue > 25)
             {
                 lblTemp.ForeColor = Color.Red;
-                //saveTempSensorDataToDB(strTime, floatValue);
             }
             else if (floatValue > 22 && floatValue < 25)
             {
@@ -552,11 +535,10 @@ namespace PracticalADO_ReadDB
         {
             string strValue = extractStringValue(strData, ID);
             int intMoistureVal = extractIntValue(strData, ID);
-
+            saveMoistureSensorDataToDB(strTime, intMoistureVal);
             if (intMoistureVal > 500)
             {
                 lblMoisture.ForeColor = Color.Red;
-                //saveMoistureSensorDataToDB(strTime, intMoistureVal);
 
             }
             else if (intMoistureVal > 100 && intMoistureVal < 500)
@@ -574,11 +556,11 @@ namespace PracticalADO_ReadDB
         private void handleMotionData(string strData, string strTime, string ID)
         {
             string strValue = extractStringValue(strData, ID);
+            saveMotionSensorDataToDB(strTime, strValue);
             if (strValue == "Motion detected")
             {
                 motionLbl.Text = "Yes";
                 motionLbl.ForeColor = Color.Red;
-                saveMotionSensorDataToDB(strTime, strValue);
             }
             else
             {
@@ -608,7 +590,6 @@ namespace PracticalADO_ReadDB
         private void saveTempSensorDataToDB(string strTime, float strTempValue)
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-
             String strCommandText =
                 "INSERT Temperature (DateTime, Temp) " +
                " VALUES (@time, @temp)";
@@ -618,7 +599,6 @@ namespace PracticalADO_ReadDB
             updateCmd.Parameters.AddWithValue("@temp", strTempValue);
             myConnect.Open();
             int result = updateCmd.ExecuteNonQuery();
-
             myConnect.Close();
         }
 
@@ -642,7 +622,6 @@ namespace PracticalADO_ReadDB
         private void saveMotionSensorDataToDB(string strTime, string strMotionValue)
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-
             String strCommandText =
                 "INSERT MotionTable (strTime, motionDetected) " +
                " VALUES (@time, @motion)";
@@ -652,7 +631,6 @@ namespace PracticalADO_ReadDB
             updateCmd.Parameters.AddWithValue("@motion", strMotionValue);
             myConnect.Open();
             int result = updateCmd.ExecuteNonQuery();
-
             myConnect.Close();
         }
 
@@ -671,19 +649,10 @@ namespace PracticalADO_ReadDB
             syslogLB.Items.Insert(0, strMessage);
 
         }
-
         public void processDataReceive(String strData)
         {
             myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData);
             sysLogTB.Invoke(d, new object[] { strData });
-        }
-        private void splitContainer5_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        private void grdUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
         private void scanCardBtn_Click(object sender, EventArgs e)
         {
@@ -697,7 +666,14 @@ namespace PracticalADO_ReadDB
         {
             dataComms.sendData("SENDLIGHT");
         }
+        private void splitContainer5_Panel2_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+        private void grdUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
         private void stopLightBtn_Click(object sender, EventArgs e)
         {
             dataComms.sendData("STOPLIGHT");
