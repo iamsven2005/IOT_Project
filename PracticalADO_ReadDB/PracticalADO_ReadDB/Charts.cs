@@ -87,7 +87,6 @@ namespace PracticalADO_ReadDB
             legend1.BackColor = Color.Transparent;
             legend1.Enabled = true;
             legend1.Font = labelFont;
-            // Chart Area is the
             Color colorGridLines = getColor(64, 64, 64, 64);
             ChartArea chartArea1 = chart1.ChartAreas[0];
             chartArea1.BackColor = Color.OldLace;
