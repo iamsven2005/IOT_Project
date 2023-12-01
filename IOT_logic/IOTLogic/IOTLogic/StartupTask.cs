@@ -39,6 +39,7 @@ namespace IOTLogic
         ILed ledGreen = DeviceFactory.Build.Led(Pin.DigitalPin6);
         Pin tempPin = Pin.AnalogPin0;
         Pin waterPin = Pin.AnalogPin2;
+        IUltrasonicRangerSensor sensor = DeviceFactory.Build.UltraSonicSensor(Pin.DigitalPin8);
 
         double temp = 23;
 
@@ -57,6 +58,9 @@ namespace IOTLogic
         private bool lightDark = false;
         private bool prevLightDark = false;
 
+        private int distance = 400;
+        int sensorDistance;
+
         const double EFSR = 5;
         const int N = 1023;
 
@@ -69,6 +73,18 @@ namespace IOTLogic
             SensorStatus sensorState = led.CurrentState;
             sm.Release();
             return sensorState;
+        }
+
+        private int getDistance()
+        {
+            sm.WaitOne();
+            int distanceRead = sensor.MeasureInCentimeters();
+            sm.Release();
+            if (distanceRead < 400 && distanceRead > 0)
+            {
+                distance = distanceRead;
+            }
+            return distance;
         }
 
         private void ChangeLEDState(ILed led, SensorStatus targetState)
@@ -189,8 +205,8 @@ namespace IOTLogic
 
         private void handleModeNormal()
         {
+
             motionDetected = false;
-            ChangeLEDState(ledGreen, SensorStatus.On);
 
             Sleep(200);
             //if (!strRfidDetected.Equals(""))
@@ -225,44 +241,49 @@ namespace IOTLogic
             Debug.WriteLine("Temp in degrees Celsius is " + sensorTemp.ToString("N2"));
             sendDataToWindows("Temp= " + sensorTemp.ToString("N2"));
 
-            ChangeLEDState(ledGreen, SensorStatus.Off);
+            sensorDistance = getDistance();
+            Debug.WriteLine("Sensor distance = " + sensorDistance);
+            sendDataToWindows("Distance= " + sensorDistance);
+            if (sensorDistance < 30)
+            {
+                Debug.WriteLine("There is object nearby");
+            }
+            
+
+
+            // ChangeLEDState(ledGreen, SensorStatus.Off);
             Sleep(300);
             if (motionDetected == true)
             {
-                //for (int i = 0; i < 1; i++)
-                //{
-                //    activateBuzzer(buzzerPin, 120);
-                //    ChangeLEDState(ledRed, SensorStatus.On);
-                //    ChangeLEDState(ledGreen, SensorStatus.On);
-                //    Sleep(1000);
-                //    activateBuzzer(buzzerPin, 0);
-                //    ChangeLEDState(ledRed, SensorStatus.Off);
-                //    ChangeLEDState(ledGreen, SensorStatus.Off);
-                //    Sleep(1000);
-                //}
                 motionData = "Motion detected";
                 sendDataToWindows("Motion=" + motionData);
-                motionData = "No motion detected";
-                Sleep(750);
-                motionDetected = false;
-                sendDataToWindows("Motion=" + motionData);
+                
                 Debug.WriteLine("Found Movement!");
+                //Debug.WriteLine("=== Entering alarm mode ===");
+                //ChangeLEDState(ledGreen, SensorStatus.On);
+                Sleep(1000);
+                motionData = "No motion detected";
+                sendDataToWindows("Motion=" + motionData);
+                motionDetected = false;
+
+                //curMode = MODE_ALARM;
             }
 
-            if (buttonPressed == true)
-            {
-                buttonPressed = false;
-                
+            //if (buttonPressed == true)
+            //{
+            //    buttonPressed = false;
 
-                ChangeLEDState(ledGreen, SensorStatus.Off);
-                curMode = MODE_ALARM;
 
-                Debug.WriteLine("Entering MODE_ALARM");
+            //    ChangeLEDState(ledGreen, SensorStatus.Off);
+            //    curMode = MODE_ALARM;
 
-                
-            }
+            //    Debug.WriteLine("Entering MODE_ALARM");
+
+
+            //}
             if (strDataReceived.Equals("SENDLIGHT"))
             {
+                ChangeLEDState(ledGreen, SensorStatus.Off);
                 curMode = MODE_SENDLIGHT;
                 Debug.WriteLine("===Entering mode sendlight===");
             }
@@ -278,15 +299,25 @@ namespace IOTLogic
 
         private void handleModeAlarm()
         {
-            soundBuzzer();
+            activateBuzzer(buzzerPin, 120);
+            ChangeLEDState(ledGreen, SensorStatus.Off);
+            ChangeLEDState(ledRed, SensorStatus.On);
+            Sleep(1000);
+            activateBuzzer(buzzerPin, 0);
+            ChangeLEDState(ledRed, SensorStatus.Off);
+            Sleep(1000);
 
-
-            if (!strRfidDetected.Equals(""))
+            if (buttonPressed == true)
             {
+                motionDetected = false;
+                ChangeLEDState(ledGreen, SensorStatus.On);
+                motionData = "No motion detected";
+                sendDataToWindows("Motion=" + motionData);
+                Debug.WriteLine("=== Entering normal mode ===");
+                buttonPressed = false;
                 curMode = MODE_NORMAL;
-                Debug.WriteLine("Entering MODE_NORMAL");
+
             }
-            strRfidDetected = "";
         }
 
         public void commsDataReceive(string dataReceived)
@@ -471,6 +502,8 @@ namespace IOTLogic
 
             initComms();
             StartUart();
+
+            ChangeLEDState(ledGreen, SensorStatus.On);
 
             Debug.WriteLine(strDataReceived);
             startButtonMonitoring();

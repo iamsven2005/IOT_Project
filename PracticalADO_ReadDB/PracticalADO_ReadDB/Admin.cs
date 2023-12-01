@@ -509,6 +509,10 @@ namespace PracticalADO_ReadDB
             {
                 handleMotionData(strData, strTime, "Motion=");
             }
+            if (strData.IndexOf("Distance=") != -1)
+            {
+                handleUltrasonicData(strData, strTime, "Distance=");
+            }
         }
 
         private void handleTempSensorData(string strData, string strTime, string ID)
@@ -584,6 +588,15 @@ namespace PracticalADO_ReadDB
                 doorLbl.Text = "Closed";
                 doorLbl.ForeColor = Color.Green;
             }
+
+        }
+
+        private void handleUltrasonicData(string strData, string strTime, string ID)
+        {
+            string strValue = extractStringValue(strData, ID);
+            float UltraSonicVal = extractFloatValue(strData, ID);
+
+            lblUltrasonic.Text = strValue;
 
         }
 

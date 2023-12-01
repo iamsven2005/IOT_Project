@@ -128,6 +128,8 @@
             this.sendLight = new System.Windows.Forms.Button();
             this.sampleDBDataSet2 = new PracticalADO_ReadDB.SampleDBDataSet2();
             this.sampleDBDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblUltrasonic = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -411,6 +413,8 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.BackColor = System.Drawing.Color.Black;
+            this.splitContainer2.Panel1.Controls.Add(this.label15);
+            this.splitContainer2.Panel1.Controls.Add(this.lblUltrasonic);
             this.splitContainer2.Panel1.Controls.Add(this.label12);
             this.splitContainer2.Panel1.Controls.Add(this.motionLbl);
             this.splitContainer2.Panel1.Controls.Add(this.label11);
@@ -470,7 +474,7 @@
             this.doorLbl.AutoSize = true;
             this.doorLbl.BackColor = System.Drawing.Color.Black;
             this.doorLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.doorLbl.Location = new System.Drawing.Point(371, 71);
+            this.doorLbl.Location = new System.Drawing.Point(372, 71);
             this.doorLbl.Name = "doorLbl";
             this.doorLbl.Size = new System.Drawing.Size(135, 39);
             this.doorLbl.TabIndex = 10;
@@ -507,9 +511,9 @@
             this.moistureLbl.ForeColor = System.Drawing.Color.Ivory;
             this.moistureLbl.Location = new System.Drawing.Point(38, 123);
             this.moistureLbl.Name = "moistureLbl";
-            this.moistureLbl.Size = new System.Drawing.Size(82, 15);
+            this.moistureLbl.Size = new System.Drawing.Size(101, 15);
             this.moistureLbl.TabIndex = 7;
-            this.moistureLbl.Text = "Water Level";
+            this.moistureLbl.Text = "Moisture Level";
             // 
             // lblMoisture
             // 
@@ -1576,6 +1580,29 @@
             this.sampleDBDataSet2BindingSource.DataSource = this.sampleDBDataSet2;
             this.sampleDBDataSet2BindingSource.Position = 0;
             // 
+            // lblUltrasonic
+            // 
+            this.lblUltrasonic.AutoSize = true;
+            this.lblUltrasonic.BackColor = System.Drawing.Color.Black;
+            this.lblUltrasonic.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblUltrasonic.Location = new System.Drawing.Point(581, 80);
+            this.lblUltrasonic.Name = "lblUltrasonic";
+            this.lblUltrasonic.Size = new System.Drawing.Size(135, 39);
+            this.lblUltrasonic.TabIndex = 14;
+            this.lblUltrasonic.Text = "label10";
+            this.lblUltrasonic.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label15.Location = new System.Drawing.Point(585, 56);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(96, 15);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "Water amount";
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1804,5 +1831,7 @@
         private System.Windows.Forms.Label motionLbl;
         private System.Windows.Forms.ListBox syslogLB;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblUltrasonic;
     }
 }
