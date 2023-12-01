@@ -38,7 +38,6 @@
             this.passwordtb.Name = "passwordtb";
             this.passwordtb.Size = new System.Drawing.Size(100, 20);
             this.passwordtb.TabIndex = 0;
-            this.passwordtb.TextChanged += new System.EventHandler(this.password_TextChanged);
             // 
             // pwdbtn
             // 

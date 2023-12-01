@@ -9,9 +9,6 @@ namespace PracticalADO_ReadDB
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
@@ -20,5 +17,6 @@ namespace PracticalADO_ReadDB
             Application.Run(new frmLogin());
             
         }
+
     }
 }

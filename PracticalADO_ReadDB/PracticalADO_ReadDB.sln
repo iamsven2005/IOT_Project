@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalADO_ReadDBTests", "PracticalADO_ReadDBTests\PracticalADO_ReadDBTests.csproj", "{299A3D5B-C10B-4435-9087-D62AE4D34DB7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A7AB8C4D-B571-4541-BB07-1FD0A5FBA9B5}"
+	ProjectSection(SolutionItems) = preProject
+		MFA.txt = MFA.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

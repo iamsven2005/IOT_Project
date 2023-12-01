@@ -2,15 +2,7 @@
 {
     partial class User
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -19,13 +11,10 @@
             }
             base.Dispose(disposing);
         }
+        //This does not clean up shit btw MS.
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
@@ -36,7 +25,6 @@
             this.messageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.messagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sampleDBDataSet = new PracticalADO_ReadDB.SampleDBDataSet();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.typemsg = new System.Windows.Forms.TextBox();
             this.submsg = new System.Windows.Forms.Button();
@@ -46,7 +34,6 @@
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.messagesTableAdapter = new PracticalADO_ReadDB.SampleDBDataSetTableAdapters.MessagesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -57,7 +44,6 @@
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
@@ -101,7 +87,6 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.dataGridView1);
-            this.splitContainer2.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel1_Paint);
             // 
             // splitContainer2.Panel2
             // 
@@ -110,7 +95,6 @@
             this.splitContainer2.SplitterDistance = 220;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 0;
-            this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
             // 
             // dataGridView1
             // 
@@ -152,16 +136,6 @@
             this.timeDataGridViewTextBoxColumn.HeaderText = "Time";
             this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
             this.timeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // messagesBindingSource
-            // 
-            this.messagesBindingSource.DataMember = "Messages";
-            this.messagesBindingSource.DataSource = this.sampleDBDataSet;
-            // 
-            // sampleDBDataSet
-            // 
-            this.sampleDBDataSet.DataSetName = "SampleDBDataSet";
-            this.sampleDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // splitContainer3
             // 
@@ -277,11 +251,6 @@
             this.tabPage3.Size = new System.Drawing.Size(348, 235);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Calendar (current)";
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
-            // 
-            // messagesTableAdapter
-            // 
-            this.messagesTableAdapter.ClearBeforeFill = true;
             // 
             // User
             // 
@@ -294,7 +263,6 @@
             this.Text = "User";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.User_FormClosed);
             this.Load += new System.EventHandler(this.User_Load);
-            this.Resize += new System.EventHandler(this.User_Resize);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -305,7 +273,6 @@
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet)).EndInit();
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel1.PerformLayout();
             this.splitContainer3.Panel2.ResumeLayout(false);
@@ -333,9 +300,7 @@
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.TextBox typemsg;
         private System.Windows.Forms.Button submsg;
-        private SampleDBDataSet sampleDBDataSet;
         private System.Windows.Forms.BindingSource messagesBindingSource;
-        private SampleDBDataSetTableAdapters.MessagesTableAdapter messagesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn userDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn messageDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;

@@ -10,58 +10,29 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 using BCrypt.Net;
+using System.IO;
 
 namespace PracticalADO_ReadDB
 {
     public partial class frmLogin : Form
     {
-        DataComms dataComms;
-
-
         public delegate void myprocessDataDelegate(String strData);
-
         private string strConnectionString = ConfigurationManager.ConnectionStrings["SampleDBConnection"].ConnectionString;
         public frmLogin()
         {
             InitializeComponent();
-
         }
-    
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-            //InitComms();
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
             SqlConnection myConnect = new SqlConnection(strConnectionString);
             string strCommandText = "SELECT Name, Password FROM MyUser WHERE Name=@uname";
-            // string RFID_authent_cmd = "SELECT UniqueRFID FROM MyUser WHERE Name=@uname";
             SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
-            // SqlCommand cmd2 = new SqlCommand(RFID_authent_cmd, myConnect);
-
             cmd.Parameters.AddWithValue("@uname", tbUserName.Text);
-            // cmd.Parameters.AddWithValue("@uRfid", textBox1.Text);
-
-
             try
             {
                 myConnect.Open();
@@ -71,16 +42,7 @@ namespace PracticalADO_ReadDB
                 {
                     reader.Read();
                     string hashedPasswordFromDB = reader["Password"].ToString();
-                    // string RFIDFromDB = reader["UniqueRFID"].ToString();
-                    // Console.WriteLine(RFIDFromDB);
-
-
-                    // Verify the entered password during login
-                    string enteredPassword = tbPassword.Text; // Replace with the actual user-entered password
-                    // string RFID_entered = textBox1.Text.ToString();
-                    // Console.WriteLine(RFID_entered);
-
-
+                    string enteredPassword = tbPassword.Text;
                     if (BCrypt.Net.BCrypt.Verify(enteredPassword, hashedPasswordFromDB))
                     {
                         MessageBox.Show($"Succcess: Welcome {tbUserName.Text}");
@@ -98,13 +60,11 @@ namespace PracticalADO_ReadDB
                             User f2 = new User(dataToPass);
                             f2.Show();
                             this.Hide();
-
                         }
                     }
                     else
                     {
                         MessageBox.Show("Wrong Password");
-
                     }
                 }
                 else
@@ -112,7 +72,6 @@ namespace PracticalADO_ReadDB
                     MessageBox.Show("Fail: Please Try Again");
                 }
                 reader.Close();
-
             }
             catch (Exception ex)
             {
@@ -123,60 +82,14 @@ namespace PracticalADO_ReadDB
                 myConnect.Close();
             }
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Test_Click(object sender, EventArgs e)
-        {
-            frmUsers f3 = new frmUsers();
-            //frmForget f3 = new frmForget();
-            f3.Show();
-            this.Hide();
-        }
-
-        private void tbPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-           
-        }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        private void test3_Click(object sender, EventArgs e)
-        {
-            Charts f5 = new Charts();
-            f5.Show();
-            this.Hide();
-        }
+        //To be removed
         private void AdminLogin_Click(object sender, EventArgs e)
         {
             string dataToPass = "Admin";
             Admin f2 = new Admin(dataToPass);
-            dataComms = null;
-
             f2.Show();
             this.Hide();
         }
-        private void Title_ClientSizeChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Title_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void Title_ParentChanged(object sender, EventArgs e)
         {
             Title.Font = new System.Drawing.Font("Trebuchet MS", 20F, System.Drawing.FontStyle.Bold);
@@ -185,11 +98,10 @@ namespace PracticalADO_ReadDB
         private void ForgetPwd_Click(object sender, EventArgs e)
         {
             forgetpassword f5 = new forgetpassword();
-            //this leads to the email page frmForget leads to the MFA page
             f5.Show();
             this.Hide();
         }
-
+  
         private void frmLogin_Resize(object sender, EventArgs e)
         {
                 int width = (this.Width / 50);
@@ -205,25 +117,6 @@ namespace PracticalADO_ReadDB
                 tbPassword.Height = this.Height * 2;
                 tbUserName.Height = this.Height * 2;
             }
-
-
         }
-    
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            dataComms.sendData("STOPRFID");
-        }
-
-        private void scanBtn_Click(object sender, EventArgs e)
-        {
-            dataComms.sendData("SCANRFID");
-        }
-
-
     }
 }

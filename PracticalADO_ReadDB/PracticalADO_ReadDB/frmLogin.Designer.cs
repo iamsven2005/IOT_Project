@@ -1,16 +1,10 @@
-﻿namespace PracticalADO_ReadDB
+﻿using System;
+using System.IO;
+namespace PracticalADO_ReadDB
 {
     partial class frmLogin
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -19,13 +13,10 @@
             }
             base.Dispose(disposing);
         }
-
         #region Windows Form Designer generated code
+        //DEXTER, This is mine, I will clean it
+        //This is autorighting based on init(), just change the init at same time the method should be able shift around.
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
@@ -34,8 +25,8 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button1 = new System.Windows.Forms.Button();
             this.AdminLogin = new System.Windows.Forms.Button();
-            this.test3 = new System.Windows.Forms.Button();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.Title = new System.Windows.Forms.Label();
@@ -72,10 +63,9 @@
             this.label2.Location = new System.Drawing.Point(-72, 5);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 1;
             this.label2.UseWaitCursor = true;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // tbUserName
             // 
@@ -83,14 +73,13 @@
             this.tbUserName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
             this.tbUserName.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.tbUserName.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tbUserName.Location = new System.Drawing.Point(0, 24);
+            this.tbUserName.Location = new System.Drawing.Point(0, 26);
             this.tbUserName.Margin = new System.Windows.Forms.Padding(4);
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(261, 22);
+            this.tbUserName.Size = new System.Drawing.Size(261, 20);
             this.tbUserName.TabIndex = 1;
             this.tbUserName.Text = "Username";
             this.tbUserName.UseWaitCursor = true;
-            this.tbUserName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // tbPassword
             // 
@@ -98,11 +87,10 @@
             this.tbPassword.Location = new System.Drawing.Point(0, 0);
             this.tbPassword.Margin = new System.Windows.Forms.Padding(8);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(261, 22);
+            this.tbPassword.Size = new System.Drawing.Size(261, 20);
             this.tbPassword.TabIndex = 2;
             this.tbPassword.Text = "Password";
             this.tbPassword.UseWaitCursor = true;
-            this.tbPassword.TextChanged += new System.EventHandler(this.tbPassword_TextChanged);
             // 
             // btnLogin
             // 
@@ -141,19 +129,26 @@
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.Desktop;
             this.splitContainer1.Panel1.BackgroundImage = global::PracticalADO_ReadDB.Properties.Resources.SYSTEM_OVERVIEW__1_;
             this.splitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.AdminLogin);
-            this.splitContainer1.Panel1.Controls.Add(this.test3);
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer4);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(511, 272);
             this.splitContainer1.SplitterDistance = 157;
             this.splitContainer1.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(42, 197);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // AdminLogin
             // 
@@ -167,19 +162,6 @@
             this.AdminLogin.UseVisualStyleBackColor = true;
             this.AdminLogin.UseWaitCursor = true;
             this.AdminLogin.Click += new System.EventHandler(this.AdminLogin_Click);
-            // 
-            // test3
-            // 
-            this.test3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.test3.Location = new System.Drawing.Point(7, 184);
-            this.test3.Margin = new System.Windows.Forms.Padding(4);
-            this.test3.Name = "test3";
-            this.test3.Size = new System.Drawing.Size(146, 28);
-            this.test3.TabIndex = 8;
-            this.test3.Text = "Graph example";
-            this.test3.UseVisualStyleBackColor = true;
-            this.test3.UseWaitCursor = true;
-            this.test3.Click += new System.EventHandler(this.test3_Click);
             // 
             // splitContainer4
             // 
@@ -228,13 +210,11 @@
             this.Title.MaximumSize = new System.Drawing.Size(2000, 200);
             this.Title.MinimumSize = new System.Drawing.Size(200, 20);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(326, 20);
+            this.Title.Size = new System.Drawing.Size(271, 20);
             this.Title.TabIndex = 0;
             this.Title.Text = "Server Environment Monitoring System";
             this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Title.UseWaitCursor = true;
-            this.Title.ClientSizeChanged += new System.EventHandler(this.Title_ClientSizeChanged);
-            this.Title.Click += new System.EventHandler(this.Title_Click);
             this.Title.ParentChanged += new System.EventHandler(this.Title_ParentChanged);
             // 
             // splitContainer3
@@ -298,7 +278,6 @@
             this.Name = "frmLogin";
             this.ShowIcon = false;
             this.Text = "Login Page";
-            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.Resize += new System.EventHandler(this.frmLogin_Resize);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -337,13 +316,13 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button ForgetPwd;
-        private System.Windows.Forms.Button test3;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Button AdminLogin;
+        private System.Windows.Forms.Button button1;
     }
 }
 
