@@ -32,14 +32,14 @@ namespace PracticalADO_ReadDB
         private void loadDataTemp()
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-            String strCommandText = "Select * from Temperature'";
+            String strCommandText = "Select * from Temperature";
             try
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(strCommandText, myConnect);
                 SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(adapter);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
-                Console.WriteLine("DataSet Rows = " + ds.Tables[0].Rows.Count);
+                Console.WriteLine("DataSet [0] Rows = " + ds.Tables[0].Rows.Count);
                 Temperature.DataSource = ds;
                 Temperature.Series[0].XValueMember = "DateTime";
                 Temperature.Series[0].YValueMembers = "Temp";
@@ -58,16 +58,16 @@ namespace PracticalADO_ReadDB
         private void loadDataMoisture()
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-            String strCommandText = "Select * from MoistureTable'";
+            String strCommandText = "Select * from MoistureTable";
             try
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(strCommandText, myConnect);
                 SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(adapter);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
-                Console.WriteLine("DataSet Rows = " + ds.Tables[0].Rows.Count);
+                Console.WriteLine("DataSet [0] Rows = " + ds.Tables[0].Rows.Count);
                 Temperature.DataSource = ds;
-                Temperature.Series[0].XValueMember = "DateTime";
+                Temperature.Series[0].XValueMember = "Datetime";
                 Temperature.Series[0].YValueMembers = "Moisture";
                 Temperature.DataBind();
 
@@ -484,7 +484,7 @@ namespace PracticalADO_ReadDB
                 status = "Bright";
             }
             roomStatus.Text = status;
-            saveLightSensorDataToDB(strTime, strlightValue, status);
+            //saveLightSensorDataToDB(strTime, strlightValue, status);
         }
         private void handleTempValue(string strData, string strTime, string ID)
         {
@@ -495,7 +495,7 @@ namespace PracticalADO_ReadDB
             float fLightValue = extractFloatValue(strData, ID);
             string status = "";
             lblTemp.Text = status;
-            saveLightSensorDataToDB(strTime, strlightValue, status);
+            //saveLightSensorDataToDB(strTime, strlightValue, status);
         }
         private void extractSensorData(string strData, string strTime)
         {
@@ -518,6 +518,14 @@ namespace PracticalADO_ReadDB
             {
                 handleMoistureSensorData(strData, strTime, "Moisture=");
             }
+            if (strData.IndexOf("Voltage=") != -1)
+            {
+                handleVoltageData(strData, strTime, "Voltage=");
+            }
+            if (strData.IndexOf("Motion=") != -1)
+            {
+                handleMotionData(strData, strTime, "Motion=");
+            }
         }
 
         private void handleTempSensorData(string strData, string strTime, string ID)
@@ -525,11 +533,12 @@ namespace PracticalADO_ReadDB
             float floatValue = extractFloatValue(strData, ID);
             string strValue = extractStringValue(strData, ID);
             lblTemp.Text = strValue;
-            if (floatValue > 30)
+            if (floatValue > 25)
             {
                 lblTemp.ForeColor = Color.Red;
+                //saveTempSensorDataToDB(strTime, floatValue);
             }
-            else if (floatValue > 28 && floatValue < 30)
+            else if (floatValue > 22 && floatValue < 25)
             {
                 lblTemp.ForeColor = Color.Yellow;
             }
@@ -537,7 +546,6 @@ namespace PracticalADO_ReadDB
             {
                 lblTemp.ForeColor = Color.Green;
             }
-            saveTempSensorDataToDB(strTime, floatValue);
         }
 
         private void handleMoistureSensorData(string strData, string strTime, string ID)
@@ -548,6 +556,8 @@ namespace PracticalADO_ReadDB
             if (intMoistureVal > 500)
             {
                 lblMoisture.ForeColor = Color.Red;
+                //saveMoistureSensorDataToDB(strTime, intMoistureVal);
+
             }
             else if (intMoistureVal > 100 && intMoistureVal < 500)
             {
@@ -559,7 +569,40 @@ namespace PracticalADO_ReadDB
             }
             Console.WriteLine(strValue);
             lblMoisture.Text = strValue;
-            saveMoistureSensorDataToDB(strTime, intMoistureVal);
+        }
+
+        private void handleMotionData(string strData, string strTime, string ID)
+        {
+            string strValue = extractStringValue(strData, ID);
+            if (strValue == "Motion detected")
+            {
+                motionLbl.Text = "Yes";
+                motionLbl.ForeColor = Color.Red;
+                saveMotionSensorDataToDB(strTime, strValue);
+            }
+            else
+            {
+                motionLbl.Text = "No";
+                motionLbl.ForeColor = Color.Green;
+            }
+        }
+
+        private void handleVoltageData(string strData, string strTime, string ID)
+        {
+            string strValue = extractStringValue(strData, ID);
+            float intVoltageVal = extractFloatValue(strData, ID);
+
+            if (intVoltageVal >= 0.3)
+            {
+                doorLbl.Text = "Open";
+                doorLbl.ForeColor = Color.Red;
+            }
+            else
+            {
+                doorLbl.Text = "Closed";
+                doorLbl.ForeColor = Color.Green;
+            }
+
         }
 
         private void saveTempSensorDataToDB(string strTime, float strTempValue)
@@ -596,6 +639,23 @@ namespace PracticalADO_ReadDB
             myConnect.Close();
         }
 
+        private void saveMotionSensorDataToDB(string strTime, string strMotionValue)
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+
+            String strCommandText =
+                "INSERT MotionTable (strTime, motionDetected) " +
+               " VALUES (@time, @motion)";
+
+            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
+            updateCmd.Parameters.AddWithValue("@time", strTime);
+            updateCmd.Parameters.AddWithValue("@motion", strMotionValue);
+            myConnect.Open();
+            int result = updateCmd.ExecuteNonQuery();
+
+            myConnect.Close();
+        }
+
         private void handleRfidSensorData(string strData, string strTime, string ID)
         {
             string strValue = extractStringValue(strData, ID);
@@ -608,12 +668,14 @@ namespace PracticalADO_ReadDB
             string dt = DateTime.Now.ToString("s");
             extractSensorData(strData, dt);
             string strMessage = dt + ":" + strData;
+            syslogLB.Items.Insert(0, strMessage);
+
         }
 
         public void processDataReceive(String strData)
         {
             myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData);
-            textBox1.Invoke(d, new object[] { strData });
+            sysLogTB.Invoke(d, new object[] { strData });
         }
         private void splitContainer5_Panel2_Paint(object sender, PaintEventArgs e)
         {
@@ -722,6 +784,14 @@ namespace PracticalADO_ReadDB
 
         }
 
+        private void label11_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

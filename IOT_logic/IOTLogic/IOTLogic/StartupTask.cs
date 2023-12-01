@@ -30,6 +30,8 @@ namespace IOTLogic
         private static string strRfidDetected = "";
 
         Pin lightPin = Pin.AnalogPin1;
+        Pin potPin = Pin.AnalogPin1;
+
         Pin PirMotionSensorPin = Pin.DigitalPin2;
         Pin buzzerPin = Pin.DigitalPin3;
         IButtonSensor button = DeviceFactory.Build.ButtonSensor(Pin.DigitalPin7);
@@ -49,9 +51,14 @@ namespace IOTLogic
         private bool buttonPressed = false;
         private bool prevButtonStatus = false;
 
+        private bool motionDetected = false;
+        string motionData;
+
         private bool lightDark = false;
         private bool prevLightDark = false;
 
+        const double EFSR = 5;
+        const int N = 1023;
 
         DataComms dataComms;
         string strDataReceived = "";
@@ -71,6 +78,13 @@ namespace IOTLogic
             sm.Release();
         }
 
+        private int ReadPotValue(Pin pin)
+        {
+            sm.WaitOne();
+            int val = DeviceFactory.Build.GrovePi().AnalogRead(pin);
+            sm.Release();
+            return val;
+        }
 
         private void Sleep(int NoOfMs)
         {
@@ -127,7 +141,6 @@ namespace IOTLogic
 
         }
 
-        private bool motionDetected = false;
 
         private async void startMotionMonitoring()
         {
@@ -169,9 +182,14 @@ namespace IOTLogic
             }
         }
 
+
+        int adcValue = 0;
+        double Q = 0.0;
+        double sensorVoltage = 0.0;
+
         private void handleModeNormal()
         {
-
+            motionDetected = false;
             ChangeLEDState(ledGreen, SensorStatus.On);
 
             Sleep(200);
@@ -195,15 +213,46 @@ namespace IOTLogic
             Debug.WriteLine("Moisture is " + sensorMoistureAdcValue.ToString());
             sendDataToWindows("Moisture= " + sensorMoistureAdcValue.ToString());
 
+            adcValue = ReadPotValue(potPin);
+            Debug.WriteLine("Pot ADC = " + adcValue);
+
+            Q = EFSR / N;
+            sensorVoltage = adcValue * Q;
+            Debug.WriteLine("Voltage= " + sensorVoltage.ToString("n2") + "V");
+            sendDataToWindows("Voltage=" + sensorVoltage.ToString("n2"));
 
             sensorTemp = getTemp();
             Debug.WriteLine("Temp in degrees Celsius is " + sensorTemp.ToString("N2"));
             sendDataToWindows("Temp= " + sensorTemp.ToString("N2"));
 
+            ChangeLEDState(ledGreen, SensorStatus.Off);
+            Sleep(300);
+            if (motionDetected == true)
+            {
+                //for (int i = 0; i < 1; i++)
+                //{
+                //    activateBuzzer(buzzerPin, 120);
+                //    ChangeLEDState(ledRed, SensorStatus.On);
+                //    ChangeLEDState(ledGreen, SensorStatus.On);
+                //    Sleep(1000);
+                //    activateBuzzer(buzzerPin, 0);
+                //    ChangeLEDState(ledRed, SensorStatus.Off);
+                //    ChangeLEDState(ledGreen, SensorStatus.Off);
+                //    Sleep(1000);
+                //}
+                motionData = "Motion detected";
+                sendDataToWindows("Motion=" + motionData);
+                motionData = "No motion detected";
+                Sleep(750);
+                motionDetected = false;
+                sendDataToWindows("Motion=" + motionData);
+                Debug.WriteLine("Found Movement!");
+            }
+
             if (buttonPressed == true)
             {
                 buttonPressed = false;
-                motionDetected = false;
+                
 
                 ChangeLEDState(ledGreen, SensorStatus.Off);
                 curMode = MODE_ALARM;
@@ -426,7 +475,7 @@ namespace IOTLogic
             Debug.WriteLine(strDataReceived);
             startButtonMonitoring();
             startMotionMonitoring();
-
+            
             curMode = MODE_NORMAL;
             Debug.WriteLine("=== Entering MODE_NORMAL ===");
 

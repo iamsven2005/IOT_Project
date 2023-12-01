@@ -294,6 +294,7 @@
             this.ClientSize = new System.Drawing.Size(511, 272);
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.ShowIcon = false;
             this.Text = "Login Page";
