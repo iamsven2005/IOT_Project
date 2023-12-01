@@ -229,22 +229,7 @@ namespace PracticalADO_ReadDB
 
 
         }
-
-       
-
-
-        //public void extractRfidData(String strData)
-        //{
-        //    string dt = DateTime.Now.ToString("s");
-        //    if (strData.IndexOf("RFID=") != -1)
-        //    {
-
-        //        handleRfidSensorData(strData, dt, "RFID=");
-        //    }
-        //}
-
-       
-        
+    
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 

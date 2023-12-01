@@ -46,7 +46,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.dashboard = new System.Windows.Forms.FlowLayoutPanel();
             this.Temperature = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.Syslog = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.Moisture = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnLoadData2 = new System.Windows.Forms.Button();
             this.usrmgtpg = new System.Windows.Forms.TabPage();
             this.todo = new System.Windows.Forms.TabPage();
@@ -143,7 +143,7 @@
             this.splitContainer2.SuspendLayout();
             this.dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Temperature)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Syslog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Moisture)).BeginInit();
             this.todo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
             this.splitContainer5.Panel2.SuspendLayout();
@@ -487,7 +487,7 @@
             // 
             this.dashboard.BackColor = System.Drawing.Color.Black;
             this.dashboard.Controls.Add(this.Temperature);
-            this.dashboard.Controls.Add(this.Syslog);
+            this.dashboard.Controls.Add(this.Moisture);
             this.dashboard.Controls.Add(this.btnLoadData2);
             this.dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboard.Location = new System.Drawing.Point(0, 0);
@@ -518,26 +518,26 @@
             this.Temperature.Titles.Add(title1);
             this.Temperature.Click += new System.EventHandler(this.Temperature_Click);
             // 
-            // Syslog
+            // Moisture
             // 
             chartArea2.Name = "ChartArea1";
-            this.Syslog.ChartAreas.Add(chartArea2);
+            this.Moisture.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
-            this.Syslog.Legends.Add(legend2);
-            this.Syslog.Location = new System.Drawing.Point(502, 2);
-            this.Syslog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Syslog.Name = "Syslog";
+            this.Moisture.Legends.Add(legend2);
+            this.Moisture.Location = new System.Drawing.Point(502, 2);
+            this.Moisture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Moisture.Name = "Moisture";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series2.Legend = "Legend1";
             series2.Name = "Series1";
-            this.Syslog.Series.Add(series2);
-            this.Syslog.Size = new System.Drawing.Size(437, 199);
-            this.Syslog.TabIndex = 1;
-            this.Syslog.Text = "Syslog";
-            title2.Name = "Syslog";
-            title2.Text = "Syslog";
-            this.Syslog.Titles.Add(title2);
+            this.Moisture.Series.Add(series2);
+            this.Moisture.Size = new System.Drawing.Size(437, 199);
+            this.Moisture.TabIndex = 1;
+            this.Moisture.Text = "Moisture";
+            title2.Name = "Moisture";
+            title2.Text = "Moisture";
+            this.Moisture.Titles.Add(title2);
             // 
             // btnLoadData2
             // 
@@ -1545,7 +1545,7 @@
             this.splitContainer2.ResumeLayout(false);
             this.dashboard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Temperature)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Syslog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Moisture)).EndInit();
             this.todo.ResumeLayout(false);
             this.splitContainer5.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
@@ -1649,7 +1649,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.FlowLayoutPanel dashboard;
         private System.Windows.Forms.DataVisualization.Charting.Chart Temperature;
-        private System.Windows.Forms.DataVisualization.Charting.Chart Syslog;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Moisture;
         private System.Windows.Forms.TabPage usrmgtpg;
         private System.Windows.Forms.TabPage todo;
         private System.Windows.Forms.SplitContainer splitContainer5;

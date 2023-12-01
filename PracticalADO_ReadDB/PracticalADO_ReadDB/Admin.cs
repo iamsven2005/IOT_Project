@@ -29,10 +29,10 @@ namespace PracticalADO_ReadDB
             InitializeComponent();
             receivedData = data;
         }
-        private void loadData()
+        private void loadDataTemp()
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-            String strCommandText = "Select * from MonthlyStatistics Where EventType='HighTemp'";
+            String strCommandText = "Select * from Temperature'";
             try
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(strCommandText, myConnect);
@@ -41,8 +41,34 @@ namespace PracticalADO_ReadDB
                 adapter.Fill(ds);
                 Console.WriteLine("DataSet Rows = " + ds.Tables[0].Rows.Count);
                 Temperature.DataSource = ds;
-                Temperature.Series[0].XValueMember = "DateTimeLastUpdate";
-                Temperature.Series[0].YValueMembers = "TotalMonthlyCount";
+                Temperature.Series[0].XValueMember = "DateTime";
+                Temperature.Series[0].YValueMembers = "Temp";
+                Temperature.DataBind();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error:" + ex.Message.ToString());
+            }
+            finally
+            {
+                myConnect.Close();
+            }
+        }
+        private void loadDataMoisture()
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            String strCommandText = "Select * from MoistureTable'";
+            try
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(strCommandText, myConnect);
+                SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(adapter);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                Console.WriteLine("DataSet Rows = " + ds.Tables[0].Rows.Count);
+                Temperature.DataSource = ds;
+                Temperature.Series[0].XValueMember = "DateTime";
+                Temperature.Series[0].YValueMembers = "Moisture";
                 Temperature.DataBind();
 
             }
@@ -57,7 +83,8 @@ namespace PracticalADO_ReadDB
         }
         private void btnLoadData2_Click(object sender, EventArgs e)
         {
-            loadData();
+            loadDataTemp();
+            loadDataMoisture();
         }
 
         private Color getColor(int r, int g, int b, int transparent = 255)
@@ -81,7 +108,7 @@ namespace PracticalADO_ReadDB
             cht.Series[0].IsXValueIndexed = false;
 
         }
-        private void initChartProperties()
+        private void initChartPropertiesTemperature()
         {
             Temperature.BackColor = getColor(243, 223, 193);
             Temperature.BackGradientStyle = GradientStyle.TopBottom;
@@ -97,7 +124,6 @@ namespace PracticalADO_ReadDB
             legend1.BackColor = Color.Transparent;
             legend1.Enabled = true;
             legend1.Font = labelFont;
-            // Chart Area is the
             Color colorGridLines = getColor(64, 64, 64, 64);
             ChartArea chartArea1 = Temperature.ChartAreas[0];
             chartArea1.BackColor = Color.OldLace;
@@ -132,10 +158,60 @@ namespace PracticalADO_ReadDB
             series1.MarkerColor = lineColor;
             series1.ToolTip = "Timestamp : #VALX{d MM yyyy H:mm:ss} , Value : #VAL";
         }
-
+        private void initChartPropertiesMoisture()
+        {
+            Moisture.BackColor = getColor(243, 223, 193);
+            Moisture.BackGradientStyle = GradientStyle.TopBottom;
+            Moisture.BorderlineColor = getColor(181, 64, 1);
+            Moisture.BorderlineDashStyle = ChartDashStyle.Solid;
+            Moisture.BorderlineWidth = 2;
+            Title title1 = new Title();
+            title1.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Bold);
+            title1.Text = "Time Base Chart";
+            Moisture.Titles.Add(title1);
+            Font labelFont = new Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold);
+            Legend legend1 = Moisture.Legends[0];
+            legend1.BackColor = Color.Transparent;
+            legend1.Enabled = true;
+            legend1.Font = labelFont;
+            Color colorGridLines = getColor(64, 64, 64, 64);
+            ChartArea chartArea1 = Moisture.ChartAreas[0];
+            chartArea1.BackColor = Color.OldLace;
+            chartArea1.BackGradientStyle = GradientStyle.TopBottom;
+            chartArea1.BorderColor = colorGridLines;
+            chartArea1.BorderDashStyle = ChartDashStyle.Solid;
+            chartArea1.ShadowColor = Color.Transparent;
+            chartArea1.AxisX.LabelStyle.Font = labelFont;
+            chartArea1.AxisX.LineColor = colorGridLines;
+            chartArea1.AxisX.MajorGrid.LineColor = colorGridLines;
+            chartArea1.AxisX.IntervalType = DateTimeIntervalType.Minutes;
+            chartArea1.AxisX.Interval = 1;
+            DateTime minDate = getDateTime(2016, 10, 12, 15, 0, 0);
+            DateTime maxDate = getDateTime(2016, 10, 12, 15, 10, 0);
+            setXAxisDisplayRange(Moisture, minDate, maxDate);
+            chartArea1.AxisX.LabelStyle.Format = "MMM dd HH:mm";
+            chartArea1.AxisY.LabelStyle.Font = labelFont;
+            chartArea1.AxisY.LineColor = colorGridLines;
+            chartArea1.AxisY.MajorGrid.LineColor = colorGridLines;
+            chartArea1.AxisY.Interval = 10;
+            chartArea1.AxisY.IsStartedFromZero = true;
+            Series series1 = Moisture.Series[0];
+            series1.Name = "Temp";
+            Color lineColor = getColor(26, 59, 105, 180);
+            series1.BorderColor = lineColor;
+            series1.ChartType = SeriesChartType.Spline;
+            series1.XValueType = ChartValueType.DateTime;
+            series1.YValueType = ChartValueType.Double;
+            series1.MarkerStyle = MarkerStyle.Circle;
+            series1.MarkerSize = 6;
+            series1.MarkerBorderColor = lineColor;
+            series1.MarkerColor = lineColor;
+            series1.ToolTip = "Timestamp : #VALX{d MM yyyy H:mm:ss} , Value : #VAL";
+        }
         private void Charts_Load(object sender, EventArgs e)
         {
-            initChartProperties();
+            initChartPropertiesTemperature();
+            initChartPropertiesMoisture();
         }
 
         public void commsDataReceive(string dataReceived)
