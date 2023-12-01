@@ -126,8 +126,6 @@
             this.lightValueTB = new System.Windows.Forms.TextBox();
             this.stopLightBtn = new System.Windows.Forms.Button();
             this.sendLight = new System.Windows.Forms.Button();
-            this.sampleDBDataSet2 = new PracticalADO_ReadDB.SampleDBDataSet2();
-            this.sampleDBDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblUltrasonic = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -221,8 +219,6 @@
             this.splitContainer20.Panel2.SuspendLayout();
             this.splitContainer20.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -271,7 +267,6 @@
             this.sysLogTB.Name = "sysLogTB";
             this.sysLogTB.Size = new System.Drawing.Size(321, 371);
             this.sysLogTB.TabIndex = 0;
-            this.sysLogTB.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // splitContainer4
             // 
@@ -379,7 +374,6 @@
             this.label13.Size = new System.Drawing.Size(126, 25);
             this.label13.TabIndex = 1;
             this.label13.Text = "System Log";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // syslogLB
             // 
@@ -467,7 +461,6 @@
             this.label11.Size = new System.Drawing.Size(57, 15);
             this.label11.TabIndex = 11;
             this.label11.Text = "Door is:";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // doorLbl
             // 
@@ -491,7 +484,6 @@
             this.label10.Size = new System.Drawing.Size(39, 15);
             this.label10.TabIndex = 9;
             this.label10.Text = "lb/ft3";
-            this.label10.Click += new System.EventHandler(this.label10_Click_4);
             // 
             // degcelLbl
             // 
@@ -537,7 +529,6 @@
             this.tempLBL.Size = new System.Drawing.Size(89, 15);
             this.tempLBL.TabIndex = 5;
             this.tempLBL.Text = "Temperature";
-            this.tempLBL.Click += new System.EventHandler(this.label10_Click_3);
             // 
             // lblTemp
             // 
@@ -550,7 +541,6 @@
             this.lblTemp.TabIndex = 4;
             this.lblTemp.Text = "label10";
             this.lblTemp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblTemp.Click += new System.EventHandler(this.label10_Click_2);
             // 
             // label9
             // 
@@ -598,7 +588,6 @@
             title1.Name = "Temperature";
             title1.Text = "Temperature";
             this.Temperature.Titles.Add(title1);
-            this.Temperature.Click += new System.EventHandler(this.Temperature_Click);
             // 
             // Moisture
             // 
@@ -655,7 +644,6 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer6);
-            this.splitContainer5.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer5_Panel2_Paint);
             this.splitContainer5.Size = new System.Drawing.Size(1048, 417);
             this.splitContainer5.SplitterDistance = 285;
             this.splitContainer5.TabIndex = 1;
@@ -951,7 +939,6 @@
             this.lblContact.Size = new System.Drawing.Size(60, 17);
             this.lblContact.TabIndex = 19;
             this.lblContact.Text = "Contact:";
-            this.lblContact.Click += new System.EventHandler(this.lblContact_Click);
             // 
             // label1
             // 
@@ -1074,7 +1061,6 @@
             this.tbRFID.ReadOnly = true;
             this.tbRFID.Size = new System.Drawing.Size(163, 22);
             this.tbRFID.TabIndex = 16;
-            this.tbRFID.TextChanged += new System.EventHandler(this.tbRFID_TextChanged);
             // 
             // tbPwd
             // 
@@ -1449,7 +1435,6 @@
             this.CountryLbl.Size = new System.Drawing.Size(61, 17);
             this.CountryLbl.TabIndex = 19;
             this.CountryLbl.Text = "Country:";
-            this.CountryLbl.Click += new System.EventHandler(this.CountryLbl_Click);
             // 
             // tbCountryOfBirthMd
             // 
@@ -1526,7 +1511,6 @@
             this.tabPage6.Size = new System.Drawing.Size(1054, 421);
             this.tabPage6.TabIndex = 7;
             this.tabPage6.Text = "lightValue";
-            this.tabPage6.Click += new System.EventHandler(this.tabPage6_Click);
             // 
             // roomStatus
             // 
@@ -1536,7 +1520,6 @@
             this.roomStatus.ReadOnly = true;
             this.roomStatus.Size = new System.Drawing.Size(272, 22);
             this.roomStatus.TabIndex = 3;
-            this.roomStatus.TextChanged += new System.EventHandler(this.roomStatus_TextChanged);
             // 
             // lightValueTB
             // 
@@ -1546,7 +1529,6 @@
             this.lightValueTB.ReadOnly = true;
             this.lightValueTB.Size = new System.Drawing.Size(272, 22);
             this.lightValueTB.TabIndex = 0;
-            this.lightValueTB.TextChanged += new System.EventHandler(this.lightValueTB_TextChanged);
             // 
             // stopLightBtn
             // 
@@ -1557,7 +1539,6 @@
             this.stopLightBtn.TabIndex = 2;
             this.stopLightBtn.Text = "Stop Light";
             this.stopLightBtn.UseVisualStyleBackColor = true;
-            this.stopLightBtn.Click += new System.EventHandler(this.stopLightBtn_Click);
             // 
             // sendLight
             // 
@@ -1569,16 +1550,6 @@
             this.sendLight.Text = "Send Light";
             this.sendLight.UseVisualStyleBackColor = true;
             this.sendLight.Click += new System.EventHandler(this.sendLight_Click);
-            // 
-            // sampleDBDataSet2
-            // 
-            this.sampleDBDataSet2.DataSetName = "SampleDBDataSet2";
-            this.sampleDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sampleDBDataSet2BindingSource
-            // 
-            this.sampleDBDataSet2BindingSource.DataSource = this.sampleDBDataSet2;
-            this.sampleDBDataSet2BindingSource.Position = 0;
             // 
             // lblUltrasonic
             // 
@@ -1616,7 +1587,6 @@
             this.Text = "Admin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Admin_FormClosed);
             this.Load += new System.EventHandler(this.Admin_Load);
-            this.Resize += new System.EventHandler(this.Admin_Resize);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -1723,8 +1693,6 @@
             this.splitContainer20.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sampleDBDataSet2BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1734,8 +1702,7 @@
         private System.Windows.Forms.TextBox adminmsg;
         private System.Windows.Forms.Button adminsend;
         private System.Windows.Forms.TextBox sysLogTB;
-        private SampleDBDataSet2 sampleDBDataSet2;
-        private System.Windows.Forms.BindingSource sampleDBDataSet2BindingSource;
+
         private System.Windows.Forms.TabControl usermgt;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
