@@ -29,11 +29,11 @@ namespace PracticalADO_ReadDB
             this.AdminLogin = new System.Windows.Forms.Button();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.MFATB = new System.Windows.Forms.TextBox();
             this.Title = new System.Windows.Forms.Label();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.ForgetPwd = new System.Windows.Forms.Button();
-            this.MFATB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -201,6 +201,14 @@ namespace PracticalADO_ReadDB
             this.splitContainer5.SplitterDistance = 46;
             this.splitContainer5.TabIndex = 10;
             // 
+            // MFATB
+            // 
+            this.MFATB.Location = new System.Drawing.Point(0, 27);
+            this.MFATB.Name = "MFATB";
+            this.MFATB.Size = new System.Drawing.Size(258, 22);
+            this.MFATB.TabIndex = 3;
+            this.MFATB.Text = "MFA Value (Default \"Hello\")";
+            // 
             // Title
             // 
             this.Title.AutoSize = true;
@@ -266,14 +274,6 @@ namespace PracticalADO_ReadDB
             this.ForgetPwd.UseVisualStyleBackColor = true;
             this.ForgetPwd.UseWaitCursor = true;
             this.ForgetPwd.Click += new System.EventHandler(this.ForgetPwd_Click);
-            // 
-            // MFATB
-            // 
-            this.MFATB.Location = new System.Drawing.Point(0, 27);
-            this.MFATB.Name = "MFATB";
-            this.MFATB.Size = new System.Drawing.Size(258, 22);
-            this.MFATB.TabIndex = 3;
-            this.MFATB.Text = "MFA Value (Default \"Hello\")";
             // 
             // frmLogin
             // 
