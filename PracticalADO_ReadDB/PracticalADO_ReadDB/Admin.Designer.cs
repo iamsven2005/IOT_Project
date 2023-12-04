@@ -16,17 +16,16 @@
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.sysLogTB = new System.Windows.Forms.TextBox();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.adminmsg = new System.Windows.Forms.TextBox();
             this.adminsend = new System.Windows.Forms.Button();
@@ -67,6 +66,8 @@
             this.splitContainer11 = new System.Windows.Forms.SplitContainer();
             this.ContactUsername = new System.Windows.Forms.TextBox();
             this.Username = new System.Windows.Forms.Label();
+            this.MFA2 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.Contact = new System.Windows.Forms.Label();
             this.ContactResult = new System.Windows.Forms.TextBox();
             this.GetContact = new System.Windows.Forms.Button();
@@ -113,6 +114,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbUserID = new System.Windows.Forms.TextBox();
             this.lblUniqueUserID = new System.Windows.Forms.Label();
+            this.MFA = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.btnGetUserID = new System.Windows.Forms.Button();
             this.CountryLbl = new System.Windows.Forms.Label();
             this.tbCountryOfBirthMd = new System.Windows.Forms.TextBox();
@@ -127,10 +130,8 @@
             this.lightValueTB = new System.Windows.Forms.TextBox();
             this.stopLightBtn = new System.Windows.Forms.Button();
             this.sendLight = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.MFA = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.MFA2 = new System.Windows.Forms.TextBox();
+            this.Messages = new System.Windows.Forms.TextBox();
+            this.session = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -252,7 +253,8 @@
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.sysLogTB);
+            this.splitContainer3.Panel1.Controls.Add(this.session);
+            this.splitContainer3.Panel1.Controls.Add(this.Messages);
             // 
             // splitContainer3.Panel2
             // 
@@ -260,16 +262,6 @@
             this.splitContainer3.Size = new System.Drawing.Size(321, 450);
             this.splitContainer3.SplitterDistance = 371;
             this.splitContainer3.TabIndex = 0;
-            // 
-            // sysLogTB
-            // 
-            this.sysLogTB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sysLogTB.Location = new System.Drawing.Point(0, 0);
-            this.sysLogTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.sysLogTB.Multiline = true;
-            this.sysLogTB.Name = "sysLogTB";
-            this.sysLogTB.Size = new System.Drawing.Size(321, 371);
-            this.sysLogTB.TabIndex = 0;
             // 
             // splitContainer4
             // 
@@ -313,6 +305,7 @@
             this.adminsend.TabIndex = 0;
             this.adminsend.Text = "Send";
             this.adminsend.UseVisualStyleBackColor = true;
+            this.adminsend.Click += new System.EventHandler(this.adminsend_Click);
             // 
             // usermgt
             // 
@@ -597,45 +590,45 @@
             // 
             // Temperature
             // 
-            chartArea1.Name = "ChartArea1";
-            this.Temperature.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.Temperature.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.Temperature.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.Temperature.Legends.Add(legend3);
             this.Temperature.Location = new System.Drawing.Point(3, 2);
             this.Temperature.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Temperature.Name = "Temperature";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.Temperature.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.Temperature.Series.Add(series3);
             this.Temperature.Size = new System.Drawing.Size(493, 199);
             this.Temperature.TabIndex = 0;
             this.Temperature.Text = "Temperature";
-            title1.Name = "Temperature";
-            title1.Text = "Temperature";
-            this.Temperature.Titles.Add(title1);
+            title3.Name = "Temperature";
+            title3.Text = "Temperature";
+            this.Temperature.Titles.Add(title3);
             // 
             // Moisture
             // 
-            chartArea2.Name = "ChartArea1";
-            this.Moisture.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.Moisture.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.Moisture.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.Moisture.Legends.Add(legend4);
             this.Moisture.Location = new System.Drawing.Point(502, 2);
             this.Moisture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Moisture.Name = "Moisture";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.Moisture.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.Moisture.Series.Add(series4);
             this.Moisture.Size = new System.Drawing.Size(437, 199);
             this.Moisture.TabIndex = 1;
             this.Moisture.Text = "Moisture";
-            title2.Name = "Moisture";
-            title2.Text = "Moisture";
-            this.Moisture.Titles.Add(title2);
+            title4.Name = "Moisture";
+            title4.Text = "Moisture";
+            this.Moisture.Titles.Add(title4);
             // 
             // usrmgtpg
             // 
@@ -837,6 +830,28 @@
             this.Username.Size = new System.Drawing.Size(73, 17);
             this.Username.TabIndex = 1;
             this.Username.Text = "Username";
+            // 
+            // MFA2
+            // 
+            this.MFA2.Location = new System.Drawing.Point(303, 11);
+            this.MFA2.Margin = new System.Windows.Forms.Padding(4);
+            this.MFA2.Name = "MFA2";
+            this.MFA2.ReadOnly = true;
+            this.MFA2.Size = new System.Drawing.Size(100, 22);
+            this.MFA2.TabIndex = 7;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label16.Location = new System.Drawing.Point(265, 12);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(40, 17);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "MFA:";
             // 
             // Contact
             // 
@@ -1443,6 +1458,24 @@
             this.lblUniqueUserID.TabIndex = 1;
             this.lblUniqueUserID.Text = "UniqueUserID:";
             // 
+            // MFA
+            // 
+            this.MFA.Location = new System.Drawing.Point(223, 94);
+            this.MFA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MFA.Name = "MFA";
+            this.MFA.Size = new System.Drawing.Size(57, 22);
+            this.MFA.TabIndex = 22;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label14.Location = new System.Drawing.Point(186, 99);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(40, 17);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "MFA:";
+            // 
             // btnGetUserID
             // 
             this.btnGetUserID.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -1582,45 +1615,23 @@
             this.sendLight.UseVisualStyleBackColor = true;
             this.sendLight.Click += new System.EventHandler(this.sendLight_Click);
             // 
-            // label14
+            // Messages
             // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label14.Location = new System.Drawing.Point(186, 99);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(40, 17);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "MFA:";
+            this.Messages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Messages.Location = new System.Drawing.Point(0, 0);
+            this.Messages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Messages.Multiline = true;
+            this.Messages.Name = "Messages";
+            this.Messages.Size = new System.Drawing.Size(321, 371);
+            this.Messages.TabIndex = 0;
             // 
-            // MFA
+            // session
             // 
-            this.MFA.Location = new System.Drawing.Point(223, 94);
-            this.MFA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MFA.Name = "MFA";
-            this.MFA.Size = new System.Drawing.Size(57, 22);
-            this.MFA.TabIndex = 22;
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label16.Location = new System.Drawing.Point(265, 12);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(40, 17);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "MFA:";
-            // 
-            // MFA2
-            // 
-            this.MFA2.Location = new System.Drawing.Point(303, 11);
-            this.MFA2.Margin = new System.Windows.Forms.Padding(4);
-            this.MFA2.Name = "MFA2";
-            this.MFA2.ReadOnly = true;
-            this.MFA2.Size = new System.Drawing.Size(100, 22);
-            this.MFA2.TabIndex = 7;
+            this.session.Location = new System.Drawing.Point(219, 350);
+            this.session.Name = "session";
+            this.session.Size = new System.Drawing.Size(100, 22);
+            this.session.TabIndex = 1;
+            this.session.Visible = false;
             // 
             // Admin
             // 
@@ -1749,7 +1760,6 @@
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.TextBox adminmsg;
         private System.Windows.Forms.Button adminsend;
-        private System.Windows.Forms.TextBox sysLogTB;
 
         private System.Windows.Forms.TabControl usermgt;
         private System.Windows.Forms.TabPage tabPage1;
@@ -1852,5 +1862,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox MFA2;
+        private System.Windows.Forms.TextBox Messages;
+        private System.Windows.Forms.TextBox session;
     }
 }

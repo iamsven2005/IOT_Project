@@ -23,17 +23,58 @@ namespace PracticalADO_ReadDB
         DataTable UserTable = new DataTable();
         DataGridViewRow CurrentRow = null;
         SqlDataAdapter UserAdapter;
-
         DataComms dataComms;
         public delegate void myprocessDataDelegate(String strData);
         public Admin(string data)
         {
             InitializeComponent();
             receivedData = data;
-            //Async
             loadDataTemp();
             loadDataMoisture();
+            loadMessages();
+            session.Text = "Admin";
         }
+        private void adminsend_Click(object sender, EventArgs e)
+        {
+            Guid newGuid = Guid.NewGuid();
+            int result = 0;
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            String strCommandText =
+                "INSERT Messages (ID, Messager, Message, Time) " +
+               " VALUES (@ID, @User, @Message, @Time)";
+            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
+            updateCmd.Parameters.AddWithValue("@Message", adminmsg.Text);
+            updateCmd.Parameters.AddWithValue("@ID", newGuid.ToString());
+            updateCmd.Parameters.AddWithValue("@Time", DateTime.Now.ToString("s"));
+            updateCmd.Parameters.AddWithValue("@User", session.Text);
+            myConnect.Open();
+            result = updateCmd.ExecuteNonQuery();
+            myConnect.Close();
+            loadMessages();
+        }
+
+        private void loadMessages()
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            String strCommandText = "Select Top 20 * from Messages Order By Time Desc";
+            SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
+            myConnect.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            StringBuilder messagesBuilder = new StringBuilder();
+
+            while (reader.Read())
+            {
+                string message = reader["Message"].ToString();
+                string user = reader["Messager"].ToString();
+                string time = reader["Time"].ToString();
+                messagesBuilder.AppendLine($"{user} {message} {time}");
+            }
+            Messages.Text = messagesBuilder.ToString();
+            reader.Close();
+            myConnect.Close();
+        }
+
         private void loadDataTemp()
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
@@ -599,9 +640,7 @@ namespace PracticalADO_ReadDB
         {
             string strValue = extractStringValue(strData, ID);
             float UltraSonicVal = extractFloatValue(strData, ID);
-
             lblUltrasonic.Text = strValue;
-
         }
 
         private void saveTempSensorDataToDB(string strTime, float strTempValue)
@@ -669,7 +708,7 @@ namespace PracticalADO_ReadDB
         public void processDataReceive(String strData)
         {
             myprocessDataDelegate d = new myprocessDataDelegate(handleSensorData);
-            sysLogTB.Invoke(d, new object[] { strData });
+            Messages.Invoke(d, new object[] { strData });
         }
         private void scanCardBtn_Click(object sender, EventArgs e)
         {
@@ -690,5 +729,7 @@ namespace PracticalADO_ReadDB
             loadDataTemp();
             loadDataMoisture();
         }
+
+
     }
 }
