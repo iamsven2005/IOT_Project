@@ -94,10 +94,10 @@ namespace IOTLogic
             sm.Release();
         }
 
-        private int ReadPotValue(Pin pin)
+        private double ReadPotValue(Pin pin)
         {
             sm.WaitOne();
-            int val = DeviceFactory.Build.GrovePi().AnalogRead(pin);
+            double val = DeviceFactory.Build.GrovePi().AnalogRead(pin);
             sm.Release();
             return val;
         }
@@ -199,7 +199,7 @@ namespace IOTLogic
         }
 
 
-        int adcValue = 0;
+        double adcValue = 0;
         double Q = 0.0;
         double sensorVoltage = 0.0;
 
@@ -221,6 +221,7 @@ namespace IOTLogic
                 ChangeLEDState(ledRed, SensorStatus.On);
                 activateBuzzer(buzzerPin, 0);
                 Sleep(200);
+                ChangeLEDState(ledGreen, SensorStatus.On);
                 ChangeLEDState(ledRed, SensorStatus.Off);
 
             }
@@ -256,7 +257,7 @@ namespace IOTLogic
 
             if (strRfidDetected == "")
             {
-                if (motionDetected == true)
+                if (motionDetected == true && adcValue >= 0.3)
                 {
                     motionData = "Motion detected";
                     sendDataToWindows("Motion=" + motionData);
@@ -273,10 +274,6 @@ namespace IOTLogic
                 }
             }
 
-            else
-            {
-                Sleep(500);
-            }
            
 
             if (buttonPressed == true)

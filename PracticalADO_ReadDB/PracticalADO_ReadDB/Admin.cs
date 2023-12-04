@@ -328,7 +328,7 @@ namespace PracticalADO_ReadDB
         {
             int result = 0;
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-            String strCommandText = "INSERT MyUser (Name, UniqueRFID, NRIC, Address, Contact, Password)" + " VALUES (@NewName, @NewRFID, @NewNRIC, @NewAdd, @NewContact, @NewPwd)";
+            String strCommandText = "INSERT MyUser (Name, UniqueRFID, NRIC, Address, Contact, Password, MFAValue)" + " VALUES (@NewName, @NewRFID, @NewNRIC, @NewAdd, @NewContact, @NewPwd, @MFA)";
             SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
             updateCmd.Parameters.AddWithValue("@NewName", tbName.Text);
             updateCmd.Parameters.AddWithValue("@NewRFID", tbRFID.Text);
@@ -336,6 +336,7 @@ namespace PracticalADO_ReadDB
             updateCmd.Parameters.AddWithValue("@NewAdd", tbAdd.Text);
             updateCmd.Parameters.AddWithValue("@NewContact", tbContact.Text);
             updateCmd.Parameters.AddWithValue("@NewPwd", BCrypt.Net.BCrypt.HashPassword(tbPwd.Text));
+            updateCmd.Parameters.AddWithValue("@MFA", "Hello");
             myConnect.Open();
             result = updateCmd.ExecuteNonQuery();
             if (result > 0)
