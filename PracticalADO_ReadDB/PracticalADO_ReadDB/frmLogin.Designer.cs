@@ -33,6 +33,7 @@ namespace PracticalADO_ReadDB
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.ForgetPwd = new System.Windows.Forms.Button();
+            this.MFATB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -194,6 +195,7 @@ namespace PracticalADO_ReadDB
             // 
             // splitContainer5.Panel2
             // 
+            this.splitContainer5.Panel2.Controls.Add(this.MFATB);
             this.splitContainer5.Panel2.Controls.Add(this.tbPassword);
             this.splitContainer5.Size = new System.Drawing.Size(261, 100);
             this.splitContainer5.SplitterDistance = 46;
@@ -265,6 +267,14 @@ namespace PracticalADO_ReadDB
             this.ForgetPwd.UseWaitCursor = true;
             this.ForgetPwd.Click += new System.EventHandler(this.ForgetPwd_Click);
             // 
+            // MFATB
+            // 
+            this.MFATB.Location = new System.Drawing.Point(0, 27);
+            this.MFATB.Name = "MFATB";
+            this.MFATB.Size = new System.Drawing.Size(258, 22);
+            this.MFATB.TabIndex = 3;
+            this.MFATB.Text = "MFA Value (Default \"Hello\")";
+            // 
             // frmLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -323,6 +333,7 @@ namespace PracticalADO_ReadDB
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Button AdminLogin;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox MFATB;
     }
 }
 

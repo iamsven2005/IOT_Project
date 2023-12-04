@@ -16,7 +16,6 @@
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -39,6 +38,8 @@
             this.syslogLB = new System.Windows.Forms.ListBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblUltrasonic = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.motionLbl = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -126,8 +127,10 @@
             this.lightValueTB = new System.Windows.Forms.TextBox();
             this.stopLightBtn = new System.Windows.Forms.Button();
             this.sendLight = new System.Windows.Forms.Button();
-            this.lblUltrasonic = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.MFA = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.MFA2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -429,6 +432,29 @@
             this.splitContainer2.SplitterDistance = 205;
             this.splitContainer2.TabIndex = 1;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label15.Location = new System.Drawing.Point(585, 56);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(96, 15);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "Water amount";
+            // 
+            // lblUltrasonic
+            // 
+            this.lblUltrasonic.AutoSize = true;
+            this.lblUltrasonic.BackColor = System.Drawing.Color.Black;
+            this.lblUltrasonic.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblUltrasonic.Location = new System.Drawing.Point(581, 80);
+            this.lblUltrasonic.Name = "lblUltrasonic";
+            this.lblUltrasonic.Size = new System.Drawing.Size(135, 39);
+            this.lblUltrasonic.TabIndex = 14;
+            this.lblUltrasonic.Text = "label10";
+            this.lblUltrasonic.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -518,6 +544,7 @@
             this.lblMoisture.TabIndex = 6;
             this.lblMoisture.Text = "label10";
             this.lblMoisture.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblMoisture.TextChanged += new System.EventHandler(this.lblMoisture_TextChanged);
             // 
             // tempLBL
             // 
@@ -780,6 +807,8 @@
             // 
             // splitContainer11.Panel2
             // 
+            this.splitContainer11.Panel2.Controls.Add(this.MFA2);
+            this.splitContainer11.Panel2.Controls.Add(this.label16);
             this.splitContainer11.Panel2.Controls.Add(this.Contact);
             this.splitContainer11.Panel2.Controls.Add(this.ContactResult);
             this.splitContainer11.Size = new System.Drawing.Size(407, 75);
@@ -1305,6 +1334,8 @@
             // 
             // splitContainer20.Panel2
             // 
+            this.splitContainer20.Panel2.Controls.Add(this.MFA);
+            this.splitContainer20.Panel2.Controls.Add(this.label14);
             this.splitContainer20.Panel2.Controls.Add(this.btnGetUserID);
             this.splitContainer20.Panel2.Controls.Add(this.CountryLbl);
             this.splitContainer20.Panel2.Controls.Add(this.tbCountryOfBirthMd);
@@ -1467,7 +1498,7 @@
             this.tbPasswordMd.Location = new System.Drawing.Point(103, 95);
             this.tbPasswordMd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPasswordMd.Name = "tbPasswordMd";
-            this.tbPasswordMd.Size = new System.Drawing.Size(177, 22);
+            this.tbPasswordMd.Size = new System.Drawing.Size(77, 22);
             this.tbPasswordMd.TabIndex = 15;
             // 
             // label7
@@ -1551,28 +1582,45 @@
             this.sendLight.UseVisualStyleBackColor = true;
             this.sendLight.Click += new System.EventHandler(this.sendLight_Click);
             // 
-            // lblUltrasonic
+            // label14
             // 
-            this.lblUltrasonic.AutoSize = true;
-            this.lblUltrasonic.BackColor = System.Drawing.Color.Black;
-            this.lblUltrasonic.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblUltrasonic.Location = new System.Drawing.Point(581, 80);
-            this.lblUltrasonic.Name = "lblUltrasonic";
-            this.lblUltrasonic.Size = new System.Drawing.Size(135, 39);
-            this.lblUltrasonic.TabIndex = 14;
-            this.lblUltrasonic.Text = "label10";
-            this.lblUltrasonic.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label14.Location = new System.Drawing.Point(186, 99);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(40, 17);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "MFA:";
             // 
-            // label15
+            // MFA
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.GhostWhite;
-            this.label15.Location = new System.Drawing.Point(585, 56);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(96, 15);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "Water amount";
+            this.MFA.Location = new System.Drawing.Point(223, 94);
+            this.MFA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MFA.Name = "MFA";
+            this.MFA.Size = new System.Drawing.Size(57, 22);
+            this.MFA.TabIndex = 22;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label16.Location = new System.Drawing.Point(265, 12);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(40, 17);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "MFA:";
+            // 
+            // MFA2
+            // 
+            this.MFA2.Location = new System.Drawing.Point(303, 11);
+            this.MFA2.Margin = new System.Windows.Forms.Padding(4);
+            this.MFA2.Name = "MFA2";
+            this.MFA2.ReadOnly = true;
+            this.MFA2.Size = new System.Drawing.Size(100, 22);
+            this.MFA2.TabIndex = 7;
             // 
             // Admin
             // 
@@ -1800,5 +1848,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblUltrasonic;
+        private System.Windows.Forms.TextBox MFA;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox MFA2;
     }
 }

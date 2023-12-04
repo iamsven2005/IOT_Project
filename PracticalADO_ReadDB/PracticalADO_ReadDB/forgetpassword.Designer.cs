@@ -55,7 +55,6 @@
             this.label1.Size = new System.Drawing.Size(144, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Write Your Username";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -103,6 +102,7 @@
             this.Submit.TabIndex = 6;
             this.Submit.Text = "Submit";
             this.Submit.UseVisualStyleBackColor = true;
+            this.Submit.Click += new System.EventHandler(this.Submit_Click);
             // 
             // forgetpassword
             // 

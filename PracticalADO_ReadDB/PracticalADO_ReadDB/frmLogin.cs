@@ -28,9 +28,13 @@ namespace PracticalADO_ReadDB
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            string textBoxValue = MFATB.Text;
+            if (string.IsNullOrEmpty(textBoxValue))
+            {
+                textBoxValue = null;
+            }
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-            string strCommandText = "SELECT Name, Password FROM MyUser WHERE Name=@uname";
+            string strCommandText = "SELECT Name, Password, MFAValue FROM MyUser WHERE Name=@uname";
             SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
             cmd.Parameters.AddWithValue("@uname", tbUserName.Text);
             try
@@ -42,11 +46,11 @@ namespace PracticalADO_ReadDB
                 {
                     reader.Read();
                     string hashedPasswordFromDB = reader["Password"].ToString();
+                    string MFADB = reader["MFAValue"].ToString();
                     string enteredPassword = tbPassword.Text;
-                    if (BCrypt.Net.BCrypt.Verify(enteredPassword, hashedPasswordFromDB))
+                    if (BCrypt.Net.BCrypt.Verify(enteredPassword, hashedPasswordFromDB) && textBoxValue == MFADB)
                     {
                         MessageBox.Show($"Succcess: Welcome {tbUserName.Text}");
-
                         if (tbUserName.Text == "Admin")
                         {
                             string dataToPass = tbUserName.Text;

@@ -11,6 +11,8 @@ using System.Windows.Forms.DataVisualization.Charting;
 using System.Configuration;
 using System.Data.SqlClient;
 using BCrypt.Net;
+using System.Net;
+using System.Net.Mail;
 
 namespace PracticalADO_ReadDB
 {
@@ -35,7 +37,7 @@ namespace PracticalADO_ReadDB
         private void loadDataTemp()
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-            String strCommandText = "Select * from Temperature";
+            String strCommandText = "Select Top 20 * from Temperature Order By DateTime Desc";
             try
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(strCommandText, myConnect);
@@ -61,7 +63,7 @@ namespace PracticalADO_ReadDB
         private void loadDataMoisture()
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-            String strCommandText = "Select * from MoistureTable";
+            String strCommandText = "Select Top 20 * from MoistureTable Order By DateTime Desc";
             try
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(strCommandText, myConnect);
@@ -264,7 +266,7 @@ namespace PracticalADO_ReadDB
         private void GetContact_Click(object sender, EventArgs e)
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-            string strCommandText = "SELECT Contact FROM MyUser ";
+            string strCommandText = "SELECT Contact, MFAValue FROM MyUser ";
             strCommandText += "WHERE Name=@UserID";
             SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
             cmd.Parameters.AddWithValue("@UserID", ContactUsername.Text);
@@ -273,6 +275,7 @@ namespace PracticalADO_ReadDB
             if (reader.Read())
             {
                 ContactResult.Text = reader["Contact"].ToString();
+                MFA2.Text = reader["MFAValue"].ToString();
             }
             else
             {
@@ -418,7 +421,7 @@ namespace PracticalADO_ReadDB
         private int ModifyUserRecord()
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-            string strCommandText = "UPDATE MyUser SET Name=@NewName, UniqueRFID=@NewRFID, NRIC=@NewNRIC, Address=@NewAdd, Contact=@NewContact, DOB=@NewDOB, CountryOfBirth=@NewCountry, Password=@NewPassword WHERE UniqueUserID=@UserID";
+            string strCommandText = "UPDATE MyUser SET Name=@NewName, UniqueRFID=@NewRFID, NRIC=@NewNRIC, Address=@NewAdd, Contact=@NewContact, DOB=@NewDOB, CountryOfBirth=@NewCountry, MFAValue=@MFA, Password=@NewPassword WHERE UniqueUserID=@UserID";
             SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
             updateCmd.Parameters.AddWithValue("@UserID", tbUserID.Text);
             updateCmd.Parameters.AddWithValue("@NewName", tbNameMd.Text);
@@ -429,6 +432,7 @@ namespace PracticalADO_ReadDB
             updateCmd.Parameters.AddWithValue("@NewDOB", tbDOBMd.Text);
             updateCmd.Parameters.AddWithValue("@NewCountry", tbCountryOfBirthMd.Text);
             updateCmd.Parameters.AddWithValue("@NewPassword", BCrypt.Net.BCrypt.HashPassword(tbPasswordMd.Text));
+            updateCmd.Parameters.AddWithValue("@MFA", MFA.Text);
             myConnect.Open();
             int result = updateCmd.ExecuteNonQuery();
             myConnect.Close();
@@ -680,5 +684,11 @@ namespace PracticalADO_ReadDB
             dataComms.sendData("SENDLIGHT");
         }
 
+
+        private void lblMoisture_TextChanged(object sender, EventArgs e)
+        {
+            loadDataTemp();
+            loadDataMoisture();
+        }
     }
 }
