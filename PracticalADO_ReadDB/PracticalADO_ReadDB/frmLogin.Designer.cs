@@ -63,7 +63,7 @@ namespace PracticalADO_ReadDB
             this.label2.Location = new System.Drawing.Point(-72, 5);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.Size = new System.Drawing.Size(0, 17);
             this.label2.TabIndex = 1;
             this.label2.UseWaitCursor = true;
             // 
@@ -73,10 +73,10 @@ namespace PracticalADO_ReadDB
             this.tbUserName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
             this.tbUserName.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.tbUserName.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tbUserName.Location = new System.Drawing.Point(0, 26);
+            this.tbUserName.Location = new System.Drawing.Point(0, 24);
             this.tbUserName.Margin = new System.Windows.Forms.Padding(4);
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(261, 20);
+            this.tbUserName.Size = new System.Drawing.Size(261, 22);
             this.tbUserName.TabIndex = 1;
             this.tbUserName.Text = "Username";
             this.tbUserName.UseWaitCursor = true;
@@ -87,7 +87,7 @@ namespace PracticalADO_ReadDB
             this.tbPassword.Location = new System.Drawing.Point(0, 0);
             this.tbPassword.Margin = new System.Windows.Forms.Padding(8);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(261, 20);
+            this.tbPassword.Size = new System.Drawing.Size(261, 22);
             this.tbPassword.TabIndex = 2;
             this.tbPassword.Text = "Password";
             this.tbPassword.UseWaitCursor = true;
@@ -210,7 +210,7 @@ namespace PracticalADO_ReadDB
             this.Title.MaximumSize = new System.Drawing.Size(2000, 200);
             this.Title.MinimumSize = new System.Drawing.Size(200, 20);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(271, 20);
+            this.Title.Size = new System.Drawing.Size(326, 20);
             this.Title.TabIndex = 0;
             this.Title.Text = "Server Environment Monitoring System";
             this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
