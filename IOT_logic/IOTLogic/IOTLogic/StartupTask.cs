@@ -209,21 +209,21 @@ namespace IOTLogic
             motionDetected = false;
 
             Sleep(200);
-            //if (!strRfidDetected.Equals(""))
-            //{
-            //    activateBuzzer(buzzerPin, 60);
-            //    ChangeLEDState(ledGreen, SensorStatus.On);
-            //    ChangeLEDState(ledRed, SensorStatus.Off);
-            //    Debug.WriteLine("One Card is detected.");
-            //    Debug.WriteLine("Can you figure out how to check for a specific card? \n");
-            //    Sleep(200);
-            //    ChangeLEDState(ledGreen, SensorStatus.Off);
-            //    ChangeLEDState(ledRed, SensorStatus.On);
-            //    activateBuzzer(buzzerPin, 0);
-            //    Sleep(200);
-            //    ChangeLEDState(ledRed, SensorStatus.Off);
+            if (!strRfidDetected.Equals(""))
+            {
+                activateBuzzer(buzzerPin, 60);
+                ChangeLEDState(ledGreen, SensorStatus.On);
+                ChangeLEDState(ledRed, SensorStatus.Off);
+                Debug.WriteLine("one card is detected.");
+                Debug.WriteLine("can you figure out how to check for a specific card? \n");
+                Sleep(200);
+                ChangeLEDState(ledGreen, SensorStatus.Off);
+                ChangeLEDState(ledRed, SensorStatus.On);
+                activateBuzzer(buzzerPin, 0);
+                Sleep(200);
+                ChangeLEDState(ledRed, SensorStatus.Off);
 
-            //}
+            }
             strRfidDetected = "";
             sensorMoistureAdcValue = getMoisture();
             Debug.WriteLine("Moisture is " + sensorMoistureAdcValue.ToString());
@@ -253,34 +253,45 @@ namespace IOTLogic
 
             // ChangeLEDState(ledGreen, SensorStatus.Off);
             Sleep(300);
-            if (motionDetected == true)
-            {
-                motionData = "Motion detected";
-                sendDataToWindows("Motion=" + motionData);
-                
-                Debug.WriteLine("Found Movement!");
-                //Debug.WriteLine("=== Entering alarm mode ===");
-                //ChangeLEDState(ledGreen, SensorStatus.On);
-                Sleep(1000);
-                motionData = "No motion detected";
-                sendDataToWindows("Motion=" + motionData);
-                motionDetected = false;
 
-                //curMode = MODE_ALARM;
+            if (strRfidDetected == "")
+            {
+                if (motionDetected == true)
+                {
+                    motionData = "Motion detected";
+                    sendDataToWindows("Motion=" + motionData);
+                    sendDataToWindows("Alert=" + " detected");
+
+                    Debug.WriteLine("Found Movement!");
+                    Debug.WriteLine("=== Entering alarm mode ===");
+                    ChangeLEDState(ledGreen, SensorStatus.On);
+                    //Sleep(1000);
+
+                    motionDetected = false;
+
+                    curMode = MODE_ALARM;
+                }
             }
 
-            //if (buttonPressed == true)
-            //{
-            //    buttonPressed = false;
+            else
+            {
+                Sleep(500);
+            }
+           
+
+            if (buttonPressed == true)
+            {
+                buttonPressed = false;
 
 
-            //    ChangeLEDState(ledGreen, SensorStatus.Off);
-            //    curMode = MODE_ALARM;
+                ChangeLEDState(ledGreen, SensorStatus.Off);
+                curMode = MODE_ALARM;
+                motionData = "No motion detected";
+                sendDataToWindows("Motion=" + motionData);
+                Debug.WriteLine("Entering MODE_ALARM");
 
-            //    Debug.WriteLine("Entering MODE_ALARM");
+            }
 
-
-            //}
             if (strDataReceived.Equals("SENDLIGHT"))
             {
                 ChangeLEDState(ledGreen, SensorStatus.Off);
@@ -299,11 +310,11 @@ namespace IOTLogic
 
         private void handleModeAlarm()
         {
-            activateBuzzer(buzzerPin, 120);
+            //activateBuzzer(buzzerPin, 120);
             ChangeLEDState(ledGreen, SensorStatus.Off);
             ChangeLEDState(ledRed, SensorStatus.On);
             Sleep(1000);
-            activateBuzzer(buzzerPin, 0);
+            //activateBuzzer(buzzerPin, 0);
             ChangeLEDState(ledRed, SensorStatus.Off);
             Sleep(1000);
 
