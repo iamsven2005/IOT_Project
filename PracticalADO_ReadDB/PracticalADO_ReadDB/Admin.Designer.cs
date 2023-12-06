@@ -26,6 +26,8 @@
             System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.session = new System.Windows.Forms.TextBox();
+            this.Messages = new System.Windows.Forms.TextBox();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.adminmsg = new System.Windows.Forms.TextBox();
             this.adminsend = new System.Windows.Forms.Button();
@@ -130,8 +132,6 @@
             this.lightValueTB = new System.Windows.Forms.TextBox();
             this.stopLightBtn = new System.Windows.Forms.Button();
             this.sendLight = new System.Windows.Forms.Button();
-            this.Messages = new System.Windows.Forms.TextBox();
-            this.session = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -262,6 +262,24 @@
             this.splitContainer3.Size = new System.Drawing.Size(321, 450);
             this.splitContainer3.SplitterDistance = 371;
             this.splitContainer3.TabIndex = 0;
+            // 
+            // session
+            // 
+            this.session.Location = new System.Drawing.Point(219, 350);
+            this.session.Name = "session";
+            this.session.Size = new System.Drawing.Size(100, 22);
+            this.session.TabIndex = 1;
+            this.session.Visible = false;
+            // 
+            // Messages
+            // 
+            this.Messages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Messages.Location = new System.Drawing.Point(0, 0);
+            this.Messages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Messages.Multiline = true;
+            this.Messages.Name = "Messages";
+            this.Messages.Size = new System.Drawing.Size(321, 371);
+            this.Messages.TabIndex = 0;
             // 
             // splitContainer4
             // 
@@ -455,9 +473,10 @@
             this.label12.ForeColor = System.Drawing.Color.GhostWhite;
             this.label12.Location = new System.Drawing.Point(376, 135);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(120, 15);
+            this.label12.Size = new System.Drawing.Size(132, 15);
             this.label12.TabIndex = 13;
-            this.label12.Text = "Motion Detected?";
+            this.label12.Text = "Intrusion Detected?";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // motionLbl
             // 
@@ -1614,24 +1633,6 @@
             this.sendLight.Text = "Send Light";
             this.sendLight.UseVisualStyleBackColor = true;
             this.sendLight.Click += new System.EventHandler(this.sendLight_Click);
-            // 
-            // Messages
-            // 
-            this.Messages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Messages.Location = new System.Drawing.Point(0, 0);
-            this.Messages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Messages.Multiline = true;
-            this.Messages.Name = "Messages";
-            this.Messages.Size = new System.Drawing.Size(321, 371);
-            this.Messages.TabIndex = 0;
-            // 
-            // session
-            // 
-            this.session.Location = new System.Drawing.Point(219, 350);
-            this.session.Name = "session";
-            this.session.Size = new System.Drawing.Size(100, 22);
-            this.session.TabIndex = 1;
-            this.session.Visible = false;
             // 
             // Admin
             // 

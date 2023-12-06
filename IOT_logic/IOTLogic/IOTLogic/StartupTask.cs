@@ -21,6 +21,7 @@ namespace IOTLogic
         const int MODE_ALARM = 2;
         const int MODE_SENDLIGHT = 3;
         const int MODE_RFID = 4;
+        const int MODE_PEACEFUL = 5;
 
         static int curMode;
 
@@ -203,26 +204,58 @@ namespace IOTLogic
         double Q = 0.0;
         double sensorVoltage = 0.0;
 
+        private void handleModePeaceful()
+        {
+            Debug.WriteLine("=== Entering to peaceful mode ===");
+            ChangeLEDState(ledGreen, SensorStatus.On);
+            ChangeLEDState(ledRed, SensorStatus.Off);
+
+            Sleep(1000);
+            adcValue = ReadPotValue(potPin);
+            Debug.WriteLine("Pot ADC = " + adcValue);
+
+            Q = EFSR / N;
+            sensorVoltage = adcValue * Q;
+            Debug.WriteLine("Voltage= " + sensorVoltage.ToString("n2") + "V");
+            sendDataToWindows("Voltage=" + sensorVoltage.ToString("n2"));
+
+            if (motionDetected == true)
+            {
+                Sleep(100);
+                if (motionDetected == false)
+                {
+                    curMode = MODE_NORMAL;
+                }
+                else
+                {
+                    curMode = MODE_ALARM;
+                }
+            }
+        }
+
         private void handleModeNormal()
         {
 
             motionDetected = false;
+            ChangeLEDState(ledGreen, SensorStatus.Off);
+            ChangeLEDState(ledRed, SensorStatus.On);
 
             Sleep(200);
             if (!strRfidDetected.Equals(""))
             {
+                ChangeLEDState(ledGreen, SensorStatus.Off);
+                ChangeLEDState(ledRed, SensorStatus.On);
                 activateBuzzer(buzzerPin, 60);
-                ChangeLEDState(ledGreen, SensorStatus.On);
-                ChangeLEDState(ledRed, SensorStatus.Off);
                 Debug.WriteLine("one card is detected.");
                 Debug.WriteLine("can you figure out how to check for a specific card? \n");
                 Sleep(200);
-                ChangeLEDState(ledGreen, SensorStatus.Off);
-                ChangeLEDState(ledRed, SensorStatus.On);
-                activateBuzzer(buzzerPin, 0);
-                Sleep(200);
                 ChangeLEDState(ledGreen, SensorStatus.On);
                 ChangeLEDState(ledRed, SensorStatus.Off);
+                activateBuzzer(buzzerPin, 0);
+                Sleep(200);
+                ChangeLEDState(ledGreen, SensorStatus.Off);
+                ChangeLEDState(ledRed, SensorStatus.On);
+                curMode = MODE_PEACEFUL;
 
             }
             strRfidDetected = "";
@@ -253,7 +286,9 @@ namespace IOTLogic
 
 
             // ChangeLEDState(ledGreen, SensorStatus.Off);
-            Sleep(300);
+
+
+
 
             if (strRfidDetected == "")
             {
@@ -272,6 +307,11 @@ namespace IOTLogic
 
                     curMode = MODE_ALARM;
                 }
+            }
+
+            if (!strRfidDetected.Equals(""))
+            {
+                curMode = MODE_PEACEFUL;
             }
 
            
@@ -303,16 +343,20 @@ namespace IOTLogic
             }
 
             strDataReceived = "";
+            Sleep(300);
+
         }
 
         private void handleModeAlarm()
         {
             //activateBuzzer(buzzerPin, 120);
-            ChangeLEDState(ledGreen, SensorStatus.Off);
             ChangeLEDState(ledRed, SensorStatus.On);
+
             Sleep(1000);
             //activateBuzzer(buzzerPin, 0);
-            ChangeLEDState(ledRed, SensorStatus.Off);
+            ChangeLEDState(ledGreen, SensorStatus.Off);
+
+            // ChangeLEDState(ledRed, SensorStatus.Off);
             Sleep(1000);
 
             if (buttonPressed == true)
@@ -540,6 +584,10 @@ namespace IOTLogic
                 else if (curMode == MODE_RFID)
                 {
                     handleRFIDdata();
+                }
+                else if (curMode == MODE_PEACEFUL)
+                {
+                    handleModePeaceful();
                 }
                 else
                 {

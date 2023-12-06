@@ -731,6 +731,9 @@ namespace PracticalADO_ReadDB
             loadDataMoisture();
         }
 
+        private void label12_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
