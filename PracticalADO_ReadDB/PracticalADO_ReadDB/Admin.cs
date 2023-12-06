@@ -40,7 +40,7 @@ namespace PracticalADO_ReadDB
             int result = 0;
             SqlConnection myConnect = new SqlConnection(strConnectionString);
             String strCommandText =
-                "INSERT Messages (ID, Messager, Message, Time) " +
+                "INSERT Messages (ID, User, Message, Time) " +
                " VALUES (@ID, @User, @Message, @Time)";
             SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
             updateCmd.Parameters.AddWithValue("@Message", adminmsg.Text);
@@ -731,9 +731,6 @@ namespace PracticalADO_ReadDB
             loadDataMoisture();
         }
 
-        private void label12_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

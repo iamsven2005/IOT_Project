@@ -87,13 +87,7 @@ namespace PracticalADO_ReadDB
             }
         }
         //To be removed
-        private void AdminLogin_Click(object sender, EventArgs e)
-        {
-            string dataToPass = "Admin";
-            Admin f2 = new Admin(dataToPass);
-            f2.Show();
-            this.Hide();
-        }
+
         private void Title_ParentChanged(object sender, EventArgs e)
         {
             Title.Font = new System.Drawing.Font("Trebuchet MS", 20F, System.Drawing.FontStyle.Bold);
@@ -121,6 +115,14 @@ namespace PracticalADO_ReadDB
                 tbPassword.Height = this.Height * 2;
                 tbUserName.Height = this.Height * 2;
             }
+        }
+
+        private void AdminLogin_Click_1(object sender, EventArgs e)
+        {
+            string dataToPass = "Admin";
+            Admin f2 = new Admin(dataToPass);
+            f2.Show();
+            this.Hide();
         }
     }
 }

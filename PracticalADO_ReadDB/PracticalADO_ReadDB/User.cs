@@ -22,6 +22,7 @@ namespace PracticalADO_ReadDB
             receivedData = data;
             session.Text = data;
             loadMessages();
+            loadUser();
         }
 
         private void User_FormClosed(object sender, FormClosedEventArgs e)
@@ -31,7 +32,34 @@ namespace PracticalADO_ReadDB
 
         private void User_Load(object sender, EventArgs e)
         {
+            //Only For Dev puposes (refer here for session)
             MessageBox.Show(receivedData);
+        }
+        private void loadUser()
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            String strCommandText = "Select * from MyUser Where Name = @Name";
+            SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
+            cmd.Parameters.AddWithValue("@Name", receivedData);
+            myConnect.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            StringBuilder messagesBuilder = new StringBuilder();
+            while (reader.Read())
+            {
+
+                Name.Text = "Name:" + reader["Name"].ToString();
+                NRIC.Text = "NRIC:" + reader["NRIC"].ToString();
+                Address.Text = "Address:" + reader["Address"].ToString();
+                DOB.Text = "DOB:" + reader["DOB"].ToString();
+                MFAvalue.Text = "MFA value:" + reader["MFAValue"].ToString();
+                Contact.Text = "Contact:" + reader["Contact"].ToString();
+                ID.Text = "UID:" + reader["UniqueUserID"].ToString();
+                RFID.Text = "RFID:" + reader["UniqueRFID"].ToString();
+                Country.Text = "Country:" + reader["CountryOfBirth"].ToString();
+            }
+            Messages.Text = messagesBuilder.ToString();
+            reader.Close();
+            myConnect.Close();
         }
 
         private void submsg_Click(object sender, EventArgs e)
@@ -40,13 +68,13 @@ namespace PracticalADO_ReadDB
             int result = 0;
             SqlConnection myConnect = new SqlConnection(strConnectionString);
             String strCommandText =
-                "INSERT Messages (ID, Messager, Message, Time) " +
+                "INSERT Messages (ID, User, Message, Time) " +
                " VALUES (@ID, @User, @Message, @Time)";
             SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
             updateCmd.Parameters.AddWithValue("@Message", typemsg.Text);
             updateCmd.Parameters.AddWithValue("@ID", newGuid.ToString());
             updateCmd.Parameters.AddWithValue("@Time", DateTime.Now.ToString("s"));
-            updateCmd.Parameters.AddWithValue("@User", session.Text);
+            updateCmd.Parameters.AddWithValue("@User", receivedData);
             myConnect.Open();
             result = updateCmd.ExecuteNonQuery();
             myConnect.Close();
@@ -55,7 +83,7 @@ namespace PracticalADO_ReadDB
         private void loadMessages()
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-            String strCommandText = "Select Top 20 * from Messages Order By Time Desc";
+            String strCommandText = "Select * from Messages Order By Time Desc";
             SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
             myConnect.Open();
             SqlDataReader reader = cmd.ExecuteReader();
@@ -72,6 +100,29 @@ namespace PracticalADO_ReadDB
             Messages.Text = messagesBuilder.ToString();
             reader.Close();
             myConnect.Close();
+        }
+
+        private void SubmitMFA_Click(object sender, EventArgs e)
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            string strCommandText = "UPDATE MyUser SET MFAValue=@MFA WHERE Name=@Name";
+            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
+            updateCmd.Parameters.AddWithValue("@MFA", MFAtb.Text);
+            updateCmd.Parameters.AddWithValue("@Name", receivedData);
+            myConnect.Open();
+            int result = updateCmd.ExecuteNonQuery();
+            myConnect.Close();
+            loadUser();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void session_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
