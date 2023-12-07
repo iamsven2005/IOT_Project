@@ -40,11 +40,12 @@
             // 
             // Username
             // 
-            this.Username.Location = new System.Drawing.Point(374, 69);
-            this.Username.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Username.Location = new System.Drawing.Point(499, 85);
+            this.Username.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(76, 20);
+            this.Username.Size = new System.Drawing.Size(100, 22);
             this.Username.TabIndex = 0;
+            this.Username.TextChanged += new System.EventHandler(this.Username_TextChanged);
             // 
             // label1
             // 
@@ -52,10 +53,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(372, 53);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(496, 65);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.Size = new System.Drawing.Size(144, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Write Your Username";
             // 
@@ -65,19 +65,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(372, 90);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(496, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 13);
+            this.label2.Size = new System.Drawing.Size(131, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Write Your Address";
             // 
             // Address
             // 
-            this.Address.Location = new System.Drawing.Point(374, 106);
-            this.Address.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Address.Location = new System.Drawing.Point(499, 130);
+            this.Address.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(76, 20);
+            this.Address.Size = new System.Drawing.Size(100, 22);
             this.Address.TabIndex = 3;
             // 
             // label3
@@ -86,27 +85,26 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(372, 126);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(496, 155);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 13);
+            this.label3.Size = new System.Drawing.Size(181, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Write Your Contact Number";
             // 
             // Contact
             // 
-            this.Contact.Location = new System.Drawing.Point(374, 142);
-            this.Contact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Contact.Location = new System.Drawing.Point(499, 175);
+            this.Contact.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Contact.Name = "Contact";
-            this.Contact.Size = new System.Drawing.Size(76, 20);
+            this.Contact.Size = new System.Drawing.Size(100, 22);
             this.Contact.TabIndex = 5;
             // 
             // Submit
             // 
-            this.Submit.Location = new System.Drawing.Point(374, 165);
-            this.Submit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Submit.Location = new System.Drawing.Point(499, 203);
+            this.Submit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Submit.Name = "Submit";
-            this.Submit.Size = new System.Drawing.Size(56, 19);
+            this.Submit.Size = new System.Drawing.Size(75, 23);
             this.Submit.TabIndex = 6;
             this.Submit.Text = "Submit";
             this.Submit.UseVisualStyleBackColor = true;
@@ -117,16 +115,17 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(186, 577);
+            this.panel1.Size = new System.Drawing.Size(248, 710);
             this.panel1.TabIndex = 7;
             // 
             // forgetpassword
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(951, 577);
+            this.ClientSize = new System.Drawing.Size(1268, 710);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Submit);
             this.Controls.Add(this.Contact);
@@ -136,7 +135,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Username);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "forgetpassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";

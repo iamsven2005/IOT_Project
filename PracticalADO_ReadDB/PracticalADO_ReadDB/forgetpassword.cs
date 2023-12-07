@@ -87,5 +87,10 @@ namespace PracticalADO_ReadDB
             }
 
     }
-}
+
+        private void Username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
