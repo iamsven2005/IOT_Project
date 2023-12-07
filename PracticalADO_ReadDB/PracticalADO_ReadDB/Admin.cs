@@ -731,6 +731,34 @@ namespace PracticalADO_ReadDB
             loadDataMoisture();
         }
 
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+
+        private void MFA_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Title_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTemp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tempLBL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
