@@ -1,0 +1,1 @@
+﻿SELECT COUNT(Distinct Id) AS MOTION_COUNT FROM MotionTable WHERE motionDetected = 'Motion detected';

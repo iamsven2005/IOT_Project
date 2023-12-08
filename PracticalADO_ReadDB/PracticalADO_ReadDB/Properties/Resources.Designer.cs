@@ -63,9 +63,39 @@ namespace PracticalADO_ReadDB.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap door_open {
+            get {
+                object obj = ResourceManager.GetObject("door_open", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SYSTEM_OVERVIEW__1_ {
             get {
                 object obj = ResourceManager.GetObject("SYSTEM OVERVIEW (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap temp_img {
+            get {
+                object obj = ResourceManager.GetObject("temp_img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap water_droplet {
+            get {
+                object obj = ResourceManager.GetObject("water_droplet", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
