@@ -55,6 +55,8 @@ namespace PracticalADO_ReadDB
                 ID.Text = "UID:" + reader["UniqueUserID"].ToString();
                 RFID.Text = "RFID:" + reader["UniqueRFID"].ToString();
                 Country.Text = "Country:" + reader["CountryOfBirth"].ToString();
+                Email.Text = "Email:" + reader["Email"].ToString();
+
             }
             Messages.Text = messagesBuilder.ToString();
             reader.Close();

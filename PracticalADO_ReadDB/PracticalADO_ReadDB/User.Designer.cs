@@ -43,6 +43,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Messages = new System.Windows.Forms.TextBox();
             this.Systems = new System.Windows.Forms.Label();
+            this.Email = new System.Windows.Forms.Label();
             this.Profile.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -99,6 +100,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.tabPage1.Controls.Add(this.Email);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.MFAtb);
             this.tabPage1.Controls.Add(this.SubmitMFA);
@@ -288,7 +290,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.Black;
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tabPage3.Name = "tabPage3";
@@ -330,6 +332,16 @@
             this.Systems.Size = new System.Drawing.Size(55, 13);
             this.Systems.TabIndex = 2;
             this.Systems.Text = "Welcome ";
+            // 
+            // Email
+            // 
+            this.Email.AutoSize = true;
+            this.Email.ForeColor = System.Drawing.Color.White;
+            this.Email.Location = new System.Drawing.Point(42, 159);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(32, 13);
+            this.Email.TabIndex = 12;
+            this.Email.Text = "Email";
             // 
             // User
             // 
@@ -383,5 +395,6 @@
         private System.Windows.Forms.Button Book;
         private System.Windows.Forms.DateTimePicker Picker;
         private System.Windows.Forms.Label Systems;
+        private System.Windows.Forms.Label Email;
     }
 }
