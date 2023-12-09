@@ -38,7 +38,8 @@ namespace PracticalADO_ReadDB
             session.Text = "Admin";
             //lbl.Text = extractStringValue(strData, "TempA=");
 
-
+            loadbooking();
+            loadapproved();
         }
         private void adminsend_Click(object sender, EventArgs e)
         {
@@ -58,7 +59,64 @@ namespace PracticalADO_ReadDB
             myConnect.Close();
             loadMessages();
         }
+        public class BookingList
+        {
+            public string Sender { get; set; }
+            public string Msg { get; set; }
+            public DateTime Time { get; set; }
+        }
 
+        private void loadbooking()
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            String strCommandText = "Select * from Booking WHERE Approval = '1' Order By Time Desc ";
+            SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
+            myConnect.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<BookingList> approvallist = new List<BookingList>();
+            while (reader.Read())
+            {
+                BookingList notapproved = new BookingList
+                {
+                    Sender =
+                    "Sender: " +
+                    reader["Sender"].ToString() +
+                    "    Message: " +
+                    reader["Message"].ToString() +
+                    "    Time Proposed: " +
+                    Convert.ToDateTime(reader["Booking"]),
+                };
+
+                approvallist.Add(notapproved);
+            }
+
+            Approval_list.DataSource = approvallist;
+            Approval_list.DisplayMember = "DisplayText";
+            Approval_list.ValueMember = "Sender";
+
+            reader.Close();
+            myConnect.Close();
+        }
+        private void loadapproved()
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            String strCommandText = "Select * from Booking WHERE Approval = '2' Order By Time Desc ";
+            SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
+            myConnect.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            StringBuilder messagesBuilder = new StringBuilder();
+            while (reader.Read())
+            {
+                string message = reader["Message"].ToString();
+                string user = reader["Sender"].ToString();
+                string time = reader["Booking"].ToString();
+                messagesBuilder.AppendLine($"User:\n{user} \n Reason Of Booking:\n{message}\n Time Of Booking \n {time}");
+            }
+            Queue.Text = messagesBuilder.ToString();
+            Queue.ForeColor = Color.White;
+            reader.Close();
+            myConnect.Close();
+        }
         private void loadSettings()
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
@@ -84,13 +142,6 @@ namespace PracticalADO_ReadDB
                 moisture_alarm_val.Value = decimal.Parse(moisture_alarm);
                 moisture_warning_val.Value = decimal.Parse(moisture_warning);
                 potentio_alarm_val.Value = decimal.Parse(potentio_alarm);
-
-                //dataComms.sendData("Moisture_ALARM=" + new temp_alarm_val.Value.ToString());
-                //dataComms.sendData("Moisture_WARNING=" + temp_warn);
-                //dataComms.sendData("Temp_ALARM=" + moisture_alarm);
-                //dataComms.sendData("Temp_WARNING=" + moisture_warning);
-                //dataComms.sendData("Potentio_THRESH=" + potentio_alarm);
-
             }
             else
             {
@@ -110,9 +161,6 @@ namespace PracticalADO_ReadDB
             }
 
             reader2.Close();
-
-
-            //int result = updateCmd.ExecuteNonQuery();
             myConnect.Close();
         }
 
@@ -713,6 +761,42 @@ namespace PracticalADO_ReadDB
                 lockdownStatus.Text = "Lockdown mode";
                 lockdownStatus.ForeColor = Color.Red;
                 MessageBox.Show("Lockdown mode activated!", "Warning");
+                string fromEmail = "iamsven2005@gmail.com";
+                string password = "gens kebu bstg kcqb";
+                string emailAddress2 = "dexdreamin0416@gmail.com";
+                string smtpServer = "smtp.gmail.com";
+                MailMessage mail = new MailMessage(fromEmail, emailAddress2);
+                mail.Subject = "Security";
+                mail.Body = "Lockdown has been activated";
+                mail.IsBodyHtml = false;
+                SmtpClient smtp = new SmtpClient(smtpServer);
+                smtp.Port = 587;
+                smtp.Credentials = new NetworkCredential(fromEmail, password);
+                smtp.EnableSsl = true;
+                smtp.Send(mail);
+                using (SqlConnection connection = new SqlConnection(strConnectionString))
+                {
+                    connection.Open();
+
+                    string selectQuery = "SELECT Email FROM MyUser";
+                    using (SqlCommand command = new SqlCommand(selectQuery, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string emailAddress = reader["email"].ToString();
+                                mail.Subject = "Security";
+                                mail.Body = "Lockdown has been activated";
+                                mail.IsBodyHtml = false;
+                                smtp.Port = 587;
+                                smtp.Credentials = new NetworkCredential(fromEmail, password);
+                                smtp.EnableSsl = true;
+                                smtp.Send(mail);
+                            }
+                        }
+                    }
+                }
 
             }
             else
@@ -901,7 +985,57 @@ namespace PracticalADO_ReadDB
 
         private void resetAlmBtn_Click(object sender, EventArgs e)
         {
+
             dataComms.sendData("Reset alarm");
+            string fromEmail = "iamsven2005@gmail.com";
+            string password = "gens kebu bstg kcqb";
+            string emailAddress = "dexdreamin0416@gmail.com";
+            string smtpServer = "smtp.gmail.com";
+            MailMessage mail = new MailMessage(fromEmail, emailAddress);
+            mail.Subject = "Security";
+            mail.Body = "Lockdown has been activated";
+            mail.IsBodyHtml = false;
+            SmtpClient smtp = new SmtpClient(smtpServer);
+            smtp.Port = 587;
+            smtp.Credentials = new NetworkCredential(fromEmail, password);
+            smtp.EnableSsl = true;
+            smtp.Send(mail);
+            using (SqlConnection connection = new SqlConnection(strConnectionString))
+            {
+                connection.Open();
+
+                string selectQuery = "SELECT Email FROM MyUser";
+                using (SqlCommand command = new SqlCommand(selectQuery, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string emailAddress2 = reader["email"].ToString();
+                            MailMessage mail2 = new MailMessage(fromEmail, emailAddress2);
+                            mail.Subject = "Security";
+                            mail.Body = "Incident has been resolved";
+                            mail.IsBodyHtml = false;
+                            smtp.Port = 587;
+                            smtp.Credentials = new NetworkCredential(fromEmail, password);
+                            smtp.EnableSsl = true;
+                            smtp.Send(mail);
+                        }
+                    }
+                }
+            }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            string strCommandText = "UPDATE MyUser SET Approval = '2' WHERE UniqueUserID=@UserID";
+            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
+            updateCmd.Parameters.AddWithValue("@UserID", "Sven3");
+            myConnect.Open();
+            int result = updateCmd.ExecuteNonQuery();
+            myConnect.Close();
+        }
+
     }
 }

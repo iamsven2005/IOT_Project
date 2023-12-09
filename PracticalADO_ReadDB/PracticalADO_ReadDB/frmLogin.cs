@@ -11,6 +11,9 @@ using System.Data.SqlClient;
 using System.Configuration;
 using BCrypt.Net;
 using System.IO;
+using System.Net;
+using System.Net.Mail;
+
 
 namespace PracticalADO_ReadDB
 {
@@ -34,7 +37,7 @@ namespace PracticalADO_ReadDB
                 textBoxValue = null;
             }
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-            string strCommandText = "SELECT Name, Password, MFAValue FROM MyUser WHERE Name=@uname";
+            string strCommandText = "SELECT Name, Password, MFAValue, Email FROM MyUser WHERE Name=@uname";
             SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
             cmd.Parameters.AddWithValue("@uname", tbUserName.Text);
             try
@@ -57,6 +60,19 @@ namespace PracticalADO_ReadDB
                             Admin f2 = new Admin(dataToPass);
                             f2.Show();
                             this.Hide();
+                            string fromEmail = "iamsven2005@gmail.com";
+                            string password = "gens kebu bstg kcqb";
+                            string toEmail = "dexdreamin0416@gmail.com";
+                            string smtpServer = "smtp.gmail.com";
+                            MailMessage mail = new MailMessage(fromEmail, toEmail);
+                            mail.Subject = "Login";
+                            mail.Body = "Someone have logged in as admin";
+                            mail.IsBodyHtml = false;
+                            SmtpClient smtp = new SmtpClient(smtpServer);
+                            smtp.Port = 587;
+                            smtp.Credentials = new NetworkCredential(fromEmail, password);
+                            smtp.EnableSsl = true;
+                            smtp.Send(mail);
                         }
                         else
                         {
@@ -64,6 +80,28 @@ namespace PracticalADO_ReadDB
                             User f2 = new User(dataToPass);
                             f2.Show();
                             this.Hide();
+                            string Email = reader["Email"].ToString();
+                            if (Email != "NULL")
+                            {
+                                string fromEmail = "iamsven2005@gmail.com";
+                                string password = "gens kebu bstg kcqb";
+                                string toEmail = Email;
+                                string smtpServer = "smtp.gmail.com";
+                                MailMessage mail = new MailMessage(fromEmail, toEmail);
+                                mail.Subject = "Login";
+                                mail.Body = "Hi, you have logged into your account.";
+                                mail.IsBodyHtml = false;
+                                SmtpClient smtp = new SmtpClient(smtpServer);
+                                smtp.Port = 587;
+                                smtp.Credentials = new NetworkCredential(fromEmail, password);
+                                smtp.EnableSsl = true;
+                                smtp.Send(mail);
+                            }
+                            else
+                            {
+
+                            }
+
                         }
                     }
                     else
@@ -123,6 +161,8 @@ namespace PracticalADO_ReadDB
             Admin f2 = new Admin(dataToPass);
             f2.Show();
             this.Hide();
+
+
         }
 
         private void Title_Click(object sender, EventArgs e)
