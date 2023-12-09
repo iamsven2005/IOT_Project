@@ -25,6 +25,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             this.session = new System.Windows.Forms.TextBox();
             this.Messages = new System.Windows.Forms.TextBox();
             this.adminmsg = new System.Windows.Forms.TextBox();
@@ -37,6 +38,11 @@
             this.syslogLB = new System.Windows.Forms.ListBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.lockdownStatus = new System.Windows.Forms.Label();
+            this.resetAlmBtn = new System.Windows.Forms.Button();
+            this.motionCountLbl = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.motionLbl = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -131,9 +137,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.Title = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.motionCountLbl = new System.Windows.Forms.Label();
             this.usermgt.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -320,6 +323,8 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.splitContainer2.Panel1.Controls.Add(this.lockdownStatus);
+            this.splitContainer2.Panel1.Controls.Add(this.resetAlmBtn);
             this.splitContainer2.Panel1.Controls.Add(this.motionCountLbl);
             this.splitContainer2.Panel1.Controls.Add(this.label5);
             this.splitContainer2.Panel1.Controls.Add(this.panel13);
@@ -338,8 +343,58 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dashboard);
             this.splitContainer2.Size = new System.Drawing.Size(905, 720);
-            this.splitContainer2.SplitterDistance = 350;
+            this.splitContainer2.SplitterDistance = 441;
             this.splitContainer2.TabIndex = 1;
+            // 
+            // lockdownStatus
+            // 
+            this.lockdownStatus.AutoSize = true;
+            this.lockdownStatus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lockdownStatus.Location = new System.Drawing.Point(281, 372);
+            this.lockdownStatus.Name = "lockdownStatus";
+            this.lockdownStatus.Size = new System.Drawing.Size(232, 39);
+            this.lockdownStatus.TabIndex = 23;
+            this.lockdownStatus.Text = "Normal mode";
+            // 
+            // resetAlmBtn
+            // 
+            this.resetAlmBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetAlmBtn.Location = new System.Drawing.Point(732, 372);
+            this.resetAlmBtn.Name = "resetAlmBtn";
+            this.resetAlmBtn.Size = new System.Drawing.Size(140, 39);
+            this.resetAlmBtn.TabIndex = 22;
+            this.resetAlmBtn.Text = "Reset alarm";
+            this.resetAlmBtn.UseVisualStyleBackColor = true;
+            this.resetAlmBtn.Click += new System.EventHandler(this.resetAlmBtn_Click);
+            // 
+            // motionCountLbl
+            // 
+            this.motionCountLbl.AutoSize = true;
+            this.motionCountLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.motionCountLbl.Location = new System.Drawing.Point(633, 82);
+            this.motionCountLbl.Name = "motionCountLbl";
+            this.motionCountLbl.Size = new System.Drawing.Size(115, 39);
+            this.motionCountLbl.TabIndex = 21;
+            this.motionCountLbl.Text = "label8";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label5.Location = new System.Drawing.Point(637, 57);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 15);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Motion Count";
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.panel13.Location = new System.Drawing.Point(276, 150);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(596, 182);
+            this.panel13.TabIndex = 19;
             // 
             // panel9
             // 
@@ -507,7 +562,7 @@
             // lblUltrasonic
             // 
             this.lblUltrasonic.AutoSize = true;
-            this.lblUltrasonic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.lblUltrasonic.BackColor = System.Drawing.Color.Transparent;
             this.lblUltrasonic.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblUltrasonic.Location = new System.Drawing.Point(470, 82);
             this.lblUltrasonic.Margin = new System.Windows.Forms.Padding(10);
@@ -531,7 +586,7 @@
             // doorLbl
             // 
             this.doorLbl.AutoSize = true;
-            this.doorLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.doorLbl.BackColor = System.Drawing.Color.Transparent;
             this.doorLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.doorLbl.Location = new System.Drawing.Point(292, 82);
             this.doorLbl.Margin = new System.Windows.Forms.Padding(10);
@@ -564,7 +619,7 @@
             this.dashboard.Location = new System.Drawing.Point(0, 0);
             this.dashboard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dashboard.Name = "dashboard";
-            this.dashboard.Size = new System.Drawing.Size(905, 366);
+            this.dashboard.Size = new System.Drawing.Size(905, 275);
             this.dashboard.TabIndex = 0;
             // 
             // Temperature
@@ -636,7 +691,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::PracticalADO_ReadDB.Properties.Resources.door_open;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(674, 27);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(125, 111);
@@ -697,7 +752,7 @@
             // 
             this.pictureBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox2.Image = global::PracticalADO_ReadDB.Properties.Resources.water_droplet;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(650, 18);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(169, 145);
@@ -778,7 +833,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::PracticalADO_ReadDB.Properties.Resources.temp_img;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(650, 32);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(169, 132);
@@ -1445,35 +1500,6 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.panel13.Location = new System.Drawing.Point(276, 150);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(596, 182);
-            this.panel13.TabIndex = 19;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.GhostWhite;
-            this.label5.Location = new System.Drawing.Point(637, 57);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 15);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Motion Count";
-            // 
-            // motionCountLbl
-            // 
-            this.motionCountLbl.AutoSize = true;
-            this.motionCountLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.motionCountLbl.Location = new System.Drawing.Point(633, 82);
-            this.motionCountLbl.Name = "motionCountLbl";
-            this.motionCountLbl.Size = new System.Drawing.Size(115, 39);
-            this.motionCountLbl.TabIndex = 21;
-            this.motionCountLbl.Text = "label8";
-            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1656,5 +1682,7 @@
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label motionCountLbl;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button resetAlmBtn;
+        private System.Windows.Forms.Label lockdownStatus;
     }
 }

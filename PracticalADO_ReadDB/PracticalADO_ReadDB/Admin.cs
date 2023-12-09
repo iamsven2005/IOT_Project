@@ -710,6 +710,8 @@ namespace PracticalADO_ReadDB
                 motion_count += 1;
                 motionLbl.Text = "Yes";
                 motionLbl.ForeColor = Color.Red;
+                lockdownStatus.Text = "Lockdown mode";
+                lockdownStatus.ForeColor = Color.Red;
                 MessageBox.Show("Lockdown mode activated!", "Warning");
 
             }
@@ -717,6 +719,9 @@ namespace PracticalADO_ReadDB
             {
                 motionLbl.Text = "No";
                 motionLbl.ForeColor = Color.Green;
+                lockdownStatus.Text = "Normal mode";
+                lockdownStatus.ForeColor = Color.Green;
+
             }
         }
 
@@ -892,6 +897,11 @@ namespace PracticalADO_ReadDB
         private void tempAlbl_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void resetAlmBtn_Click(object sender, EventArgs e)
+        {
+            dataComms.sendData("Reset alarm");
         }
     }
 }

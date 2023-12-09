@@ -339,12 +339,9 @@ namespace IOTLogic
 
             // ChangeLEDState(ledGreen, SensorStatus.Off);
 
-
-
-
             if (strRfidDetected == "")
             {
-                if (motionDetected == true && adcValue >= 0.3)
+                if (motionDetected == true && adcValue >= double.Parse(potentioValue.ToString()))
                 {
                     motionData = "Motion detected";
                     sendDataToWindows("Motion=" + motionData);
@@ -368,18 +365,18 @@ namespace IOTLogic
 
            
 
-            if (buttonPressed == true)
-            {
-                buttonPressed = false;
+            //if (buttonPressed == true)
+            //{
+            //    buttonPressed = false;
 
 
-                ChangeLEDState(ledGreen, SensorStatus.Off);
-                curMode = MODE_ALARM;
-                motionData = "No motion detected";
-                sendDataToWindows("Motion=" + motionData);
-                Debug.WriteLine("Entering MODE_ALARM");
+            //    ChangeLEDState(ledGreen, SensorStatus.Off);
+            //    curMode = MODE_ALARM;
+            //    motionData = "No motion detected";
+            //    sendDataToWindows("Motion=" + motionData);
+            //    Debug.WriteLine("Entering MODE_ALARM");
 
-            }
+            //}
 
             if (strDataReceived.Equals("SENDLIGHT"))
             {
@@ -418,7 +415,7 @@ namespace IOTLogic
             Sleep(1000);
 
 
-            if (buttonPressed == true)
+            if (strDataReceived == "Reset alarm")
             {
                 motionDetected = false;
                 ChangeLEDState(ledGreen, SensorStatus.On);
@@ -456,36 +453,36 @@ namespace IOTLogic
             dataComms.dataReceiveEvent += new DataComms.DataReceivedDelegate(commsDataReceive);
         }
 
-        private void handleModeSendLight()
-        {
-            //Sleep(300);
-            sensorLightAdcValue = getLight();
-            Debug.WriteLine("Sensor light = " + sensorLightAdcValue);
+        //private void handleModeSendLight()
+        //{
+        //    //Sleep(300);
+        //    sensorLightAdcValue = getLight();
+        //    Debug.WriteLine("Sensor light = " + sensorLightAdcValue);
 
-            if (sensorLightAdcValue <= 100)
-            {
-                lightDark = true;
-            }
-            else
-            {
-                lightDark = false;
-            }
+        //    if (sensorLightAdcValue <= 100)
+        //    {
+        //        lightDark = true;
+        //    }
+        //    else
+        //    {
+        //        lightDark = false;
+        //    }
 
-            if (prevLightDark != lightDark)
-            {
-                sendDataToWindows("LIGHT= " + sensorLightAdcValue);
+        //    if (prevLightDark != lightDark)
+        //    {
+        //        sendDataToWindows("LIGHT= " + sensorLightAdcValue);
 
-            }
+        //    }
 
-            if (strDataReceived.Equals("STOPLIGHT"))
-            {
-                strDataReceived = "";
-                curMode = MODE_NORMAL;
+        //    if (strDataReceived.Equals("STOPLIGHT"))
+        //    {
+        //        strDataReceived = "";
+        //        curMode = MODE_NORMAL;
 
-            }
-            strDataReceived = "";
+        //    }
+        //    strDataReceived = "";
             
-        }
+        //}
 
         private void handleRFIDdata()
         {
@@ -616,11 +613,29 @@ namespace IOTLogic
 
             ChangeLEDState(ledGreen, SensorStatus.On);
 
-            sendDataToWindows("TempA= "+tempHighValue);
-            string dt = DateTime.Now.ToString("s");
+            //if (strRfidDetected == "")
+            //{
+            //    if (motionDetected == true && adcValue >= double.Parse(potentioValue.ToString()))
+            //    {
+            //        motionData = "Motion detected";
+            //        sendDataToWindows("Motion=" + motionData);
+            //        sendDataToWindows("Alert=" + " detected");
+
+            //        Debug.WriteLine("Found Movement!");
+            //        Debug.WriteLine("=== Entering alarm mode ===");
+            //        ChangeLEDState(ledGreen, SensorStatus.On);
+            //        //Sleep(1000);
+
+            //        motionDetected = false;
+
+            //        curMode = MODE_ALARM;
+            //    }
+            //}
+
+
 
             Debug.WriteLine(strDataReceived);
-            extractSettingsData(strDataReceived, dt);
+            
             startButtonMonitoring();
             startMotionMonitoring();
             
@@ -640,10 +655,7 @@ namespace IOTLogic
                 {
                     handleModeAlarm();
                 }
-                else if (curMode == MODE_SENDLIGHT)
-                {
-                    handleModeSendLight();
-                }
+                
                 else if (curMode == MODE_RFID)
                 {
                     handleRFIDdata();
