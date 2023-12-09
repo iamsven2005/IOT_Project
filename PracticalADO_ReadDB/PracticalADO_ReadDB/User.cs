@@ -32,8 +32,7 @@ namespace PracticalADO_ReadDB
 
         private void User_Load(object sender, EventArgs e)
         {
-            //Only For Dev puposes (refer here for session)
-            MessageBox.Show(receivedData);
+
         }
         private void loadUser()
         {
@@ -123,6 +122,29 @@ namespace PracticalADO_ReadDB
         private void session_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Book_Click(object sender, EventArgs e)
+        {
+            Guid newGuid = Guid.NewGuid();
+            int result = 0;
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            String strCommandText =
+                "INSERT Booking (ID, Sender, Message, Time, Booking, Approval) " +
+               " VALUES (@ID, @User, @Message, @Time, @Booking, @Approval)";
+            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
+            updateCmd.Parameters.AddWithValue("@Message", Reason.Text);
+            updateCmd.Parameters.AddWithValue("@ID", newGuid.ToString());
+            updateCmd.Parameters.AddWithValue("@Time", DateTime.Now.ToString("s"));
+            updateCmd.Parameters.AddWithValue("@Booking", Picker.Value);
+            updateCmd.Parameters.AddWithValue("@User", receivedData);
+            updateCmd.Parameters.AddWithValue("@Approval", "1");
+            myConnect.Open();
+            result = updateCmd.ExecuteNonQuery();
+            myConnect.Close();
+            Reason.Text = "";
+            Systems.Text = "Booking Done";
+            Systems.ForeColor = Color.Green;
         }
     }
 }

@@ -38,7 +38,7 @@ namespace PracticalADO_ReadDB
             session.Text = "Admin";
             //lbl.Text = extractStringValue(strData, "TempA=");
 
-
+            loadbooking();
         }
         private void adminsend_Click(object sender, EventArgs e)
         {
@@ -58,7 +58,43 @@ namespace PracticalADO_ReadDB
             myConnect.Close();
             loadMessages();
         }
+        public class BookingList
+        {
+            public string Sender { get; set; }
+            public string Msg { get; set; }
+            public DateTime Time { get; set; }
+        }
 
+        private void loadbooking()
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            String strCommandText = "Select * from Booking WHERE Approval = '1' Order By Time Desc ";
+            SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
+            myConnect.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<BookingList> approvallist = new List<BookingList>();
+            while (reader.Read())
+            {
+                BookingList notapproved = new BookingList
+                {
+                    Sender =
+                    "Sender: " +
+                    reader["Sender"].ToString() +
+                    "    Message: " + 
+                    reader["Message"].ToString() +
+                    "    Time Proposed: " +
+                    Convert.ToDateTime(reader["Booking"]),
+                };
+
+                approvallist.Add(notapproved);
+            }
+
+            Approval_list.DataSource = approvallist;
+            Approval_list.DisplayMember = "DisplayText";
+            Approval_list.ValueMember = "Sender";
+            reader.Close();
+            myConnect.Close();
+        }
         private void loadSettings()
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
@@ -84,13 +120,6 @@ namespace PracticalADO_ReadDB
                 moisture_alarm_val.Value = decimal.Parse(moisture_alarm);
                 moisture_warning_val.Value = decimal.Parse(moisture_warning);
                 potentio_alarm_val.Value = decimal.Parse(potentio_alarm);
-
-                //dataComms.sendData("Moisture_ALARM=" + new temp_alarm_val.Value.ToString());
-                //dataComms.sendData("Moisture_WARNING=" + temp_warn);
-                //dataComms.sendData("Temp_ALARM=" + moisture_alarm);
-                //dataComms.sendData("Temp_WARNING=" + moisture_warning);
-                //dataComms.sendData("Potentio_THRESH=" + potentio_alarm);
-
             }
             else
             {
@@ -110,9 +139,6 @@ namespace PracticalADO_ReadDB
             }
 
             reader2.Close();
-
-
-            //int result = updateCmd.ExecuteNonQuery();
             myConnect.Close();
         }
 
@@ -903,5 +929,43 @@ namespace PracticalADO_ReadDB
         {
             dataComms.sendData("Reset alarm");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Call the method to update selected bookings when the button is clicked
+            UpdateSelectedBookings();
+
+            // Optionally, refresh the CheckedListBox after the update
+            loadbooking();
+        }
+        private void UpdateSelectedBookings()
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+
+            // Iterate through the items in the CheckedListBox
+            for (int i = 0; i < Approval_list.Items.Count; i++)
+            {
+                if (Approval_list.GetItemChecked(i))
+                {
+                    // Get the Booking object bound to the current item
+                    BookingList selectedBooking = Approval_list.Items[i] as BookingList;
+                    if (selectedBooking != null)
+                    {
+                        string updateQuery = "UPDATE Booking SET Approval=@Val WHERE Booking = @Booking";
+                        using (SqlCommand updateCmd = new SqlCommand(updateQuery, myConnect))
+                        {
+                            updateCmd.Parameters.AddWithValue("@Val", "2");
+                            
+                            updateCmd.Parameters.Add("@Booking", SqlDbType.DateTime2).Value = selectedBooking.Time;
+                            myConnect.Open();
+                            updateCmd.ExecuteNonQuery();
+                            myConnect.Close();
+                        }
+
+                    }
+                }
+            }
+        }
+
     }
 }

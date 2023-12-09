@@ -38,7 +38,7 @@ namespace PracticalADO_ReadDB
             this.tbUserName.Location = new System.Drawing.Point(185, 52);
             this.tbUserName.Margin = new System.Windows.Forms.Padding(4);
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(261, 26);
+            this.tbUserName.Size = new System.Drawing.Size(261, 20);
             this.tbUserName.TabIndex = 1;
             this.tbUserName.Text = "Username";
             this.tbUserName.UseWaitCursor = true;
@@ -48,7 +48,7 @@ namespace PracticalADO_ReadDB
             this.tbPassword.Location = new System.Drawing.Point(185, 81);
             this.tbPassword.Margin = new System.Windows.Forms.Padding(8);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(261, 26);
+            this.tbPassword.Size = new System.Drawing.Size(261, 20);
             this.tbPassword.TabIndex = 2;
             this.tbPassword.Text = "Password";
             this.tbPassword.UseWaitCursor = true;
@@ -69,7 +69,7 @@ namespace PracticalADO_ReadDB
             // 
             this.MFATB.Location = new System.Drawing.Point(185, 114);
             this.MFATB.Name = "MFATB";
-            this.MFATB.Size = new System.Drawing.Size(264, 26);
+            this.MFATB.Size = new System.Drawing.Size(264, 20);
             this.MFATB.TabIndex = 3;
             this.MFATB.Text = "MFA Value (Default \"Hello\")";
             // 
@@ -86,7 +86,7 @@ namespace PracticalADO_ReadDB
             this.Title.MinimumSize = new System.Drawing.Size(200, 20);
             this.Title.Name = "Title";
             this.Title.Padding = new System.Windows.Forms.Padding(120, 0, 0, 0);
-            this.Title.Size = new System.Drawing.Size(526, 24);
+            this.Title.Size = new System.Drawing.Size(391, 20);
             this.Title.TabIndex = 0;
             this.Title.Text = "Server Environment Monitoring System";
             this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
