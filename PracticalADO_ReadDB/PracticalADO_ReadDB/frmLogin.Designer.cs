@@ -27,7 +27,6 @@ namespace PracticalADO_ReadDB
             this.ForgetPwd = new System.Windows.Forms.Button();
             this.AdminLogin = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRegister = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,22 +131,12 @@ namespace PracticalADO_ReadDB
             this.panel1.TabIndex = 7;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // btnRegister
-            // 
-            this.btnRegister.Location = new System.Drawing.Point(308, 397);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(165, 44);
-            this.btnRegister.TabIndex = 8;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = true;
-            // 
             // frmLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(951, 577);
-            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.AdminLogin);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -172,7 +161,6 @@ namespace PracticalADO_ReadDB
         private System.Windows.Forms.TextBox MFATB;
         private System.Windows.Forms.Button AdminLogin;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnRegister;
     }
 }
 
