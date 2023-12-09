@@ -53,10 +53,10 @@
             // 
             // session
             // 
-            this.session.Location = new System.Drawing.Point(147, 544);
+            this.session.Location = new System.Drawing.Point(165, 680);
             this.session.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.session.Name = "session";
-            this.session.Size = new System.Drawing.Size(100, 22);
+            this.session.Size = new System.Drawing.Size(112, 26);
             this.session.TabIndex = 1;
             this.session.Visible = false;
             this.session.TextChanged += new System.EventHandler(this.session_TextChanged);
@@ -64,11 +64,11 @@
             // typemsg
             // 
             this.typemsg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.typemsg.Location = new System.Drawing.Point(0, 635);
+            this.typemsg.Location = new System.Drawing.Point(0, 795);
             this.typemsg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.typemsg.Multiline = true;
             this.typemsg.Name = "typemsg";
-            this.typemsg.Size = new System.Drawing.Size(248, 75);
+            this.typemsg.Size = new System.Drawing.Size(279, 93);
             this.typemsg.TabIndex = 0;
             this.typemsg.Text = "New Message";
             // 
@@ -76,10 +76,10 @@
             // 
             this.submsg.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.submsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.submsg.Location = new System.Drawing.Point(0, 570);
+            this.submsg.Location = new System.Drawing.Point(0, 714);
             this.submsg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.submsg.Name = "submsg";
-            this.submsg.Size = new System.Drawing.Size(248, 65);
+            this.submsg.Size = new System.Drawing.Size(279, 81);
             this.submsg.TabIndex = 0;
             this.submsg.Text = "send";
             this.submsg.UseVisualStyleBackColor = true;
@@ -90,11 +90,11 @@
             this.Profile.Controls.Add(this.tabPage1);
             this.Profile.Controls.Add(this.tabPage2);
             this.Profile.Controls.Add(this.tabPage3);
-            this.Profile.Location = new System.Drawing.Point(468, 100);
+            this.Profile.Location = new System.Drawing.Point(461, 125);
             this.Profile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Profile.Name = "Profile";
             this.Profile.SelectedIndex = 0;
-            this.Profile.Size = new System.Drawing.Size(475, 304);
+            this.Profile.Size = new System.Drawing.Size(599, 430);
             this.Profile.TabIndex = 0;
             // 
             // tabPage1
@@ -111,11 +111,11 @@
             this.tabPage1.Controls.Add(this.Contact);
             this.tabPage1.Controls.Add(this.Name);
             this.tabPage1.Controls.Add(this.NRIC);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(467, 275);
+            this.tabPage1.Size = new System.Drawing.Size(591, 397);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Profile";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -123,27 +123,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(251, 55);
+            this.label1.Location = new System.Drawing.Point(282, 69);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 17);
+            this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 11;
             this.label1.Text = "MFA Value";
             // 
             // MFAtb
             // 
-            this.MFAtb.Location = new System.Drawing.Point(255, 75);
-            this.MFAtb.Margin = new System.Windows.Forms.Padding(4);
+            this.MFAtb.Location = new System.Drawing.Point(287, 94);
+            this.MFAtb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MFAtb.Name = "MFAtb";
-            this.MFAtb.Size = new System.Drawing.Size(132, 22);
+            this.MFAtb.Size = new System.Drawing.Size(148, 26);
             this.MFAtb.TabIndex = 10;
             // 
             // SubmitMFA
             // 
-            this.SubmitMFA.Location = new System.Drawing.Point(255, 103);
-            this.SubmitMFA.Margin = new System.Windows.Forms.Padding(4);
+            this.SubmitMFA.Location = new System.Drawing.Point(287, 129);
+            this.SubmitMFA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SubmitMFA.Name = "SubmitMFA";
-            this.SubmitMFA.Size = new System.Drawing.Size(100, 28);
+            this.SubmitMFA.Size = new System.Drawing.Size(112, 35);
             this.SubmitMFA.TabIndex = 9;
             this.SubmitMFA.Text = "Submit";
             this.SubmitMFA.UseVisualStyleBackColor = true;
@@ -152,101 +152,101 @@
             // Address
             // 
             this.Address.AutoSize = true;
-            this.Address.Location = new System.Drawing.Point(56, 116);
+            this.Address.Location = new System.Drawing.Point(63, 145);
             this.Address.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(60, 17);
+            this.Address.Size = new System.Drawing.Size(68, 20);
             this.Address.TabIndex = 8;
             this.Address.Text = "Address";
             // 
             // Country
             // 
             this.Country.AutoSize = true;
-            this.Country.Location = new System.Drawing.Point(56, 148);
+            this.Country.Location = new System.Drawing.Point(63, 185);
             this.Country.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Country.Name = "Country";
-            this.Country.Size = new System.Drawing.Size(57, 17);
+            this.Country.Size = new System.Drawing.Size(64, 20);
             this.Country.TabIndex = 7;
             this.Country.Text = "Country";
             // 
             // ID
             // 
             this.ID.AutoSize = true;
-            this.ID.Location = new System.Drawing.Point(56, 68);
+            this.ID.Location = new System.Drawing.Point(63, 85);
             this.ID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(21, 17);
+            this.ID.Size = new System.Drawing.Size(26, 20);
             this.ID.TabIndex = 6;
             this.ID.Text = "ID";
             // 
             // MFAvalue
             // 
             this.MFAvalue.AutoSize = true;
-            this.MFAvalue.Location = new System.Drawing.Point(56, 132);
+            this.MFAvalue.Location = new System.Drawing.Point(63, 165);
             this.MFAvalue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MFAvalue.Name = "MFAvalue";
-            this.MFAvalue.Size = new System.Drawing.Size(70, 17);
+            this.MFAvalue.Size = new System.Drawing.Size(80, 20);
             this.MFAvalue.TabIndex = 5;
             this.MFAvalue.Text = "MFAvalue";
             // 
             // DOB
             // 
             this.DOB.AutoSize = true;
-            this.DOB.Location = new System.Drawing.Point(56, 164);
+            this.DOB.Location = new System.Drawing.Point(63, 205);
             this.DOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DOB.Name = "DOB";
-            this.DOB.Size = new System.Drawing.Size(38, 17);
+            this.DOB.Size = new System.Drawing.Size(44, 20);
             this.DOB.TabIndex = 4;
             this.DOB.Text = "DOB";
             // 
             // RFID
             // 
             this.RFID.AutoSize = true;
-            this.RFID.Location = new System.Drawing.Point(56, 100);
+            this.RFID.Location = new System.Drawing.Point(63, 125);
             this.RFID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RFID.Name = "RFID";
-            this.RFID.Size = new System.Drawing.Size(39, 17);
+            this.RFID.Size = new System.Drawing.Size(48, 20);
             this.RFID.TabIndex = 3;
             this.RFID.Text = "RFID";
             // 
             // Contact
             // 
             this.Contact.AutoSize = true;
-            this.Contact.Location = new System.Drawing.Point(56, 84);
+            this.Contact.Location = new System.Drawing.Point(63, 105);
             this.Contact.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Contact.Name = "Contact";
-            this.Contact.Size = new System.Drawing.Size(56, 17);
+            this.Contact.Size = new System.Drawing.Size(65, 20);
             this.Contact.TabIndex = 2;
             this.Contact.Text = "Contact";
             // 
             // Name
             // 
             this.Name.AutoSize = true;
-            this.Name.Location = new System.Drawing.Point(56, 27);
+            this.Name.Location = new System.Drawing.Point(63, 34);
             this.Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(45, 17);
+            this.Name.Size = new System.Drawing.Size(51, 20);
             this.Name.TabIndex = 1;
             this.Name.Text = "Name";
             // 
             // NRIC
             // 
             this.NRIC.AutoSize = true;
-            this.NRIC.Location = new System.Drawing.Point(56, 180);
+            this.NRIC.Location = new System.Drawing.Point(63, 225);
             this.NRIC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NRIC.Name = "NRIC";
-            this.NRIC.Size = new System.Drawing.Size(40, 17);
+            this.NRIC.Size = new System.Drawing.Size(48, 20);
             this.NRIC.TabIndex = 0;
             this.NRIC.Text = "NRIC";
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.splitContainer4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(467, 275);
+            this.tabPage2.Size = new System.Drawing.Size(591, 397);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Booking";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -261,8 +261,8 @@
             // splitContainer4.Panel1
             // 
             this.splitContainer4.Panel1.Controls.Add(this.splitContainer5);
-            this.splitContainer4.Size = new System.Drawing.Size(461, 271);
-            this.splitContainer4.SplitterDistance = 278;
+            this.splitContainer4.Size = new System.Drawing.Size(585, 393);
+            this.splitContainer4.SplitterDistance = 352;
             this.splitContainer4.TabIndex = 0;
             // 
             // splitContainer5
@@ -272,18 +272,19 @@
             this.splitContainer5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainer5.Name = "splitContainer5";
             this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.splitContainer5.Size = new System.Drawing.Size(278, 271);
-            this.splitContainer5.SplitterDistance = 86;
+            this.splitContainer5.Size = new System.Drawing.Size(352, 393);
+            this.splitContainer5.SplitterDistance = 123;
+            this.splitContainer5.SplitterWidth = 5;
             this.splitContainer5.TabIndex = 0;
             // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.Black;
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(467, 275);
+            this.tabPage3.Size = new System.Drawing.Size(591, 397);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Calendar (current)";
             // 
@@ -296,32 +297,33 @@
             this.panel1.Controls.Add(this.typemsg);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(248, 710);
+            this.panel1.Size = new System.Drawing.Size(279, 888);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Messages
             // 
             this.Messages.Location = new System.Drawing.Point(0, 0);
-            this.Messages.Margin = new System.Windows.Forms.Padding(4);
+            this.Messages.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Messages.Multiline = true;
             this.Messages.Name = "Messages";
-            this.Messages.Size = new System.Drawing.Size(247, 568);
+            this.Messages.Size = new System.Drawing.Size(277, 709);
             this.Messages.TabIndex = 2;
             // 
             // User
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1268, 710);
+            this.ClientSize = new System.Drawing.Size(1426, 888);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Profile);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+           
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "User";
+            this.Text = "s";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.User_FormClosed);
             this.Load += new System.EventHandler(this.User_Load);
             this.Profile.ResumeLayout(false);

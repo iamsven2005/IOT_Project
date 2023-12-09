@@ -102,19 +102,19 @@ namespace PracticalADO_ReadDB
   
         private void frmLogin_Resize(object sender, EventArgs e)
         {
-                int width = (this.Width / 50);
-                int height = ((this.Height / 25)/2);
-                if (width == 0 || height == 0)
-            {
+            //    int width = (this.Width / 50);
+            //    int height = ((this.Height / 25)/2);
+            //    if (width == 0 || height == 0)
+            //{
 
-            }
-            else
-            {
-                Title.Font = new System.Drawing.Font("Arial Rounded MT", width, System.Drawing.FontStyle.Bold);
-                this.Font = new System.Drawing.Font("Arial Rounded MT", height, System.Drawing.FontStyle.Regular);
-                tbPassword.Height = this.Height * 2;
-                tbUserName.Height = this.Height * 2;
-            }
+            //}
+            //else
+            //{
+            //    Title.Font = new System.Drawing.Font("Arial Rounded MT", width, System.Drawing.FontStyle.Bold);
+            //    this.Font = new System.Drawing.Font("Arial Rounded MT", height, System.Drawing.FontStyle.Regular);
+            //    tbPassword.Height = this.Height * 2;
+            //    tbUserName.Height = this.Height * 2;
+            //}
         }
 
         private void AdminLogin_Click_1(object sender, EventArgs e)
@@ -123,6 +123,21 @@ namespace PracticalADO_ReadDB
             Admin f2 = new Admin(dataToPass);
             f2.Show();
             this.Hide();
+        }
+
+        private void Title_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
