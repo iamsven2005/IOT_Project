@@ -57,7 +57,10 @@
     </Reference>
     <Reference Include="CommsUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\IOTPRJ\DataCommsStarters\CommsUtil.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\temp\DataCommsStarters\DataCommsStarters\CommsUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="DataCommsWinforms">
+      <HintPath>..\..\..\..\..\..\..\temp\DataCommsStarters\DataCommsStarters\DataCommsWinforms.exe</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
