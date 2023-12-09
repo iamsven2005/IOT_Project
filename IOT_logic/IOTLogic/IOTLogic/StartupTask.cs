@@ -65,6 +65,14 @@ namespace IOTLogic
         const double EFSR = 5;
         const int N = 1023;
 
+        private decimal tempHighValue = 0;
+        private decimal tempLowValue = 0;
+
+        private decimal moistureHighValue = 0;
+        private decimal moistureLowValue = 0;
+
+        private decimal potentioValue = 0;
+
         DataComms dataComms;
         string strDataReceived = "";
 
@@ -113,6 +121,50 @@ namespace IOTLogic
         {
             strRfidDetected = e.data;
             Debug.WriteLine("Card detected: " + strRfidDetected);
+        }
+
+        private void extractSettingsData(string strData, string strTime)
+        {
+            
+            if (strData.IndexOf("Moisture_ALARM=") != -1)
+            {
+                string ID = "Moisture_ALARM=";
+                string result = strData.Substring(strData.IndexOf(ID) + ID.Length);
+                moistureHighValue = decimal.Parse(result);
+
+            }
+
+            if (strData.IndexOf("Moisture_WARNING=") != -1)
+            {
+                string ID = "Moisture_WARNING=";
+                string result = strData.Substring(strData.IndexOf(ID) + ID.Length);
+                moistureLowValue = decimal.Parse(result);
+
+            }
+
+            if (strData.IndexOf("Temp_ALARM=") != -1)
+            {
+                string ID = "Temp_ALARM=";
+                string result = strData.Substring(strData.IndexOf(ID) + ID.Length);
+                tempHighValue = decimal.Parse(result);
+            }
+
+            if (strData.IndexOf("Temp_WARNING=") != -1)
+            {
+                string ID = "Temp_WARNING=";
+                string result = strData.Substring(strData.IndexOf(ID) + ID.Length);
+                tempLowValue = decimal.Parse(result);
+
+            }
+
+            if (strData.IndexOf("Potentio_THRESH=") != -1)
+            {
+                string ID = "Potentio_THRESH=";
+                string result = strData.Substring(strData.IndexOf(ID) + ID.Length);
+                potentioValue = decimal.Parse(result);
+
+            }
+
         }
 
         private void StartUart()
@@ -349,15 +401,22 @@ namespace IOTLogic
 
         private void handleModeAlarm()
         {
-            //activateBuzzer(buzzerPin, 120);
-            ChangeLEDState(ledRed, SensorStatus.On);
+            activateBuzzer(buzzerPin, 60);
+            ChangeLEDState(ledGreen, SensorStatus.On);
+
+            ChangeLEDState(ledRed, SensorStatus.Off);
 
             Sleep(1000);
-            //activateBuzzer(buzzerPin, 0);
+
+            activateBuzzer(buzzerPin, 0);
+            ChangeLEDState(ledRed, SensorStatus.On);
+
             ChangeLEDState(ledGreen, SensorStatus.Off);
 
             // ChangeLEDState(ledRed, SensorStatus.Off);
+
             Sleep(1000);
+
 
             if (buttonPressed == true)
             {
@@ -557,7 +616,11 @@ namespace IOTLogic
 
             ChangeLEDState(ledGreen, SensorStatus.On);
 
+            sendDataToWindows("TempA= "+tempHighValue);
+            string dt = DateTime.Now.ToString("s");
+
             Debug.WriteLine(strDataReceived);
+            extractSettingsData(strDataReceived, dt);
             startButtonMonitoring();
             startMotionMonitoring();
             

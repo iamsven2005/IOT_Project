@@ -25,6 +25,8 @@ namespace PracticalADO_ReadDB
         SqlDataAdapter UserAdapter;
         DataComms dataComms;
         public delegate void myprocessDataDelegate(String strData);
+        private int motion_count;
+
         public Admin(string data)
         {
             InitializeComponent();
@@ -32,7 +34,11 @@ namespace PracticalADO_ReadDB
             loadDataTemp();
             loadDataMoisture();
             loadMessages();
+            loadSettings();
             session.Text = "Admin";
+            //lbl.Text = extractStringValue(strData, "TempA=");
+
+
         }
         private void adminsend_Click(object sender, EventArgs e)
         {
@@ -51,6 +57,63 @@ namespace PracticalADO_ReadDB
             result = updateCmd.ExecuteNonQuery();
             myConnect.Close();
             loadMessages();
+        }
+
+        private void loadSettings()
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            string strQuery = "SELECT * FROM Threshold";
+
+            SqlCommand cmd = new SqlCommand(strQuery, myConnect);
+            myConnect.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            SqlCommand updateCmd = new SqlCommand(strQuery, myConnect);
+
+
+            if (reader.Read())
+            {
+                string temp_alarm = reader["TemperatureA"].ToString();
+                string temp_warn = reader["TemperatureW"].ToString();
+                string moisture_alarm = reader["MoistureA"].ToString();
+                string moisture_warning = reader["MoistureW"].ToString();
+                string potentio_alarm = reader["PotentialMeter"].ToString();
+
+
+                temp_alarm_val.Value = decimal.Parse(temp_alarm);
+                temp_warning_val.Value = decimal.Parse(temp_warn);
+                moisture_alarm_val.Value = decimal.Parse(moisture_alarm);
+                moisture_warning_val.Value = decimal.Parse(moisture_warning);
+                potentio_alarm_val.Value = decimal.Parse(potentio_alarm);
+
+                //dataComms.sendData("Moisture_ALARM=" + new temp_alarm_val.Value.ToString());
+                //dataComms.sendData("Moisture_WARNING=" + temp_warn);
+                //dataComms.sendData("Temp_ALARM=" + moisture_alarm);
+                //dataComms.sendData("Temp_WARNING=" + moisture_warning);
+                //dataComms.sendData("Potentio_THRESH=" + potentio_alarm);
+
+            }
+            else
+            {
+                MessageBox.Show("error");
+            }
+
+            reader.Close();
+            string strQuery2 = "SELECT COUNT(Distinct Id) AS MOTION_COUNT FROM MotionTable WHERE motionDetected = 'Motion detected'";
+            SqlCommand cmd2 = new SqlCommand(strQuery2, myConnect);
+            SqlDataReader reader2 = cmd2.ExecuteReader();
+            SqlCommand updateCmd2 = new SqlCommand(strQuery2, myConnect);
+
+            if (reader2.Read())
+            {
+                motionCountLbl.Text = reader2["MOTION_COUNT"].ToString();
+
+            }
+
+            reader2.Close();
+
+
+            //int result = updateCmd.ExecuteNonQuery();
+            myConnect.Close();
         }
 
         private void loadMessages()
@@ -280,6 +343,28 @@ namespace PracticalADO_ReadDB
             int result = updateCmd.ExecuteNonQuery();
             myConnect.Close();
         }
+
+        private void saveIOTDeviceConfigDataToDB(decimal tempA, decimal tempB, decimal moistureA, decimal moistureB, decimal potentioMeter)
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            String strCommandText = "UPDATE Threshold SET TemperatureA = @tempA, TemperatureW = @tempW, MoistureA = @moistA, MoistureW = @moistW, PotentialMeter = @potentio WHERE Id = 1";
+            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
+            updateCmd.Parameters.AddWithValue("@tempA", tempA);
+            updateCmd.Parameters.AddWithValue("@tempW", tempB);
+            updateCmd.Parameters.AddWithValue("@moistA", moistureA);
+            updateCmd.Parameters.AddWithValue("@moistW", moistureB);
+            updateCmd.Parameters.AddWithValue("@potentio", potentioMeter);
+
+            string strQuery = "SELECT * FROM Threshold";
+            // SqlConnection myConnect = new SqlConnection(strConnectionString);
+            // strCommandText += "WHERE Name=@UserID";
+            SqlCommand cmd = new SqlCommand(strQuery, myConnect);
+            myConnect.Open();
+            
+            int result = updateCmd.ExecuteNonQuery();
+            myConnect.Close();
+        }
+
         private void Admin_Load(object sender, EventArgs e)
         {
             LoadUserRecords();
@@ -485,9 +570,9 @@ namespace PracticalADO_ReadDB
             string result = strData.Substring(strData.IndexOf(ID) + ID.Length);
             return result;
         }
-        private float extractFloatValue(string strData, string ID)
+        private decimal extractFloatValue(string strData, string ID)
         {
-            return (float.Parse(extractStringValue(strData, ID)));
+            return (decimal.Parse(extractStringValue(strData, ID)));
         }
         private int extractIntValue(string strData, string ID)
         {
@@ -501,7 +586,7 @@ namespace PracticalADO_ReadDB
             lightValueTB.Text = strlightValue;
             Console.WriteLine(strData);
 
-            float fLightValue = extractFloatValue(strData, ID);
+            decimal fLightValue = extractFloatValue(strData, ID);
 
             string status = "";
 
@@ -522,10 +607,20 @@ namespace PracticalADO_ReadDB
             Console.WriteLine(strlightValue);
             lightValueTB.Text = strlightValue;
             Console.WriteLine(strData);
-            float fLightValue = extractFloatValue(strData, ID);
+            decimal fLightValue = extractFloatValue(strData, ID);
             string status = "";
             lblTemp.Text = status;
         }
+
+        private void handleMotionValue(string strData, string strTime, string ID)
+        {
+            string strValue = extractStringValue(strData, ID);
+            if (strValue == "Motion detected")
+            {
+                MessageBox.Show("Lockdown mode activated!", "Warning");
+            }
+        }
+
         private void extractSensorData(string strData, string strTime)
         {
             if (strData.IndexOf("LIGHT=") != -1)
@@ -559,19 +654,20 @@ namespace PracticalADO_ReadDB
             {
                 handleUltrasonicData(strData, strTime, "Distance=");
             }
+            
         }
 
         private void handleTempSensorData(string strData, string strTime, string ID)
         {
-            float floatValue = extractFloatValue(strData, ID);
+            decimal floatValue = extractFloatValue(strData, ID);
             string strValue = extractStringValue(strData, ID);
             lblTemp.Text = strValue;
             saveTempSensorDataToDB(strTime, floatValue);
-            if (floatValue > 25)
+            if (floatValue > temp_alarm_val.Value)
             {
                 lblTemp.ForeColor = Color.Red;
             }
-            else if (floatValue > 22 && floatValue < 25)
+            else if (floatValue > temp_warning_val.Value && floatValue < temp_alarm_val.Value)
             {
                 lblTemp.ForeColor = Color.Yellow;
             }
@@ -586,12 +682,14 @@ namespace PracticalADO_ReadDB
             string strValue = extractStringValue(strData, ID);
             int intMoistureVal = extractIntValue(strData, ID);
             saveMoistureSensorDataToDB(strTime, intMoistureVal);
-            if (intMoistureVal > 500)
+            // alarm threshold to be set at 500
+            // warning threshold to be set at 100
+            if (intMoistureVal > moisture_alarm_val.Value)
             {
                 lblMoisture.ForeColor = Color.Red;
 
             }
-            else if (intMoistureVal > 100 && intMoistureVal < 500)
+            else if (intMoistureVal > moisture_warning_val.Value && intMoistureVal < moisture_alarm_val.Value)
             {
                 lblMoisture.ForeColor = Color.Yellow;
             }
@@ -609,8 +707,11 @@ namespace PracticalADO_ReadDB
             saveMotionSensorDataToDB(strTime, strValue);
             if (strValue == "Motion detected")
             {
+                motion_count += 1;
                 motionLbl.Text = "Yes";
                 motionLbl.ForeColor = Color.Red;
+                MessageBox.Show("Lockdown mode activated!", "Warning");
+
             }
             else
             {
@@ -622,9 +723,9 @@ namespace PracticalADO_ReadDB
         private void handleVoltageData(string strData, string strTime, string ID)
         {
             string strValue = extractStringValue(strData, ID);
-            float intVoltageVal = extractFloatValue(strData, ID);
+            decimal intVoltageVal = extractFloatValue(strData, ID);
 
-            if (intVoltageVal >= 0.3)
+            if (intVoltageVal >= potentio_alarm_val.Value)
             {
                 doorLbl.Text = "Open";
                 doorLbl.ForeColor = Color.Red;
@@ -640,11 +741,12 @@ namespace PracticalADO_ReadDB
         private void handleUltrasonicData(string strData, string strTime, string ID)
         {
             string strValue = extractStringValue(strData, ID);
-            float UltraSonicVal = extractFloatValue(strData, ID);
+            decimal UltraSonicVal = extractFloatValue(strData, ID);
             lblUltrasonic.Text = strValue;
         }
 
-        private void saveTempSensorDataToDB(string strTime, float strTempValue)
+
+        private void saveTempSensorDataToDB(string strTime, decimal strTempValue)
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
             String strCommandText =
@@ -757,6 +859,37 @@ namespace PracticalADO_ReadDB
         }
 
         private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void saveChanges_btn_Click(object sender, EventArgs e)
+        {
+            decimal tempA = temp_alarm_val.Value;
+            decimal tempW = temp_warning_val.Value;
+
+            decimal moistureA = moisture_alarm_val.Value;
+            decimal moistureW = moisture_warning_val.Value;
+
+            decimal potentioMeter = potentio_alarm_val.Value;
+            saveIOTDeviceConfigDataToDB(tempA, tempW, moistureA, moistureW, potentioMeter);
+
+            dataComms.sendData("Moisture_ALARM=" + moistureA.ToString());
+            dataComms.sendData("Moisture_WARNING=" + moistureW.ToString());
+            dataComms.sendData("Temp_ALARM=" + tempA.ToString());
+            dataComms.sendData("Temp_WARNING=" + tempW.ToString());
+            dataComms.sendData("Potentio_THRESH=" + potentioMeter.ToString());
+
+
+
+        }
+
+        private void tempAlbl_Click(object sender, EventArgs e)
         {
 
         }
