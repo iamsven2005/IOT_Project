@@ -34,6 +34,7 @@ namespace PracticalADO_ReadDB
             loadSettings();
             loadbooking();
             loadapproved();
+            loadTodo();
             session.Text = "Admin";
             //lbl.Text = extractStringValue(strData, "TempA=");
         }
@@ -402,7 +403,7 @@ namespace PracticalADO_ReadDB
             dataComms.dataSendErrorEvent += new DataComms.DataSendErrorDelegate(commsSendError);
 
         }
-        
+
         private void saveLightSensorDataToDB(string strTime, string strlightValue, string strStatus)
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
@@ -434,7 +435,7 @@ namespace PracticalADO_ReadDB
             // strCommandText += "WHERE Name=@UserID";
             SqlCommand cmd = new SqlCommand(strQuery, myConnect);
             myConnect.Open();
-            
+
             int result = updateCmd.ExecuteNonQuery();
             myConnect.Close();
         }
@@ -451,39 +452,7 @@ namespace PracticalADO_ReadDB
         {
             return (int.Parse(extractStringValue(strData, ID)));
         }
-        private void handleLightSensorData(string strData, string strTime, string ID)
-        {
-            string strlightValue = extractStringValue(strData, ID);
-            Console.WriteLine(strlightValue);
 
-            lightValueTB.Text = strlightValue;
-            Console.WriteLine(strData);
-
-            decimal fLightValue = extractFloatValue(strData, ID);
-
-            string status = "";
-
-            if (fLightValue <= 200)
-            {
-                status = "Dark";
-            }
-            else
-            {
-                status = "Bright";
-            }
-            roomStatus.Text = status;
-            saveLightSensorDataToDB(strTime, strlightValue, status);
-        }
-        private void handleTempValue(string strData, string strTime, string ID)
-        {
-            string strlightValue = extractStringValue(strData, ID);
-            Console.WriteLine(strlightValue);
-            lightValueTB.Text = strlightValue;
-            Console.WriteLine(strData);
-            decimal fLightValue = extractFloatValue(strData, ID);
-            string status = "";
-            lblTemp.Text = status;
-        }
 
         private void handleMotionValue(string strData, string strTime, string ID)
         {
@@ -496,11 +465,6 @@ namespace PracticalADO_ReadDB
 
         private void extractSensorData(string strData, string strTime)
         {
-            if (strData.IndexOf("LIGHT=") != -1)
-            {
-                handleLightSensorData(strData, strTime, "LIGHT=");
-            }
-
             if (strData.IndexOf("RFID=") != -1)
             {
                 handleRfidSensorData(strData, strTime, "RFID=");
@@ -527,7 +491,7 @@ namespace PracticalADO_ReadDB
             {
                 handleUltrasonicData(strData, strTime, "Distance=");
             }
-            
+
         }
 
         private void handleTempSensorData(string strData, string strTime, string ID)
@@ -848,8 +812,8 @@ namespace PracticalADO_ReadDB
         /// <summary>
         /// User Management
         /// </summary>
-        
-            //Add User
+
+        //Add User
         private void btnSave_Click(object sender, EventArgs e)
         {
             int result = 0;
@@ -1023,5 +987,60 @@ namespace PracticalADO_ReadDB
             return result;
         }
 
+        private void AddTaskbtn_Click(object sender, EventArgs e)
+        {
+            Guid newGuid = Guid.NewGuid();
+            int result = 0;
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            String strCommandText =
+                "INSERT Todo (ID, Task) " +
+               " VALUES (@ID, @Task)";
+            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
+            updateCmd.Parameters.AddWithValue("@Task", AddTasktb.Text);
+            updateCmd.Parameters.AddWithValue("@ID", newGuid.ToString());
+            myConnect.Open();
+            result = updateCmd.ExecuteNonQuery();
+            myConnect.Close();
+            loadTodo();
+            Systems.Text = "Task Added";
+            Systems.ForeColor = Color.Green;
+            AddTasktb.Text = "";
+        }
+
+        private void RemoveTaskbtn_Click(object sender, EventArgs e)
+        {
+            string id = RemoveTasktb.Text;
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            String strCommandText = "DELETE FROM Todo WHERE Id = @ID";
+            using (SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect))
+            {
+                updateCmd.Parameters.AddWithValue("@ID", id);
+                myConnect.Open();
+                int result = updateCmd.ExecuteNonQuery();
+                myConnect.Close();
+            }
+            Systems.Text = "Task Removed";
+            Systems.ForeColor = Color.Green;
+            loadTodo();
+            RemoveTasktb.Text = "";
+        }
+        private void loadTodo()
+        {
+            SqlConnection myConnect = new SqlConnection(strConnectionString);
+            String strCommandText = "Select * from Todo";
+            SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
+            myConnect.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            StringBuilder messagesBuilder = new StringBuilder();
+            while (reader.Read())
+            {
+                string Id = reader["Id"].ToString();
+                string Task = reader["Task"].ToString();
+                messagesBuilder.AppendLine($"{Id}: {Task}");
+            }
+            Tasklist.Text = messagesBuilder.ToString();
+            reader.Close();
+            myConnect.Close();
+        }
     }
 }
