@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
-using BCrypt.Net;
-using System.IO;
 using System.Net;
 using System.Net.Mail;
 
@@ -37,7 +28,7 @@ namespace PracticalADO_ReadDB
                 textBoxValue = null;
             }
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-            string strCommandText = "SELECT Name, Password, MFAValue, Email FROM MyUser WHERE Name=@uname";
+            string strCommandText = "SELECT * FROM MyUser WHERE Name=@uname";
             SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
             cmd.Parameters.AddWithValue("@uname", tbUserName.Text);
             try
@@ -124,7 +115,6 @@ namespace PracticalADO_ReadDB
                 myConnect.Close();
             }
         }
-        //To be removed
 
         private void Title_ParentChanged(object sender, EventArgs e)
         {
@@ -137,24 +127,6 @@ namespace PracticalADO_ReadDB
             f5.Show();
             this.Hide();
         }
-  
-        private void frmLogin_Resize(object sender, EventArgs e)
-        {
-            //    int width = (this.Width / 50);
-            //    int height = ((this.Height / 25)/2);
-            //    if (width == 0 || height == 0)
-            //{
-
-            //}
-            //else
-            //{
-            //    Title.Font = new System.Drawing.Font("Arial Rounded MT", width, System.Drawing.FontStyle.Bold);
-            //    this.Font = new System.Drawing.Font("Arial Rounded MT", height, System.Drawing.FontStyle.Regular);
-            //    tbPassword.Height = this.Height * 2;
-            //    tbUserName.Height = this.Height * 2;
-            //}
-        }
-
         private void AdminLogin_Click_1(object sender, EventArgs e)
         {
             string dataToPass = "Admin";
@@ -162,21 +134,6 @@ namespace PracticalADO_ReadDB
             f2.Show();
             this.Hide();
 
-
-        }
-
-        private void Title_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
 
         }
     }
