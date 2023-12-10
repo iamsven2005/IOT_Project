@@ -26,6 +26,14 @@
             System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.session = new System.Windows.Forms.TextBox();
             this.Messages = new System.Windows.Forms.TextBox();
             this.adminmsg = new System.Windows.Forms.TextBox();
@@ -97,6 +105,8 @@
             this.editlbl = new System.Windows.Forms.Label();
             this.grdUser = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.Role = new System.Windows.Forms.TextBox();
+            this.Email = new System.Windows.Forms.TextBox();
             this.modifylbl = new System.Windows.Forms.Label();
             this.lblUniqueUserID = new System.Windows.Forms.Label();
             this.btnGetUserID = new System.Windows.Forms.Button();
@@ -118,11 +128,14 @@
             this.Username = new System.Windows.Forms.Label();
             this.ContactResult = new System.Windows.Forms.TextBox();
             this.ContactUsername = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Newlabels = new System.Windows.Forms.Label();
+            this.tbRole = new System.Windows.Forms.TextBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbName = new System.Windows.Forms.TextBox();
             this.AddTitle = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             this.tbPwd = new System.Windows.Forms.TextBox();
             this.tbContact = new System.Windows.Forms.TextBox();
             this.tbRFID = new System.Windows.Forms.TextBox();
@@ -168,29 +181,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.temp_alarm_val)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.temp_warning_val)).BeginInit();
-            this.tabPage5.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EditSplit)).BeginInit();
-            this.EditSplit.Panel1.SuspendLayout();
-            this.EditSplit.Panel2.SuspendLayout();
-            this.EditSplit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdUser)).BeginInit();
-            this.panel5.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.tabPage6.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.dashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Temperature)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Moisture)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.usermgt.SuspendLayout();
             this.SuspendLayout();
             // 
             // session
             // 
             this.session.Enabled = false;
-            this.session.Location = new System.Drawing.Point(3, 28);
-            this.session.Margin = new System.Windows.Forms.Padding(2);
+            this.session.Location = new System.Drawing.Point(4, 34);
+            this.session.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.session.Name = "session";
-            this.session.Size = new System.Drawing.Size(76, 20);
+            this.session.Size = new System.Drawing.Size(100, 22);
             this.session.TabIndex = 1;
             this.session.Text = "Admin";
             // 
@@ -199,22 +213,22 @@
             this.Messages.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Messages.Enabled = false;
             this.Messages.ForeColor = System.Drawing.Color.White;
-            this.Messages.Location = new System.Drawing.Point(0, 56);
-            this.Messages.Margin = new System.Windows.Forms.Padding(2);
+            this.Messages.Location = new System.Drawing.Point(0, 72);
+            this.Messages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Messages.Multiline = true;
             this.Messages.Name = "Messages";
-            this.Messages.Size = new System.Drawing.Size(273, 429);
+            this.Messages.Size = new System.Drawing.Size(364, 527);
             this.Messages.TabIndex = 0;
             // 
             // adminmsg
             // 
             this.adminmsg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.adminmsg.Location = new System.Drawing.Point(0, 485);
-            this.adminmsg.Margin = new System.Windows.Forms.Padding(2);
-            this.adminmsg.MinimumSize = new System.Drawing.Size(38, 17);
+            this.adminmsg.Location = new System.Drawing.Point(0, 599);
+            this.adminmsg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.adminmsg.MinimumSize = new System.Drawing.Size(49, 20);
             this.adminmsg.Multiline = true;
             this.adminmsg.Name = "adminmsg";
-            this.adminmsg.Size = new System.Drawing.Size(273, 62);
+            this.adminmsg.Size = new System.Drawing.Size(364, 75);
             this.adminmsg.TabIndex = 0;
             this.adminmsg.Text = "Admin Msg";
             // 
@@ -222,11 +236,11 @@
             // 
             this.adminsend.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.adminsend.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.adminsend.Location = new System.Drawing.Point(0, 547);
-            this.adminsend.Margin = new System.Windows.Forms.Padding(2);
-            this.adminsend.MinimumSize = new System.Drawing.Size(22, 16);
+            this.adminsend.Location = new System.Drawing.Point(0, 674);
+            this.adminsend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.adminsend.MinimumSize = new System.Drawing.Size(29, 20);
             this.adminsend.Name = "adminsend";
-            this.adminsend.Size = new System.Drawing.Size(273, 62);
+            this.adminsend.Size = new System.Drawing.Size(364, 76);
             this.adminsend.TabIndex = 0;
             this.adminsend.Text = "Send";
             this.adminsend.UseVisualStyleBackColor = true;
@@ -522,7 +536,7 @@
             this.moistureLbl.TabIndex = 7;
             this.moistureLbl.Text = "Moisture Level";
             // 
-            // panel7
+            // panel6
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.panel7.Controls.Add(this.lblTemp);
@@ -1000,10 +1014,11 @@
             // 
             this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.tabPage5.Controls.Add(this.flowLayoutPanel1);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(681, 586);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage5.Size = new System.Drawing.Size(911, 724);
             this.tabPage5.TabIndex = 6;
             this.tabPage5.Text = "Check Info";
             // 
@@ -1014,12 +1029,11 @@
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(675, 580);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(903, 716);
             this.flowLayoutPanel1.TabIndex = 24;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // panel3
             // 
@@ -1027,17 +1041,17 @@
             this.panel3.Controls.Add(this.EditSplit);
             this.panel3.Controls.Add(this.editlbl);
             this.panel3.Controls.Add(this.grdUser);
-            this.panel3.Location = new System.Drawing.Point(8, 8);
-            this.panel3.Margin = new System.Windows.Forms.Padding(8);
+            this.panel3.Location = new System.Drawing.Point(11, 10);
+            this.panel3.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(371, 362);
+            this.panel3.Size = new System.Drawing.Size(495, 446);
             this.panel3.TabIndex = 26;
             // 
             // EditSplit
             // 
             this.EditSplit.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.EditSplit.Location = new System.Drawing.Point(0, 37);
-            this.EditSplit.Margin = new System.Windows.Forms.Padding(2);
+            this.EditSplit.Location = new System.Drawing.Point(0, 46);
+            this.EditSplit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EditSplit.Name = "EditSplit";
             // 
             // EditSplit.Panel1
@@ -1047,9 +1061,8 @@
             // EditSplit.Panel2
             // 
             this.EditSplit.Panel2.Controls.Add(this.btnUpdate);
-            this.EditSplit.Size = new System.Drawing.Size(371, 39);
-            this.EditSplit.SplitterDistance = 172;
-            this.EditSplit.SplitterWidth = 3;
+            this.EditSplit.Size = new System.Drawing.Size(495, 48);
+            this.EditSplit.SplitterDistance = 229;
             this.EditSplit.TabIndex = 4;
             // 
             // btnDelete
@@ -1057,9 +1070,9 @@
             this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(0, 0);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(172, 39);
+            this.btnDelete.Size = new System.Drawing.Size(229, 48);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -1070,9 +1083,9 @@
             this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(0, 0);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(5);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(196, 39);
+            this.btnUpdate.Size = new System.Drawing.Size(262, 48);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -1085,10 +1098,10 @@
             this.editlbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
             this.editlbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.editlbl.Location = new System.Drawing.Point(0, 0);
-            this.editlbl.Margin = new System.Windows.Forms.Padding(8);
+            this.editlbl.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.editlbl.Name = "editlbl";
-            this.editlbl.Padding = new System.Windows.Forms.Padding(10);
-            this.editlbl.Size = new System.Drawing.Size(172, 36);
+            this.editlbl.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.editlbl.Size = new System.Drawing.Size(209, 44);
             this.editlbl.TabIndex = 1;
             this.editlbl.Text = "Edit User Information";
             // 
@@ -1097,17 +1110,19 @@
             this.grdUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grdUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdUser.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grdUser.Location = new System.Drawing.Point(0, 76);
-            this.grdUser.Margin = new System.Windows.Forms.Padding(8);
+            this.grdUser.Location = new System.Drawing.Point(0, 94);
+            this.grdUser.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.grdUser.Name = "grdUser";
             this.grdUser.RowTemplate.Height = 24;
-            this.grdUser.Size = new System.Drawing.Size(371, 286);
+            this.grdUser.Size = new System.Drawing.Size(495, 352);
             this.grdUser.TabIndex = 1;
             this.grdUser.Click += new System.EventHandler(this.grdUser_Click);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel5.Controls.Add(this.Role);
+            this.panel5.Controls.Add(this.Email);
             this.panel5.Controls.Add(this.modifylbl);
             this.panel5.Controls.Add(this.lblUniqueUserID);
             this.panel5.Controls.Add(this.btnGetUserID);
@@ -1122,11 +1137,27 @@
             this.panel5.Controls.Add(this.tbNRICMd);
             this.panel5.Controls.Add(this.tbContactMd);
             this.panel5.Controls.Add(this.tbAddMd);
-            this.panel5.Location = new System.Drawing.Point(395, 8);
-            this.panel5.Margin = new System.Windows.Forms.Padding(8);
+            this.panel5.Location = new System.Drawing.Point(528, 10);
+            this.panel5.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(271, 362);
+            this.panel5.Size = new System.Drawing.Size(361, 446);
             this.panel5.TabIndex = 25;
+            // 
+            // Role
+            // 
+            this.Role.Location = new System.Drawing.Point(82, 315);
+            this.Role.Margin = new System.Windows.Forms.Padding(2);
+            this.Role.Name = "Role";
+            this.Role.Size = new System.Drawing.Size(83, 20);
+            this.Role.TabIndex = 25;
+            // 
+            // Email
+            // 
+            this.Email.Location = new System.Drawing.Point(82, 288);
+            this.Email.Margin = new System.Windows.Forms.Padding(2);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(83, 20);
+            this.Email.TabIndex = 24;
             // 
             // modifylbl
             // 
@@ -1135,10 +1166,10 @@
             this.modifylbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
             this.modifylbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.modifylbl.Location = new System.Drawing.Point(0, 0);
-            this.modifylbl.Margin = new System.Windows.Forms.Padding(10);
+            this.modifylbl.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.modifylbl.Name = "modifylbl";
-            this.modifylbl.Padding = new System.Windows.Forms.Padding(10);
-            this.modifylbl.Size = new System.Drawing.Size(191, 36);
+            this.modifylbl.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.modifylbl.Size = new System.Drawing.Size(231, 44);
             this.modifylbl.TabIndex = 2;
             this.modifylbl.Text = "Modify User Information";
             // 
@@ -1147,13 +1178,12 @@
             this.lblUniqueUserID.AutoSize = true;
             this.lblUniqueUserID.BackColor = System.Drawing.Color.Transparent;
             this.lblUniqueUserID.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lblUniqueUserID.Location = new System.Drawing.Point(2, 36);
-            this.lblUniqueUserID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUniqueUserID.Location = new System.Drawing.Point(3, 44);
             this.lblUniqueUserID.Name = "lblUniqueUserID";
             this.lblUniqueUserID.Size = new System.Drawing.Size(77, 247);
             this.lblUniqueUserID.TabIndex = 1;
             this.lblUniqueUserID.Text = "UniqueUserID:\r\n\r\nName:\r\n\r\nRFID:\r\n\r\nNRIC:\r\n\r\nAddress:\r\n\r\nContact:\r\n\r\nPassword:\r\n\r\n" +
-    "Country:\r\n\r\nMFA:\r\n\r\nDOB:";
+    "Country:\r\n\r\nMFA:\r\n\r\nDOB:\r\n\r\nEmail:\r\n\r\nRole:";
             // 
             // btnGetUserID
             // 
@@ -1161,7 +1191,7 @@
             this.btnGetUserID.Location = new System.Drawing.Point(100, 326);
             this.btnGetUserID.Margin = new System.Windows.Forms.Padding(2);
             this.btnGetUserID.Name = "btnGetUserID";
-            this.btnGetUserID.Size = new System.Drawing.Size(63, 23);
+            this.btnGetUserID.Size = new System.Drawing.Size(84, 28);
             this.btnGetUserID.TabIndex = 20;
             this.btnGetUserID.Text = "Get User";
             this.btnGetUserID.UseVisualStyleBackColor = true;
@@ -1172,7 +1202,7 @@
             this.tbDOBMd.Location = new System.Drawing.Point(82, 280);
             this.tbDOBMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbDOBMd.Name = "tbDOBMd";
-            this.tbDOBMd.Size = new System.Drawing.Size(83, 20);
+            this.tbDOBMd.Size = new System.Drawing.Size(109, 22);
             this.tbDOBMd.TabIndex = 23;
             // 
             // btnModify
@@ -1181,7 +1211,7 @@
             this.btnModify.Location = new System.Drawing.Point(20, 326);
             this.btnModify.Margin = new System.Windows.Forms.Padding(2);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(58, 23);
+            this.btnModify.Size = new System.Drawing.Size(77, 28);
             this.btnModify.TabIndex = 15;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = true;
@@ -1193,7 +1223,7 @@
             this.tbUserID.Location = new System.Drawing.Point(82, 36);
             this.tbUserID.Margin = new System.Windows.Forms.Padding(2);
             this.tbUserID.Name = "tbUserID";
-            this.tbUserID.Size = new System.Drawing.Size(83, 20);
+            this.tbUserID.Size = new System.Drawing.Size(109, 22);
             this.tbUserID.TabIndex = 7;
             // 
             // MFA
@@ -1201,9 +1231,8 @@
             this.MFA.Location = new System.Drawing.Point(82, 254);
             this.MFA.Margin = new System.Windows.Forms.Padding(2);
             this.MFA.Name = "MFA";
-            this.MFA.Size = new System.Drawing.Size(83, 20);
+            this.MFA.Size = new System.Drawing.Size(109, 22);
             this.MFA.TabIndex = 22;
-            this.MFA.TextChanged += new System.EventHandler(this.MFA_TextChanged);
             // 
             // tbNameMd
             // 
@@ -1211,7 +1240,7 @@
             this.tbNameMd.Location = new System.Drawing.Point(82, 58);
             this.tbNameMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbNameMd.Name = "tbNameMd";
-            this.tbNameMd.Size = new System.Drawing.Size(83, 20);
+            this.tbNameMd.Size = new System.Drawing.Size(109, 22);
             this.tbNameMd.TabIndex = 9;
             // 
             // tbPasswordMd
@@ -1219,7 +1248,7 @@
             this.tbPasswordMd.Location = new System.Drawing.Point(82, 198);
             this.tbPasswordMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbPasswordMd.Name = "tbPasswordMd";
-            this.tbPasswordMd.Size = new System.Drawing.Size(83, 20);
+            this.tbPasswordMd.Size = new System.Drawing.Size(109, 22);
             this.tbPasswordMd.TabIndex = 15;
             // 
             // tbRFIDMd
@@ -1227,7 +1256,7 @@
             this.tbRFIDMd.Location = new System.Drawing.Point(82, 85);
             this.tbRFIDMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbRFIDMd.Name = "tbRFIDMd";
-            this.tbRFIDMd.Size = new System.Drawing.Size(83, 20);
+            this.tbRFIDMd.Size = new System.Drawing.Size(109, 22);
             this.tbRFIDMd.TabIndex = 10;
             // 
             // tbCountryOfBirthMd
@@ -1235,7 +1264,7 @@
             this.tbCountryOfBirthMd.Location = new System.Drawing.Point(82, 226);
             this.tbCountryOfBirthMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbCountryOfBirthMd.Name = "tbCountryOfBirthMd";
-            this.tbCountryOfBirthMd.Size = new System.Drawing.Size(83, 20);
+            this.tbCountryOfBirthMd.Size = new System.Drawing.Size(109, 22);
             this.tbCountryOfBirthMd.TabIndex = 18;
             // 
             // tbNRICMd
@@ -1243,7 +1272,7 @@
             this.tbNRICMd.Location = new System.Drawing.Point(82, 118);
             this.tbNRICMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbNRICMd.Name = "tbNRICMd";
-            this.tbNRICMd.Size = new System.Drawing.Size(83, 20);
+            this.tbNRICMd.Size = new System.Drawing.Size(109, 22);
             this.tbNRICMd.TabIndex = 12;
             // 
             // tbContactMd
@@ -1251,7 +1280,7 @@
             this.tbContactMd.Location = new System.Drawing.Point(82, 170);
             this.tbContactMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbContactMd.Name = "tbContactMd";
-            this.tbContactMd.Size = new System.Drawing.Size(83, 20);
+            this.tbContactMd.Size = new System.Drawing.Size(109, 22);
             this.tbContactMd.TabIndex = 12;
             // 
             // tbAddMd
@@ -1259,7 +1288,7 @@
             this.tbAddMd.Location = new System.Drawing.Point(82, 144);
             this.tbAddMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbAddMd.Name = "tbAddMd";
-            this.tbAddMd.Size = new System.Drawing.Size(83, 20);
+            this.tbAddMd.Size = new System.Drawing.Size(109, 22);
             this.tbAddMd.TabIndex = 13;
             // 
             // panel2
@@ -1275,14 +1304,14 @@
             this.panel2.Location = new System.Drawing.Point(8, 386);
             this.panel2.Margin = new System.Windows.Forms.Padding(8);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(225, 195);
+            this.panel2.Size = new System.Drawing.Size(300, 240);
             this.panel2.TabIndex = 25;
             // 
             // GetContact
             // 
             this.GetContact.Location = new System.Drawing.Point(88, 128);
             this.GetContact.Name = "GetContact";
-            this.GetContact.Size = new System.Drawing.Size(79, 30);
+            this.GetContact.Size = new System.Drawing.Size(105, 37);
             this.GetContact.TabIndex = 5;
             this.GetContact.Text = "Get Contact";
             this.GetContact.UseVisualStyleBackColor = true;
@@ -1295,45 +1324,49 @@
             this.ContactTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
             this.ContactTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ContactTitle.Location = new System.Drawing.Point(0, 0);
-            this.ContactTitle.Margin = new System.Windows.Forms.Padding(10);
+            this.ContactTitle.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.ContactTitle.Name = "ContactTitle";
-            this.ContactTitle.Padding = new System.Windows.Forms.Padding(10);
-            this.ContactTitle.Size = new System.Drawing.Size(145, 36);
+            this.ContactTitle.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.ContactTitle.Size = new System.Drawing.Size(176, 44);
             this.ContactTitle.TabIndex = 0;
             this.ContactTitle.Text = "Get User Contact";
             // 
             // MFA2
             // 
-            this.MFA2.Location = new System.Drawing.Point(64, 89);
+            this.MFA2.Location = new System.Drawing.Point(85, 110);
+            this.MFA2.Margin = new System.Windows.Forms.Padding(4);
             this.MFA2.Name = "MFA2";
             this.MFA2.ReadOnly = true;
-            this.MFA2.Size = new System.Drawing.Size(100, 20);
+            this.MFA2.Size = new System.Drawing.Size(132, 22);
             this.MFA2.TabIndex = 7;
             // 
             // Username
             // 
             this.Username.AutoSize = true;
             this.Username.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Username.Location = new System.Drawing.Point(3, 41);
+            this.Username.Location = new System.Drawing.Point(4, 50);
+            this.Username.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(55, 65);
+            this.Username.Size = new System.Drawing.Size(73, 85);
             this.Username.TabIndex = 1;
             this.Username.Text = "Username\r\n\r\nContact\r\n\r\nMFA";
             // 
             // ContactResult
             // 
-            this.ContactResult.Location = new System.Drawing.Point(64, 64);
+            this.ContactResult.Location = new System.Drawing.Point(85, 79);
+            this.ContactResult.Margin = new System.Windows.Forms.Padding(4);
             this.ContactResult.Name = "ContactResult";
             this.ContactResult.ReadOnly = true;
-            this.ContactResult.Size = new System.Drawing.Size(100, 20);
+            this.ContactResult.Size = new System.Drawing.Size(132, 22);
             this.ContactResult.TabIndex = 4;
             // 
             // ContactUsername
             // 
             this.ContactUsername.AllowDrop = true;
-            this.ContactUsername.Location = new System.Drawing.Point(64, 41);
+            this.ContactUsername.Location = new System.Drawing.Point(85, 50);
+            this.ContactUsername.Margin = new System.Windows.Forms.Padding(4);
             this.ContactUsername.Name = "ContactUsername";
-            this.ContactUsername.Size = new System.Drawing.Size(100, 20);
+            this.ContactUsername.Size = new System.Drawing.Size(132, 22);
             this.ContactUsername.TabIndex = 3;
             // 
             // btnSave
@@ -1351,9 +1384,13 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel4.Controls.Add(this.Newlabels);
+            this.panel4.Controls.Add(this.tbRole);
+            this.panel4.Controls.Add(this.tbEmail);
             this.panel4.Controls.Add(this.tbName);
             this.panel4.Controls.Add(this.AddTitle);
             this.panel4.Controls.Add(this.lblName);
+            this.panel4.Controls.Add(this.btnSave);
             this.panel4.Controls.Add(this.tbPwd);
             this.panel4.Controls.Add(this.tbContact);
             this.panel4.Controls.Add(this.tbRFID);
@@ -1361,18 +1398,44 @@
             this.panel4.Controls.Add(this.tbAdd);
             this.panel4.Controls.Add(this.stopScanBtn);
             this.panel4.Controls.Add(this.tbNRIC);
-            this.panel4.Location = new System.Drawing.Point(249, 386);
-            this.panel4.Margin = new System.Windows.Forms.Padding(8);
+            this.panel4.Location = new System.Drawing.Point(333, 476);
+            this.panel4.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(417, 195);
+            this.panel4.Size = new System.Drawing.Size(556, 240);
             this.panel4.TabIndex = 25;
+            // 
+            // Newlabels
+            // 
+            this.Newlabels.AutoSize = true;
+            this.Newlabels.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Newlabels.Location = new System.Drawing.Point(243, 38);
+            this.Newlabels.Name = "Newlabels";
+            this.Newlabels.Size = new System.Drawing.Size(32, 39);
+            this.Newlabels.TabIndex = 24;
+            this.Newlabels.Text = "Email\r\n\r\nRole";
+            // 
+            // tbRole
+            // 
+            this.tbRole.Location = new System.Drawing.Point(286, 59);
+            this.tbRole.Margin = new System.Windows.Forms.Padding(2);
+            this.tbRole.Name = "tbRole";
+            this.tbRole.Size = new System.Drawing.Size(129, 20);
+            this.tbRole.TabIndex = 23;
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Location = new System.Drawing.Point(286, 33);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(129, 20);
+            this.tbEmail.TabIndex = 22;
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(62, 35);
-            this.tbName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbName.Location = new System.Drawing.Point(83, 43);
+            this.tbName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(157, 20);
+            this.tbName.Size = new System.Drawing.Size(208, 22);
             this.tbName.TabIndex = 15;
             // 
             // AddTitle
@@ -1382,10 +1445,10 @@
             this.AddTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
             this.AddTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.AddTitle.Location = new System.Drawing.Point(0, 0);
-            this.AddTitle.Margin = new System.Windows.Forms.Padding(10);
+            this.AddTitle.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.AddTitle.Name = "AddTitle";
-            this.AddTitle.Padding = new System.Windows.Forms.Padding(10);
-            this.AddTitle.Size = new System.Drawing.Size(93, 36);
+            this.AddTitle.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.AddTitle.Size = new System.Drawing.Size(112, 44);
             this.AddTitle.TabIndex = 1;
             this.AddTitle.Text = "Add User";
             // 
@@ -1393,44 +1456,55 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lblName.Location = new System.Drawing.Point(2, 36);
-            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.Location = new System.Drawing.Point(3, 44);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(56, 143);
+            this.lblName.Size = new System.Drawing.Size(73, 187);
             this.lblName.TabIndex = 14;
             this.lblName.Text = "Name:\r\n\r\nPassword:\r\n\r\nRFID:\r\n\r\nNRIC:\r\n\r\nAddress:\r\n\r\nContact:";
             // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(286, 108);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(78, 28);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // tbPwd
             // 
-            this.tbPwd.Location = new System.Drawing.Point(62, 59);
-            this.tbPwd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbPwd.Location = new System.Drawing.Point(83, 73);
+            this.tbPwd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPwd.Name = "tbPwd";
-            this.tbPwd.Size = new System.Drawing.Size(157, 20);
+            this.tbPwd.Size = new System.Drawing.Size(208, 22);
             this.tbPwd.TabIndex = 14;
             // 
             // tbContact
             // 
-            this.tbContact.Location = new System.Drawing.Point(62, 165);
-            this.tbContact.Margin = new System.Windows.Forms.Padding(2);
+            this.tbContact.Location = new System.Drawing.Point(83, 203);
+            this.tbContact.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbContact.Name = "tbContact";
-            this.tbContact.Size = new System.Drawing.Size(157, 20);
+            this.tbContact.Size = new System.Drawing.Size(208, 22);
             this.tbContact.TabIndex = 19;
             // 
             // tbRFID
             // 
-            this.tbRFID.Location = new System.Drawing.Point(62, 86);
-            this.tbRFID.Margin = new System.Windows.Forms.Padding(2);
+            this.tbRFID.Location = new System.Drawing.Point(83, 106);
+            this.tbRFID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbRFID.Name = "tbRFID";
             this.tbRFID.ReadOnly = true;
-            this.tbRFID.Size = new System.Drawing.Size(71, 20);
+            this.tbRFID.Size = new System.Drawing.Size(93, 22);
             this.tbRFID.TabIndex = 16;
             // 
             // scanCardBtn
             // 
-            this.scanCardBtn.Location = new System.Drawing.Point(136, 85);
-            this.scanCardBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.scanCardBtn.Location = new System.Drawing.Point(181, 105);
+            this.scanCardBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.scanCardBtn.Name = "scanCardBtn";
-            this.scanCardBtn.Size = new System.Drawing.Size(42, 19);
+            this.scanCardBtn.Size = new System.Drawing.Size(56, 23);
             this.scanCardBtn.TabIndex = 20;
             this.scanCardBtn.Text = "Scan Card";
             this.scanCardBtn.UseVisualStyleBackColor = true;
@@ -1438,18 +1512,18 @@
             // 
             // tbAdd
             // 
-            this.tbAdd.Location = new System.Drawing.Point(62, 142);
-            this.tbAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbAdd.Location = new System.Drawing.Point(83, 175);
+            this.tbAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbAdd.Name = "tbAdd";
-            this.tbAdd.Size = new System.Drawing.Size(157, 20);
+            this.tbAdd.Size = new System.Drawing.Size(208, 22);
             this.tbAdd.TabIndex = 18;
             // 
             // stopScanBtn
             // 
-            this.stopScanBtn.Location = new System.Drawing.Point(182, 84);
-            this.stopScanBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.stopScanBtn.Location = new System.Drawing.Point(243, 103);
+            this.stopScanBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.stopScanBtn.Name = "stopScanBtn";
-            this.stopScanBtn.Size = new System.Drawing.Size(35, 19);
+            this.stopScanBtn.Size = new System.Drawing.Size(47, 23);
             this.stopScanBtn.TabIndex = 21;
             this.stopScanBtn.Text = "Stop Scan";
             this.stopScanBtn.UseVisualStyleBackColor = true;
@@ -1457,13 +1531,32 @@
             // 
             // tbNRIC
             // 
-            this.tbNRIC.Location = new System.Drawing.Point(62, 113);
-            this.tbNRIC.Margin = new System.Windows.Forms.Padding(2);
+            this.tbNRIC.Location = new System.Drawing.Point(83, 139);
+            this.tbNRIC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbNRIC.Name = "tbNRIC";
-            this.tbNRIC.Size = new System.Drawing.Size(157, 20);
+            this.tbNRIC.Size = new System.Drawing.Size(208, 22);
             this.tbNRIC.TabIndex = 17;
             // 
-            // tabPage6
+            // todo
+            // 
+            this.todo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.todo.Controls.Add(this.RemoveTaskbtn);
+            this.todo.Controls.Add(this.RemoveTasktb);
+            this.todo.Controls.Add(this.RemoveTask);
+            this.todo.Controls.Add(this.AddTaskbtn);
+            this.todo.Controls.Add(this.AddTasktb);
+            this.todo.Controls.Add(this.AddTask);
+            this.todo.Controls.Add(this.Tasks);
+            this.todo.Controls.Add(this.Tasklist);
+            this.todo.Location = new System.Drawing.Point(4, 22);
+            this.todo.Margin = new System.Windows.Forms.Padding(2);
+            this.todo.Name = "todo";
+            this.todo.Padding = new System.Windows.Forms.Padding(2);
+            this.todo.Size = new System.Drawing.Size(681, 586);
+            this.todo.TabIndex = 5;
+            this.todo.Text = "To-do-list";
+            // 
+            // RemoveTaskbtn
             // 
             this.tabPage6.BackColor = System.Drawing.Color.LightGray;
             this.tabPage6.Controls.Add(this.roomStatus);
@@ -1486,7 +1579,22 @@
             this.roomStatus.Size = new System.Drawing.Size(205, 20);
             this.roomStatus.TabIndex = 3;
             // 
-            // lightValueTB
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.panel11.Controls.Add(this.pictureBox2);
+            this.panel11.Controls.Add(this.moisture_alarm_val);
+            this.panel11.Controls.Add(this.label6);
+            this.panel11.Controls.Add(this.moisture_warning_val);
+            this.panel11.Controls.Add(this.label2);
+            this.panel11.Controls.Add(this.label1);
+            this.panel11.Location = new System.Drawing.Point(21, 197);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(629, 146);
+            this.panel11.TabIndex = 21;
+            // 
+            // pictureBox2
             // 
             this.lightValueTB.Location = new System.Drawing.Point(54, 20);
             this.lightValueTB.Margin = new System.Windows.Forms.Padding(2);
@@ -1495,7 +1603,19 @@
             this.lightValueTB.Size = new System.Drawing.Size(205, 20);
             this.lightValueTB.TabIndex = 0;
             // 
-            // stopLightBtn
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(28, 23);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(272, 25);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Moisture threshold controls";
+            // 
+            // label1
             // 
             this.stopLightBtn.Location = new System.Drawing.Point(367, 13);
             this.stopLightBtn.Margin = new System.Windows.Forms.Padding(2);
@@ -1505,7 +1625,7 @@
             this.stopLightBtn.Text = "Stop Light";
             this.stopLightBtn.UseVisualStyleBackColor = true;
             // 
-            // sendLight
+            // saveChanges_btn
             // 
             this.sendLight.Location = new System.Drawing.Point(282, 13);
             this.sendLight.Margin = new System.Windows.Forms.Padding(2);
@@ -1516,7 +1636,7 @@
             this.sendLight.UseVisualStyleBackColor = true;
             this.sendLight.Click += new System.EventHandler(this.sendLight_Click);
             // 
-            // panel1
+            // splitContainer2.Panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.panel1.Controls.Add(this.Systems);
@@ -1531,7 +1651,7 @@
             this.panel1.Size = new System.Drawing.Size(273, 609);
             this.panel1.TabIndex = 2;
             // 
-            // Systems
+            // panel9
             // 
             this.Systems.AutoSize = true;
             this.Systems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(210)))), ((int)(((byte)(134)))));
@@ -1541,7 +1661,7 @@
             this.Systems.TabIndex = 28;
             this.Systems.Text = "Welcome ";
             // 
-            // panel6
+            // panel8
             // 
             this.panel6.Controls.Add(this.Title);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1551,7 +1671,7 @@
             this.panel6.Size = new System.Drawing.Size(273, 24);
             this.panel6.TabIndex = 27;
             // 
-            // Title
+            // lblMoisture
             // 
             this.Title.AutoSize = true;
             this.Title.Cursor = System.Windows.Forms.Cursors.WaitCursor;
@@ -1587,10 +1707,10 @@
             // 
             // Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(962, 612);
+            this.ClientSize = new System.Drawing.Size(1283, 753);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.usermgt);
             this.ForeColor = System.Drawing.SystemColors.InfoText;
@@ -1599,42 +1719,10 @@
             this.Text = "Admin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Admin_FormClosed);
             this.Load += new System.EventHandler(this.Admin_Load);
-            this.usermgt.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel1.PerformLayout();
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.dashboard.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Temperature)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Moisture)).EndInit();
-            this.tabPage7.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.potentio_alarm_val)).EndInit();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moisture_alarm_val)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moisture_warning_val)).EndInit();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.temp_alarm_val)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.temp_warning_val)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -1650,130 +1738,176 @@
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.tabPage6.ResumeLayout(false);
-            this.tabPage6.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.todo.ResumeLayout(false);
+            this.todo.PerformLayout();
+            this.usrmgtpg.ResumeLayout(false);
+            this.usrmgtpg.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.potentio_alarm_val)).EndInit();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moisture_alarm_val)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moisture_warning_val)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.temp_alarm_val)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.temp_warning_val)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.dashboard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Temperature)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Moisture)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.usermgt.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
         private System.Windows.Forms.TextBox adminmsg;
         private System.Windows.Forms.Button adminsend;
-
-        private System.Windows.Forms.TabControl usermgt;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.Label lblTemp;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.FlowLayoutPanel dashboard;
-        private System.Windows.Forms.DataVisualization.Charting.Chart Temperature;
-        private System.Windows.Forms.DataVisualization.Charting.Chart Moisture;
-        private System.Windows.Forms.TabPage usrmgtpg;
-        private System.Windows.Forms.TabPage todo;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.TextBox roomStatus;
-        private System.Windows.Forms.TextBox lightValueTB;
-        private System.Windows.Forms.Button stopLightBtn;
-        private System.Windows.Forms.Button sendLight;
-        private System.Windows.Forms.Label tempLBL;
-        private System.Windows.Forms.Label moistureLbl;
-        private System.Windows.Forms.Label lblMoisture;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label degcelLbl;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label doorLbl;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label motionLbl;
-        private System.Windows.Forms.ListBox syslogLB;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label lblUltrasonic;
         private System.Windows.Forms.TextBox Messages;
         private System.Windows.Forms.TextBox session;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox tbContact;
-        private System.Windows.Forms.TextBox MFA;
-        private System.Windows.Forms.Button stopScanBtn;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.TextBox tbAdd;
-        private System.Windows.Forms.Button scanCardBtn;
-        private System.Windows.Forms.TextBox tbPasswordMd;
-        private System.Windows.Forms.TextBox tbNRIC;
-        private System.Windows.Forms.Button btnGetUserID;
-        private System.Windows.Forms.TextBox tbContactMd;
-        private System.Windows.Forms.TextBox tbName;
-        private System.Windows.Forms.TextBox tbRFID;
-        private System.Windows.Forms.DataGridView grdUser;
-        private System.Windows.Forms.TextBox tbPwd;
-        private System.Windows.Forms.Label AddTitle;
-        private System.Windows.Forms.Button btnModify;
-        private System.Windows.Forms.TextBox tbCountryOfBirthMd;
-        private System.Windows.Forms.Button GetContact;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Label modifylbl;
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label editlbl;
-        private System.Windows.Forms.Label lblUniqueUserID;
-        private System.Windows.Forms.TextBox MFA2;
-        private System.Windows.Forms.TextBox tbUserID;
-        private System.Windows.Forms.Label Username;
-        private System.Windows.Forms.TextBox tbNameMd;
-        private System.Windows.Forms.TextBox ContactResult;
-        private System.Windows.Forms.TextBox ContactUsername;
-        private System.Windows.Forms.TextBox tbAddMd;
-        private System.Windows.Forms.TextBox tbRFIDMd;
-        private System.Windows.Forms.Label ContactTitle;
-        private System.Windows.Forms.TextBox tbNRICMd;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Title;
-        private System.Windows.Forms.TextBox tbDOBMd;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Label Systems;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.SplitContainer EditSplit;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label editlbl;
+        private System.Windows.Forms.DataGridView grdUser;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox Role;
+        private System.Windows.Forms.TextBox Email;
+        private System.Windows.Forms.Label modifylbl;
+        private System.Windows.Forms.Label lblUniqueUserID;
+        private System.Windows.Forms.Button btnGetUserID;
+        private System.Windows.Forms.TextBox tbDOBMd;
+        private System.Windows.Forms.Button btnModify;
+        private System.Windows.Forms.TextBox tbUserID;
+        private System.Windows.Forms.TextBox MFA;
+        private System.Windows.Forms.TextBox tbNameMd;
+        private System.Windows.Forms.TextBox tbPasswordMd;
+        private System.Windows.Forms.TextBox tbRFIDMd;
+        private System.Windows.Forms.TextBox tbCountryOfBirthMd;
+        private System.Windows.Forms.TextBox tbNRICMd;
+        private System.Windows.Forms.TextBox tbContactMd;
+        private System.Windows.Forms.TextBox tbAddMd;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button GetContact;
+        private System.Windows.Forms.Label ContactTitle;
+        private System.Windows.Forms.TextBox MFA2;
+        private System.Windows.Forms.Label Username;
+        private System.Windows.Forms.TextBox ContactResult;
+        private System.Windows.Forms.TextBox ContactUsername;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label Newlabels;
+        private System.Windows.Forms.TextBox tbRole;
+        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.Label AddTitle;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox tbPwd;
+        private System.Windows.Forms.TextBox tbContact;
+        private System.Windows.Forms.TextBox tbRFID;
+        private System.Windows.Forms.Button scanCardBtn;
+        private System.Windows.Forms.TextBox tbAdd;
+        private System.Windows.Forms.Button stopScanBtn;
+        private System.Windows.Forms.TextBox tbNRIC;
+        private System.Windows.Forms.TabPage todo;
+        private System.Windows.Forms.TabPage usrmgtpg;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.NumericUpDown potentio_alarm_val;
         private System.Windows.Forms.Label alarm_potentio_label;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.NumericUpDown moisture_alarm_val;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown moisture_warning_val;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.NumericUpDown temp_alarm_val;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown temp_warning_val;
         private System.Windows.Forms.Label temp_Threshold_lbl;
         private System.Windows.Forms.Label warning_thres_label;
         private System.Windows.Forms.Button saveChanges_btn;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.Label lockdownStatus;
+        private System.Windows.Forms.Button resetAlmBtn;
         private System.Windows.Forms.Label motionCountLbl;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button resetAlmBtn;
-        private System.Windows.Forms.Label lockdownStatus;
-        private System.Windows.Forms.CheckedListBox Approval_list;
-        private System.Windows.Forms.Label Systems;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label motionLbl;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblMoisture;
+        private System.Windows.Forms.Label moistureLbl;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label lblTemp;
+        private System.Windows.Forms.Label tempLBL;
+        private System.Windows.Forms.Label degcelLbl;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblUltrasonic;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label doorLbl;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.FlowLayoutPanel dashboard;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Temperature;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Moisture;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ListBox syslogLB;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox Queue;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button ApproveSubmit;
+        private System.Windows.Forms.Label IDlist;
+        private System.Windows.Forms.Label List;
+        private System.Windows.Forms.TextBox ID_list;
+        private System.Windows.Forms.TextBox Approval_list;
+        private System.Windows.Forms.TabControl usermgt;
+        private System.Windows.Forms.Label Tasks;
+        private System.Windows.Forms.TextBox Tasklist;
+        private System.Windows.Forms.Button RemoveTaskbtn;
+        private System.Windows.Forms.TextBox RemoveTasktb;
+        private System.Windows.Forms.Label RemoveTask;
+        private System.Windows.Forms.Button AddTaskbtn;
+        private System.Windows.Forms.TextBox AddTasktb;
+        private System.Windows.Forms.Label AddTask;
+        private System.Windows.Forms.TextBox Usermgttb;
     }
 }
