@@ -18,14 +18,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.session = new System.Windows.Forms.TextBox();
             this.Messages = new System.Windows.Forms.TextBox();
             this.adminmsg = new System.Windows.Forms.TextBox();
@@ -83,6 +83,12 @@
             this.stopScanBtn = new System.Windows.Forms.Button();
             this.tbNRIC = new System.Windows.Forms.TextBox();
             this.todo = new System.Windows.Forms.TabPage();
+            this.RemoveTaskbtn = new System.Windows.Forms.Button();
+            this.RemoveTasktb = new System.Windows.Forms.TextBox();
+            this.RemoveTask = new System.Windows.Forms.Label();
+            this.AddTaskbtn = new System.Windows.Forms.Button();
+            this.AddTasktb = new System.Windows.Forms.TextBox();
+            this.AddTask = new System.Windows.Forms.Label();
             this.Tasks = new System.Windows.Forms.Label();
             this.Tasklist = new System.Windows.Forms.TextBox();
             this.usrmgtpg = new System.Windows.Forms.TabPage();
@@ -146,12 +152,7 @@
             this.ID_list = new System.Windows.Forms.TextBox();
             this.Approval_list = new System.Windows.Forms.TextBox();
             this.usermgt = new System.Windows.Forms.TabControl();
-            this.AddTask = new System.Windows.Forms.Label();
-            this.AddTasktb = new System.Windows.Forms.TextBox();
-            this.AddTaskbtn = new System.Windows.Forms.Button();
-            this.RemoveTask = new System.Windows.Forms.Label();
-            this.RemoveTasktb = new System.Windows.Forms.TextBox();
-            this.RemoveTaskbtn = new System.Windows.Forms.Button();
+            this.Usermgttb = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -166,6 +167,7 @@
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.todo.SuspendLayout();
+            this.usrmgtpg.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -832,6 +834,61 @@
             this.todo.TabIndex = 5;
             this.todo.Text = "To-do-list";
             // 
+            // RemoveTaskbtn
+            // 
+            this.RemoveTaskbtn.Location = new System.Drawing.Point(276, 356);
+            this.RemoveTaskbtn.Name = "RemoveTaskbtn";
+            this.RemoveTaskbtn.Size = new System.Drawing.Size(75, 23);
+            this.RemoveTaskbtn.TabIndex = 7;
+            this.RemoveTaskbtn.Text = "Done";
+            this.RemoveTaskbtn.UseVisualStyleBackColor = true;
+            this.RemoveTaskbtn.Click += new System.EventHandler(this.RemoveTaskbtn_Click);
+            // 
+            // RemoveTasktb
+            // 
+            this.RemoveTasktb.Location = new System.Drawing.Point(276, 330);
+            this.RemoveTasktb.Name = "RemoveTasktb";
+            this.RemoveTasktb.Size = new System.Drawing.Size(239, 20);
+            this.RemoveTasktb.TabIndex = 6;
+            // 
+            // RemoveTask
+            // 
+            this.RemoveTask.AutoSize = true;
+            this.RemoveTask.ForeColor = System.Drawing.Color.White;
+            this.RemoveTask.Location = new System.Drawing.Point(277, 310);
+            this.RemoveTask.Name = "RemoveTask";
+            this.RemoveTask.Size = new System.Drawing.Size(74, 13);
+            this.RemoveTask.TabIndex = 5;
+            this.RemoveTask.Text = "Remove Task";
+            // 
+            // AddTaskbtn
+            // 
+            this.AddTaskbtn.Location = new System.Drawing.Point(22, 483);
+            this.AddTaskbtn.Name = "AddTaskbtn";
+            this.AddTaskbtn.Size = new System.Drawing.Size(75, 23);
+            this.AddTaskbtn.TabIndex = 4;
+            this.AddTaskbtn.Text = "Add Task";
+            this.AddTaskbtn.UseVisualStyleBackColor = true;
+            this.AddTaskbtn.Click += new System.EventHandler(this.AddTaskbtn_Click);
+            // 
+            // AddTasktb
+            // 
+            this.AddTasktb.Location = new System.Drawing.Point(21, 330);
+            this.AddTasktb.Multiline = true;
+            this.AddTasktb.Name = "AddTasktb";
+            this.AddTasktb.Size = new System.Drawing.Size(239, 147);
+            this.AddTasktb.TabIndex = 3;
+            // 
+            // AddTask
+            // 
+            this.AddTask.AutoSize = true;
+            this.AddTask.ForeColor = System.Drawing.Color.White;
+            this.AddTask.Location = new System.Drawing.Point(18, 310);
+            this.AddTask.Name = "AddTask";
+            this.AddTask.Size = new System.Drawing.Size(53, 13);
+            this.AddTask.TabIndex = 2;
+            this.AddTask.Text = "Add Task";
+            // 
             // Tasks
             // 
             this.Tasks.AutoSize = true;
@@ -853,6 +910,7 @@
             // usrmgtpg
             // 
             this.usrmgtpg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.usrmgtpg.Controls.Add(this.Usermgttb);
             this.usrmgtpg.Location = new System.Drawing.Point(4, 22);
             this.usrmgtpg.Margin = new System.Windows.Forms.Padding(2);
             this.usrmgtpg.Name = "usrmgtpg";
@@ -1459,45 +1517,45 @@
             // 
             // Temperature
             // 
-            chartArea9.Name = "ChartArea1";
-            this.Temperature.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.Temperature.Legends.Add(legend9);
+            chartArea1.Name = "ChartArea1";
+            this.Temperature.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.Temperature.Legends.Add(legend1);
             this.Temperature.Location = new System.Drawing.Point(8, 8);
             this.Temperature.Margin = new System.Windows.Forms.Padding(8);
             this.Temperature.Name = "Temperature";
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series9.Legend = "Legend1";
-            series9.Name = "Temperature";
-            this.Temperature.Series.Add(series9);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Temperature";
+            this.Temperature.Series.Add(series1);
             this.Temperature.Size = new System.Drawing.Size(322, 162);
             this.Temperature.TabIndex = 0;
             this.Temperature.Text = "Temperature";
-            title9.Name = "Temperature";
-            title9.Text = "Temperature";
-            this.Temperature.Titles.Add(title9);
+            title1.Name = "Temperature";
+            title1.Text = "Temperature";
+            this.Temperature.Titles.Add(title1);
             // 
             // Moisture
             // 
-            chartArea10.Name = "ChartArea1";
-            this.Moisture.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.Moisture.Legends.Add(legend10);
+            chartArea2.Name = "ChartArea1";
+            this.Moisture.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.Moisture.Legends.Add(legend2);
             this.Moisture.Location = new System.Drawing.Point(346, 8);
             this.Moisture.Margin = new System.Windows.Forms.Padding(8);
             this.Moisture.Name = "Moisture";
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series10.Legend = "Legend1";
-            series10.Name = "Moisture";
-            this.Moisture.Series.Add(series10);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Moisture";
+            this.Moisture.Series.Add(series2);
             this.Moisture.Size = new System.Drawing.Size(322, 162);
             this.Moisture.TabIndex = 1;
             this.Moisture.Text = "Moisture";
-            title10.Name = "Moisture";
-            title10.Text = "Moisture";
-            this.Moisture.Titles.Add(title10);
+            title2.Name = "Moisture";
+            title2.Text = "Moisture";
+            this.Moisture.Titles.Add(title2);
             // 
             // tabPage3
             // 
@@ -1637,60 +1695,15 @@
             this.usermgt.Size = new System.Drawing.Size(689, 612);
             this.usermgt.TabIndex = 0;
             // 
-            // AddTask
+            // Usermgttb
             // 
-            this.AddTask.AutoSize = true;
-            this.AddTask.ForeColor = System.Drawing.Color.White;
-            this.AddTask.Location = new System.Drawing.Point(18, 310);
-            this.AddTask.Name = "AddTask";
-            this.AddTask.Size = new System.Drawing.Size(53, 13);
-            this.AddTask.TabIndex = 2;
-            this.AddTask.Text = "Add Task";
-            // 
-            // AddTasktb
-            // 
-            this.AddTasktb.Location = new System.Drawing.Point(21, 330);
-            this.AddTasktb.Multiline = true;
-            this.AddTasktb.Name = "AddTasktb";
-            this.AddTasktb.Size = new System.Drawing.Size(239, 147);
-            this.AddTasktb.TabIndex = 3;
-            // 
-            // AddTaskbtn
-            // 
-            this.AddTaskbtn.Location = new System.Drawing.Point(22, 483);
-            this.AddTaskbtn.Name = "AddTaskbtn";
-            this.AddTaskbtn.Size = new System.Drawing.Size(75, 23);
-            this.AddTaskbtn.TabIndex = 4;
-            this.AddTaskbtn.Text = "Add Task";
-            this.AddTaskbtn.UseVisualStyleBackColor = true;
-            this.AddTaskbtn.Click += new System.EventHandler(this.AddTaskbtn_Click);
-            // 
-            // RemoveTask
-            // 
-            this.RemoveTask.AutoSize = true;
-            this.RemoveTask.ForeColor = System.Drawing.Color.White;
-            this.RemoveTask.Location = new System.Drawing.Point(277, 310);
-            this.RemoveTask.Name = "RemoveTask";
-            this.RemoveTask.Size = new System.Drawing.Size(74, 13);
-            this.RemoveTask.TabIndex = 5;
-            this.RemoveTask.Text = "Remove Task";
-            // 
-            // RemoveTasktb
-            // 
-            this.RemoveTasktb.Location = new System.Drawing.Point(276, 330);
-            this.RemoveTasktb.Name = "RemoveTasktb";
-            this.RemoveTasktb.Size = new System.Drawing.Size(239, 20);
-            this.RemoveTasktb.TabIndex = 6;
-            // 
-            // RemoveTaskbtn
-            // 
-            this.RemoveTaskbtn.Location = new System.Drawing.Point(276, 356);
-            this.RemoveTaskbtn.Name = "RemoveTaskbtn";
-            this.RemoveTaskbtn.Size = new System.Drawing.Size(75, 23);
-            this.RemoveTaskbtn.TabIndex = 7;
-            this.RemoveTaskbtn.Text = "Done";
-            this.RemoveTaskbtn.UseVisualStyleBackColor = true;
-            this.RemoveTaskbtn.Click += new System.EventHandler(this.RemoveTaskbtn_Click);
+            this.Usermgttb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.Usermgttb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Usermgttb.Location = new System.Drawing.Point(2, 2);
+            this.Usermgttb.Multiline = true;
+            this.Usermgttb.Name = "Usermgttb";
+            this.Usermgttb.Size = new System.Drawing.Size(677, 582);
+            this.Usermgttb.TabIndex = 0;
             // 
             // Admin
             // 
@@ -1700,7 +1713,7 @@
             this.ClientSize = new System.Drawing.Size(962, 612);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.usermgt);
-            this.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
@@ -1727,6 +1740,8 @@
             this.panel4.PerformLayout();
             this.todo.ResumeLayout(false);
             this.todo.PerformLayout();
+            this.usrmgtpg.ResumeLayout(false);
+            this.usrmgtpg.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
@@ -1893,5 +1908,6 @@
         private System.Windows.Forms.Button AddTaskbtn;
         private System.Windows.Forms.TextBox AddTasktb;
         private System.Windows.Forms.Label AddTask;
+        private System.Windows.Forms.TextBox Usermgttb;
     }
 }
