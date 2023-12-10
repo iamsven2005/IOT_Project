@@ -691,29 +691,11 @@ namespace PracticalADO_ReadDB
             myConnect.Close();
         }
 
-        private void saveRfidDataToDB(string strRfid, string strTime, string strData)
-        {
-            SqlConnection myConnect = new SqlConnection(strConnectionString);
-            String strCommandText = "INSERT MyTxn (UniqueRFID, DateAndTime, Activity)" + " VALUES (@rfid, @datetime, @activity)";
-            SqlCommand updateCmd = new SqlCommand(strCommandText, myConnect);
-            updateCmd.Parameters.AddWithValue("@rfid", strRfid);
-            updateCmd.Parameters.AddWithValue("@datetime", strTime);
-            updateCmd.Parameters.AddWithValue("@activity", strData);
-            myConnect.Open();
-            int result = updateCmd.ExecuteNonQuery();
-            myConnect.Close();
-        }
-
         private void handleRfidSensorData(string strData, string strTime, string ID)
         {
             string strValue = extractStringValue(strData, ID);
             Console.WriteLine(strValue);
             tbRFID.Text = strValue;
-            //string dt = DateTime.Now.ToString("s");
-            string strType = "Scanning to authenticate";
-
-            saveRfidDataToDB(strValue, strTime, strType);
-
         }
         public void handleSensorData(String strData)
         {

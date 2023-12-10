@@ -201,10 +201,10 @@
             // session
             // 
             this.session.Enabled = false;
-            this.session.Location = new System.Drawing.Point(4, 34);
-            this.session.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.session.Location = new System.Drawing.Point(3, 28);
+            this.session.Margin = new System.Windows.Forms.Padding(2);
             this.session.Name = "session";
-            this.session.Size = new System.Drawing.Size(100, 22);
+            this.session.Size = new System.Drawing.Size(76, 20);
             this.session.TabIndex = 1;
             this.session.Text = "Admin";
             // 
@@ -213,22 +213,22 @@
             this.Messages.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Messages.Enabled = false;
             this.Messages.ForeColor = System.Drawing.Color.White;
-            this.Messages.Location = new System.Drawing.Point(0, 72);
-            this.Messages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Messages.Location = new System.Drawing.Point(0, 56);
+            this.Messages.Margin = new System.Windows.Forms.Padding(2);
             this.Messages.Multiline = true;
             this.Messages.Name = "Messages";
-            this.Messages.Size = new System.Drawing.Size(364, 527);
+            this.Messages.Size = new System.Drawing.Size(273, 429);
             this.Messages.TabIndex = 0;
             // 
             // adminmsg
             // 
             this.adminmsg.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.adminmsg.Location = new System.Drawing.Point(0, 599);
-            this.adminmsg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.adminmsg.MinimumSize = new System.Drawing.Size(49, 20);
+            this.adminmsg.Location = new System.Drawing.Point(0, 485);
+            this.adminmsg.Margin = new System.Windows.Forms.Padding(2);
+            this.adminmsg.MinimumSize = new System.Drawing.Size(38, 17);
             this.adminmsg.Multiline = true;
             this.adminmsg.Name = "adminmsg";
-            this.adminmsg.Size = new System.Drawing.Size(364, 75);
+            this.adminmsg.Size = new System.Drawing.Size(273, 62);
             this.adminmsg.TabIndex = 0;
             this.adminmsg.Text = "Admin Msg";
             // 
@@ -236,11 +236,11 @@
             // 
             this.adminsend.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.adminsend.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.adminsend.Location = new System.Drawing.Point(0, 674);
-            this.adminsend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.adminsend.MinimumSize = new System.Drawing.Size(29, 20);
+            this.adminsend.Location = new System.Drawing.Point(0, 547);
+            this.adminsend.Margin = new System.Windows.Forms.Padding(2);
+            this.adminsend.MinimumSize = new System.Drawing.Size(22, 16);
             this.adminsend.Name = "adminsend";
-            this.adminsend.Size = new System.Drawing.Size(364, 76);
+            this.adminsend.Size = new System.Drawing.Size(273, 62);
             this.adminsend.TabIndex = 0;
             this.adminsend.Text = "Send";
             this.adminsend.UseVisualStyleBackColor = true;
@@ -1014,11 +1014,10 @@
             // 
             this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.tabPage5.Controls.Add(this.flowLayoutPanel1);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage5.Size = new System.Drawing.Size(911, 724);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(681, 586);
             this.tabPage5.TabIndex = 6;
             this.tabPage5.Text = "Check Info";
             // 
@@ -1029,10 +1028,10 @@
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 4);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(903, 716);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(675, 580);
             this.flowLayoutPanel1.TabIndex = 24;
             // 
             // panel3
@@ -1041,17 +1040,17 @@
             this.panel3.Controls.Add(this.EditSplit);
             this.panel3.Controls.Add(this.editlbl);
             this.panel3.Controls.Add(this.grdUser);
-            this.panel3.Location = new System.Drawing.Point(11, 10);
-            this.panel3.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.panel3.Location = new System.Drawing.Point(8, 8);
+            this.panel3.Margin = new System.Windows.Forms.Padding(8);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(495, 446);
+            this.panel3.Size = new System.Drawing.Size(371, 362);
             this.panel3.TabIndex = 26;
             // 
             // EditSplit
             // 
             this.EditSplit.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.EditSplit.Location = new System.Drawing.Point(0, 46);
-            this.EditSplit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.EditSplit.Location = new System.Drawing.Point(0, 37);
+            this.EditSplit.Margin = new System.Windows.Forms.Padding(2);
             this.EditSplit.Name = "EditSplit";
             // 
             // EditSplit.Panel1
@@ -1061,8 +1060,9 @@
             // EditSplit.Panel2
             // 
             this.EditSplit.Panel2.Controls.Add(this.btnUpdate);
-            this.EditSplit.Size = new System.Drawing.Size(495, 48);
-            this.EditSplit.SplitterDistance = 229;
+            this.EditSplit.Size = new System.Drawing.Size(371, 39);
+            this.EditSplit.SplitterDistance = 172;
+            this.EditSplit.SplitterWidth = 3;
             this.EditSplit.TabIndex = 4;
             // 
             // btnDelete
@@ -1070,9 +1070,9 @@
             this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(0, 0);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(229, 48);
+            this.btnDelete.Size = new System.Drawing.Size(172, 39);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -1083,9 +1083,9 @@
             this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(0, 0);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(5);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(262, 48);
+            this.btnUpdate.Size = new System.Drawing.Size(196, 39);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -1098,10 +1098,10 @@
             this.editlbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
             this.editlbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.editlbl.Location = new System.Drawing.Point(0, 0);
-            this.editlbl.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.editlbl.Margin = new System.Windows.Forms.Padding(8);
             this.editlbl.Name = "editlbl";
-            this.editlbl.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.editlbl.Size = new System.Drawing.Size(209, 44);
+            this.editlbl.Padding = new System.Windows.Forms.Padding(10);
+            this.editlbl.Size = new System.Drawing.Size(172, 36);
             this.editlbl.TabIndex = 1;
             this.editlbl.Text = "Edit User Information";
             // 
@@ -1110,11 +1110,11 @@
             this.grdUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grdUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdUser.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grdUser.Location = new System.Drawing.Point(0, 94);
-            this.grdUser.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.grdUser.Location = new System.Drawing.Point(0, 76);
+            this.grdUser.Margin = new System.Windows.Forms.Padding(8);
             this.grdUser.Name = "grdUser";
             this.grdUser.RowTemplate.Height = 24;
-            this.grdUser.Size = new System.Drawing.Size(495, 352);
+            this.grdUser.Size = new System.Drawing.Size(371, 286);
             this.grdUser.TabIndex = 1;
             this.grdUser.Click += new System.EventHandler(this.grdUser_Click);
             // 
@@ -1137,10 +1137,10 @@
             this.panel5.Controls.Add(this.tbNRICMd);
             this.panel5.Controls.Add(this.tbContactMd);
             this.panel5.Controls.Add(this.tbAddMd);
-            this.panel5.Location = new System.Drawing.Point(528, 10);
-            this.panel5.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.panel5.Location = new System.Drawing.Point(395, 8);
+            this.panel5.Margin = new System.Windows.Forms.Padding(8);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(361, 446);
+            this.panel5.Size = new System.Drawing.Size(271, 362);
             this.panel5.TabIndex = 25;
             // 
             // Role
@@ -1166,10 +1166,10 @@
             this.modifylbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
             this.modifylbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.modifylbl.Location = new System.Drawing.Point(0, 0);
-            this.modifylbl.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.modifylbl.Margin = new System.Windows.Forms.Padding(10);
             this.modifylbl.Name = "modifylbl";
-            this.modifylbl.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.modifylbl.Size = new System.Drawing.Size(231, 44);
+            this.modifylbl.Padding = new System.Windows.Forms.Padding(10);
+            this.modifylbl.Size = new System.Drawing.Size(191, 36);
             this.modifylbl.TabIndex = 2;
             this.modifylbl.Text = "Modify User Information";
             // 
@@ -1178,7 +1178,8 @@
             this.lblUniqueUserID.AutoSize = true;
             this.lblUniqueUserID.BackColor = System.Drawing.Color.Transparent;
             this.lblUniqueUserID.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lblUniqueUserID.Location = new System.Drawing.Point(3, 44);
+            this.lblUniqueUserID.Location = new System.Drawing.Point(2, 36);
+            this.lblUniqueUserID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUniqueUserID.Name = "lblUniqueUserID";
             this.lblUniqueUserID.Size = new System.Drawing.Size(77, 247);
             this.lblUniqueUserID.TabIndex = 1;
@@ -1191,7 +1192,7 @@
             this.btnGetUserID.Location = new System.Drawing.Point(100, 326);
             this.btnGetUserID.Margin = new System.Windows.Forms.Padding(2);
             this.btnGetUserID.Name = "btnGetUserID";
-            this.btnGetUserID.Size = new System.Drawing.Size(84, 28);
+            this.btnGetUserID.Size = new System.Drawing.Size(63, 23);
             this.btnGetUserID.TabIndex = 20;
             this.btnGetUserID.Text = "Get User";
             this.btnGetUserID.UseVisualStyleBackColor = true;
@@ -1202,7 +1203,7 @@
             this.tbDOBMd.Location = new System.Drawing.Point(82, 280);
             this.tbDOBMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbDOBMd.Name = "tbDOBMd";
-            this.tbDOBMd.Size = new System.Drawing.Size(109, 22);
+            this.tbDOBMd.Size = new System.Drawing.Size(83, 20);
             this.tbDOBMd.TabIndex = 23;
             // 
             // btnModify
@@ -1211,7 +1212,7 @@
             this.btnModify.Location = new System.Drawing.Point(20, 326);
             this.btnModify.Margin = new System.Windows.Forms.Padding(2);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(77, 28);
+            this.btnModify.Size = new System.Drawing.Size(58, 23);
             this.btnModify.TabIndex = 15;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = true;
@@ -1223,7 +1224,7 @@
             this.tbUserID.Location = new System.Drawing.Point(82, 36);
             this.tbUserID.Margin = new System.Windows.Forms.Padding(2);
             this.tbUserID.Name = "tbUserID";
-            this.tbUserID.Size = new System.Drawing.Size(109, 22);
+            this.tbUserID.Size = new System.Drawing.Size(83, 20);
             this.tbUserID.TabIndex = 7;
             // 
             // MFA
@@ -1231,7 +1232,7 @@
             this.MFA.Location = new System.Drawing.Point(82, 254);
             this.MFA.Margin = new System.Windows.Forms.Padding(2);
             this.MFA.Name = "MFA";
-            this.MFA.Size = new System.Drawing.Size(109, 22);
+            this.MFA.Size = new System.Drawing.Size(83, 20);
             this.MFA.TabIndex = 22;
             // 
             // tbNameMd
@@ -1240,7 +1241,7 @@
             this.tbNameMd.Location = new System.Drawing.Point(82, 58);
             this.tbNameMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbNameMd.Name = "tbNameMd";
-            this.tbNameMd.Size = new System.Drawing.Size(109, 22);
+            this.tbNameMd.Size = new System.Drawing.Size(83, 20);
             this.tbNameMd.TabIndex = 9;
             // 
             // tbPasswordMd
@@ -1248,7 +1249,7 @@
             this.tbPasswordMd.Location = new System.Drawing.Point(82, 198);
             this.tbPasswordMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbPasswordMd.Name = "tbPasswordMd";
-            this.tbPasswordMd.Size = new System.Drawing.Size(109, 22);
+            this.tbPasswordMd.Size = new System.Drawing.Size(83, 20);
             this.tbPasswordMd.TabIndex = 15;
             // 
             // tbRFIDMd
@@ -1256,7 +1257,7 @@
             this.tbRFIDMd.Location = new System.Drawing.Point(82, 85);
             this.tbRFIDMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbRFIDMd.Name = "tbRFIDMd";
-            this.tbRFIDMd.Size = new System.Drawing.Size(109, 22);
+            this.tbRFIDMd.Size = new System.Drawing.Size(83, 20);
             this.tbRFIDMd.TabIndex = 10;
             // 
             // tbCountryOfBirthMd
@@ -1264,7 +1265,7 @@
             this.tbCountryOfBirthMd.Location = new System.Drawing.Point(82, 226);
             this.tbCountryOfBirthMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbCountryOfBirthMd.Name = "tbCountryOfBirthMd";
-            this.tbCountryOfBirthMd.Size = new System.Drawing.Size(109, 22);
+            this.tbCountryOfBirthMd.Size = new System.Drawing.Size(83, 20);
             this.tbCountryOfBirthMd.TabIndex = 18;
             // 
             // tbNRICMd
@@ -1272,7 +1273,7 @@
             this.tbNRICMd.Location = new System.Drawing.Point(82, 118);
             this.tbNRICMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbNRICMd.Name = "tbNRICMd";
-            this.tbNRICMd.Size = new System.Drawing.Size(109, 22);
+            this.tbNRICMd.Size = new System.Drawing.Size(83, 20);
             this.tbNRICMd.TabIndex = 12;
             // 
             // tbContactMd
@@ -1280,7 +1281,7 @@
             this.tbContactMd.Location = new System.Drawing.Point(82, 170);
             this.tbContactMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbContactMd.Name = "tbContactMd";
-            this.tbContactMd.Size = new System.Drawing.Size(109, 22);
+            this.tbContactMd.Size = new System.Drawing.Size(83, 20);
             this.tbContactMd.TabIndex = 12;
             // 
             // tbAddMd
@@ -1288,7 +1289,7 @@
             this.tbAddMd.Location = new System.Drawing.Point(82, 144);
             this.tbAddMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbAddMd.Name = "tbAddMd";
-            this.tbAddMd.Size = new System.Drawing.Size(109, 22);
+            this.tbAddMd.Size = new System.Drawing.Size(83, 20);
             this.tbAddMd.TabIndex = 13;
             // 
             // panel2
@@ -1304,14 +1305,14 @@
             this.panel2.Location = new System.Drawing.Point(8, 386);
             this.panel2.Margin = new System.Windows.Forms.Padding(8);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(300, 240);
+            this.panel2.Size = new System.Drawing.Size(225, 195);
             this.panel2.TabIndex = 25;
             // 
             // GetContact
             // 
             this.GetContact.Location = new System.Drawing.Point(88, 128);
             this.GetContact.Name = "GetContact";
-            this.GetContact.Size = new System.Drawing.Size(105, 37);
+            this.GetContact.Size = new System.Drawing.Size(79, 30);
             this.GetContact.TabIndex = 5;
             this.GetContact.Text = "Get Contact";
             this.GetContact.UseVisualStyleBackColor = true;
@@ -1324,49 +1325,45 @@
             this.ContactTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
             this.ContactTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ContactTitle.Location = new System.Drawing.Point(0, 0);
-            this.ContactTitle.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.ContactTitle.Margin = new System.Windows.Forms.Padding(10);
             this.ContactTitle.Name = "ContactTitle";
-            this.ContactTitle.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.ContactTitle.Size = new System.Drawing.Size(176, 44);
+            this.ContactTitle.Padding = new System.Windows.Forms.Padding(10);
+            this.ContactTitle.Size = new System.Drawing.Size(145, 36);
             this.ContactTitle.TabIndex = 0;
             this.ContactTitle.Text = "Get User Contact";
             // 
             // MFA2
             // 
-            this.MFA2.Location = new System.Drawing.Point(85, 110);
-            this.MFA2.Margin = new System.Windows.Forms.Padding(4);
+            this.MFA2.Location = new System.Drawing.Point(64, 89);
             this.MFA2.Name = "MFA2";
             this.MFA2.ReadOnly = true;
-            this.MFA2.Size = new System.Drawing.Size(132, 22);
+            this.MFA2.Size = new System.Drawing.Size(100, 20);
             this.MFA2.TabIndex = 7;
             // 
             // Username
             // 
             this.Username.AutoSize = true;
             this.Username.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Username.Location = new System.Drawing.Point(4, 50);
-            this.Username.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Username.Location = new System.Drawing.Point(3, 41);
             this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(73, 85);
+            this.Username.Size = new System.Drawing.Size(55, 65);
             this.Username.TabIndex = 1;
             this.Username.Text = "Username\r\n\r\nContact\r\n\r\nMFA";
             // 
             // ContactResult
             // 
-            this.ContactResult.Location = new System.Drawing.Point(85, 79);
-            this.ContactResult.Margin = new System.Windows.Forms.Padding(4);
+            this.ContactResult.Location = new System.Drawing.Point(64, 64);
             this.ContactResult.Name = "ContactResult";
             this.ContactResult.ReadOnly = true;
-            this.ContactResult.Size = new System.Drawing.Size(132, 22);
+            this.ContactResult.Size = new System.Drawing.Size(100, 20);
             this.ContactResult.TabIndex = 4;
             // 
             // ContactUsername
             // 
             this.ContactUsername.AllowDrop = true;
-            this.ContactUsername.Location = new System.Drawing.Point(85, 50);
-            this.ContactUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.ContactUsername.Location = new System.Drawing.Point(64, 41);
             this.ContactUsername.Name = "ContactUsername";
-            this.ContactUsername.Size = new System.Drawing.Size(132, 22);
+            this.ContactUsername.Size = new System.Drawing.Size(100, 20);
             this.ContactUsername.TabIndex = 3;
             // 
             // btnSave
@@ -1398,10 +1395,10 @@
             this.panel4.Controls.Add(this.tbAdd);
             this.panel4.Controls.Add(this.stopScanBtn);
             this.panel4.Controls.Add(this.tbNRIC);
-            this.panel4.Location = new System.Drawing.Point(333, 476);
-            this.panel4.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
+            this.panel4.Location = new System.Drawing.Point(249, 386);
+            this.panel4.Margin = new System.Windows.Forms.Padding(8);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(556, 240);
+            this.panel4.Size = new System.Drawing.Size(417, 195);
             this.panel4.TabIndex = 25;
             // 
             // Newlabels
@@ -1432,10 +1429,10 @@
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(83, 43);
-            this.tbName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbName.Location = new System.Drawing.Point(62, 35);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(208, 22);
+            this.tbName.Size = new System.Drawing.Size(157, 20);
             this.tbName.TabIndex = 15;
             // 
             // AddTitle
@@ -1445,10 +1442,10 @@
             this.AddTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
             this.AddTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.AddTitle.Location = new System.Drawing.Point(0, 0);
-            this.AddTitle.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.AddTitle.Margin = new System.Windows.Forms.Padding(10);
             this.AddTitle.Name = "AddTitle";
-            this.AddTitle.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.AddTitle.Size = new System.Drawing.Size(112, 44);
+            this.AddTitle.Padding = new System.Windows.Forms.Padding(10);
+            this.AddTitle.Size = new System.Drawing.Size(93, 36);
             this.AddTitle.TabIndex = 1;
             this.AddTitle.Text = "Add User";
             // 
@@ -1456,9 +1453,10 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lblName.Location = new System.Drawing.Point(3, 44);
+            this.lblName.Location = new System.Drawing.Point(2, 36);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(73, 187);
+            this.lblName.Size = new System.Drawing.Size(56, 143);
             this.lblName.TabIndex = 14;
             this.lblName.Text = "Name:\r\n\r\nPassword:\r\n\r\nRFID:\r\n\r\nNRIC:\r\n\r\nAddress:\r\n\r\nContact:";
             // 
@@ -1476,35 +1474,35 @@
             // 
             // tbPwd
             // 
-            this.tbPwd.Location = new System.Drawing.Point(83, 73);
-            this.tbPwd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbPwd.Location = new System.Drawing.Point(62, 59);
+            this.tbPwd.Margin = new System.Windows.Forms.Padding(2);
             this.tbPwd.Name = "tbPwd";
-            this.tbPwd.Size = new System.Drawing.Size(208, 22);
+            this.tbPwd.Size = new System.Drawing.Size(157, 20);
             this.tbPwd.TabIndex = 14;
             // 
             // tbContact
             // 
-            this.tbContact.Location = new System.Drawing.Point(83, 203);
-            this.tbContact.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbContact.Location = new System.Drawing.Point(62, 165);
+            this.tbContact.Margin = new System.Windows.Forms.Padding(2);
             this.tbContact.Name = "tbContact";
-            this.tbContact.Size = new System.Drawing.Size(208, 22);
+            this.tbContact.Size = new System.Drawing.Size(157, 20);
             this.tbContact.TabIndex = 19;
             // 
             // tbRFID
             // 
-            this.tbRFID.Location = new System.Drawing.Point(83, 106);
-            this.tbRFID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbRFID.Location = new System.Drawing.Point(62, 86);
+            this.tbRFID.Margin = new System.Windows.Forms.Padding(2);
             this.tbRFID.Name = "tbRFID";
             this.tbRFID.ReadOnly = true;
-            this.tbRFID.Size = new System.Drawing.Size(93, 22);
+            this.tbRFID.Size = new System.Drawing.Size(71, 20);
             this.tbRFID.TabIndex = 16;
             // 
             // scanCardBtn
             // 
-            this.scanCardBtn.Location = new System.Drawing.Point(181, 105);
-            this.scanCardBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.scanCardBtn.Location = new System.Drawing.Point(136, 85);
+            this.scanCardBtn.Margin = new System.Windows.Forms.Padding(2);
             this.scanCardBtn.Name = "scanCardBtn";
-            this.scanCardBtn.Size = new System.Drawing.Size(56, 23);
+            this.scanCardBtn.Size = new System.Drawing.Size(42, 19);
             this.scanCardBtn.TabIndex = 20;
             this.scanCardBtn.Text = "Scan Card";
             this.scanCardBtn.UseVisualStyleBackColor = true;
@@ -1512,18 +1510,18 @@
             // 
             // tbAdd
             // 
-            this.tbAdd.Location = new System.Drawing.Point(83, 175);
-            this.tbAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbAdd.Location = new System.Drawing.Point(62, 142);
+            this.tbAdd.Margin = new System.Windows.Forms.Padding(2);
             this.tbAdd.Name = "tbAdd";
-            this.tbAdd.Size = new System.Drawing.Size(208, 22);
+            this.tbAdd.Size = new System.Drawing.Size(157, 20);
             this.tbAdd.TabIndex = 18;
             // 
             // stopScanBtn
             // 
-            this.stopScanBtn.Location = new System.Drawing.Point(243, 103);
-            this.stopScanBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.stopScanBtn.Location = new System.Drawing.Point(182, 84);
+            this.stopScanBtn.Margin = new System.Windows.Forms.Padding(2);
             this.stopScanBtn.Name = "stopScanBtn";
-            this.stopScanBtn.Size = new System.Drawing.Size(47, 23);
+            this.stopScanBtn.Size = new System.Drawing.Size(35, 19);
             this.stopScanBtn.TabIndex = 21;
             this.stopScanBtn.Text = "Stop Scan";
             this.stopScanBtn.UseVisualStyleBackColor = true;
@@ -1531,10 +1529,10 @@
             // 
             // tbNRIC
             // 
-            this.tbNRIC.Location = new System.Drawing.Point(83, 139);
-            this.tbNRIC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbNRIC.Location = new System.Drawing.Point(62, 113);
+            this.tbNRIC.Margin = new System.Windows.Forms.Padding(2);
             this.tbNRIC.Name = "tbNRIC";
-            this.tbNRIC.Size = new System.Drawing.Size(208, 22);
+            this.tbNRIC.Size = new System.Drawing.Size(157, 20);
             this.tbNRIC.TabIndex = 17;
             // 
             // todo
@@ -1707,10 +1705,10 @@
             // 
             // Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1283, 753);
+            this.ClientSize = new System.Drawing.Size(962, 612);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.usermgt);
             this.ForeColor = System.Drawing.SystemColors.InfoText;

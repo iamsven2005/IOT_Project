@@ -30,6 +30,7 @@ namespace IOTLogic
         private static SerialComms uartComms;
         private static string strRfidDetected = "";
 
+        Pin lightPin = Pin.AnalogPin1;
         Pin potPin = Pin.AnalogPin1;
 
         Pin PirMotionSensorPin = Pin.DigitalPin2;
@@ -397,7 +398,7 @@ namespace IOTLogic
 
         private void handleModeAlarm()
         {
-            // activateBuzzer(buzzerPin, 60);
+            activateBuzzer(buzzerPin, 60);
             ChangeLEDState(ledGreen, SensorStatus.On);
 
             ChangeLEDState(ledRed, SensorStatus.Off);
@@ -514,38 +515,38 @@ namespace IOTLogic
             strDataReceived = "";
         }
 
-        //private int getLight()
-        //{
-        //    iReadAdcValue = GetLightValue(lightPin);
-        //    // Debug.WriteLine(iReadAdcValue);
+        private int getLight()
+        {
+            iReadAdcValue = GetLightValue(lightPin);
+            // Debug.WriteLine(iReadAdcValue);
 
-        //    if (iPrevAdcValue > iReadAdcValue)
-        //    {
-        //        iDiff = iPrevAdcValue - iReadAdcValue;
-        //    }
-        //    else
-        //    {
-        //        iDiff = iReadAdcValue - iPrevAdcValue;
-        //    }
+            if (iPrevAdcValue > iReadAdcValue)
+            {
+                iDiff = iPrevAdcValue - iReadAdcValue;
+            }
+            else
+            {
+                iDiff = iReadAdcValue - iPrevAdcValue;
+            }
 
-        //    if (iDiff < 100)
-        //    {
-        //        lightAdcValue = iReadAdcValue;
-        //    }
+            if (iDiff < 100)
+            {
+                lightAdcValue = iReadAdcValue;
+            }
 
-        //    lightAdcValue = iReadAdcValue;
-        //    // Debug.WriteLine(lightAdcValue);
+            lightAdcValue = iReadAdcValue;
+            // Debug.WriteLine(lightAdcValue);
 
-        //    return lightAdcValue;
-        //}
+            return lightAdcValue;
+        }
 
-        //private int GetLightValue(Pin pin)
-        //{
-        //    sm.WaitOne();
-        //    int value = DeviceFactory.Build.GrovePi().AnalogRead(pin);
-        //    sm.Release();
-        //    return value;
-        //}
+        private int GetLightValue(Pin pin)
+        {
+            sm.WaitOne();
+            int value = DeviceFactory.Build.GrovePi().AnalogRead(pin);
+            sm.Release();
+            return value;
+        }
 
 
         
