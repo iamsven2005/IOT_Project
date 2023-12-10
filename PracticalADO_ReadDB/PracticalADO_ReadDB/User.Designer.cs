@@ -22,6 +22,8 @@
             this.submsg = new System.Windows.Forms.Button();
             this.Profile = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Role = new System.Windows.Forms.Label();
+            this.Email = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.MFAtb = new System.Windows.Forms.TextBox();
             this.SubmitMFA = new System.Windows.Forms.Button();
@@ -35,6 +37,7 @@
             this.Name = new System.Windows.Forms.Label();
             this.NRIC = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.EndTime = new System.Windows.Forms.DateTimePicker();
             this.Book = new System.Windows.Forms.Button();
             this.Picker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,10 +46,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Messages = new System.Windows.Forms.TextBox();
             this.Systems = new System.Windows.Forms.Label();
-            this.Email = new System.Windows.Forms.Label();
+            this.Queue = new System.Windows.Forms.TextBox();
             this.Profile.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +63,6 @@
             this.session.Name = "session";
             this.session.Size = new System.Drawing.Size(186, 20);
             this.session.TabIndex = 1;
-            this.session.TextChanged += new System.EventHandler(this.session_TextChanged);
             // 
             // typemsg
             // 
@@ -100,6 +103,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.tabPage1.Controls.Add(this.Role);
             this.tabPage1.Controls.Add(this.Email);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.MFAtb);
@@ -120,6 +124,26 @@
             this.tabPage1.Size = new System.Drawing.Size(741, 491);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Profile";
+            // 
+            // Role
+            // 
+            this.Role.AutoSize = true;
+            this.Role.ForeColor = System.Drawing.Color.White;
+            this.Role.Location = new System.Drawing.Point(42, 159);
+            this.Role.Name = "Role";
+            this.Role.Size = new System.Drawing.Size(29, 13);
+            this.Role.TabIndex = 13;
+            this.Role.Text = "Role";
+            // 
+            // Email
+            // 
+            this.Email.AutoSize = true;
+            this.Email.ForeColor = System.Drawing.Color.White;
+            this.Email.Location = new System.Drawing.Point(42, 172);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(32, 13);
+            this.Email.TabIndex = 12;
+            this.Email.Text = "Email";
             // 
             // label1
             // 
@@ -241,6 +265,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.tabPage2.Controls.Add(this.EndTime);
             this.tabPage2.Controls.Add(this.Book);
             this.tabPage2.Controls.Add(this.Picker);
             this.tabPage2.Controls.Add(this.label2);
@@ -253,9 +278,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Booking";
             // 
+            // EndTime
+            // 
+            this.EndTime.Location = new System.Drawing.Point(123, 89);
+            this.EndTime.Name = "EndTime";
+            this.EndTime.Size = new System.Drawing.Size(202, 20);
+            this.EndTime.TabIndex = 5;
+            // 
             // Book
             // 
-            this.Book.Location = new System.Drawing.Point(123, 168);
+            this.Book.Location = new System.Drawing.Point(123, 215);
             this.Book.Name = "Book";
             this.Book.Size = new System.Drawing.Size(75, 23);
             this.Book.TabIndex = 4;
@@ -265,7 +297,7 @@
             // 
             // Picker
             // 
-            this.Picker.Location = new System.Drawing.Point(123, 54);
+            this.Picker.Location = new System.Drawing.Point(123, 60);
             this.Picker.Name = "Picker";
             this.Picker.Size = new System.Drawing.Size(202, 20);
             this.Picker.TabIndex = 3;
@@ -276,13 +308,13 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(242)))), ((int)(((byte)(247)))));
             this.label2.Location = new System.Drawing.Point(26, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 39);
+            this.label2.Size = new System.Drawing.Size(94, 65);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Date Of Booking\r\n\r\nReason\r\n";
+            this.label2.Text = "Date Of Booking\r\n\r\nEnd Time Booking\r\n\r\nReason\r\n";
             // 
             // Reason
             // 
-            this.Reason.Location = new System.Drawing.Point(123, 79);
+            this.Reason.Location = new System.Drawing.Point(123, 115);
             this.Reason.Multiline = true;
             this.Reason.Name = "Reason";
             this.Reason.Size = new System.Drawing.Size(202, 83);
@@ -291,6 +323,7 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.tabPage3.Controls.Add(this.Queue);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tabPage3.Name = "tabPage3";
@@ -311,7 +344,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(186, 577);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Messages
             // 
@@ -333,15 +365,15 @@
             this.Systems.TabIndex = 2;
             this.Systems.Text = "Welcome ";
             // 
-            // Email
+            // Queue
             // 
-            this.Email.AutoSize = true;
-            this.Email.ForeColor = System.Drawing.Color.White;
-            this.Email.Location = new System.Drawing.Point(42, 159);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(32, 13);
-            this.Email.TabIndex = 12;
-            this.Email.Text = "Email";
+            this.Queue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.Queue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Queue.Location = new System.Drawing.Point(2, 1);
+            this.Queue.Multiline = true;
+            this.Queue.Name = "Queue";
+            this.Queue.Size = new System.Drawing.Size(737, 489);
+            this.Queue.TabIndex = 0;
             // 
             // User
             // 
@@ -355,12 +387,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.User_FormClosed);
-            this.Load += new System.EventHandler(this.User_Load);
             this.Profile.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -396,5 +429,8 @@
         private System.Windows.Forms.DateTimePicker Picker;
         private System.Windows.Forms.Label Systems;
         private System.Windows.Forms.Label Email;
+        private System.Windows.Forms.Label Role;
+        private System.Windows.Forms.DateTimePicker EndTime;
+        private System.Windows.Forms.TextBox Queue;
     }
 }

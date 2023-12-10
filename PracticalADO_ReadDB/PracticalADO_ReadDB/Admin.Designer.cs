@@ -32,9 +32,13 @@
             this.adminsend = new System.Windows.Forms.Button();
             this.usermgt = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Approval_list = new System.Windows.Forms.CheckedListBox();
+            this.ApproveSubmit = new System.Windows.Forms.Button();
+            this.IDlist = new System.Windows.Forms.Label();
+            this.List = new System.Windows.Forms.Label();
+            this.ID_list = new System.Windows.Forms.TextBox();
+            this.Approval_list = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Queue = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label13 = new System.Windows.Forms.Label();
             this.syslogLB = new System.Windows.Forms.ListBox();
@@ -97,6 +101,8 @@
             this.editlbl = new System.Windows.Forms.Label();
             this.grdUser = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.Role = new System.Windows.Forms.TextBox();
+            this.Email = new System.Windows.Forms.TextBox();
             this.modifylbl = new System.Windows.Forms.Label();
             this.lblUniqueUserID = new System.Windows.Forms.Label();
             this.btnGetUserID = new System.Windows.Forms.Button();
@@ -118,11 +124,14 @@
             this.Username = new System.Windows.Forms.Label();
             this.ContactResult = new System.Windows.Forms.TextBox();
             this.ContactUsername = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Newlabels = new System.Windows.Forms.Label();
+            this.tbRole = new System.Windows.Forms.TextBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbName = new System.Windows.Forms.TextBox();
             this.AddTitle = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             this.tbPwd = new System.Windows.Forms.TextBox();
             this.tbContact = new System.Windows.Forms.TextBox();
             this.tbRFID = new System.Windows.Forms.TextBox();
@@ -140,7 +149,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.Title = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.Queue = new System.Windows.Forms.TextBox();
             this.usermgt.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -253,7 +261,11 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.tabPage1.Controls.Add(this.ApproveSubmit);
+            this.tabPage1.Controls.Add(this.IDlist);
+            this.tabPage1.Controls.Add(this.List);
+            this.tabPage1.Controls.Add(this.ID_list);
             this.tabPage1.Controls.Add(this.Approval_list);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
@@ -262,29 +274,52 @@
             this.tabPage1.Size = new System.Drawing.Size(681, 586);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Approval";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // ApproveSubmit
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.Location = new System.Drawing.Point(2, 561);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(677, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Approve Selected";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ApproveSubmit.Location = new System.Drawing.Point(56, 381);
+            this.ApproveSubmit.Name = "ApproveSubmit";
+            this.ApproveSubmit.Size = new System.Drawing.Size(75, 23);
+            this.ApproveSubmit.TabIndex = 7;
+            this.ApproveSubmit.Text = "Submit";
+            this.ApproveSubmit.UseVisualStyleBackColor = true;
+            this.ApproveSubmit.Click += new System.EventHandler(this.ApproveSubmit_Click);
+            // 
+            // IDlist
+            // 
+            this.IDlist.AutoSize = true;
+            this.IDlist.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.IDlist.Location = new System.Drawing.Point(53, 222);
+            this.IDlist.Name = "IDlist";
+            this.IDlist.Size = new System.Drawing.Size(100, 13);
+            this.IDlist.TabIndex = 6;
+            this.IDlist.Text = "List Of Approved ID";
+            // 
+            // List
+            // 
+            this.List.AutoSize = true;
+            this.List.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.List.Location = new System.Drawing.Point(53, 16);
+            this.List.Name = "List";
+            this.List.Size = new System.Drawing.Size(92, 13);
+            this.List.TabIndex = 5;
+            this.List.Text = "Not Approved List";
+            // 
+            // ID_list
+            // 
+            this.ID_list.Location = new System.Drawing.Point(56, 238);
+            this.ID_list.Multiline = true;
+            this.ID_list.Name = "ID_list";
+            this.ID_list.Size = new System.Drawing.Size(533, 137);
+            this.ID_list.TabIndex = 4;
             // 
             // Approval_list
             // 
-            this.Approval_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.Approval_list.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Approval_list.ForeColor = System.Drawing.Color.White;
-            this.Approval_list.FormattingEnabled = true;
-            this.Approval_list.Location = new System.Drawing.Point(2, 2);
+            this.Approval_list.Location = new System.Drawing.Point(56, 37);
+            this.Approval_list.Multiline = true;
             this.Approval_list.Name = "Approval_list";
-            this.Approval_list.Size = new System.Drawing.Size(677, 582);
-            this.Approval_list.TabIndex = 1;
+            this.Approval_list.Size = new System.Drawing.Size(533, 167);
+            this.Approval_list.TabIndex = 3;
             // 
             // tabPage2
             // 
@@ -297,6 +332,18 @@
             this.tabPage2.Size = new System.Drawing.Size(681, 586);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Current Queue";
+            // 
+            // Queue
+            // 
+            this.Queue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.Queue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Queue.Enabled = false;
+            this.Queue.ForeColor = System.Drawing.Color.White;
+            this.Queue.Location = new System.Drawing.Point(2, 2);
+            this.Queue.Multiline = true;
+            this.Queue.Name = "Queue";
+            this.Queue.Size = new System.Drawing.Size(677, 582);
+            this.Queue.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -369,7 +416,6 @@
             this.splitContainer2.Panel1.Controls.Add(this.doorLbl);
             this.splitContainer2.Panel1.Controls.Add(this.label9);
             this.splitContainer2.Panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.splitContainer2.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel1_Paint);
             // 
             // splitContainer2.Panel2
             // 
@@ -468,7 +514,6 @@
             this.label12.Size = new System.Drawing.Size(118, 13);
             this.label12.TabIndex = 13;
             this.label12.Text = "Intrusion Detected?";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // panel8
             // 
@@ -548,7 +593,6 @@
             this.lblTemp.TabIndex = 4;
             this.lblTemp.Text = "label10";
             this.lblTemp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblTemp.Click += new System.EventHandler(this.lblTemp_Click);
             // 
             // tempLBL
             // 
@@ -562,7 +606,6 @@
             this.tempLBL.Size = new System.Drawing.Size(76, 13);
             this.tempLBL.TabIndex = 5;
             this.tempLBL.Text = "Temperature";
-            this.tempLBL.Click += new System.EventHandler(this.tempLBL_Click);
             // 
             // degcelLbl
             // 
@@ -1019,7 +1062,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(675, 580);
             this.flowLayoutPanel1.TabIndex = 24;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // panel3
             // 
@@ -1108,6 +1150,8 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel5.Controls.Add(this.Role);
+            this.panel5.Controls.Add(this.Email);
             this.panel5.Controls.Add(this.modifylbl);
             this.panel5.Controls.Add(this.lblUniqueUserID);
             this.panel5.Controls.Add(this.btnGetUserID);
@@ -1127,6 +1171,22 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(271, 362);
             this.panel5.TabIndex = 25;
+            // 
+            // Role
+            // 
+            this.Role.Location = new System.Drawing.Point(82, 315);
+            this.Role.Margin = new System.Windows.Forms.Padding(2);
+            this.Role.Name = "Role";
+            this.Role.Size = new System.Drawing.Size(83, 20);
+            this.Role.TabIndex = 25;
+            // 
+            // Email
+            // 
+            this.Email.Location = new System.Drawing.Point(82, 288);
+            this.Email.Margin = new System.Windows.Forms.Padding(2);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(83, 20);
+            this.Email.TabIndex = 24;
             // 
             // modifylbl
             // 
@@ -1150,15 +1210,15 @@
             this.lblUniqueUserID.Location = new System.Drawing.Point(2, 36);
             this.lblUniqueUserID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUniqueUserID.Name = "lblUniqueUserID";
-            this.lblUniqueUserID.Size = new System.Drawing.Size(77, 247);
+            this.lblUniqueUserID.Size = new System.Drawing.Size(77, 299);
             this.lblUniqueUserID.TabIndex = 1;
             this.lblUniqueUserID.Text = "UniqueUserID:\r\n\r\nName:\r\n\r\nRFID:\r\n\r\nNRIC:\r\n\r\nAddress:\r\n\r\nContact:\r\n\r\nPassword:\r\n\r\n" +
-    "Country:\r\n\r\nMFA:\r\n\r\nDOB:";
+    "Country:\r\n\r\nMFA:\r\n\r\nDOB:\r\n\r\nEmail:\r\n\r\nRole:";
             // 
             // btnGetUserID
             // 
             this.btnGetUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGetUserID.Location = new System.Drawing.Point(100, 326);
+            this.btnGetUserID.Location = new System.Drawing.Point(186, 34);
             this.btnGetUserID.Margin = new System.Windows.Forms.Padding(2);
             this.btnGetUserID.Name = "btnGetUserID";
             this.btnGetUserID.Size = new System.Drawing.Size(63, 23);
@@ -1169,7 +1229,7 @@
             // 
             // tbDOBMd
             // 
-            this.tbDOBMd.Location = new System.Drawing.Point(82, 280);
+            this.tbDOBMd.Location = new System.Drawing.Point(82, 264);
             this.tbDOBMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbDOBMd.Name = "tbDOBMd";
             this.tbDOBMd.Size = new System.Drawing.Size(83, 20);
@@ -1178,7 +1238,7 @@
             // btnModify
             // 
             this.btnModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModify.Location = new System.Drawing.Point(20, 326);
+            this.btnModify.Location = new System.Drawing.Point(186, 61);
             this.btnModify.Margin = new System.Windows.Forms.Padding(2);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(58, 23);
@@ -1190,7 +1250,7 @@
             // tbUserID
             // 
             this.tbUserID.BackColor = System.Drawing.SystemColors.Window;
-            this.tbUserID.Location = new System.Drawing.Point(82, 36);
+            this.tbUserID.Location = new System.Drawing.Point(82, 31);
             this.tbUserID.Margin = new System.Windows.Forms.Padding(2);
             this.tbUserID.Name = "tbUserID";
             this.tbUserID.Size = new System.Drawing.Size(83, 20);
@@ -1198,17 +1258,16 @@
             // 
             // MFA
             // 
-            this.MFA.Location = new System.Drawing.Point(82, 254);
+            this.MFA.Location = new System.Drawing.Point(82, 240);
             this.MFA.Margin = new System.Windows.Forms.Padding(2);
             this.MFA.Name = "MFA";
             this.MFA.Size = new System.Drawing.Size(83, 20);
             this.MFA.TabIndex = 22;
-            this.MFA.TextChanged += new System.EventHandler(this.MFA_TextChanged);
             // 
             // tbNameMd
             // 
             this.tbNameMd.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbNameMd.Location = new System.Drawing.Point(82, 58);
+            this.tbNameMd.Location = new System.Drawing.Point(82, 57);
             this.tbNameMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbNameMd.Name = "tbNameMd";
             this.tbNameMd.Size = new System.Drawing.Size(83, 20);
@@ -1216,7 +1275,7 @@
             // 
             // tbPasswordMd
             // 
-            this.tbPasswordMd.Location = new System.Drawing.Point(82, 198);
+            this.tbPasswordMd.Location = new System.Drawing.Point(82, 188);
             this.tbPasswordMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbPasswordMd.Name = "tbPasswordMd";
             this.tbPasswordMd.Size = new System.Drawing.Size(83, 20);
@@ -1224,7 +1283,7 @@
             // 
             // tbRFIDMd
             // 
-            this.tbRFIDMd.Location = new System.Drawing.Point(82, 85);
+            this.tbRFIDMd.Location = new System.Drawing.Point(82, 83);
             this.tbRFIDMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbRFIDMd.Name = "tbRFIDMd";
             this.tbRFIDMd.Size = new System.Drawing.Size(83, 20);
@@ -1232,7 +1291,7 @@
             // 
             // tbCountryOfBirthMd
             // 
-            this.tbCountryOfBirthMd.Location = new System.Drawing.Point(82, 226);
+            this.tbCountryOfBirthMd.Location = new System.Drawing.Point(82, 214);
             this.tbCountryOfBirthMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbCountryOfBirthMd.Name = "tbCountryOfBirthMd";
             this.tbCountryOfBirthMd.Size = new System.Drawing.Size(83, 20);
@@ -1240,7 +1299,7 @@
             // 
             // tbNRICMd
             // 
-            this.tbNRICMd.Location = new System.Drawing.Point(82, 118);
+            this.tbNRICMd.Location = new System.Drawing.Point(82, 109);
             this.tbNRICMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbNRICMd.Name = "tbNRICMd";
             this.tbNRICMd.Size = new System.Drawing.Size(83, 20);
@@ -1248,7 +1307,7 @@
             // 
             // tbContactMd
             // 
-            this.tbContactMd.Location = new System.Drawing.Point(82, 170);
+            this.tbContactMd.Location = new System.Drawing.Point(82, 161);
             this.tbContactMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbContactMd.Name = "tbContactMd";
             this.tbContactMd.Size = new System.Drawing.Size(83, 20);
@@ -1256,7 +1315,7 @@
             // 
             // tbAddMd
             // 
-            this.tbAddMd.Location = new System.Drawing.Point(82, 144);
+            this.tbAddMd.Location = new System.Drawing.Point(82, 135);
             this.tbAddMd.Margin = new System.Windows.Forms.Padding(2);
             this.tbAddMd.Name = "tbAddMd";
             this.tbAddMd.Size = new System.Drawing.Size(83, 20);
@@ -1271,7 +1330,6 @@
             this.panel2.Controls.Add(this.Username);
             this.panel2.Controls.Add(this.ContactResult);
             this.panel2.Controls.Add(this.ContactUsername);
-            this.panel2.Controls.Add(this.btnSave);
             this.panel2.Location = new System.Drawing.Point(8, 386);
             this.panel2.Margin = new System.Windows.Forms.Padding(8);
             this.panel2.Name = "panel2";
@@ -1280,7 +1338,7 @@
             // 
             // GetContact
             // 
-            this.GetContact.Location = new System.Drawing.Point(88, 128);
+            this.GetContact.Location = new System.Drawing.Point(64, 132);
             this.GetContact.Name = "GetContact";
             this.GetContact.Size = new System.Drawing.Size(79, 30);
             this.GetContact.TabIndex = 5;
@@ -1336,24 +1394,16 @@
             this.ContactUsername.Size = new System.Drawing.Size(100, 20);
             this.ContactUsername.TabIndex = 3;
             // 
-            // btnSave
-            // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(5, 128);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(78, 28);
-            this.btnSave.TabIndex = 11;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel4.Controls.Add(this.Newlabels);
+            this.panel4.Controls.Add(this.tbRole);
+            this.panel4.Controls.Add(this.tbEmail);
             this.panel4.Controls.Add(this.tbName);
             this.panel4.Controls.Add(this.AddTitle);
             this.panel4.Controls.Add(this.lblName);
+            this.panel4.Controls.Add(this.btnSave);
             this.panel4.Controls.Add(this.tbPwd);
             this.panel4.Controls.Add(this.tbContact);
             this.panel4.Controls.Add(this.tbRFID);
@@ -1366,6 +1416,32 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(417, 195);
             this.panel4.TabIndex = 25;
+            // 
+            // Newlabels
+            // 
+            this.Newlabels.AutoSize = true;
+            this.Newlabels.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Newlabels.Location = new System.Drawing.Point(243, 38);
+            this.Newlabels.Name = "Newlabels";
+            this.Newlabels.Size = new System.Drawing.Size(32, 39);
+            this.Newlabels.TabIndex = 24;
+            this.Newlabels.Text = "Email\r\n\r\nRole";
+            // 
+            // tbRole
+            // 
+            this.tbRole.Location = new System.Drawing.Point(286, 59);
+            this.tbRole.Margin = new System.Windows.Forms.Padding(2);
+            this.tbRole.Name = "tbRole";
+            this.tbRole.Size = new System.Drawing.Size(129, 20);
+            this.tbRole.TabIndex = 23;
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Location = new System.Drawing.Point(286, 33);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(129, 20);
+            this.tbEmail.TabIndex = 22;
             // 
             // tbName
             // 
@@ -1399,6 +1475,18 @@
             this.lblName.Size = new System.Drawing.Size(56, 143);
             this.lblName.TabIndex = 14;
             this.lblName.Text = "Name:\r\n\r\nPassword:\r\n\r\nRFID:\r\n\r\nNRIC:\r\n\r\nAddress:\r\n\r\nContact:";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(286, 108);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(78, 28);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // tbPwd
             // 
@@ -1567,23 +1655,12 @@
             this.Title.Text = "Server Environment Monitoring System";
             this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Title.UseWaitCursor = true;
-            this.Title.Click += new System.EventHandler(this.Title_Click);
             // 
             // imageList1
             // 
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // Queue
-            // 
-            this.Queue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.Queue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Queue.Location = new System.Drawing.Point(2, 2);
-            this.Queue.Multiline = true;
-            this.Queue.Name = "Queue";
-            this.Queue.Size = new System.Drawing.Size(677, 582);
-            this.Queue.TabIndex = 0;
             // 
             // Admin
             // 
@@ -1601,6 +1678,7 @@
             this.Load += new System.EventHandler(this.Admin_Load);
             this.usermgt.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -1771,9 +1849,17 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button resetAlmBtn;
         private System.Windows.Forms.Label lockdownStatus;
-        private System.Windows.Forms.CheckedListBox Approval_list;
         private System.Windows.Forms.Label Systems;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox Queue;
+        private System.Windows.Forms.Label Newlabels;
+        private System.Windows.Forms.TextBox tbRole;
+        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.TextBox Role;
+        private System.Windows.Forms.TextBox Email;
+        private System.Windows.Forms.Button ApproveSubmit;
+        private System.Windows.Forms.Label IDlist;
+        private System.Windows.Forms.Label List;
+        private System.Windows.Forms.TextBox ID_list;
+        private System.Windows.Forms.TextBox Approval_list;
     }
 }

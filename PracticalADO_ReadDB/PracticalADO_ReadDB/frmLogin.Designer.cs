@@ -25,8 +25,8 @@ namespace PracticalADO_ReadDB
             this.MFATB = new System.Windows.Forms.TextBox();
             this.Title = new System.Windows.Forms.Label();
             this.ForgetPwd = new System.Windows.Forms.Button();
-            this.AdminLogin = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AdminLogin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,7 +91,6 @@ namespace PracticalADO_ReadDB
             this.Title.Text = "Server Environment Monitoring System";
             this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Title.UseWaitCursor = true;
-            this.Title.Click += new System.EventHandler(this.Title_Click);
             this.Title.ParentChanged += new System.EventHandler(this.Title_ParentChanged);
             // 
             // ForgetPwd
@@ -106,16 +105,6 @@ namespace PracticalADO_ReadDB
             this.ForgetPwd.UseWaitCursor = true;
             this.ForgetPwd.Click += new System.EventHandler(this.ForgetPwd_Click);
             // 
-            // AdminLogin
-            // 
-            this.AdminLogin.Location = new System.Drawing.Point(479, 397);
-            this.AdminLogin.Name = "AdminLogin";
-            this.AdminLogin.Size = new System.Drawing.Size(93, 44);
-            this.AdminLogin.TabIndex = 6;
-            this.AdminLogin.Text = "Admin";
-            this.AdminLogin.UseVisualStyleBackColor = true;
-            this.AdminLogin.Click += new System.EventHandler(this.AdminLogin_Click_1);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
@@ -129,7 +118,16 @@ namespace PracticalADO_ReadDB
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(668, 208);
             this.panel1.TabIndex = 7;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // AdminLogin
+            // 
+            this.AdminLogin.Location = new System.Drawing.Point(479, 397);
+            this.AdminLogin.Name = "AdminLogin";
+            this.AdminLogin.Size = new System.Drawing.Size(93, 44);
+            this.AdminLogin.TabIndex = 6;
+            this.AdminLogin.Text = "Admin";
+            this.AdminLogin.UseVisualStyleBackColor = true;
+            this.AdminLogin.Click += new System.EventHandler(this.AdminLogin_Click_1);
             // 
             // frmLogin
             // 
@@ -145,7 +143,6 @@ namespace PracticalADO_ReadDB
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Page";
-            this.Resize += new System.EventHandler(this.frmLogin_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -159,8 +156,8 @@ namespace PracticalADO_ReadDB
         private System.Windows.Forms.Button ForgetPwd;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.TextBox MFATB;
-        private System.Windows.Forms.Button AdminLogin;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button AdminLogin;
     }
 }
 
