@@ -26,14 +26,14 @@
             System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.session = new System.Windows.Forms.TextBox();
             this.Messages = new System.Windows.Forms.TextBox();
             this.adminmsg = new System.Windows.Forms.TextBox();
@@ -143,6 +143,7 @@
             this.tbAdd = new System.Windows.Forms.TextBox();
             this.stopScanBtn = new System.Windows.Forms.Button();
             this.tbNRIC = new System.Windows.Forms.TextBox();
+<<<<<<< HEAD
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.roomStatus = new System.Windows.Forms.TextBox();
             this.lightValueTB = new System.Windows.Forms.TextBox();
@@ -169,6 +170,92 @@
             this.dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Temperature)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Moisture)).BeginInit();
+=======
+            this.todo = new System.Windows.Forms.TabPage();
+            this.Tasks = new System.Windows.Forms.Label();
+            this.Tasklist = new System.Windows.Forms.TextBox();
+            this.usrmgtpg = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.potentio_alarm_val = new System.Windows.Forms.NumericUpDown();
+            this.alarm_potentio_label = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.moisture_alarm_val = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.moisture_warning_val = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.temp_alarm_val = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.temp_warning_val = new System.Windows.Forms.NumericUpDown();
+            this.temp_Threshold_lbl = new System.Windows.Forms.Label();
+            this.warning_thres_label = new System.Windows.Forms.Label();
+            this.saveChanges_btn = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.lockdownStatus = new System.Windows.Forms.Label();
+            this.resetAlmBtn = new System.Windows.Forms.Button();
+            this.motionCountLbl = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.motionLbl = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblMoisture = new System.Windows.Forms.Label();
+            this.moistureLbl = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lblTemp = new System.Windows.Forms.Label();
+            this.tempLBL = new System.Windows.Forms.Label();
+            this.degcelLbl = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblUltrasonic = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.doorLbl = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dashboard = new System.Windows.Forms.FlowLayoutPanel();
+            this.Temperature = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.Moisture = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.syslogLB = new System.Windows.Forms.ListBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Queue = new System.Windows.Forms.TextBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.ApproveSubmit = new System.Windows.Forms.Button();
+            this.IDlist = new System.Windows.Forms.Label();
+            this.List = new System.Windows.Forms.Label();
+            this.ID_list = new System.Windows.Forms.TextBox();
+            this.Approval_list = new System.Windows.Forms.TextBox();
+            this.usermgt = new System.Windows.Forms.TabControl();
+            this.AddTask = new System.Windows.Forms.Label();
+            this.AddTasktb = new System.Windows.Forms.TextBox();
+            this.AddTaskbtn = new System.Windows.Forms.Button();
+            this.RemoveTask = new System.Windows.Forms.Label();
+            this.RemoveTasktb = new System.Windows.Forms.TextBox();
+            this.RemoveTaskbtn = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EditSplit)).BeginInit();
+            this.EditSplit.Panel1.SuspendLayout();
+            this.EditSplit.Panel2.SuspendLayout();
+            this.EditSplit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdUser)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.todo.SuspendLayout();
+>>>>>>> parent of 6b2ca9f (last mile)
             this.tabPage7.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -538,6 +625,7 @@
             // 
             // panel6
             // 
+<<<<<<< HEAD
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.panel7.Controls.Add(this.lblTemp);
             this.panel7.Controls.Add(this.tempLBL);
@@ -721,6 +809,598 @@
             title8.Name = "Moisture";
             title8.Text = "Moisture";
             this.Moisture.Titles.Add(title8);
+=======
+            this.panel6.Controls.Add(this.Title);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(273, 24);
+            this.panel6.TabIndex = 27;
+            // 
+            // Title
+            // 
+            this.Title.AutoSize = true;
+            this.Title.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.Title.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Title.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Title.Location = new System.Drawing.Point(0, 0);
+            this.Title.MaximumSize = new System.Drawing.Size(2000, 200);
+            this.Title.MinimumSize = new System.Drawing.Size(200, 20);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(271, 20);
+            this.Title.TabIndex = 1;
+            this.Title.Text = "Server Environment Monitoring System";
+            this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Title.UseWaitCursor = true;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.tabPage5.Controls.Add(this.flowLayoutPanel1);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(681, 586);
+            this.tabPage5.TabIndex = 6;
+            this.tabPage5.Text = "Check Info";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.panel3);
+            this.flowLayoutPanel1.Controls.Add(this.panel5);
+            this.flowLayoutPanel1.Controls.Add(this.panel2);
+            this.flowLayoutPanel1.Controls.Add(this.panel4);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(675, 580);
+            this.flowLayoutPanel1.TabIndex = 24;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel3.Controls.Add(this.EditSplit);
+            this.panel3.Controls.Add(this.editlbl);
+            this.panel3.Controls.Add(this.grdUser);
+            this.panel3.Location = new System.Drawing.Point(8, 8);
+            this.panel3.Margin = new System.Windows.Forms.Padding(8);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(371, 362);
+            this.panel3.TabIndex = 26;
+            // 
+            // EditSplit
+            // 
+            this.EditSplit.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.EditSplit.Location = new System.Drawing.Point(0, 37);
+            this.EditSplit.Margin = new System.Windows.Forms.Padding(2);
+            this.EditSplit.Name = "EditSplit";
+            // 
+            // EditSplit.Panel1
+            // 
+            this.EditSplit.Panel1.Controls.Add(this.btnDelete);
+            // 
+            // EditSplit.Panel2
+            // 
+            this.EditSplit.Panel2.Controls.Add(this.btnUpdate);
+            this.EditSplit.Size = new System.Drawing.Size(371, 39);
+            this.EditSplit.SplitterDistance = 172;
+            this.EditSplit.SplitterWidth = 3;
+            this.EditSplit.TabIndex = 4;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(0, 0);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(172, 39);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(0, 0);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(196, 39);
+            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
+            // 
+            // editlbl
+            // 
+            this.editlbl.AutoSize = true;
+            this.editlbl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.editlbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.editlbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.editlbl.Location = new System.Drawing.Point(0, 0);
+            this.editlbl.Margin = new System.Windows.Forms.Padding(8);
+            this.editlbl.Name = "editlbl";
+            this.editlbl.Padding = new System.Windows.Forms.Padding(10);
+            this.editlbl.Size = new System.Drawing.Size(172, 36);
+            this.editlbl.TabIndex = 1;
+            this.editlbl.Text = "Edit User Information";
+            // 
+            // grdUser
+            // 
+            this.grdUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.grdUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdUser.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.grdUser.Location = new System.Drawing.Point(0, 76);
+            this.grdUser.Margin = new System.Windows.Forms.Padding(8);
+            this.grdUser.Name = "grdUser";
+            this.grdUser.RowTemplate.Height = 24;
+            this.grdUser.Size = new System.Drawing.Size(371, 286);
+            this.grdUser.TabIndex = 1;
+            this.grdUser.Click += new System.EventHandler(this.grdUser_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel5.Controls.Add(this.Role);
+            this.panel5.Controls.Add(this.Email);
+            this.panel5.Controls.Add(this.modifylbl);
+            this.panel5.Controls.Add(this.lblUniqueUserID);
+            this.panel5.Controls.Add(this.btnGetUserID);
+            this.panel5.Controls.Add(this.tbDOBMd);
+            this.panel5.Controls.Add(this.btnModify);
+            this.panel5.Controls.Add(this.tbUserID);
+            this.panel5.Controls.Add(this.MFA);
+            this.panel5.Controls.Add(this.tbNameMd);
+            this.panel5.Controls.Add(this.tbPasswordMd);
+            this.panel5.Controls.Add(this.tbRFIDMd);
+            this.panel5.Controls.Add(this.tbCountryOfBirthMd);
+            this.panel5.Controls.Add(this.tbNRICMd);
+            this.panel5.Controls.Add(this.tbContactMd);
+            this.panel5.Controls.Add(this.tbAddMd);
+            this.panel5.Location = new System.Drawing.Point(395, 8);
+            this.panel5.Margin = new System.Windows.Forms.Padding(8);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(271, 362);
+            this.panel5.TabIndex = 25;
+            // 
+            // Role
+            // 
+            this.Role.Location = new System.Drawing.Point(82, 315);
+            this.Role.Margin = new System.Windows.Forms.Padding(2);
+            this.Role.Name = "Role";
+            this.Role.Size = new System.Drawing.Size(83, 20);
+            this.Role.TabIndex = 25;
+            // 
+            // Email
+            // 
+            this.Email.Location = new System.Drawing.Point(82, 288);
+            this.Email.Margin = new System.Windows.Forms.Padding(2);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(83, 20);
+            this.Email.TabIndex = 24;
+            // 
+            // modifylbl
+            // 
+            this.modifylbl.AutoSize = true;
+            this.modifylbl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.modifylbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.modifylbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.modifylbl.Location = new System.Drawing.Point(0, 0);
+            this.modifylbl.Margin = new System.Windows.Forms.Padding(10);
+            this.modifylbl.Name = "modifylbl";
+            this.modifylbl.Padding = new System.Windows.Forms.Padding(10);
+            this.modifylbl.Size = new System.Drawing.Size(191, 36);
+            this.modifylbl.TabIndex = 2;
+            this.modifylbl.Text = "Modify User Information";
+            // 
+            // lblUniqueUserID
+            // 
+            this.lblUniqueUserID.AutoSize = true;
+            this.lblUniqueUserID.BackColor = System.Drawing.Color.Transparent;
+            this.lblUniqueUserID.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblUniqueUserID.Location = new System.Drawing.Point(2, 36);
+            this.lblUniqueUserID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUniqueUserID.Name = "lblUniqueUserID";
+            this.lblUniqueUserID.Size = new System.Drawing.Size(77, 299);
+            this.lblUniqueUserID.TabIndex = 1;
+            this.lblUniqueUserID.Text = "UniqueUserID:\r\n\r\nName:\r\n\r\nRFID:\r\n\r\nNRIC:\r\n\r\nAddress:\r\n\r\nContact:\r\n\r\nPassword:\r\n\r\n" +
+    "Country:\r\n\r\nMFA:\r\n\r\nDOB:\r\n\r\nEmail:\r\n\r\nRole:";
+            // 
+            // btnGetUserID
+            // 
+            this.btnGetUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGetUserID.Location = new System.Drawing.Point(186, 34);
+            this.btnGetUserID.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGetUserID.Name = "btnGetUserID";
+            this.btnGetUserID.Size = new System.Drawing.Size(63, 23);
+            this.btnGetUserID.TabIndex = 20;
+            this.btnGetUserID.Text = "Get User";
+            this.btnGetUserID.UseVisualStyleBackColor = true;
+            this.btnGetUserID.Click += new System.EventHandler(this.btnGetUserID_Click);
+            // 
+            // tbDOBMd
+            // 
+            this.tbDOBMd.Location = new System.Drawing.Point(82, 264);
+            this.tbDOBMd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDOBMd.Name = "tbDOBMd";
+            this.tbDOBMd.Size = new System.Drawing.Size(83, 20);
+            this.tbDOBMd.TabIndex = 23;
+            // 
+            // btnModify
+            // 
+            this.btnModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModify.Location = new System.Drawing.Point(186, 61);
+            this.btnModify.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(58, 23);
+            this.btnModify.TabIndex = 15;
+            this.btnModify.Text = "Modify";
+            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
+            // 
+            // tbUserID
+            // 
+            this.tbUserID.BackColor = System.Drawing.SystemColors.Window;
+            this.tbUserID.Location = new System.Drawing.Point(82, 31);
+            this.tbUserID.Margin = new System.Windows.Forms.Padding(2);
+            this.tbUserID.Name = "tbUserID";
+            this.tbUserID.Size = new System.Drawing.Size(83, 20);
+            this.tbUserID.TabIndex = 7;
+            // 
+            // MFA
+            // 
+            this.MFA.Location = new System.Drawing.Point(82, 240);
+            this.MFA.Margin = new System.Windows.Forms.Padding(2);
+            this.MFA.Name = "MFA";
+            this.MFA.Size = new System.Drawing.Size(83, 20);
+            this.MFA.TabIndex = 22;
+            // 
+            // tbNameMd
+            // 
+            this.tbNameMd.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbNameMd.Location = new System.Drawing.Point(82, 57);
+            this.tbNameMd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbNameMd.Name = "tbNameMd";
+            this.tbNameMd.Size = new System.Drawing.Size(83, 20);
+            this.tbNameMd.TabIndex = 9;
+            // 
+            // tbPasswordMd
+            // 
+            this.tbPasswordMd.Location = new System.Drawing.Point(82, 188);
+            this.tbPasswordMd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbPasswordMd.Name = "tbPasswordMd";
+            this.tbPasswordMd.Size = new System.Drawing.Size(83, 20);
+            this.tbPasswordMd.TabIndex = 15;
+            // 
+            // tbRFIDMd
+            // 
+            this.tbRFIDMd.Location = new System.Drawing.Point(82, 83);
+            this.tbRFIDMd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbRFIDMd.Name = "tbRFIDMd";
+            this.tbRFIDMd.Size = new System.Drawing.Size(83, 20);
+            this.tbRFIDMd.TabIndex = 10;
+            // 
+            // tbCountryOfBirthMd
+            // 
+            this.tbCountryOfBirthMd.Location = new System.Drawing.Point(82, 214);
+            this.tbCountryOfBirthMd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbCountryOfBirthMd.Name = "tbCountryOfBirthMd";
+            this.tbCountryOfBirthMd.Size = new System.Drawing.Size(83, 20);
+            this.tbCountryOfBirthMd.TabIndex = 18;
+            // 
+            // tbNRICMd
+            // 
+            this.tbNRICMd.Location = new System.Drawing.Point(82, 109);
+            this.tbNRICMd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbNRICMd.Name = "tbNRICMd";
+            this.tbNRICMd.Size = new System.Drawing.Size(83, 20);
+            this.tbNRICMd.TabIndex = 12;
+            // 
+            // tbContactMd
+            // 
+            this.tbContactMd.Location = new System.Drawing.Point(82, 161);
+            this.tbContactMd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbContactMd.Name = "tbContactMd";
+            this.tbContactMd.Size = new System.Drawing.Size(83, 20);
+            this.tbContactMd.TabIndex = 12;
+            // 
+            // tbAddMd
+            // 
+            this.tbAddMd.Location = new System.Drawing.Point(82, 135);
+            this.tbAddMd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbAddMd.Name = "tbAddMd";
+            this.tbAddMd.Size = new System.Drawing.Size(83, 20);
+            this.tbAddMd.TabIndex = 13;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel2.Controls.Add(this.GetContact);
+            this.panel2.Controls.Add(this.ContactTitle);
+            this.panel2.Controls.Add(this.MFA2);
+            this.panel2.Controls.Add(this.Username);
+            this.panel2.Controls.Add(this.ContactResult);
+            this.panel2.Controls.Add(this.ContactUsername);
+            this.panel2.Location = new System.Drawing.Point(8, 386);
+            this.panel2.Margin = new System.Windows.Forms.Padding(8);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(225, 195);
+            this.panel2.TabIndex = 25;
+            // 
+            // GetContact
+            // 
+            this.GetContact.Location = new System.Drawing.Point(64, 132);
+            this.GetContact.Name = "GetContact";
+            this.GetContact.Size = new System.Drawing.Size(79, 30);
+            this.GetContact.TabIndex = 5;
+            this.GetContact.Text = "Get Contact";
+            this.GetContact.UseVisualStyleBackColor = true;
+            this.GetContact.Click += new System.EventHandler(this.GetContact_Click);
+            // 
+            // ContactTitle
+            // 
+            this.ContactTitle.AutoSize = true;
+            this.ContactTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ContactTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.ContactTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ContactTitle.Location = new System.Drawing.Point(0, 0);
+            this.ContactTitle.Margin = new System.Windows.Forms.Padding(10);
+            this.ContactTitle.Name = "ContactTitle";
+            this.ContactTitle.Padding = new System.Windows.Forms.Padding(10);
+            this.ContactTitle.Size = new System.Drawing.Size(145, 36);
+            this.ContactTitle.TabIndex = 0;
+            this.ContactTitle.Text = "Get User Contact";
+            // 
+            // MFA2
+            // 
+            this.MFA2.Location = new System.Drawing.Point(64, 89);
+            this.MFA2.Name = "MFA2";
+            this.MFA2.ReadOnly = true;
+            this.MFA2.Size = new System.Drawing.Size(100, 20);
+            this.MFA2.TabIndex = 7;
+            // 
+            // Username
+            // 
+            this.Username.AutoSize = true;
+            this.Username.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.Username.Location = new System.Drawing.Point(3, 41);
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(55, 65);
+            this.Username.TabIndex = 1;
+            this.Username.Text = "Username\r\n\r\nContact\r\n\r\nMFA";
+            // 
+            // ContactResult
+            // 
+            this.ContactResult.Location = new System.Drawing.Point(64, 64);
+            this.ContactResult.Name = "ContactResult";
+            this.ContactResult.ReadOnly = true;
+            this.ContactResult.Size = new System.Drawing.Size(100, 20);
+            this.ContactResult.TabIndex = 4;
+            // 
+            // ContactUsername
+            // 
+            this.ContactUsername.AllowDrop = true;
+            this.ContactUsername.Location = new System.Drawing.Point(64, 41);
+            this.ContactUsername.Name = "ContactUsername";
+            this.ContactUsername.Size = new System.Drawing.Size(100, 20);
+            this.ContactUsername.TabIndex = 3;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel4.Controls.Add(this.Newlabels);
+            this.panel4.Controls.Add(this.tbRole);
+            this.panel4.Controls.Add(this.tbEmail);
+            this.panel4.Controls.Add(this.tbName);
+            this.panel4.Controls.Add(this.AddTitle);
+            this.panel4.Controls.Add(this.lblName);
+            this.panel4.Controls.Add(this.btnSave);
+            this.panel4.Controls.Add(this.tbPwd);
+            this.panel4.Controls.Add(this.tbContact);
+            this.panel4.Controls.Add(this.tbRFID);
+            this.panel4.Controls.Add(this.scanCardBtn);
+            this.panel4.Controls.Add(this.tbAdd);
+            this.panel4.Controls.Add(this.stopScanBtn);
+            this.panel4.Controls.Add(this.tbNRIC);
+            this.panel4.Location = new System.Drawing.Point(249, 386);
+            this.panel4.Margin = new System.Windows.Forms.Padding(8);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(417, 195);
+            this.panel4.TabIndex = 25;
+            // 
+            // Newlabels
+            // 
+            this.Newlabels.AutoSize = true;
+            this.Newlabels.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Newlabels.Location = new System.Drawing.Point(243, 38);
+            this.Newlabels.Name = "Newlabels";
+            this.Newlabels.Size = new System.Drawing.Size(32, 39);
+            this.Newlabels.TabIndex = 24;
+            this.Newlabels.Text = "Email\r\n\r\nRole";
+            // 
+            // tbRole
+            // 
+            this.tbRole.Location = new System.Drawing.Point(286, 59);
+            this.tbRole.Margin = new System.Windows.Forms.Padding(2);
+            this.tbRole.Name = "tbRole";
+            this.tbRole.Size = new System.Drawing.Size(129, 20);
+            this.tbRole.TabIndex = 23;
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Location = new System.Drawing.Point(286, 33);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(129, 20);
+            this.tbEmail.TabIndex = 22;
+            // 
+            // tbName
+            // 
+            this.tbName.Location = new System.Drawing.Point(62, 35);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(157, 20);
+            this.tbName.TabIndex = 15;
+            // 
+            // AddTitle
+            // 
+            this.AddTitle.AutoSize = true;
+            this.AddTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AddTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.AddTitle.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.AddTitle.Location = new System.Drawing.Point(0, 0);
+            this.AddTitle.Margin = new System.Windows.Forms.Padding(10);
+            this.AddTitle.Name = "AddTitle";
+            this.AddTitle.Padding = new System.Windows.Forms.Padding(10);
+            this.AddTitle.Size = new System.Drawing.Size(93, 36);
+            this.AddTitle.TabIndex = 1;
+            this.AddTitle.Text = "Add User";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblName.Location = new System.Drawing.Point(2, 36);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(56, 143);
+            this.lblName.TabIndex = 14;
+            this.lblName.Text = "Name:\r\n\r\nPassword:\r\n\r\nRFID:\r\n\r\nNRIC:\r\n\r\nAddress:\r\n\r\nContact:";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(286, 108);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(78, 28);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // tbPwd
+            // 
+            this.tbPwd.Location = new System.Drawing.Point(62, 59);
+            this.tbPwd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbPwd.Name = "tbPwd";
+            this.tbPwd.Size = new System.Drawing.Size(157, 20);
+            this.tbPwd.TabIndex = 14;
+            // 
+            // tbContact
+            // 
+            this.tbContact.Location = new System.Drawing.Point(62, 165);
+            this.tbContact.Margin = new System.Windows.Forms.Padding(2);
+            this.tbContact.Name = "tbContact";
+            this.tbContact.Size = new System.Drawing.Size(157, 20);
+            this.tbContact.TabIndex = 19;
+            // 
+            // tbRFID
+            // 
+            this.tbRFID.Location = new System.Drawing.Point(62, 86);
+            this.tbRFID.Margin = new System.Windows.Forms.Padding(2);
+            this.tbRFID.Name = "tbRFID";
+            this.tbRFID.ReadOnly = true;
+            this.tbRFID.Size = new System.Drawing.Size(71, 20);
+            this.tbRFID.TabIndex = 16;
+            // 
+            // scanCardBtn
+            // 
+            this.scanCardBtn.Location = new System.Drawing.Point(136, 85);
+            this.scanCardBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.scanCardBtn.Name = "scanCardBtn";
+            this.scanCardBtn.Size = new System.Drawing.Size(42, 19);
+            this.scanCardBtn.TabIndex = 20;
+            this.scanCardBtn.Text = "Scan Card";
+            this.scanCardBtn.UseVisualStyleBackColor = true;
+            this.scanCardBtn.Click += new System.EventHandler(this.scanCardBtn_Click);
+            // 
+            // tbAdd
+            // 
+            this.tbAdd.Location = new System.Drawing.Point(62, 142);
+            this.tbAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.tbAdd.Name = "tbAdd";
+            this.tbAdd.Size = new System.Drawing.Size(157, 20);
+            this.tbAdd.TabIndex = 18;
+            // 
+            // stopScanBtn
+            // 
+            this.stopScanBtn.Location = new System.Drawing.Point(182, 84);
+            this.stopScanBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.stopScanBtn.Name = "stopScanBtn";
+            this.stopScanBtn.Size = new System.Drawing.Size(35, 19);
+            this.stopScanBtn.TabIndex = 21;
+            this.stopScanBtn.Text = "Stop Scan";
+            this.stopScanBtn.UseVisualStyleBackColor = true;
+            this.stopScanBtn.Click += new System.EventHandler(this.stopScanBtn_Click);
+            // 
+            // tbNRIC
+            // 
+            this.tbNRIC.Location = new System.Drawing.Point(62, 113);
+            this.tbNRIC.Margin = new System.Windows.Forms.Padding(2);
+            this.tbNRIC.Name = "tbNRIC";
+            this.tbNRIC.Size = new System.Drawing.Size(157, 20);
+            this.tbNRIC.TabIndex = 17;
+            // 
+            // todo
+            // 
+            this.todo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.todo.Controls.Add(this.RemoveTaskbtn);
+            this.todo.Controls.Add(this.RemoveTasktb);
+            this.todo.Controls.Add(this.RemoveTask);
+            this.todo.Controls.Add(this.AddTaskbtn);
+            this.todo.Controls.Add(this.AddTasktb);
+            this.todo.Controls.Add(this.AddTask);
+            this.todo.Controls.Add(this.Tasks);
+            this.todo.Controls.Add(this.Tasklist);
+            this.todo.Location = new System.Drawing.Point(4, 22);
+            this.todo.Margin = new System.Windows.Forms.Padding(2);
+            this.todo.Name = "todo";
+            this.todo.Padding = new System.Windows.Forms.Padding(2);
+            this.todo.Size = new System.Drawing.Size(681, 586);
+            this.todo.TabIndex = 5;
+            this.todo.Text = "To-do-list";
+            // 
+            // Tasks
+            // 
+            this.Tasks.AutoSize = true;
+            this.Tasks.ForeColor = System.Drawing.Color.White;
+            this.Tasks.Location = new System.Drawing.Point(18, 16);
+            this.Tasks.Name = "Tasks";
+            this.Tasks.Size = new System.Drawing.Size(36, 13);
+            this.Tasks.TabIndex = 1;
+            this.Tasks.Text = "Tasks";
+            // 
+            // Tasklist
+            // 
+            this.Tasklist.Location = new System.Drawing.Point(21, 37);
+            this.Tasklist.Multiline = true;
+            this.Tasklist.Name = "Tasklist";
+            this.Tasklist.Size = new System.Drawing.Size(513, 261);
+            this.Tasklist.TabIndex = 0;
+            // 
+            // usrmgtpg
+            // 
+            this.usrmgtpg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.usrmgtpg.Location = new System.Drawing.Point(4, 22);
+            this.usrmgtpg.Margin = new System.Windows.Forms.Padding(2);
+            this.usrmgtpg.Name = "usrmgtpg";
+            this.usrmgtpg.Padding = new System.Windows.Forms.Padding(2);
+            this.usrmgtpg.Size = new System.Drawing.Size(681, 586);
+            this.usrmgtpg.TabIndex = 4;
+            this.usrmgtpg.Text = "User Management Page";
+>>>>>>> parent of 6b2ca9f (last mile)
             // 
             // tabPage7
             // 
@@ -1689,9 +2369,252 @@
             // 
             // imageList1
             // 
+<<<<<<< HEAD
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+=======
+            this.moistureLbl.AutoSize = true;
+            this.moistureLbl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.moistureLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moistureLbl.ForeColor = System.Drawing.Color.Ivory;
+            this.moistureLbl.Location = new System.Drawing.Point(0, 0);
+            this.moistureLbl.Margin = new System.Windows.Forms.Padding(8);
+            this.moistureLbl.Name = "moistureLbl";
+            this.moistureLbl.Size = new System.Drawing.Size(90, 13);
+            this.moistureLbl.TabIndex = 7;
+            this.moistureLbl.Text = "Moisture Level";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.panel7.Controls.Add(this.lblTemp);
+            this.panel7.Controls.Add(this.tempLBL);
+            this.panel7.Controls.Add(this.degcelLbl);
+            this.panel7.Controls.Add(this.label10);
+            this.panel7.Location = new System.Drawing.Point(16, 122);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(150, 63);
+            this.panel7.TabIndex = 16;
+            // 
+            // lblTemp
+            // 
+            this.lblTemp.AutoSize = true;
+            this.lblTemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.lblTemp.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblTemp.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTemp.Location = new System.Drawing.Point(0, 19);
+            this.lblTemp.Margin = new System.Windows.Forms.Padding(8);
+            this.lblTemp.Name = "lblTemp";
+            this.lblTemp.Size = new System.Drawing.Size(108, 31);
+            this.lblTemp.TabIndex = 4;
+            this.lblTemp.Text = "label10";
+            this.lblTemp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tempLBL
+            // 
+            this.tempLBL.AutoSize = true;
+            this.tempLBL.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tempLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tempLBL.ForeColor = System.Drawing.Color.Ivory;
+            this.tempLBL.Location = new System.Drawing.Point(0, 0);
+            this.tempLBL.Margin = new System.Windows.Forms.Padding(4);
+            this.tempLBL.Name = "tempLBL";
+            this.tempLBL.Size = new System.Drawing.Size(76, 13);
+            this.tempLBL.TabIndex = 5;
+            this.tempLBL.Text = "Temperature";
+            // 
+            // degcelLbl
+            // 
+            this.degcelLbl.AutoSize = true;
+            this.degcelLbl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.degcelLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.degcelLbl.ForeColor = System.Drawing.Color.GhostWhite;
+            this.degcelLbl.Location = new System.Drawing.Point(0, 50);
+            this.degcelLbl.Margin = new System.Windows.Forms.Padding(8);
+            this.degcelLbl.Name = "degcelLbl";
+            this.degcelLbl.Size = new System.Drawing.Size(96, 13);
+            this.degcelLbl.TabIndex = 8;
+            this.degcelLbl.Text = "degrees Celsius";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label10.Location = new System.Drawing.Point(114, 0);
+            this.label10.Margin = new System.Windows.Forms.Padding(4);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 13);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "lb/ft3";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label15.Location = new System.Drawing.Point(356, 46);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(84, 13);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "Water amount";
+            // 
+            // lblUltrasonic
+            // 
+            this.lblUltrasonic.AutoSize = true;
+            this.lblUltrasonic.BackColor = System.Drawing.Color.Transparent;
+            this.lblUltrasonic.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblUltrasonic.Location = new System.Drawing.Point(352, 67);
+            this.lblUltrasonic.Margin = new System.Windows.Forms.Padding(8);
+            this.lblUltrasonic.Name = "lblUltrasonic";
+            this.lblUltrasonic.Size = new System.Drawing.Size(108, 31);
+            this.lblUltrasonic.TabIndex = 14;
+            this.lblUltrasonic.Text = "label10";
+            this.lblUltrasonic.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label11.Location = new System.Drawing.Point(222, 46);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(51, 13);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Door is:";
+            // 
+            // doorLbl
+            // 
+            this.doorLbl.AutoSize = true;
+            this.doorLbl.BackColor = System.Drawing.Color.Transparent;
+            this.doorLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.doorLbl.Location = new System.Drawing.Point(219, 67);
+            this.doorLbl.Margin = new System.Windows.Forms.Padding(8);
+            this.doorLbl.Name = "doorLbl";
+            this.doorLbl.Size = new System.Drawing.Size(108, 31);
+            this.doorLbl.TabIndex = 10;
+            this.doorLbl.Text = "label10";
+            this.doorLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F);
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Margin = new System.Windows.Forms.Padding(10);
+            this.label9.Name = "label9";
+            this.label9.Padding = new System.Windows.Forms.Padding(10);
+            this.label9.Size = new System.Drawing.Size(103, 36);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "DashBoard";
+            // 
+            // dashboard
+            // 
+            this.dashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.dashboard.Controls.Add(this.Temperature);
+            this.dashboard.Controls.Add(this.Moisture);
+            this.dashboard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboard.Location = new System.Drawing.Point(0, 0);
+            this.dashboard.Margin = new System.Windows.Forms.Padding(2);
+            this.dashboard.Name = "dashboard";
+            this.dashboard.Size = new System.Drawing.Size(677, 223);
+            this.dashboard.TabIndex = 0;
+            // 
+            // Temperature
+            // 
+            chartArea9.Name = "ChartArea1";
+            this.Temperature.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.Temperature.Legends.Add(legend9);
+            this.Temperature.Location = new System.Drawing.Point(8, 8);
+            this.Temperature.Margin = new System.Windows.Forms.Padding(8);
+            this.Temperature.Name = "Temperature";
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series9.Legend = "Legend1";
+            series9.Name = "Temperature";
+            this.Temperature.Series.Add(series9);
+            this.Temperature.Size = new System.Drawing.Size(322, 162);
+            this.Temperature.TabIndex = 0;
+            this.Temperature.Text = "Temperature";
+            title9.Name = "Temperature";
+            title9.Text = "Temperature";
+            this.Temperature.Titles.Add(title9);
+            // 
+            // Moisture
+            // 
+            chartArea10.Name = "ChartArea1";
+            this.Moisture.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.Moisture.Legends.Add(legend10);
+            this.Moisture.Location = new System.Drawing.Point(346, 8);
+            this.Moisture.Margin = new System.Windows.Forms.Padding(8);
+            this.Moisture.Name = "Moisture";
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series10.Legend = "Legend1";
+            series10.Name = "Moisture";
+            this.Moisture.Series.Add(series10);
+            this.Moisture.Size = new System.Drawing.Size(322, 162);
+            this.Moisture.TabIndex = 1;
+            this.Moisture.Text = "Moisture";
+            title10.Name = "Moisture";
+            title10.Text = "Moisture";
+            this.Moisture.Titles.Add(title10);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.syslogLB);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Size = new System.Drawing.Size(681, 586);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Logs";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label13.Location = new System.Drawing.Point(23, 19);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(103, 20);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "System Log";
+            // 
+            // syslogLB
+            // 
+            this.syslogLB.FormattingEnabled = true;
+            this.syslogLB.Location = new System.Drawing.Point(20, 51);
+            this.syslogLB.Margin = new System.Windows.Forms.Padding(22, 24, 22, 24);
+            this.syslogLB.Name = "syslogLB";
+            this.syslogLB.Size = new System.Drawing.Size(649, 277);
+            this.syslogLB.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.tabPage2.Controls.Add(this.Queue);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Size = new System.Drawing.Size(681, 586);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Current Queue";
+>>>>>>> parent of 6b2ca9f (last mile)
             // 
             // Queue
             // 
@@ -1703,6 +2626,144 @@
             this.Queue.Size = new System.Drawing.Size(677, 582);
             this.Queue.TabIndex = 0;
             // 
+<<<<<<< HEAD
+=======
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.tabPage1.Controls.Add(this.ApproveSubmit);
+            this.tabPage1.Controls.Add(this.IDlist);
+            this.tabPage1.Controls.Add(this.List);
+            this.tabPage1.Controls.Add(this.ID_list);
+            this.tabPage1.Controls.Add(this.Approval_list);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Size = new System.Drawing.Size(681, 586);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Approval";
+            // 
+            // ApproveSubmit
+            // 
+            this.ApproveSubmit.Location = new System.Drawing.Point(56, 381);
+            this.ApproveSubmit.Name = "ApproveSubmit";
+            this.ApproveSubmit.Size = new System.Drawing.Size(75, 23);
+            this.ApproveSubmit.TabIndex = 7;
+            this.ApproveSubmit.Text = "Submit";
+            this.ApproveSubmit.UseVisualStyleBackColor = true;
+            this.ApproveSubmit.Click += new System.EventHandler(this.ApproveSubmit_Click);
+            // 
+            // IDlist
+            // 
+            this.IDlist.AutoSize = true;
+            this.IDlist.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.IDlist.Location = new System.Drawing.Point(53, 222);
+            this.IDlist.Name = "IDlist";
+            this.IDlist.Size = new System.Drawing.Size(100, 13);
+            this.IDlist.TabIndex = 6;
+            this.IDlist.Text = "List Of Approved ID";
+            // 
+            // List
+            // 
+            this.List.AutoSize = true;
+            this.List.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.List.Location = new System.Drawing.Point(53, 16);
+            this.List.Name = "List";
+            this.List.Size = new System.Drawing.Size(92, 13);
+            this.List.TabIndex = 5;
+            this.List.Text = "Not Approved List";
+            // 
+            // ID_list
+            // 
+            this.ID_list.Location = new System.Drawing.Point(56, 238);
+            this.ID_list.Multiline = true;
+            this.ID_list.Name = "ID_list";
+            this.ID_list.Size = new System.Drawing.Size(533, 137);
+            this.ID_list.TabIndex = 4;
+            // 
+            // Approval_list
+            // 
+            this.Approval_list.Location = new System.Drawing.Point(56, 37);
+            this.Approval_list.Multiline = true;
+            this.Approval_list.Name = "Approval_list";
+            this.Approval_list.Size = new System.Drawing.Size(533, 167);
+            this.Approval_list.TabIndex = 3;
+            // 
+            // usermgt
+            // 
+            this.usermgt.Controls.Add(this.tabPage1);
+            this.usermgt.Controls.Add(this.tabPage2);
+            this.usermgt.Controls.Add(this.tabPage3);
+            this.usermgt.Controls.Add(this.tabPage4);
+            this.usermgt.Controls.Add(this.tabPage7);
+            this.usermgt.Controls.Add(this.usrmgtpg);
+            this.usermgt.Controls.Add(this.todo);
+            this.usermgt.Controls.Add(this.tabPage5);
+            this.usermgt.Dock = System.Windows.Forms.DockStyle.Right;
+            this.usermgt.Location = new System.Drawing.Point(273, 0);
+            this.usermgt.Margin = new System.Windows.Forms.Padding(2);
+            this.usermgt.Name = "usermgt";
+            this.usermgt.SelectedIndex = 0;
+            this.usermgt.Size = new System.Drawing.Size(689, 612);
+            this.usermgt.TabIndex = 0;
+            // 
+            // AddTask
+            // 
+            this.AddTask.AutoSize = true;
+            this.AddTask.ForeColor = System.Drawing.Color.White;
+            this.AddTask.Location = new System.Drawing.Point(18, 310);
+            this.AddTask.Name = "AddTask";
+            this.AddTask.Size = new System.Drawing.Size(53, 13);
+            this.AddTask.TabIndex = 2;
+            this.AddTask.Text = "Add Task";
+            // 
+            // AddTasktb
+            // 
+            this.AddTasktb.Location = new System.Drawing.Point(21, 330);
+            this.AddTasktb.Multiline = true;
+            this.AddTasktb.Name = "AddTasktb";
+            this.AddTasktb.Size = new System.Drawing.Size(239, 147);
+            this.AddTasktb.TabIndex = 3;
+            // 
+            // AddTaskbtn
+            // 
+            this.AddTaskbtn.Location = new System.Drawing.Point(22, 483);
+            this.AddTaskbtn.Name = "AddTaskbtn";
+            this.AddTaskbtn.Size = new System.Drawing.Size(75, 23);
+            this.AddTaskbtn.TabIndex = 4;
+            this.AddTaskbtn.Text = "Add Task";
+            this.AddTaskbtn.UseVisualStyleBackColor = true;
+            this.AddTaskbtn.Click += new System.EventHandler(this.AddTaskbtn_Click);
+            // 
+            // RemoveTask
+            // 
+            this.RemoveTask.AutoSize = true;
+            this.RemoveTask.ForeColor = System.Drawing.Color.White;
+            this.RemoveTask.Location = new System.Drawing.Point(277, 310);
+            this.RemoveTask.Name = "RemoveTask";
+            this.RemoveTask.Size = new System.Drawing.Size(74, 13);
+            this.RemoveTask.TabIndex = 5;
+            this.RemoveTask.Text = "Remove Task";
+            // 
+            // RemoveTasktb
+            // 
+            this.RemoveTasktb.Location = new System.Drawing.Point(276, 330);
+            this.RemoveTasktb.Name = "RemoveTasktb";
+            this.RemoveTasktb.Size = new System.Drawing.Size(239, 20);
+            this.RemoveTasktb.TabIndex = 6;
+            // 
+            // RemoveTaskbtn
+            // 
+            this.RemoveTaskbtn.Location = new System.Drawing.Point(276, 356);
+            this.RemoveTaskbtn.Name = "RemoveTaskbtn";
+            this.RemoveTaskbtn.Size = new System.Drawing.Size(75, 23);
+            this.RemoveTaskbtn.TabIndex = 7;
+            this.RemoveTaskbtn.Text = "Done";
+            this.RemoveTaskbtn.UseVisualStyleBackColor = true;
+            this.RemoveTaskbtn.Click += new System.EventHandler(this.RemoveTaskbtn_Click);
+            // 
+>>>>>>> parent of 6b2ca9f (last mile)
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1738,8 +2799,6 @@
             this.panel4.PerformLayout();
             this.todo.ResumeLayout(false);
             this.todo.PerformLayout();
-            this.usrmgtpg.ResumeLayout(false);
-            this.usrmgtpg.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
@@ -1906,6 +2965,5 @@
         private System.Windows.Forms.Button AddTaskbtn;
         private System.Windows.Forms.TextBox AddTasktb;
         private System.Windows.Forms.Label AddTask;
-        private System.Windows.Forms.TextBox Usermgttb;
     }
 }

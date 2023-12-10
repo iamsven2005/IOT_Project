@@ -26,6 +26,7 @@ namespace PracticalADO_ReadDB
             this.Title = new System.Windows.Forms.Label();
             this.ForgetPwd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AdminLogin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,6 +119,16 @@ namespace PracticalADO_ReadDB
             this.panel1.Size = new System.Drawing.Size(668, 208);
             this.panel1.TabIndex = 7;
             // 
+            // AdminLogin
+            // 
+            this.AdminLogin.Location = new System.Drawing.Point(479, 397);
+            this.AdminLogin.Name = "AdminLogin";
+            this.AdminLogin.Size = new System.Drawing.Size(93, 44);
+            this.AdminLogin.TabIndex = 6;
+            this.AdminLogin.Text = "Admin";
+            this.AdminLogin.UseVisualStyleBackColor = true;
+            this.AdminLogin.Click += new System.EventHandler(this.AdminLogin_Click_1);
+            // 
             // frmLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -125,6 +136,7 @@ namespace PracticalADO_ReadDB
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(951, 577);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.AdminLogin);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmLogin";
@@ -145,6 +157,7 @@ namespace PracticalADO_ReadDB
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.TextBox MFATB;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button AdminLogin;
     }
 }
 

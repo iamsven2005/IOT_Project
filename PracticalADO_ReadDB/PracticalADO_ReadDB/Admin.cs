@@ -35,7 +35,6 @@ namespace PracticalADO_ReadDB
             loadbooking();
             loadapproved();
             loadTodo();
-            loadMgt();
             session.Text = "Admin";
             //lbl.Text = extractStringValue(strData, "TempA=");
         }
@@ -81,25 +80,6 @@ namespace PracticalADO_ReadDB
                 messagesBuilder.AppendLine($"{user} {message} {time}");
             }
             Messages.Text = messagesBuilder.ToString();
-            reader.Close();
-            myConnect.Close();
-        }
-        private void loadMgt()
-        {
-            SqlConnection myConnect = new SqlConnection(strConnectionString);
-            String strCommandText = "Select * from MyTxn";
-            SqlCommand cmd = new SqlCommand(strCommandText, myConnect);
-            myConnect.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
-            StringBuilder messagesBuilder = new StringBuilder();
-            while (reader.Read())
-            {
-                string RFID = reader["UniqueRFID"].ToString();
-                string Date = reader["DateAndTime"].ToString();
-                messagesBuilder.AppendLine($"RFID: {RFID} Time:{Date}");
-            }
-            Usermgttb.Text = messagesBuilder.ToString();
-            Usermgttb.ForeColor = Color.White;
             reader.Close();
             myConnect.Close();
         }
@@ -794,7 +774,7 @@ namespace PracticalADO_ReadDB
         private void LoadUserRecords()
         {
             SqlConnection myConnect = new SqlConnection(strConnectionString);
-            string strCommandText = "SELECT * FROM MyUser";
+            string strCommandText = "SELECT UniqueUserID, Name, UniqueRFID, Address, Contact, Gender, DOB, CountryOfBirth, NRIC, MFAValue, Email, Role FROM MyUser";
             UserAdapter = new SqlDataAdapter(strCommandText, myConnect);
             SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(UserAdapter);
             UserTable.Clear();
